@@ -13,12 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package uk.ac.leeds.ccg.projects.fire;
+package uk.ac.leeds.ccg.projects.fire.id;
+
+import uk.ac.leeds.ccg.data.id.Data_ID_long;
 
 /**
- *
+ * F_ID_long
+ * 
  * @author Andy Turner
+ * @version 1.0.0
  */
-public class FireIncidenceRecord {
+public class F_ID_long extends Data_ID_long {
     
+    private static final long serialVersionUID = 1L;
+
+    public F_ID_long(long l) {
+        super(l);
+    }
+
 }

@@ -40,8 +40,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <agdt-java-generic.version>1.7</agdt-java-generic.version>
-        <!--<agdt-java-generic.version>1.2</agdt-java-generic.version>-->
+        <agdt-java-generic.version>1.8</agdt-java-generic.version>
+        <agdt-java-data.version>0.2</agdt-java-data.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <junit.version>5.5.2</junit.version>
@@ -53,6 +53,11 @@
             <groupId>io.github.agdturner</groupId>
             <artifactId>agdt-java-generic</artifactId>
             <version>${agdt-java-generic.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.agdturner</groupId>
+            <artifactId>agdt-java-data</artifactId>
+            <version>${agdt-java-data.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -77,6 +82,12 @@
             <artifactId>selenium-java</artifactId>
             <scope>test</scope>
             <version>2.44.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.opera</groupId>
@@ -101,6 +112,18 @@
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>xmpbox</artifactId>
             <version>2.0.22</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.0.0</version>
         </dependency>
     </dependencies>
     
