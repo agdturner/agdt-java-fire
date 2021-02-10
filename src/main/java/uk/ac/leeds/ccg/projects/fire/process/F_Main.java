@@ -20,7 +20,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import uk.ac.leeds.ccg.data.core.Data_Environment;
 import uk.ac.leeds.ccg.data.format.Data_ReadCSV;
 import uk.ac.leeds.ccg.generic.core.Generic_Environment;
@@ -39,7 +43,7 @@ import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
 
 /**
  * F_Main
- * 
+ *
  * This is that main processor for the fire incidence data.
  *
  * @author Andy Turner
@@ -62,7 +66,7 @@ public class F_Main extends F_Object {
     public static void main(String[] args) {
         try {
             Path dataDir = Paths.get(System.getProperty("user.home"),
-                    F_Strings.s_data);
+                    F_Strings.s_data, "projects", "Fire");
             F_Environment e = new F_Environment(new Data_Environment(
                     new Generic_Environment(new Generic_Defaults(dataDir))));
             F_Main p = new F_Main(e);
@@ -74,14 +78,15 @@ public class F_Main extends F_Object {
 
     public void run() throws ClassNotFoundException {
         try {
-            boolean doLoadData = true;
-            //boolean doLoadData = false;
+            //boolean doLoadData = true;
+            boolean doLoadData = false;
             if (doLoadData) {
                 env.data = new F_Data(env);
                 data = env.data;
                 loadData();
             } else {
                 env.data.env = env;
+                process2();
             }
         } catch (Exception ex) {
             ex.printStackTrace(System.err);
@@ -148,5 +153,44 @@ public class F_Main extends F_Object {
         env.logEndTag(m);
         env.env.closeLog(env.logID);
         env.swapData();
+    }
+
+    /**
+     * Summarise the data.
+     */
+    public void process2() {
+        try {
+            env.loadData();
+            HashMap<String, Integer> sACCIDENTAL_OR_DELIBERATE = new HashMap<>();
+            System.out.println("env.data.cID2recIDs.size()=" + env.data.cID2recIDs.size());
+            System.out.println("env.data.recID2cID.size()=" + env.data.recID2cID.size());
+            System.out.println("env.data.data.size()=" + env.data.data.size());
+            Iterator<F_CollectionID> ite = env.data.data.keySet().iterator();
+            while (ite.hasNext()) {
+                F_CollectionID cid = ite.next();
+                System.out.println("cid=" + cid.toString());
+                env.data.env = env;
+                F_Collection c = env.data.getCollection(cid);
+                Iterator<F_RecordID> ite2 = c.data.keySet().iterator();
+                while (ite2.hasNext()) {
+                    F_RecordID id = ite2.next();
+                    F_Dwellings_Record r = c.data.get(id);
+                    Generic_Collections.addToCount(sACCIDENTAL_OR_DELIBERATE, r.gettACCIDENTAL_OR_DELIBERATE(), 1);
+                }
+            }
+            System.out.println("sACCIDENTAL_OR_DELIBERATE.size()=" + sACCIDENTAL_OR_DELIBERATE.size());
+            print(sACCIDENTAL_OR_DELIBERATE);
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void print(HashSet<String> s) {
+        s.stream().forEach(i -> System.out.println(i));
+    }
+
+    public void print(HashMap<String, Integer> m) {
+        System.out.println("count,value");
+        m.keySet().stream().forEach(i -> System.out.println(" " + m.get(i) + "," + i));
     }
 }

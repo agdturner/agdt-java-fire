@@ -1932,7 +1932,9 @@ public class F_Data extends F_Object {
      */
     public F_Collection loadCollection(F_CollectionID cid) throws IOException,
             ClassNotFoundException {
-        return (F_Collection) load(getCollectionPath(cid));
+        F_Collection r = (F_Collection) load(getCollectionPath(cid));
+        r.env = env;
+        return r;
     }
 
     /**

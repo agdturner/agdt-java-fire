@@ -50,7 +50,7 @@ public class F_Environment extends Generic_MemoryManager {
         //Memory_Threshold = 3000000000L;
         this.de = de;
         this.env = de.env;
-        Path dir = Paths.get(de.files.getDataDir().toString(), F_Strings.s_Fire);
+        Path dir = Paths.get(de.files.getDataDir().toString());
         files = new F_Files(dir);
         Path f  = files.getEnvDataFile();
         if (Files.exists(f)) {
