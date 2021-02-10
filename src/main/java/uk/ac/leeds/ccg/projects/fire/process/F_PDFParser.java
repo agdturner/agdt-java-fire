@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package uk.ac.leeds.ccg.projects.fire;
+package uk.ac.leeds.ccg.projects.fire.process;
 
 import java.io.BufferedWriter;
 import java.nio.file.Path;
@@ -68,11 +68,12 @@ import org.apache.xmpbox.xml.DomXmpParser;
 import org.apache.xmpbox.xml.XmpParsingException;
 
 /**
- * This class was originally developed as an attempt to parse a PDF document.
+ * Developed as an attempt to parse a PDF document such as might be obtained via
+ * an FOI request.
  *
  * @author Andy Turner
  */
-public class PDFReader {
+public class F_PDFParser {
 
     Path dataDir;
     Path inDir;
@@ -88,7 +89,7 @@ public class PDFReader {
      */
     String id;
 
-    public PDFReader(Path dataDir, String td, String id) {
+    public F_PDFParser(Path dataDir, String td, String id) {
         this.dataDir = dataDir;
         this.inDir = Paths.get(dataDir.toString(), "input");
         this.outDir = Paths.get(dataDir.toString(), "output");
@@ -97,7 +98,7 @@ public class PDFReader {
     }
 
     public static void main(String[] args) {
-        PDFReader r = new PDFReader(Paths.get("C:", "Users", "agdtu", "work",
+        F_PDFParser r = new F_PDFParser(Paths.get("C:", "Users", "agdtu", "work",
                 "research", "fire", "data"), ": ", " ");
         r.run();
     }
@@ -109,7 +110,7 @@ public class PDFReader {
         try {
             Files.createDirectories(out);
         } catch (IOException ex) {
-            Logger.getLogger(PDFReader.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(F_PDFParser.class.getName()).log(Level.SEVERE, null, ex);
         }
         String tag0 = "Metadata";
         System.out.println(getStartTag(tag0));
@@ -126,7 +127,7 @@ public class PDFReader {
                 print(parse(pdf, fn));
             }
         } catch (IOException ex) {
-            Logger.getLogger(PDFReader.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(F_PDFParser.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -370,6 +371,7 @@ public class PDFReader {
 
     /**
      * For parsing {@code cb}.
+     *
      * @param cb The COSBase to parse.
      * @param l The list to add parsed information to.
      */
@@ -521,7 +523,7 @@ public class PDFReader {
             ts.setSortByPosition(true);
             r = ts.getText(pdf);
         } catch (IOException ex) {
-            Logger.getLogger(PDFReader.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(F_PDFParser.class.getName()).log(Level.SEVERE, null, ex);
         }
         return r;
     }
@@ -561,7 +563,7 @@ public class PDFReader {
                         r.add("CreatorTool" + td + xbs.getCreatorTool());
                     }
                 } catch (XmpParsingException ex) {
-                    Logger.getLogger(PDFReader.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(F_PDFParser.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {
                 // The pdf doesn't contain any metadata, try to use the
@@ -576,7 +578,7 @@ public class PDFReader {
                 }
             }
         } catch (IOException ex) {
-            Logger.getLogger(PDFReader.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(F_PDFParser.class.getName()).log(Level.SEVERE, null, ex);
         }
         return r;
     }

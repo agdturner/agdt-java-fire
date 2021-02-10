@@ -39,6 +39,8 @@ import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
 
 /**
  * F_Main
+ * 
+ * This is that main processor for the fire incidence data.
  *
  * @author Andy Turner
  * @version 1.0.0
@@ -76,6 +78,7 @@ public class F_Main extends F_Object {
             //boolean doLoadData = false;
             if (doLoadData) {
                 env.data = new F_Data(env);
+                data = env.data;
                 loadData();
             } else {
                 env.data.env = env;
@@ -110,10 +113,10 @@ public class F_Main extends F_Object {
         for (Path vf : vfs) {
             F_CollectionID cID = new F_CollectionID(data.cID2recIDs.size());
             HashSet<F_RecordID> recIDs = new HashSet<>();
-            env.data.cID2recIDs.put(cID, recIDs);
+            data.cID2recIDs.put(cID, recIDs);
             F_Collection c = new F_Collection(cID);
-            env.data.data.put(cID, c);
-            env.env.log("Reading " + vf.toString());
+            data.data.put(cID, c);
+            env.log("Reading " + vf.toString());
             long lf = 0;
             try (final BufferedReader br = Generic_IO.getBufferedReader(vf)) {
                 reader.setStreamTokenizer(br, syntax);
@@ -133,13 +136,13 @@ public class F_Main extends F_Object {
                         Generic_Collections.addToMap(data.cID2recIDs, cID, recID);
                         data.recID2cID.put(recID, cID);
                         if (lf % 1000 == 0) {
-                            env.env.log("loaded record " + lf);
+                            env.log("loaded record " + lf);
                         }
                     }
                     lf++;
                     line = reader.readLine();
                 }
-                env.data.swapCollections();
+                data.swapCollections();
             }
         }
         env.logEndTag(m);
