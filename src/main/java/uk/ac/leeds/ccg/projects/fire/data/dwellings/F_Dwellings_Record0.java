@@ -18,11 +18,7 @@ package uk.ac.leeds.ccg.projects.fire.data.dwellings;
 import uk.ac.leeds.ccg.data.Data_Record;
 import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
 
-/**
- * Old
- * @author Andy Turner
- */
-public class F_Dwellings_Record extends Data_Record {
+public class F_Dwellings_Record0 extends Data_Record {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,7 +29,7 @@ public class F_Dwellings_Record extends Data_Record {
     protected String tMONTH_NAME;
     protected String tWEEKDAY_WEEKEND;
     protected String tDAY_NIGHT;
-    protected String tproperty_type_detailed_d;
+    protected String tBUILDING_OR_PROPERTY_TYPE;
     protected String tLATE_CALL;
     protected String tMULTI_SEATED_FLAG;
     protected String tIGNITION_TO_DISCOVERY;
@@ -42,12 +38,7 @@ public class F_Dwellings_Record extends Data_Record {
     protected String tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION;
     protected String tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION;
     protected String tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT;
-    protected String tOCCUPANCY_TYPE;
     protected String tOCCUPIED_NORMAL;
-    protected String tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT;
-    protected String tALARM_SYSTEM;
-    protected String tALARM_SYSTEM_TYPE;
-    protected String tALARM_REASON_FOR_POOR_OUTCOME;
     protected String tACCIDENTAL_OR_DELIBERATE;
     protected String tVEHICLES;
     protected String tVEHICLES_CODE;
@@ -91,105 +82,35 @@ public class F_Dwellings_Record extends Data_Record {
     protected String tEVACUATIONS_CODE;
     protected String tBUILDING_EVACUATION_DELAY_DESCRIPTION;
     protected String tBUILDING_EVACUATION_TIME_DESCRIPTION;
-
-    public F_Dwellings_Record(F_RecordID i, String[] s) throws Exception {
+    
+    public F_Dwellings_Record0(F_RecordID i){
         super(i);
-        inittID_number(s[0]);
-        inittFRS_NAME(s[1]);
-        inittE_CODE(s[2]);
-        inittFINANCIAL_YEAR(s[3]);
-        inittMONTH_NAME(s[4]);
-        inittWEEKDAY_WEEKEND(s[5]);
-        inittDAY_NIGHT(s[6]);
-        inittproperty_type_detailed_d(s[7]);
-        inittLATE_CALL(s[8]);
-        inittMULTI_SEATED_FLAG(s[9]);
-        inittIGNITION_TO_DISCOVERY(s[10]);
-        inittDISCOVERY_TO_CALL(s[11]);
-        inittHOW_DISCOVERED_DESCRIPTION(s[12]);
-        inittBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION(s[13]);
-        inittBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION(s[14]);
-        inittBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT(s[15]);
-        inittOCCUPANCY_TYPE(s[16]);
-        inittOCCUPIED_NORMAL(s[17]);
-        inittWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT(s[18]);
-        inittALARM_SYSTEM(s[19]);
-        inittALARM_SYSTEM_TYPE(s[20]);
-        inittALARM_REASON_FOR_POOR_OUTCOME(s[21]);
-        inittACCIDENTAL_OR_DELIBERATE(s[22]);
-        inittVEHICLES(s[23]);
-        inittVEHICLES_CODE(s[24]);
-        inittPERSONNEL(s[25]);
-        inittPERSONNEL_CODE(s[26]);
-        inittSTARTING_DELAY_DESCRIPTION(s[27]);
-        inittACTION_NON_FRS_DESCRIPTION(s[28]);
-        inittACTION_FRS_DESCRIPTION(s[29]);
-        inittCAUSE_OF_FIRE(s[30]);
-        inittIGNITION_POWER(s[31]);
-        inittSOURCE_OF_IGNITION(s[32]);
-        inittITEM_IGNITED(s[33]);
-        inittITEM_CAUSING_SPREAD(s[34]);
-        inittRAPID_FIRE_GROWTH(s[35]);
-        inittCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION(s[36]);
-        inittCAUSE_EXPLOSION_INVOLVED(s[37]);
-        inittCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION(s[38]);
-        inittCAUSE_EXPLOSION_STAGE_DESCRIPTION(s[39]);
-        inittCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION(s[40]);
-        inittBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION(s[41]);
-        inittBUILDING_FLOORS_ABOVE_GROUND(s[42]);
-        inittBUILDING_FLOORS_BELOW_GROUND(s[43]);
-        inittBUILDING_FLOOR_ORIGIN(s[44]);
-        inittBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION(s[45]);
-        inittBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION(s[46]);
-        inittFIRE_START_LOCATION(s[47]);
-        inittFIRE_SIZE_ON_ARRIVAL(s[48]);
-        inittOTHER_PROPERTY_AFFECTED_ON_ARRIVAL(s[49]);
-        inittBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION(s[50]);
-        inittBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION(s[51]);
-        inittFIRE_SIZE_ON_ARRIVAL_DESCRIPTION(s[52]);
-        inittother_property_affected_close_d(s[53]);
-        inittspread_of_fire_d(s[54]);
-        inittRESPONSE_TIME(s[55]);
-        inittRESPONSE_TIME_CODE(s[56]);
-        inittTIME_AT_SCENE(s[57]);
-        inittTIME_AT_SCENE_CODE(s[58]);
-        inittFATALITY_CASUALTY(s[59]);
-        inittRESCUES(s[60]);
-        inittEVACUATIONS(s[61]);
-        inittEVACUATIONS_CODE(s[62]);
-        inittBUILDING_EVACUATION_DELAY_DESCRIPTION(s[63]);
-        inittBUILDING_EVACUATION_TIME_DESCRIPTION(s[64]);
     }
 
-    /**
-     * @return A String representation of this.
-     */
-    @Override
-    public String toString() {
-        //return getId().getClass().getSimpleName() + id.toString();
-        //return id.toString();
+    protected String toString0() {
         String r = "FRS_NAME=" + tFRS_NAME;
         r += ", E_CODE=" + tE_CODE;
         r += ", FINANCIAL_YEAR=" + tFINANCIAL_YEAR;
         r += ", MONTH_NAME=" + tMONTH_NAME;
         r += ", WEEKDAY_WEEKEND=" + tWEEKDAY_WEEKEND;
         r += ", DAY_NIGHT=" + tDAY_NIGHT;
-        r += ", property_type_detailed_d=" + tproperty_type_detailed_d;
+        r += ", BUILDING_OR_PROPERTY_TYPE=" + tBUILDING_OR_PROPERTY_TYPE;
         r += ", LATE_CALL=" + tLATE_CALL;
         r += ", MULTI_SEATED_FLAG=" + tMULTI_SEATED_FLAG;
         r += ", IGNITION_TO_DISCOVERY=" + tIGNITION_TO_DISCOVERY;
         r += ", DISCOVERY_TO_CALL=" + tDISCOVERY_TO_CALL;
         r += ", HOW_DISCOVERED_DESCRIPTION=" + tHOW_DISCOVERED_DESCRIPTION;
-        r += ", BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION=" + tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION;
+        return r;
+    }
+        
+    protected String toString1() {
+        String r = ", BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION=" + tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION;
         r += ", BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION=" + tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION;
-        r += ", BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT=" + tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT;
-        r += ", OCCUPANCY_TYPE=" + tOCCUPANCY_TYPE;
-        r += ", OCCUPIED_NORMAL=" + tOCCUPIED_NORMAL;
-        r += ", WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT=" + tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT;
-        r += ", ALARM_SYSTEM=" + tALARM_SYSTEM;
-        r += ", ALARM_SYSTEM_TYPE=" + tALARM_SYSTEM_TYPE;
-        r += ", ALARM_REASON_FOR_POOR_OUTCOME=" + tALARM_REASON_FOR_POOR_OUTCOME;
-        r += ", ACCIDENTAL_OR_DELIBERATE=" + tACCIDENTAL_OR_DELIBERATE;
+        return r;
+    }
+    
+    protected String toString2() {
+        String r = ", ACCIDENTAL_OR_DELIBERATE=" + tACCIDENTAL_OR_DELIBERATE;
         r += ", VEHICLES=" + tVEHICLES;
         r += ", VEHICLES_CODE=" + tVEHICLES_CODE;
         r += ", PERSONNEL=" + tPERSONNEL;
@@ -234,6 +155,19 @@ public class F_Dwellings_Record extends Data_Record {
         r += ", BUILDING_EVACUATION_TIME_DESCRIPTION=" + tBUILDING_EVACUATION_TIME_DESCRIPTION;
         return r;
     }
+        
+//    /**
+//     * @return A String representation of this.
+//     */
+//    @Override
+//    public String toString() {
+//        //return getId().getClass().getSimpleName() + id.toString();
+//        //return id.toString();
+//        String r = toString0();
+//        r += ", OCCUPIED_NORMAL=" + tOCCUPIED_NORMAL;
+//        r += toString1();
+//        return r;
+//    }
 
     @Override
     public F_RecordID getId() {
@@ -297,11 +231,11 @@ public class F_Dwellings_Record extends Data_Record {
         }
     }
 
-    protected final void inittproperty_type_detailed_d(String s) {
+    protected final void inittBUILDING_OR_PROPERTY_TYPE(String s) {
         if (!s.trim().isEmpty()) {
-            tproperty_type_detailed_d = s;
+            tBUILDING_OR_PROPERTY_TYPE = s;
         } else {
-            tproperty_type_detailed_d = null;
+            tBUILDING_OR_PROPERTY_TYPE = null;
         }
     }
 
@@ -369,51 +303,11 @@ public class F_Dwellings_Record extends Data_Record {
         }
     }
 
-    protected final void inittOCCUPANCY_TYPE(String s) {
-        if (!s.trim().isEmpty()) {
-            tOCCUPANCY_TYPE = s;
-        } else {
-            tOCCUPANCY_TYPE = null;
-        }
-    }
-
     protected final void inittOCCUPIED_NORMAL(String s) {
         if (!s.trim().isEmpty()) {
             tOCCUPIED_NORMAL = s;
         } else {
             tOCCUPIED_NORMAL = null;
-        }
-    }
-
-    protected final void inittWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT(String s) {
-        if (!s.trim().isEmpty()) {
-            tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = s;
-        } else {
-            tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = null;
-        }
-    }
-
-    protected final void inittALARM_SYSTEM(String s) {
-        if (!s.trim().isEmpty()) {
-            tALARM_SYSTEM = s;
-        } else {
-            tALARM_SYSTEM = null;
-        }
-    }
-
-    protected final void inittALARM_SYSTEM_TYPE(String s) {
-        if (!s.trim().isEmpty()) {
-            tALARM_SYSTEM_TYPE = s;
-        } else {
-            tALARM_SYSTEM_TYPE = null;
-        }
-    }
-
-    protected final void inittALARM_REASON_FOR_POOR_OUTCOME(String s) {
-        if (!s.trim().isEmpty()) {
-            tALARM_REASON_FOR_POOR_OUTCOME = s;
-        } else {
-            tALARM_REASON_FOR_POOR_OUTCOME = null;
         }
     }
 
@@ -761,263 +655,243 @@ public class F_Dwellings_Record extends Data_Record {
         }
     }
 
-    public Integer gettID_number() {
+    public final Integer gettID_number() {
         return tID_number;
     }
 
-    public String gettFRS_NAME() {
+    public final String gettFRS_NAME() {
         return tFRS_NAME;
     }
 
-    public String gettE_CODE() {
+    public final String gettE_CODE() {
         return tE_CODE;
     }
 
-    public String gettFINANCIAL_YEAR() {
+    public final String gettFINANCIAL_YEAR() {
         return tFINANCIAL_YEAR;
     }
 
-    public String gettMONTH_NAME() {
+    public final String gettMONTH_NAME() {
         return tMONTH_NAME;
     }
 
-    public String gettWEEKDAY_WEEKEND() {
+    public final String gettWEEKDAY_WEEKEND() {
         return tWEEKDAY_WEEKEND;
     }
 
-    public String gettDAY_NIGHT() {
+    public final String gettDAY_NIGHT() {
         return tDAY_NIGHT;
     }
 
-    public String gettproperty_type_detailed_d() {
-        return tproperty_type_detailed_d;
+    public final String gettBUILDING_OR_PROPERTY_TYPE() {
+        return tBUILDING_OR_PROPERTY_TYPE;
     }
 
-    public String gettLATE_CALL() {
+    public final String gettLATE_CALL() {
         return tLATE_CALL;
     }
 
-    public String gettMULTI_SEATED_FLAG() {
+    public final String gettMULTI_SEATED_FLAG() {
         return tMULTI_SEATED_FLAG;
     }
 
-    public String gettIGNITION_TO_DISCOVERY() {
+    public final String gettIGNITION_TO_DISCOVERY() {
         return tIGNITION_TO_DISCOVERY;
     }
 
-    public String gettDISCOVERY_TO_CALL() {
+    public final String gettDISCOVERY_TO_CALL() {
         return tDISCOVERY_TO_CALL;
     }
 
-    public String gettHOW_DISCOVERED_DESCRIPTION() {
+    public final String gettHOW_DISCOVERED_DESCRIPTION() {
         return tHOW_DISCOVERED_DESCRIPTION;
     }
 
-    public String gettBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION() {
+    public final String gettBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION() {
         return tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION;
     }
 
-    public String gettBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION() {
+    public final String gettBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION() {
         return tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION;
     }
 
-    public String gettBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT() {
+    public final String gettBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT() {
         return tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT;
     }
 
-    public String gettOCCUPANCY_TYPE() {
-        return tOCCUPANCY_TYPE;
-    }
-
-    public String gettOCCUPIED_NORMAL() {
+    public final String gettOCCUPIED_NORMAL() {
         return tOCCUPIED_NORMAL;
     }
 
-    public String gettWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT() {
-        return tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT;
-    }
-
-    public String gettALARM_SYSTEM() {
-        return tALARM_SYSTEM;
-    }
-
-    public String gettALARM_SYSTEM_TYPE() {
-        return tALARM_SYSTEM_TYPE;
-    }
-
-    public String gettALARM_REASON_FOR_POOR_OUTCOME() {
-        return tALARM_REASON_FOR_POOR_OUTCOME;
-    }
-
-    public String gettACCIDENTAL_OR_DELIBERATE() {
+    public final String gettACCIDENTAL_OR_DELIBERATE() {
         return tACCIDENTAL_OR_DELIBERATE;
     }
 
-    public String gettVEHICLES() {
+    public final String gettVEHICLES() {
         return tVEHICLES;
     }
 
-    public String gettVEHICLES_CODE() {
+    public final String gettVEHICLES_CODE() {
         return tVEHICLES_CODE;
     }
 
-    public String gettPERSONNEL() {
+    public final String gettPERSONNEL() {
         return tPERSONNEL;
     }
 
-    public String gettPERSONNEL_CODE() {
+    public final String gettPERSONNEL_CODE() {
         return tPERSONNEL_CODE;
     }
 
-    public String gettSTARTING_DELAY_DESCRIPTION() {
+    public final String gettSTARTING_DELAY_DESCRIPTION() {
         return tSTARTING_DELAY_DESCRIPTION;
     }
 
-    public String gettACTION_NON_FRS_DESCRIPTION() {
+    public final String gettACTION_NON_FRS_DESCRIPTION() {
         return tACTION_NON_FRS_DESCRIPTION;
     }
 
-    public String gettACTION_FRS_DESCRIPTION() {
+    public final String gettACTION_FRS_DESCRIPTION() {
         return tACTION_FRS_DESCRIPTION;
     }
 
-    public String gettCAUSE_OF_FIRE() {
+    public final String gettCAUSE_OF_FIRE() {
         return tCAUSE_OF_FIRE;
     }
 
-    public String gettIGNITION_POWER() {
+    public final String gettIGNITION_POWER() {
         return tIGNITION_POWER;
     }
 
-    public String gettSOURCE_OF_IGNITION() {
+    public final String gettSOURCE_OF_IGNITION() {
         return tSOURCE_OF_IGNITION;
     }
 
-    public String gettITEM_IGNITED() {
+    public final String gettITEM_IGNITED() {
         return tITEM_IGNITED;
     }
 
-    public String gettITEM_CAUSING_SPREAD() {
+    public final String gettITEM_CAUSING_SPREAD() {
         return tITEM_CAUSING_SPREAD;
     }
 
-    public String gettRAPID_FIRE_GROWTH() {
+    public final String gettRAPID_FIRE_GROWTH() {
         return tRAPID_FIRE_GROWTH;
     }
 
-    public String gettCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION() {
+    public final String gettCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION() {
         return tCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION;
     }
 
-    public String gettCAUSE_EXPLOSION_INVOLVED() {
+    public final String gettCAUSE_EXPLOSION_INVOLVED() {
         return tCAUSE_EXPLOSION_INVOLVED;
     }
 
-    public String gettCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION() {
+    public final String gettCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION() {
         return tCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION;
     }
 
-    public String gettCAUSE_EXPLOSION_STAGE_DESCRIPTION() {
+    public final String gettCAUSE_EXPLOSION_STAGE_DESCRIPTION() {
         return tCAUSE_EXPLOSION_STAGE_DESCRIPTION;
     }
 
-    public String gettCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION() {
+    public final String gettCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION() {
         return tCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION;
     }
 
-    public String gettBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION() {
+    public final String gettBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION() {
         return tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION;
     }
 
-    public String gettBUILDING_FLOORS_ABOVE_GROUND() {
+    public final String gettBUILDING_FLOORS_ABOVE_GROUND() {
         return tBUILDING_FLOORS_ABOVE_GROUND;
     }
 
-    public String gettBUILDING_FLOORS_BELOW_GROUND() {
+    public final String gettBUILDING_FLOORS_BELOW_GROUND() {
         return tBUILDING_FLOORS_BELOW_GROUND;
     }
 
-    public String gettBUILDING_FLOOR_ORIGIN() {
+    public final String gettBUILDING_FLOOR_ORIGIN() {
         return tBUILDING_FLOOR_ORIGIN;
     }
 
-    public String gettBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION() {
+    public final String gettBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION() {
         return tBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION;
     }
 
-    public String gettBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION() {
+    public final String gettBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION() {
         return tBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION;
     }
 
-    public String gettFIRE_START_LOCATION() {
+    public final String gettFIRE_START_LOCATION() {
         return tFIRE_START_LOCATION;
     }
 
-    public String gettFIRE_SIZE_ON_ARRIVAL() {
+    public final String gettFIRE_SIZE_ON_ARRIVAL() {
         return tFIRE_SIZE_ON_ARRIVAL;
     }
 
-    public String gettOTHER_PROPERTY_AFFECTED_ON_ARRIVAL() {
+    public final String gettOTHER_PROPERTY_AFFECTED_ON_ARRIVAL() {
         return tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL;
     }
 
-    public String gettBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION() {
+    public final String gettBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION() {
         return tBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION;
     }
 
-    public String gettBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION() {
+    public final String gettBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION() {
         return tBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION;
     }
 
-    public String gettFIRE_SIZE_ON_ARRIVAL_DESCRIPTION() {
+    public final String gettFIRE_SIZE_ON_ARRIVAL_DESCRIPTION() {
         return tFIRE_SIZE_ON_ARRIVAL_DESCRIPTION;
     }
 
-    public String gettother_property_affected_close_d() {
+    public final String gettother_property_affected_close_d() {
         return tother_property_affected_close_d;
     }
 
-    public String gettspread_of_fire_d() {
+    public final String gettspread_of_fire_d() {
         return tspread_of_fire_d;
     }
 
-    public String gettRESPONSE_TIME() {
+    public final String gettRESPONSE_TIME() {
         return tRESPONSE_TIME;
     }
 
-    public String gettRESPONSE_TIME_CODE() {
+    public final String gettRESPONSE_TIME_CODE() {
         return tRESPONSE_TIME_CODE;
     }
 
-    public String gettTIME_AT_SCENE() {
+    public final String gettTIME_AT_SCENE() {
         return tTIME_AT_SCENE;
     }
 
-    public String gettTIME_AT_SCENE_CODE() {
+    public final String gettTIME_AT_SCENE_CODE() {
         return tTIME_AT_SCENE_CODE;
     }
 
-    public String gettFATALITY_CASUALTY() {
+    public final String gettFATALITY_CASUALTY() {
         return tFATALITY_CASUALTY;
     }
 
-    public String gettRESCUES() {
+    public final String gettRESCUES() {
         return tRESCUES;
     }
 
-    public String gettEVACUATIONS() {
+    public final String gettEVACUATIONS() {
         return tEVACUATIONS;
     }
 
-    public String gettEVACUATIONS_CODE() {
+    public final String gettEVACUATIONS_CODE() {
         return tEVACUATIONS_CODE;
     }
 
-    public String gettBUILDING_EVACUATION_DELAY_DESCRIPTION() {
+    public final String gettBUILDING_EVACUATION_DELAY_DESCRIPTION() {
         return tBUILDING_EVACUATION_DELAY_DESCRIPTION;
     }
 
-    public String gettBUILDING_EVACUATION_TIME_DESCRIPTION() {
+    public final String gettBUILDING_EVACUATION_TIME_DESCRIPTION() {
         return tBUILDING_EVACUATION_TIME_DESCRIPTION;
     }
 }

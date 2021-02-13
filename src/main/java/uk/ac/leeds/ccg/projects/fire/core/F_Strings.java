@@ -29,6 +29,8 @@ public class F_Strings extends Generic_Strings {
 
     public static final String s_Fire = "Fire";
     public static final String s_Subsets = "Subsets";
+    
+    public static final String BUILDING_OR_PROPERTY_TYPE = "BUILDING_OR_PROPERTY_TYPE";
 
     public F_Strings() {
         super();

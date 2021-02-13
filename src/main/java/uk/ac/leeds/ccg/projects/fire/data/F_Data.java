@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Andy Turner, CCG, University of Leeds.
+ * Copyright 2021 Andy Turner, CCG, University of Leeds.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
