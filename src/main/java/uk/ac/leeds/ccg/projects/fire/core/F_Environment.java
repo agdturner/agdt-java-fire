@@ -25,6 +25,7 @@ import uk.ac.leeds.ccg.projects.fire.data.F_Data;
 import uk.ac.leeds.ccg.projects.fire.io.F_Files;
 import uk.ac.leeds.ccg.generic.io.Generic_IO;
 import uk.ac.leeds.ccg.generic.memory.Generic_MemoryManager;
+import uk.ac.leeds.ccg.projects.fire.data.F_Data0;
 
 /**
  * F_Environment
@@ -41,7 +42,19 @@ public class F_Environment extends Generic_MemoryManager {
     
     public int logID;
     //public final STATS19_Casualty_Handler ch;
+    
+    /**
+     * This is the processed data with values and variable names turned into IDs.
+     */
     public F_Data data;
+    
+    /**
+     * This is the initial data loaded. Once this has been processed into IDs,
+     * this is no longer used.
+     */
+    public F_Data0 data0;
+    
+    
     public F_Files files;
     
     public transient static final String EOL = System.getProperty("line.separator");
@@ -56,6 +69,7 @@ public class F_Environment extends Generic_MemoryManager {
         if (Files.exists(f)) {
             loadData();
         } else {
+            data0 = new F_Data0(this);
             data = new F_Data(this);
         }
         logID = env.initLog(F_Strings.s_Fire);
@@ -133,7 +147,7 @@ public class F_Environment extends Generic_MemoryManager {
         return data.clearAllData();
     }
     
-    public void swapData() throws IOException {
+    public void cacheData() throws IOException {
         Path f = files.getEnvDataFile();
         String m = "Swap data to " + f;
         logStartTag(m);

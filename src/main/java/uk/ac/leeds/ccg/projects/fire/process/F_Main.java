@@ -15,9 +15,6 @@
  */
 package uk.ac.leeds.ccg.projects.fire.process;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -28,30 +25,30 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import uk.ac.leeds.ccg.data.core.Data_Environment;
-import uk.ac.leeds.ccg.data.format.Data_ReadCSV;
 import uk.ac.leeds.ccg.generic.core.Generic_Environment;
 import uk.ac.leeds.ccg.projects.fire.core.F_Environment;
 import uk.ac.leeds.ccg.projects.fire.io.F_Files;
 import uk.ac.leeds.ccg.projects.fire.core.F_Object;
 import uk.ac.leeds.ccg.projects.fire.core.F_Strings;
-import uk.ac.leeds.ccg.projects.fire.data.F_Collection;
+import uk.ac.leeds.ccg.projects.fire.data.F_Collection0;
 import uk.ac.leeds.ccg.projects.fire.data.F_Data;
 import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_Record0;
 import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_Record1;
 import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_Record2;
 import uk.ac.leeds.ccg.generic.io.Generic_Defaults;
-import uk.ac.leeds.ccg.generic.io.Generic_IO;
 import uk.ac.leeds.ccg.generic.util.Generic_Collections;
+import uk.ac.leeds.ccg.projects.fire.data.F_Collection;
+import uk.ac.leeds.ccg.projects.fire.data.F_Data0;
+import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_Record;
 import uk.ac.leeds.ccg.projects.fire.id.F_CollectionID;
 import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
+import static uk.ac.leeds.ccg.projects.fire.process.F_XLSXParser.getWorkbook;
 
 /**
  * F_Main
@@ -66,15 +63,17 @@ public class F_Main extends F_Object {
     private static final long serialVersionUID = 1L;
 
     // For convenience
-    protected F_Data data;
     protected final F_Files files;
 
     public F_Main(F_Environment env) {
         super(env);
-        data = env.data;
         files = env.files;
     }
 
+    /**
+     * Main method.
+     * @param args 
+     */
     public static void main(String[] args) {
         try {
             Path dataDir = Paths.get(System.getProperty("user.home"),
@@ -88,17 +87,20 @@ public class F_Main extends F_Object {
         }
     }
 
+    /**
+     * Run once an instance ({@code this}) is set up.
+     * @throws ClassNotFoundException 
+     */
     public void run() throws ClassNotFoundException {
         try {
             //boolean doLoadData = true;
             boolean doLoadData = false;
             if (doLoadData) {
-                env.data = new F_Data(env);
-                data = env.data;
+                env.data0 = new F_Data0(env);
                 loadData();
             } else {
                 env.data.env = env;
-                process2();
+                process();
             }
         } catch (Exception ex) {
             ex.printStackTrace(System.err);
@@ -121,20 +123,13 @@ public class F_Main extends F_Object {
         String type = ".xlsx"; // "csv";
         // Load "other building - residential to send.xlsx"        
         Path f = Paths.get(indir.toString(), "other building - residential to send" + type);
-        F_CollectionID cID = new F_CollectionID(data.cID2recIDs.size());
+        F_CollectionID cID = new F_CollectionID(env.data0.cID2recIDs.size());
         HashSet<F_RecordID> recIDs = new HashSet<>();
-        data.cID2recIDs.put(cID, recIDs);
-        F_Collection c = new F_Collection(cID);
-        data.data.put(cID, c);
+        env.data0.cID2recIDs.put(cID, recIDs);
+        F_Collection0 c0 = new F_Collection0(cID);
+        env.data0.data.put(cID, c0);
         env.log("Reading " + f.toString());
-        Workbook wb = null;
-        try {
-            wb = WorkbookFactory.create(new FileInputStream(f.toFile()));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(F_XLSXParser.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException | EncryptedDocumentException ex) {
-            Logger.getLogger(F_XLSXParser.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Workbook wb = getWorkbook(f);
         if (wb == null) {
             env.log(f.toString() + " Errrrrr");
         } else {
@@ -157,7 +152,7 @@ public class F_Main extends F_Object {
                             System.out.println();
                         } else {
                             String[] line = new String[n];
-                            int r = row.getRowNum();
+                            //int r = row.getRowNum();
                             //s = "\tRow " + r;
                             //System.out.println(s);
                             //pw.println(s);
@@ -168,9 +163,9 @@ public class F_Main extends F_Object {
                                 F_RecordID recID = new F_RecordID(Long.valueOf(line[0]));
                                 F_Dwellings_Record2 rec = new F_Dwellings_Record2(recID, line);
                                 recIDs.add(recID);
-                                c.data.put(recID, rec);
-                                Generic_Collections.addToMap(data.cID2recIDs, cID, recID);
-                                data.recID2cID.put(recID, cID);
+                                c0.data.put(recID, rec);
+                                Generic_Collections.addToMap(env.data0.cID2recIDs, cID, recID);
+                                env.data0.recID2cID.put(recID, cID);
                             } catch (Exception e) {
                                 System.err.println("Error loading record " + ri + ", recID=" + line[0]);
                             }
@@ -184,7 +179,7 @@ public class F_Main extends F_Object {
                 i++;
             }
         }
-        data.cacheCollection(cID, c);
+        env.data0.cacheCollection(cID, c0);
         //data.clearCollection(cID);
 
         // Load other  dwellings data
@@ -196,26 +191,14 @@ public class F_Main extends F_Object {
         vfs[4] = Paths.get(indir.toString(), "dwellings data to send 16-18" + type);
         vfs[5] = Paths.get(indir.toString(), "dwellings data to send 18-20" + type);
 
-        Path dataDirPath = Paths.get("C:", "Users", "agdtu", "work", "research",
-                "fire", "data");
-        String dirName = "MA065AZX5";
-        Path inDataDirPath = Paths.get(dataDirPath.toString(), "source", dirName);
-        int syntax = 1;
         for (Path vf : vfs) {
-            cID = new F_CollectionID(data.cID2recIDs.size());
+            cID = new F_CollectionID(env.data0.cID2recIDs.size());
             recIDs = new HashSet<>();
-            data.cID2recIDs.put(cID, recIDs);
-            c = new F_Collection(cID);
-            data.data.put(cID, c);
+            env.data0.cID2recIDs.put(cID, recIDs);
+            c0 = new F_Collection0(cID);
+            env.data0.data.put(cID, c0);
             env.log("Reading " + vf.toString());
-            wb = null;
-            try {
-                wb = WorkbookFactory.create(new FileInputStream(vf.toFile()));
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(F_XLSXParser.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException | EncryptedDocumentException ex) {
-                Logger.getLogger(F_XLSXParser.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            wb = getWorkbook(vf);
             if (wb == null) {
                 env.log(vf.toString() + " Errrrrr");
             } else {
@@ -238,7 +221,7 @@ public class F_Main extends F_Object {
                                 System.out.println();
                             } else {
                                 String[] line = new String[n];
-                                int r = row.getRowNum();
+                                //int r = row.getRowNum();
                                 //s = "\tRow " + r;
                                 //System.out.println(s);
                                 //pw.println(s);
@@ -249,9 +232,9 @@ public class F_Main extends F_Object {
                                     F_RecordID recID = new F_RecordID(Long.valueOf(line[0]));
                                     F_Dwellings_Record1 rec = new F_Dwellings_Record1(recID, line);
                                     recIDs.add(recID);
-                                    c.data.put(recID, rec);
-                                    Generic_Collections.addToMap(data.cID2recIDs, cID, recID);
-                                    data.recID2cID.put(recID, cID);
+                                    c0.data.put(recID, rec);
+                                    Generic_Collections.addToMap(env.data0.cID2recIDs, cID, recID);
+                                    env.data0.recID2cID.put(recID, cID);
                                 } catch (Exception e) {
                                     System.err.println("Error loading record " + ri + ", recID=" + line[0]);
                                 }
@@ -265,112 +248,24 @@ public class F_Main extends F_Object {
                     i++;
                 }
             }
-            data.cacheCollection(cID, c);
+            env.data0.cacheCollection(cID, c0);
             //data.clearCollection(cID);
         }
-        env.logEndTag(m);
-        env.env.closeLog(env.logID);
-        env.swapData();
-    }
-
-    /**
-     * Summarise the data.
-     * <ul>
-     * <li>number of fires by type of building over the period of the data</li>
-     * <li>number of fires by type of building where fire spreads beyond 2
-     * floors over period of data</li>
-     * <li>number of fires by type of building by starting height and ending
-     * height of fire over period of data</li>
-     * <li>number of fires by type of building with compartmentation missing
-     * over period of data</li>
-     * <li>each of the above with injuries / fatalities</li>
-     * </ul>
-     *
-     * FSO_APPLY SAFETY_SYSTEM
-     *
-     * OCCUPANCY_TYPE
-     * WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT,ALARM_SYSTEM,ALARM_SYSTEM_TYPE,ALARM_REASON_FOR_POOR_OUTCOME,
-     *
-     * ID
-     * number,FRS_NAME,E_CODE,FINANCIAL_YEAR,MONTH_NAME,WEEKDAY_WEEKEND,DAY_NIGHT,property_type_detailed_d,LATE_CALL,MULTI_SEATED_FLAG,IGNITION_TO_DISCOVERY,DISCOVERY_TO_CALL,HOW_DISCOVERED_DESCRIPTION,BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION,BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT,OCCUPANCY_TYPE,OCCUPIED_NORMAL,WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT,ALARM_SYSTEM,ALARM_SYSTEM_TYPE,ALARM_REASON_FOR_POOR_OUTCOME,ACCIDENTAL_OR_DELIBERATE,VEHICLES,VEHICLES_CODE,PERSONNEL,PERSONNEL_CODE,STARTING_DELAY_DESCRIPTION,ACTION_NON_FRS_DESCRIPTION,ACTION_FRS_DESCRIPTION,CAUSE_OF_FIRE,IGNITION_POWER,SOURCE_OF_IGNITION,ITEM_IGNITED,ITEM_CAUSING_SPREAD,RAPID_FIRE_GROWTH,CAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION,CAUSE_EXPLOSION_INVOLVED,CAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION,CAUSE_EXPLOSION_STAGE_DESCRIPTION,CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,BUILDING_FLOORS_ABOVE_GROUND,BUILDING_FLOORS_BELOW_GROUND,BUILDING_FLOOR_ORIGIN,BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,BUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION,FIRE_START_LOCATION,FIRE_SIZE_ON_ARRIVAL,OTHER_PROPERTY_AFFECTED_ON_ARRIVAL,BUILDING_FIRE_DAMAGE_AREA_DESCRIPTION,BUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION,FIRE_SIZE_ON_ARRIVAL_DESCRIPTION,other_property_affected_close_d,spread_of_fire_d,RESPONSE_TIME,RESPONSE_TIME_CODE,TIME_AT_SCENE,TIME_AT_SCENE_CODE,FATALITY_CASUALTY,RESCUES,EVACUATIONS,EVACUATIONS_CODE,BUILDING_EVACUATION_DELAY_DESCRIPTION,BUILDING_EVACUATION_TIME_DESCRIPTION
-     * ID number FRS_NAME E_CODE FINANCIAL_YEAR MONTH_NAME WEEKDAY_WEEKEND
-     * DAY_NIGHT BUILDING_TYPE LATE_CALL MULTI_SEATED_FLAG IGNITION_TO_DISCOVERY
-     * DISCOVERY_TO_CALL HOW_DISCOVERED_DESCRIPTION
-     * BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
-     * BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
-     * BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT OCCUPIED_NORMAL
-     * ACCIDENTAL_OR_DELIBERATE VEHICLES VEHICLES_CODE PERSONNEL PERSONNEL_CODE
-     * STARTING_DELAY_DESCRIPTION ACTION_NON_FRS_DESCRIPTION
-     * ACTION_FRS_DESCRIPTION CAUSE_OF_FIRE IGNITION_POWER SOURCE_OF_IGNITION
-     * ITEM_IGNITED ITEM_CAUSING_SPREAD RAPID_FIRE_GROWTH
-     * CAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION CAUSE_EXPLOSION_INVOLVED
-     * CAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION CAUSE_EXPLOSION_STAGE_DESCRIPTION
-     * CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION
-     * BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION BUILDING_FLOORS_ABOVE_GROUND
-     * BUILDING_FLOORS_BELOW_GROUND BUILDING_FLOOR_ORIGIN
-     * BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION
-     * BUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION FIRE_START_LOCATION
-     * FIRE_SIZE_ON_ARRIVAL OTHER_PROPERTY_AFFECTED_ON_ARRIVAL
-     * BUILDING_FIRE_DAMAGE_AREA_DESCRIPTION
-     * BUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION FIRE_SIZE_ON_ARRIVAL_DESCRIPTION
-     * other_property_affected_close_d spread_of_fire_d RESPONSE_TIME
-     * RESPONSE_TIME_CODE TIME_AT_SCENE TIME_AT_SCENE_CODE FATALITY_CASUALTY
-     * RESCUES EVACUATIONS EVACUATIONS_CODE
-     * BUILDING_EVACUATION_DELAY_DESCRIPTION BUILDING_EVACUATION_TIME_DESCRIPTIO
-     * ID number FRS_NAME E_CODE FINANCIAL_YEAR MONTH_NAME WEEKDAY_WEEKEND
-     * DAY_NIGHT property_type_detailed_d LATE_CALL MULTI_SEATED_FLAG
-     * IGNITION_TO_DISCOVERY DISCOVERY_TO_CALL HOW_DISCOVERED_DESCRIPTION
-     * BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
-     * BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
-     * BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT OCCUPIED_NORMAL
-     * ACCIDENTAL_OR_DELIBERATE VEHICLES VEHICLES_CODE PERSONNEL PERSONNEL_CODE
-     * STARTING_DELAY_DESCRIPTION ACTION_NON_FRS_DESCRIPTION
-     * ACTION_FRS_DESCRIPTION CAUSE_OF_FIRE IGNITION_POWER SOURCE_OF_IGNITION
-     * ITEM_IGNITED ITEM_CAUSING_SPREAD RAPID_FIRE_GROWTH
-     * CAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION CAUSE_EXPLOSION_INVOLVED
-     * CAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION CAUSE_EXPLOSION_STAGE_DESCRIPTION
-     * CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION
-     * BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION BUILDING_FLOORS_ABOVE_GROUND
-     * BUILDING_FLOORS_BELOW_GROUND BUILDING_FLOOR_ORIGIN
-     * BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION
-     * BUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION FIRE_START_LOCATION
-     * FIRE_SIZE_ON_ARRIVAL OTHER_PROPERTY_AFFECTED_ON_ARRIVAL
-     * BUILDING_FIRE_DAMAGE_AREA_DESCRIPTION
-     * BUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION FIRE_SIZE_ON_ARRIVAL_DESCRIPTION
-     * other_property_affected_close_d spread_of_fire_d RESPONSE_TIME
-     * RESPONSE_TIME_CODE TIME_AT_SCENE TIME_AT_SCENE_CODE FATALITY_CASUALTY
-     * RESCUES EVACUATIONS EVACUATIONS_CODE
-     * BUILDING_EVACUATION_DELAY_DESCRIPTION
-     * BUILDING_EVACUATION_TIME_DESCRIPTION ID number FRS_NAME E_CODE
-     * FINANCIAL_YEAR MONTH_NAME WEEKDAY_WEEKEND DAY_NIGHT BUILDING_TYPE
-     * LATE_CALL MULTI_SEATED_FLAG IGNITION_TO_DISCOVERY DISCOVERY_TO_CALL
-     * HOW_DISCOVERED_DESCRIPTION FSO_APPLY
-     * BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
-     * BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION SAFETY_SYSTEM
-     * BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT OCCUPIED_NORMAL
-     * ACCIDENTAL_OR_DELIBERATE VEHICLES VEHICLES_CODE PERSONNEL PERSONNEL_CODE
-     * STARTING_DELAY_DESCRIPTION ACTION_NON_FRS_DESCRIPTION
-     * ACTION_FRS_DESCRIPTION CAUSE_OF_FIRE IGNITION_POWER SOURCE_OF_IGNITION
-     * ITEM_IGNITED ITEM_CAUSING_SPREAD RAPID_FIRE_GROWTH
-     * CAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION CAUSE_EXPLOSION_INVOLVED
-     * CAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION CAUSE_EXPLOSION_STAGE_DESCRIPTION
-     * CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION
-     * BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION BUILDING_FLOORS_ABOVE_GROUND
-     * BUILDING_FLOORS_BELOW_GROUND BUILDING_FLOOR_ORIGIN
-     * BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION
-     * BUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION FIRE_START_LOCATION
-     * FIRE_SIZE_ON_ARRIVAL OTHER_PROPERTY_AFFECTED_ON_ARRIVAL
-     * BUILDING_FIRE_DAMAGE_AREA_DESCRIPTION
-     * BUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION FIRE_SIZE_ON_ARRIVAL_DESCRIPTION
-     * other_property_affected_close_d spread_of_fire_d RESPONSE_TIME
-     * RESPONSE_TIME_CODE TIME_AT_SCENE TIME_AT_SCENE_CODE FATALITY_CASUALTY
-     * RESCUES EVACUATIONS EVACUATIONS_CODE
-     * BUILDING_EVACUATION_DELAY_DESCRIPTION
-     * BUILDING_EVACUATION_TIME_DESCRIPTION
-     */
-    public void process2() {
+        /**
+         * Summarise the data.
+         * <ul>
+         * <li>number of fires by type of building over the period of the
+         * data</li>
+         * <li>number of fires by type of building where fire spreads beyond 2
+         * floors over period of data</li>
+         * <li>number of fires by type of building by starting height and ending
+         * height of fire over period of data</li>
+         * <li>number of fires by type of building with compartmentation missing
+         * over period of data</li>
+         * <li>each of the above with injuries / fatalities</li>
+         * </ul>
+         */
         try {
-            env.loadData();
             // 1 Variable
             HashMap<String, Integer> mFRS_NAME = new HashMap<>();
             HashMap<String, Integer> mE_CODE = new HashMap<>();
@@ -381,7 +276,6 @@ public class F_Main extends F_Object {
             HashMap<String, Integer> mBUILDING_OR_PROPERTY_TYPE = new HashMap<>();
             HashMap<String, Integer> mLATE_CALL = new HashMap<>();
             HashMap<String, Integer> mMULTI_SEATED_FLAG = new HashMap<>();
-            HashMap<String, Integer> m = new HashMap<>();
             HashMap<String, Integer> mIGNITION_TO_DISCOVERY = new HashMap<>();
             HashMap<String, Integer> mDISCOVERY_TO_CALL = new HashMap<>();
             HashMap<String, Integer> mHOW_DISCOVERED_DESCRIPTION = new HashMap<>();
@@ -390,10 +284,10 @@ public class F_Main extends F_Object {
             HashMap<String, Integer> mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT = new HashMap<>();
             //HashMap<String, Integer> mOCCUPANCY_TYPE = new HashMap<>();
             HashMap<String, Integer> mOCCUPIED_NORMAL = new HashMap<>();
-            HashMap<String, Integer> mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
-            HashMap<String, Integer> mALARM_SYSTEM = new HashMap<>();
-            HashMap<String, Integer> mALARM_SYSTEM_TYPE = new HashMap<>();
-            HashMap<String, Integer> mALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
+            //HashMap<String, Integer> mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
+            //HashMap<String, Integer> mALARM_SYSTEM = new HashMap<>();
+            //HashMap<String, Integer> mALARM_SYSTEM_TYPE = new HashMap<>();
+            //HashMap<String, Integer> mALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
             HashMap<String, Integer> mACCIDENTAL_OR_DELIBERATE = new HashMap<>();
             HashMap<String, Integer> mVEHICLES = new HashMap<>();
             HashMap<String, Integer> mVEHICLES_CODE = new HashMap<>();
@@ -416,49 +310,40 @@ public class F_Main extends F_Object {
             HashMap<String, Integer> mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION = new HashMap<>();
             HashMap<String, Integer> mBUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
             HashMap<String, Integer> mBUILDING_FLOORS_BELOW_GROUND = new HashMap<>();
-           HashMap<String, Integer> mBUILDING_FLOOR_ORIGIN = new HashMap<>();
+            HashMap<String, Integer> mBUILDING_FLOOR_ORIGIN = new HashMap<>();
             HashMap<String, Integer> mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION = new HashMap<>();
             HashMap<String, Integer> mBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION = new HashMap<>();
-           HashMap<String, Integer> mFIRE_START_LOCATION = new HashMap<>();
+            HashMap<String, Integer> mFIRE_START_LOCATION = new HashMap<>();
             HashMap<String, Integer> mFIRE_SIZE_ON_ARRIVAL = new HashMap<>();
             HashMap<String, Integer> mOTHER_PROPERTY_AFFECTED_ON_ARRIVAL = new HashMap<>();
-             HashMap<String, Integer> mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION = new HashMap<>();
+            HashMap<String, Integer> mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION = new HashMap<>();
             HashMap<String, Integer> mBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION = new HashMap<>();
-             HashMap<String, Integer> mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION = new HashMap<>();
+            HashMap<String, Integer> mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION = new HashMap<>();
             HashMap<String, Integer> mother_property_affected_close_d = new HashMap<>();
-              HashMap<String, Integer> mspread_of_fire_d = new HashMap<>();
+            HashMap<String, Integer> mspread_of_fire_d = new HashMap<>();
             HashMap<String, Integer> mRESPONSE_TIME = new HashMap<>();
-             HashMap<String, Integer> mRESPONSE_TIME_CODE = new HashMap<>();
+            HashMap<String, Integer> mRESPONSE_TIME_CODE = new HashMap<>();
             HashMap<String, Integer> mTIME_AT_SCENE = new HashMap<>();
             HashMap<String, Integer> mTIME_AT_SCENE_CODE = new HashMap<>();
-             HashMap<String, Integer> mFATALITY_CASUALTY = new HashMap<>();
+            HashMap<String, Integer> mFATALITY_CASUALTY = new HashMap<>();
             HashMap<String, Integer> mRESCUES = new HashMap<>();
-             HashMap<String, Integer> mEVACUATIONS = new HashMap<>();
+            HashMap<String, Integer> mEVACUATIONS = new HashMap<>();
             HashMap<String, Integer> mEVACUATIONS_CODE = new HashMap<>();
-             HashMap<String, Integer> mBUILDING_EVACUATION_DELAY_DESCRIPTION = new HashMap<>();
+            HashMap<String, Integer> mBUILDING_EVACUATION_DELAY_DESCRIPTION = new HashMap<>();
             HashMap<String, Integer> mBUILDING_EVACUATION_TIME_DESCRIPTION = new HashMap<>();
-            // 2 Variables
-            HashMap<String, Integer> mFATALITY_CASUALTY__NoCompartmentationInBuilding = new HashMap<>();
-
-            HashMap<String, Integer> mFATALITY_CASUALTY__BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-            HashMap<String, Integer> mFATALITY_CASUALTY__BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = new HashMap<>();
-
-            HashMap<String, Integer> mAffectingMoreThan2FloorsBy__BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-
-            HashMap<String, Integer> mFATALITY_CASUALTY__AffectingMoreThan2FloorsByType = new HashMap<>();
-            System.out.println("env.data.cID2recIDs.size()=" + env.data.cID2recIDs.size());
-            System.out.println("env.data.recID2cID.size()=" + env.data.recID2cID.size());
-            System.out.println("env.data.data.size()=" + env.data.data.size());
-            Iterator<F_CollectionID> ite = env.data.data.keySet().iterator();
+            System.out.println("env.data0.cID2recIDs.size()=" + env.data0.cID2recIDs.size());
+            System.out.println("env.data0.recID2cID.size()=" + env.data0.recID2cID.size());
+            System.out.println("env.data0.data.size()=" + env.data0.data.size());
+            Iterator<F_CollectionID> ite = env.data0.data.keySet().iterator();
             while (ite.hasNext()) {
                 F_CollectionID cid = ite.next();
                 System.out.println("cid=" + cid.toString());
-                env.data.env = env;
-                F_Collection c = env.data.getCollection(cid);
-                Iterator<F_RecordID> ite2 = c.data.keySet().iterator();
+                //env.data0.env = env;
+                c0 = env.data0.getCollection(cid);
+                Iterator<F_RecordID> ite2 = c0.data.keySet().iterator();
                 while (ite2.hasNext()) {
                     F_RecordID id = ite2.next();
-                    F_Dwellings_Record0 r = c.data.get(id);
+                    F_Dwellings_Record0 r = c0.data.get(id);
                     Generic_Collections.addToCount(mFRS_NAME, r.gettFRS_NAME(), 1);
                     Generic_Collections.addToCount(mE_CODE, r.gettE_CODE(), 1);
                     Generic_Collections.addToCount(mFINANCIAL_YEAR, r.gettFINANCIAL_YEAR(), 1);
@@ -523,26 +408,6 @@ public class F_Main extends F_Object {
                     Generic_Collections.addToCount(mEVACUATIONS_CODE, r.gettEVACUATIONS_CODE(), 1);
                     Generic_Collections.addToCount(mBUILDING_EVACUATION_DELAY_DESCRIPTION, r.gettBUILDING_EVACUATION_DELAY_DESCRIPTION(), 1);
                     Generic_Collections.addToCount(mBUILDING_EVACUATION_TIME_DESCRIPTION, r.gettBUILDING_EVACUATION_TIME_DESCRIPTION(), 1);
-                    
-                    
-                    String tBUILDING_OR_PROPERTY_TYPE = r.gettBUILDING_OR_PROPERTY_TYPE();
-                    String tspread_of_fire_d = r.gettspread_of_fire_d();
-                    String tFATALITY_CASUALTY = r.gettFATALITY_CASUALTY();
-                    String tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = r.gettBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION();
-                    if (tFATALITY_CASUALTY.equalsIgnoreCase("Fatality/Casualty")) {
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY__BUILDING_OR_PROPERTY_TYPE, tBUILDING_OR_PROPERTY_TYPE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY__BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, 1);
-                        if (tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION.equalsIgnoreCase(F_Strings.NoCompartmentationInBuilding)) {
-                            Generic_Collections.addToCount(mFATALITY_CASUALTY__NoCompartmentationInBuilding, tBUILDING_OR_PROPERTY_TYPE, 1);
-                        }
-                    }
-
-                    if (tspread_of_fire_d.equalsIgnoreCase("Whole Building/ Affecting more than 2 floors")) {
-                        Generic_Collections.addToCount(mAffectingMoreThan2FloorsBy__BUILDING_OR_PROPERTY_TYPE, tBUILDING_OR_PROPERTY_TYPE, 1);
-                        if (tFATALITY_CASUALTY.equalsIgnoreCase("Fatality/Casualty")) {
-                            Generic_Collections.addToCount(mFATALITY_CASUALTY__AffectingMoreThan2FloorsByType, tBUILDING_OR_PROPERTY_TYPE, 1);
-                        }
-                    }
                 }
             }
             print(F_Strings.FRS_NAME, mFRS_NAME);
@@ -609,16 +474,19 @@ public class F_Main extends F_Object {
             print(F_Strings.EVACUATIONS_CODE, mEVACUATIONS_CODE);
             print(F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION, mBUILDING_EVACUATION_DELAY_DESCRIPTION);
             print(F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION, mBUILDING_EVACUATION_TIME_DESCRIPTION);
-            
+            // Create env.data
+            env.data = new F_Data(env);
             createLookups(mFRS_NAME.keySet(), F_Strings.FRS_NAME);
             createLookups(mE_CODE.keySet(), F_Strings.E_CODE);
             createLookups(mFINANCIAL_YEAR.keySet(), F_Strings.FINANCIAL_YEAR);
             createLookups(mMONTH_NAME.keySet(), F_Strings.MONTH_NAME);
+            createLookups(mWEEKDAY_WEEKEND.keySet(), F_Strings.WEEKDAY_WEEKEND);
             createLookups(mDAY_NIGHT.keySet(), F_Strings.DAY_NIGHT);
             createLookups(mLATE_CALL.keySet(), F_Strings.LATE_CALL);
             createLookups(mBUILDING_OR_PROPERTY_TYPE.keySet(), F_Strings.BUILDING_OR_PROPERTY_TYPE);
             createLookups(mMULTI_SEATED_FLAG.keySet(), F_Strings.MULTI_SEATED_FLAG);
             createLookups(mIGNITION_TO_DISCOVERY.keySet(), F_Strings.IGNITION_TO_DISCOVERY);
+            createLookups(mDISCOVERY_TO_CALL.keySet(), F_Strings.DISCOVERY_TO_CALL);
             createLookups(mHOW_DISCOVERED_DESCRIPTION.keySet(), F_Strings.HOW_DISCOVERED_DESCRIPTION);
             createLookups(mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION.keySet(), F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION);
             createLookups(mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION.keySet(), F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION);
@@ -627,7 +495,7 @@ public class F_Main extends F_Object {
             createLookups(mOCCUPIED_NORMAL.keySet(), F_Strings.OCCUPIED_NORMAL);
             //createLookups(mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT.keySet(), F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
             //createLookups(mALARM_SYSTEM.keySet(), F_Strings.ALARM_SYSTEM);
-            createLookups(mALARM_REASON_FOR_POOR_OUTCOME.keySet(), F_Strings.ALARM_REASON_FOR_POOR_OUTCOME);
+            //createLookups(mALARM_REASON_FOR_POOR_OUTCOME.keySet(), F_Strings.ALARM_REASON_FOR_POOR_OUTCOME);
             createLookups(mACCIDENTAL_OR_DELIBERATE.keySet(), F_Strings.ACCIDENTAL_OR_DELIBERATE);
             createLookups(mVEHICLES.keySet(), F_Strings.VEHICLES);
             createLookups(mVEHICLES_CODE.keySet(), F_Strings.VEHICLES_CODE);
@@ -638,6 +506,7 @@ public class F_Main extends F_Object {
             createLookups(mACTION_FRS_DESCRIPTION.keySet(), F_Strings.ACTION_FRS_DESCRIPTION);
             createLookups(mCAUSE_OF_FIRE.keySet(), F_Strings.CAUSE_OF_FIRE);
             createLookups(mIGNITION_POWER.keySet(), F_Strings.IGNITION_POWER);
+            createLookups(mSOURCE_OF_IGNITION.keySet(), F_Strings.SOURCE_OF_IGNITION);
             createLookups(mSOURCE_OF_IGNITION.keySet(), F_Strings.SOURCE_OF_IGNITION);
             createLookups(mITEM_IGNITED.keySet(), F_Strings.ITEM_IGNITED);
             createLookups(mITEM_CAUSING_SPREAD.keySet(), F_Strings.ITEM_CAUSING_SPREAD);
@@ -671,35 +540,87 @@ public class F_Main extends F_Object {
             createLookups(mEVACUATIONS_CODE.keySet(), F_Strings.EVACUATIONS_CODE);
             createLookups(mBUILDING_EVACUATION_DELAY_DESCRIPTION.keySet(), F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION);
             createLookups(mBUILDING_EVACUATION_TIME_DESCRIPTION.keySet(), F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION);
-            
-            print("FATALITY_CASUALTY IN BUILDING_OR_PROPERTY_TYPE", mFATALITY_CASUALTY__BUILDING_OR_PROPERTY_TYPE);
-            print("FATALITY_CASUALTY IN BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION", mFATALITY_CASUALTY__BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION);
-
-            print("FATALITY_CASUALTY IN " + F_Strings.NoCompartmentationInBuilding, mFATALITY_CASUALTY__NoCompartmentationInBuilding);
-
-            print("Whole Building/ Affecting more than 2 floors BY property_type_detailed_d", mAffectingMoreThan2FloorsBy__BUILDING_OR_PROPERTY_TYPE);
-            print("FATALITY_CASUALTY IN Whole Building/ Affecting more than 2 floors BY property_type_detailed_d", mFATALITY_CASUALTY__AffectingMoreThan2FloorsByType);
+            ite = env.data0.data.keySet().iterator();
+            while (ite.hasNext()) {
+                F_CollectionID cid = ite.next();
+                System.out.println("cid=" + cid.toString());
+                c0 = env.data0.getCollection(cid);
+                recIDs = new HashSet<>();
+                env.data.cID2recIDs.put(cid, recIDs);
+                F_Collection c = new F_Collection(cid);
+                env.data.data.put(cid, c);
+                Iterator<F_RecordID> ite2 = c0.data.keySet().iterator();
+                while (ite2.hasNext()) {
+                    F_RecordID recID = ite2.next();
+                    recIDs.add(recID);
+                    F_Dwellings_Record0 r = c0.data.get(recID);
+                    F_Dwellings_Record rec = new F_Dwellings_Record(r, env.data);
+                    c.data.put(recID, rec);
+                    env.data.recID2cID.put(recID, cID);
+                }
+                //env.data0.clearCollection(cid);
+                env.data.cacheCollection(cid, c);
+                //env.data.clearCollection(cid);
+            }
+            env.data0 = null;
+            env.cacheData();
         } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
             Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void print(String name, HashSet<String> s) {
+    /**
+     * Prints out all things in {@code s} to std.out.
+     * @param <T> The type.
+     * @param s The set containing values to print out.
+     */
+    public <T> void print(HashSet<T> s) {
         s.stream().forEach(i -> System.out.println(i));
     }
 
-    public void print(String name, HashMap<String, Integer> m) {
-        System.out.println(name + ".size()=" + m.size());
+    /**
+     * Prints out all things in {@code m} to std.out.
+     * @param <T> The type.
+     * @param s The set containing values to print out.
+     */
+    public <K> void print(String name, HashMap<K, Integer> m) {
+        System.out.println(name + " Table length=" + m.size());
         System.out.println("count,value");
         m.keySet().stream().forEach(i -> System.out.println("" + m.get(i) + "," + i));
+        System.out.println("");
+    }
+    
+    /**
+     * Prints out all things in {@code m} to std.out.
+     * @param <T> The type.
+     * @param s The name of the thing to print out.
+     * @param vid The id of the variable.
+     * @param m Keys are variable value IDs, values are counts. 
+     */
+    public void print(String s, int vid, HashMap<Integer, Integer> m) {
+        HashMap<Integer, String> id2name = env.data.id2names.get(vid);
+        HashMap<String, Integer> r = new HashMap<>();
+        Iterator<Integer> ite = m.keySet().iterator();
+        while (ite.hasNext()) {
+            int id = ite.next();
+            String name = id2name.get(id);
+            r.put(name, m.get(id));
+        }
+        print(s, r);
     }
 
     /**
      * This creates some look ups or indexes for the keys of m.
-     * @param s The map that's keys are saved in look ups. 
+     *
+     * @param s The map that's keys are saved in look ups.
      * @param name The name given to the lookups.
      */
     public void createLookups(Set<String> s, String name) {
+        int vnameid = env.data.vname2id.size();
+        env.data.vname2id.put(name, vnameid);
+        env.data.id2vname.put(vnameid, name);
         HashMap<String, Integer> name2id = new HashMap<>();
         HashMap<Integer, String> id2name = new HashMap<>();
         Iterator<String> ite = s.iterator();
@@ -709,15 +630,99 @@ public class F_Main extends F_Object {
             name2id.put(k, id);
             id2name.put(id, k);
         }
-        try {
-            String p0 = env.files.getGeneratedDir().getPath().toString();
-            Path p;
-            p = Paths.get(p0, name + "2ID");
-            Generic_IO.writeObject(name2id, p);
-            p = Paths.get(p0, "ID2" + name);
-            Generic_IO.writeObject(id2name, p);
-        } catch (IOException ex) {
-            Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        env.data.name2ids.put(vnameid, name2id);
+        env.data.id2names.put(vnameid, id2name);
     }
+
+    /**
+     * This is the main processor for generating results once the source data 
+     * get loaded.
+     */
+    public void process() {
+        System.out.println("env.data.cID2recIDs.size()=" + env.data.cID2recIDs.size());
+        System.out.println("env.data.recID2cID.size()=" + env.data.recID2cID.size());
+        System.out.println("env.data.data.size()=" + env.data.data.size());
+        // 2 Variables
+        HashMap<Integer, Integer> mFATALITY_CASUALTY_IN_NoCompartmentationInBuilding = new HashMap<>();
+        HashMap<Integer, Integer> mFATALITY_CASUALTY_IN_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+        HashMap<Integer, Integer> mFATALITY_CASUALTY_IN_BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = new HashMap<>();
+
+        HashMap<Integer, Integer> mAffectingMoreThan2FloorsBy__BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+
+        HashMap<Integer, Integer> mFATALITY_CASUALTY__AffectingMoreThan2FloorsByType = new HashMap<>();
+
+        int varFATALITY_CASUALTY = env.data.vname2id.get(F_Strings.FATALITY_CASUALTY);
+        int valFATALITY_CASUALTY = env.data.name2ids.get(varFATALITY_CASUALTY).get(F_Strings.FatalityOrCasualty);
+        int varBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = env.data.vname2id.get(
+                F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION);
+        int valNoCompartmentationInBuilding = env.data.name2ids.get(
+                varBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION).get(
+                        F_Strings.NoCompartmentationInBuilding);
+
+        int varspread_of_fire_d = env.data.vname2id.get(F_Strings.spread_of_fire_d);
+        int valWholeBuildingOrAffectingMoreThan2Floors = env.data.name2ids.get(
+                varspread_of_fire_d).get(
+                        F_Strings.WholeBuildingOrAffectingMoreThan2Floors);
+        int varBUILDING_OR_PROPERTY_TYPE = env.data.vname2id.get(F_Strings.BUILDING_OR_PROPERTY_TYPE);
+
+        Iterator<F_CollectionID> ite = env.data.data.keySet().iterator();
+        while (ite.hasNext()) {
+            try {
+                F_CollectionID cid = ite.next();
+                F_Collection c = env.data.getCollection(cid);
+                System.out.println("cid=" + cid.toString() + ", size=" + c.data.keySet().size());
+                Iterator<F_RecordID> ite2 = c.data.keySet().iterator();
+                while (ite2.hasNext()) {
+                    F_RecordID id = ite2.next();
+                    F_Dwellings_Record r = c.data.get(id);
+//                    String sACCIDENTAL_OR_DELIBERATE = env.data.id2names.get(
+//                            env.data.vname2id.get(F_Strings.ACCIDENTAL_OR_DELIBERATE)).get(r.tACCIDENTAL_OR_DELIBERATE);
+//                    System.out.println("F_Strings.ACCIDENTAL_OR_DELIBERATE " 
+//                            + sACCIDENTAL_OR_DELIBERATE);
+                    if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                        Generic_Collections.addToCount(mFATALITY_CASUALTY_IN_BUILDING_OR_PROPERTY_TYPE, r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                        Generic_Collections.addToCount(mFATALITY_CASUALTY_IN_BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, r.tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, 1);
+                        if (r.tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION == valNoCompartmentationInBuilding) {
+                            Generic_Collections.addToCount(mFATALITY_CASUALTY_IN_NoCompartmentationInBuilding, r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                        }
+                    }
+                    if (r.tspread_of_fire_d == valWholeBuildingOrAffectingMoreThan2Floors) {
+                        Generic_Collections.addToCount(mAffectingMoreThan2FloorsBy__BUILDING_OR_PROPERTY_TYPE, r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                        if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                            Generic_Collections.addToCount(mFATALITY_CASUALTY__AffectingMoreThan2FloorsByType, r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                        }
+                    }
+                }
+                print(F_Strings.FATALITY_CASUALTY + " IN "
+                        + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                        varFATALITY_CASUALTY,
+                        mFATALITY_CASUALTY_IN_BUILDING_OR_PROPERTY_TYPE);
+                print(F_Strings.FATALITY_CASUALTY
+                        + " IN " + F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,
+                        varFATALITY_CASUALTY,
+                        mFATALITY_CASUALTY_IN_BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION);
+                print(F_Strings.FATALITY_CASUALTY
+                        + " IN " + F_Strings.NoCompartmentationInBuilding,
+                        varBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,
+                        mFATALITY_CASUALTY_IN_NoCompartmentationInBuilding);
+                print(F_Strings.WholeBuildingOrAffectingMoreThan2Floors
+                        + " BY "
+                        + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                        varBUILDING_OR_PROPERTY_TYPE,
+                        mAffectingMoreThan2FloorsBy__BUILDING_OR_PROPERTY_TYPE);
+                print(F_Strings.FATALITY_CASUALTY
+                        + " IN "
+                        + F_Strings.WholeBuildingOrAffectingMoreThan2Floors
+                        + " BY "
+                        + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                        varBUILDING_OR_PROPERTY_TYPE,
+                        mFATALITY_CASUALTY__AffectingMoreThan2FloorsByType);
+            } catch (IOException | ClassNotFoundException ex) {
+                Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }
+
+    
 }

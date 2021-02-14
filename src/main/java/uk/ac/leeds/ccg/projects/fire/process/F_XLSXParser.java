@@ -72,14 +72,7 @@ public class F_XLSXParser {
                     // Read the contents of the workbook
                     try ( PrintWriter pw = Generic_IO.getPrintWriter(out, false)) {
                         // Read the contents of the workbook
-                        Workbook wb = null;
-                        try {
-                            wb = WorkbookFactory.create(new FileInputStream(p.toFile()));
-                        } catch (FileNotFoundException ex) {
-                            Logger.getLogger(F_XLSXParser.class.getName()).log(Level.SEVERE, null, ex);
-                        } catch (IOException | EncryptedDocumentException ex) {
-                            Logger.getLogger(F_XLSXParser.class.getName()).log(Level.SEVERE, null, ex);
-                        }
+                        Workbook wb = getWorkbook(p);
                         if (wb == null) {
                             System.err.println(p.toString());
                         } else {
@@ -164,5 +157,21 @@ public class F_XLSXParser {
         } finally {
             pw0.close();
         }
+    }
+
+    /**
+     * @param p The path to the file.
+     * @return Workbook loaded from file or {@code null}
+     */
+    public static Workbook getWorkbook(Path p) {
+        Workbook wb = null;
+        try {
+            wb = WorkbookFactory.create(new FileInputStream(p.toFile()));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(F_XLSXParser.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException | EncryptedDocumentException ex) {
+            Logger.getLogger(F_XLSXParser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return wb;
     }
 }

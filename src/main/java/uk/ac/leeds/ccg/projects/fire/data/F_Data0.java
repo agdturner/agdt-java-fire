@@ -37,7 +37,7 @@ import uk.ac.leeds.ccg.generic.io.Generic_IO;
  * @author Andy Turner
  * @version 1.0.0
  */
-public class F_Data extends F_Object {
+public class F_Data0 extends F_Object {
 
     private static final long serialVersionUID = 1L;
 
@@ -46,40 +46,18 @@ public class F_Data extends F_Object {
     /**
      * The main data store. Keys are Collection IDs.
      */
-    public Map<F_CollectionID, F_Collection> data;
+    public Map<F_CollectionID, F_Collection0> data;
 
     /**
      * The main data store. Keys are Collection IDs.
      */
     public Map<F_CollectionID, Set<F_RecordID>> cID2recIDs;
-
+    
     /**
      * The main data store. Keys are Collection IDs.
      */
     public Map<F_RecordID, F_CollectionID> recID2cID;
-
-    /**
-     * For looking up the variable name id from the variable name.
-     */
-    public HashMap<String, Integer> vname2id;
-
-    /**
-     * For looking up the variable name from the variable name id.
-     */
-    public HashMap<Integer, String> id2vname;
-
-    /**
-     * Keys are variable name ids. Keys of values are names of variable values,
-     * values of values are variable value ids.
-     */
-    public HashMap<Integer, HashMap<String, Integer>> name2ids;
-
-    /**
-     * Keys are variable name ids. Keys of values are names of variable values,
-     * values of values are variable value ids.
-     */
-    public HashMap<Integer, HashMap<Integer, String>> id2names;
-
+    
     /**
      *
      * @param cid
@@ -87,9 +65,9 @@ public class F_Data extends F_Object {
      * @throws IOException
      * @throws ClassNotFoundException
      */
-    public F_Collection getCollection(F_CollectionID cid)
+    public F_Collection0 getCollection(F_CollectionID cid)
             throws IOException, ClassNotFoundException {
-        F_Collection r = data.get(cid);
+        F_Collection0 r = data.get(cid);
         if (r == null) {
             r = loadCollection(cid);
             data.put(cid, r);
@@ -101,9 +79,9 @@ public class F_Data extends F_Object {
         data.put(cid, null);
     }
 
-    public F_Data(F_Environment env) throws IOException, Exception {
+    public F_Data0(F_Environment env) throws IOException, Exception {
         super(env);
-        String name = "Collections";
+        String name = "Collections0";
         Path dir = env.files.getGeneratedDir();
         Path p = Paths.get(dir.toString(), name);
         if (Files.exists(p)) {
@@ -115,17 +93,13 @@ public class F_Data extends F_Object {
         data = new HashMap<>();
         cID2recIDs = new HashMap<>();
         recID2cID = new HashMap<>();
-        vname2id = new HashMap<>();
-        id2vname = new HashMap<>();
-        name2ids = new HashMap<>();
-        id2names = new HashMap<>();
     }
 
     public boolean clearSomeData() throws IOException {
         Iterator<F_CollectionID> ite = data.keySet().iterator();
         while (ite.hasNext()) {
             F_CollectionID cid = ite.next();
-            F_Collection c = data.get(cid);
+            F_Collection0 c = data.get(cid);
             cacheCollection(cid, c);
             data.put(cid, null);
             return true;
@@ -138,7 +112,7 @@ public class F_Data extends F_Object {
         Iterator<F_CollectionID> ite = data.keySet().iterator();
         while (ite.hasNext()) {
             F_CollectionID cid = ite.next();
-            F_Collection c = data.get(cid);
+            F_Collection0 c = data.get(cid);
             cacheCollection(cid, c);
             data.put(cid, null);
             r++;
@@ -152,7 +126,7 @@ public class F_Data extends F_Object {
      * @param c the F_Collection0
      * @throws java.io.IOException
      */
-    public void cacheCollection(F_CollectionID cid, F_Collection c)
+    public void cacheCollection(F_CollectionID cid, F_Collection0 c)
             throws IOException {
         cache(getCollectionPath(cid), c);
     }
@@ -169,9 +143,9 @@ public class F_Data extends F_Object {
      * @throws java.io.IOException
      * @throws java.lang.ClassNotFoundException
      */
-    public F_Collection loadCollection(F_CollectionID cid) throws IOException,
+    public F_Collection0 loadCollection(F_CollectionID cid) throws IOException,
             ClassNotFoundException {
-        F_Collection r = (F_Collection) load(getCollectionPath(cid));
+        F_Collection0 r = (F_Collection0) load(getCollectionPath(cid));
         r.env = env;
         return r;
     }
@@ -198,7 +172,7 @@ public class F_Data extends F_Object {
     public void swapCollections() throws IOException {
         data.keySet().stream().forEach(i -> {
             try {
-                F_Collection c = data.get(i);
+                F_Collection0 c = data.get(i);
                 if (c != null) {
                     cacheCollection(i, data.get(i));
                     data.put(i, null);

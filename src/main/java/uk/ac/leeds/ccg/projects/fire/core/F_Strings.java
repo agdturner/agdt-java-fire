@@ -96,6 +96,8 @@ public class F_Strings extends Generic_Strings {
     public static final String BUILDING_EVACUATION_TIME_DESCRIPTION = "BUILDING_EVACUATION_TIME_DESCRIPTION";
     // Variable values
     public static final String NoCompartmentationInBuilding = "No compartmentation in building";
+    public static final String FatalityOrCasualty = "Fatality/Casualty";
+    public static final String WholeBuildingOrAffectingMoreThan2Floors = "Whole Building/ Affecting more than 2 floors";
 
     public F_Strings() {
         super();
