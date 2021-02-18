@@ -95,9 +95,16 @@ public class F_Strings extends Generic_Strings {
     public static final String BUILDING_EVACUATION_DELAY_DESCRIPTION = "BUILDING_EVACUATION_DELAY_DESCRIPTION";
     public static final String BUILDING_EVACUATION_TIME_DESCRIPTION = "BUILDING_EVACUATION_TIME_DESCRIPTION";
     // Variable values
-    public static final String NoCompartmentationInBuilding = "No compartmentation in building";
+    public static final String Cladding = "Cladding";
     public static final String FatalityOrCasualty = "Fatality/Casualty";
+    //public static final String FatalityOrCasualty = "Fatality_OR_Casualty";
+    //public static final String NoCompartmentationInBuilding = "No_compartmentation_in_building";
+    public static final String NoCompartmentationInBuilding = "No compartmentation in building";
+    public static final String PurposeBuiltHighRiseFlats = "Purpose Built High Rise (10+) Flats";
+    public static final String PurposeBuiltMediumRiseFlats = "Purpose Built Medium Rise (4-9) Flats";
+    public static final String PurposeBuiltLowRiseFlats = "Purpose Built Low Rise (1-3) Flats/Maisonettes";
     public static final String WholeBuildingOrAffectingMoreThan2Floors = "Whole Building/ Affecting more than 2 floors";
+    //public static final String WholeBuildingOrAffectingMoreThan2Floors = "Whole_Building_OR__Affecting_more_than_2_floors";
 
     public F_Strings() {
         super();

@@ -46,28 +46,13 @@ public class F_Files extends Data_Files {
         return r;
     }
 
-    /**
-     * @return A path to a file for storing the accident to accident id lookup.
-     * @throws IOException If encountered.
-     */
-    public Path getAi2aiid() throws IOException {
-        return Paths.get(getGeneratedDir().toString(), "dwellings data to send 10-11.csv");
+    public static String getFormattedFilenameString(String s) {
+        //return s.replaceAll("\\\\", "_OR_").replaceAll("/", "_OR_").replaceAll(" ", "_");
+//        return s.trim().replaceAll("\\s+", "_")
+//                .replaceAll("/", "_OR_")
+//                .replaceAll("[^A-Za-z0-9 ]", "_");
+        return s.trim().replaceAll("\\s+", "_").replaceAll("[^A-Za-z0-9 ]", "_")
+                .replaceAll("__", "_");
     }
-
-    /**
-     * @return A path to a file for storing the accident id to accident lookup.
-     * @throws IOException If encountered.
-     */
-    public Path getAiid2ai() throws IOException {
-        return Paths.get(getGeneratedDir().toString(), "aiid2ai.dat");
-    }
-
-    /**
-     * @return A path to a file for storing the accident id to collection id
-     * lookup.
-     * @throws IOException If encountered.
-     */
-    public Path getAiid2cid() throws IOException {
-        return Paths.get(getGeneratedDir().toString(), "aiid2cid.dat");
-    }
+    
 }
