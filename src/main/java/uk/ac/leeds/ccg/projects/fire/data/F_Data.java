@@ -20,9 +20,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import uk.ac.leeds.ccg.projects.fire.core.F_Environment;
 import uk.ac.leeds.ccg.projects.fire.core.F_Object;
 import uk.ac.leeds.ccg.projects.fire.core.F_Strings;
@@ -78,7 +80,7 @@ public class F_Data extends F_Object {
      * Keys are variable name ids. Keys of values are names of variable values,
      * values of values are variable value ids.
      */
-    public HashMap<Integer, HashMap<Integer, String>> id2names;
+    public HashMap<Integer, Map<Integer, String>> id2names;
 
     /**
      *
@@ -112,13 +114,42 @@ public class F_Data extends F_Object {
             short n = 100;
             fs = new Generic_FileStore(p.getParent(), name, n);
         }
-        data = new HashMap<>();
+    }
+        
+    public F_Data(F_Environment env, int startYear, int endYear) 
+            throws IOException, Exception {
+        super(env);
+        String name = "Collections";
+        Path dir = env.files.getGeneratedDir();
+        Path p = Paths.get(dir.toString(), name);
+        if (Files.exists(p)) {
+            fs = new Generic_FileStore(p);
+        } else {
+            short n = 100;
+            fs = new Generic_FileStore(p.getParent(), name, n);
+        }
+        data = new TreeMap<>();
         cID2recIDs = new HashMap<>();
         recID2cID = new HashMap<>();
         vname2id = new HashMap<>();
         id2vname = new HashMap<>();
+        vname2id.put(F_Strings.FINANCIAL_YEAR, 0);
+        id2vname.put(0, F_Strings.FINANCIAL_YEAR);
         name2ids = new HashMap<>();
         id2names = new HashMap<>();
+        HashMap<String, Integer> name2id = new HashMap<>();
+        TreeMap<Integer, String> id2name = new TreeMap<>();
+        for (int year = startYear; year <= endYear; year ++) {
+            int id = name2id.size();
+            String yearName = "" + year + "/" + (year - 1999);
+            name2id.put(yearName, id);
+            id2name.put(id, yearName);
+            F_CollectionID cid = new F_CollectionID(id);
+            data.put(cid, new F_Collection(cid));
+            cID2recIDs.put(cid, new HashSet<>());
+        }
+        name2ids.put(0, name2id);
+        id2names.put(0, id2name);
     }
 
     public boolean clearSomeData() throws IOException {

@@ -30,6 +30,7 @@ public class F_Strings extends Generic_Strings {
     public static final String s_Fire = "Fire";
     public static final String s_Subsets = "Subsets";
     // Variable names
+    public static final String TOTAL = "TOTAL";
     public static final String FRS_NAME = "FRS_NAME";
     public static final String E_CODE = "E_CODE";
     public static final String FINANCIAL_YEAR = "FINANCIAL_YEAR";
