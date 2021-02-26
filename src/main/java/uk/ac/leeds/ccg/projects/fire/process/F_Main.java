@@ -964,6 +964,7 @@ public class F_Main extends F_Object {
             int valCladding = env.data.name2ids.get(varBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION).get(F_Strings.Cladding);
 
             Map<Integer, Set<F_Dwellings_Record>> mAffectingMoreThan2FloorsFATALITY_CASUALTY = new HashMap<>();
+            Map<Integer, Set<F_Dwellings_Record>> mAffectingMoreThan2FloorsNonFATALITY_CASUALTY = new HashMap<>();
 //            Iterator<Integer> itei = mAllBUILDING_OR_PROPERTY_TYPE.keySet().iterator();
 //            while (itei.hasNext()) {
 //                mAffectingMoreThan2FloorsFATALITY_CASUALTY.put(itei.next(), new HashSet<>());
@@ -1024,6 +1025,8 @@ public class F_Main extends F_Object {
                                         mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
                                         r.tBUILDING_OR_PROPERTY_TYPE, 1);
                                 Generic_Collections.addToMap(mAffectingMoreThan2FloorsFATALITY_CASUALTY, Integer.valueOf(r.tBUILDING_OR_PROPERTY_TYPE), r);
+                            } else {
+                                Generic_Collections.addToMap(mAffectingMoreThan2FloorsNonFATALITY_CASUALTY, Integer.valueOf(r.tBUILDING_OR_PROPERTY_TYPE), r);
                             }
                             if (r.tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION == valCladding) {
                                 Generic_Collections.addToCount(
@@ -1135,6 +1138,9 @@ public class F_Main extends F_Object {
                 dir = getDir(F_Strings.s_Subsets, "AffectingMoreThan2FloorsFATALITY_CASUALTY");
                 output(dir, tBuildingOrPropertyType,
                         mAffectingMoreThan2FloorsFATALITY_CASUALTY.get(i));
+                dir = getDir(F_Strings.s_Subsets, "AffectingMoreThan2FloorsNonFATALITY_CASUALTY");
+                output(dir, tBuildingOrPropertyType,
+                        mAffectingMoreThan2FloorsNonFATALITY_CASUALTY.get(i));
             }
             dir = getDir(F_Strings.s_Subsets, "CladdingAffectingMoreThan2Floors");
             output(dir, "highriseFATALITY_CASUALTY", highriseCladdingAffectingMoreThan2FloorsFATALITY_CASUALTY);
