@@ -17,7 +17,6 @@ package uk.ac.leeds.ccg.projects.fire.process;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import org.apache.poi.ss.usermodel.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
@@ -39,6 +38,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import uk.ac.leeds.ccg.generic.io.Generic_IO;
 import uk.ac.leeds.ccg.generic.util.Generic_Collections;
 
@@ -355,6 +361,22 @@ public class F_XLSXParser {
         Workbook wb = null;
         try {
             wb = WorkbookFactory.create(new FileInputStream(p.toFile()));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(F_XLSXParser.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException | EncryptedDocumentException ex) {
+            Logger.getLogger(F_XLSXParser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return wb;
+    }
+    
+    /**
+     * @param p The path to the file.
+     * @return Workbook loaded from file or {@code null}
+     */
+    public static HSSFWorkbook getHSSFWorkbook(Path p) {
+        HSSFWorkbook wb = null;
+        try {
+            wb = new HSSFWorkbook(new FileInputStream(p.toFile()));
         } catch (FileNotFoundException ex) {
             Logger.getLogger(F_XLSXParser.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException | EncryptedDocumentException ex) {

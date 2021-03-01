@@ -29,6 +29,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
@@ -56,6 +57,7 @@ import uk.ac.leeds.ccg.projects.fire.data.ehs.F_ARecord;
 import uk.ac.leeds.ccg.projects.fire.id.F_CollectionID;
 import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
 import static uk.ac.leeds.ccg.projects.fire.process.F_XLSXParser.getWorkbook;
+import static uk.ac.leeds.ccg.projects.fire.process.F_XLSXParser.getHSSFWorkbook;
 
 /**
  * F_Main
@@ -1158,25 +1160,60 @@ public class F_Main extends F_Object {
             //        "EnglishHousingSurvey", "Headline");
             String type = ".xlsx"; // "csv";
             // Load "other building - residential to send.xlsx"
+            String sn = "AT2.1";
+            int br = 26;
+            int ar = 58;
+                    int col = 9;
+            int pbd = 2;
             Path f;
             f = Paths.get(indir.toString(),
                     "2019-20_EHS_Headline_Report_Section_2_Stock_Annex_Tables" + type);
-            F_ARecord r1920 = getARecord("2019/20", f, 0);
+            F_ARecord r1920 = getARecord("2019/20", f, sn, col, br, pbd, ar);
             f = Paths.get(indir.toString(),
                     "2018-19_Section_2_Housing_Stock_Annex_Tables" + type);
-            F_ARecord r1819 = getARecord("2018/19", f, 0);
+            F_ARecord r1819 = getARecord("2018/19", f, sn, col, br, pbd, ar);
             f = Paths.get(indir.toString(),
                     "2017-18_Section_2_Housing_Stock_Annex_Tables" + type);
-            F_ARecord r1718 = getARecord("2017/18", f, 0);
+            F_ARecord r1718 = getARecord("2017/18", f, sn, col, br, pbd, ar);
             f = Paths.get(indir.toString(),
                     "2016-17_Section_2_Housing_Stock_annex_tables" + type);
-            F_ARecord r1617 = getARecord("2016/17", f, 0);
+            F_ARecord r1617 = getARecord("2016/17", f, sn, col, br, pbd, ar);
             f = Paths.get(indir.toString(),
                     "2015-16_Section_2_Housing_Stock_annex_tables" + type);
-            F_ARecord r1516 = getARecord("2015/16", f, 0);
+            F_ARecord r1516 = getARecord("2015/16", f, sn, col, br, pbd, ar);
             f = Paths.get(indir.toString(),
                     "2014-15_Section_2_Housing_Stock_tables_and_figures_FINAL" + type);
-            F_ARecord r1415 = getARecord("2014/15", f, 0);
+            F_ARecord r1415 = getARecord("2014/15", f, sn, col, br, pbd, ar);
+            f = Paths.get(indir.toString(),
+                    "2013-14_Chapter_1_Tables_Figures_and_Annex_Tables" + type);
+            sn = "AT1.1";
+            br = 19;
+            ar = 29;
+            col = 6;
+            F_ARecord r1314 = getARecord("2013/14", f, sn, col, br, pbd, ar);
+            sn = "AT1.1";
+            br = 19;
+            ar = 24;
+            f = Paths.get(indir.toString(),
+                    "2012-13_Chapter_1_Stock_profile_tables_figures_and_annex_tables" + type);
+            F_ARecord r1213 = getARecord("2012/13", f, sn, col, br, pbd, ar);
+            sn = "AT1.4";
+            br = 10;
+            ar = 15;
+            type = ".xls";
+            f = Paths.get(indir.toString(),
+                    "2011-12_Chapter_1_Tables__Figures_and_Annex_Tables" + type);
+            F_ARecord r1112 = getARecordHSSF("2011/12", f, sn, col, br, pbd, ar);
+            
+            sn = "AT1.5";
+            ar = 18;
+            pbd = 4;
+            type = ".xls";
+            f = Paths.get(indir.toString(),
+                    "2010-11_2173554" + type);
+            F_ARecord r1011 = getARecordHSSF("2010/11", f, sn, col, br, pbd, ar);
+            
+            
             // Output
             try {
                 dir = Paths.get(env.files.getOutputDir().toString(), "Stuart");
@@ -1225,6 +1262,14 @@ public class F_Main extends F_Object {
                             + ",PB FATALITY_CASUALTY_Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
                     );
                     int yearID;
+                    yearID = env.data.name2ids.get(0).get(F_Strings.S2010_11);
+                    print(r1011, pw, yearID);
+                    yearID = env.data.name2ids.get(0).get(F_Strings.S2011_12);
+                    print(r1112, pw, yearID);
+                    yearID = env.data.name2ids.get(0).get(F_Strings.S2012_13);
+                    print(r1213, pw, yearID);
+                    yearID = env.data.name2ids.get(0).get(F_Strings.S2013_14);
+                    print(r1314, pw, yearID);
                     yearID = env.data.name2ids.get(0).get(F_Strings.S2014_15);
                     print(r1415, pw, yearID);
                     yearID = env.data.name2ids.get(0).get(F_Strings.S2015_16);
@@ -2066,11 +2111,15 @@ public class F_Main extends F_Object {
 
     /**
      *
-     * @param year
-     * @param f
+     * @param year Year
+     * @param f File path
+     * @param sn SheetName
+     * @param col All tenures column
+     * @param br Bungalow row
+     * @param ar All Dwellings row
      * @return
      */
-    public F_ARecord getARecord(String year, Path f, int ra) {
+    public F_ARecord getARecord(String year, Path f, String sn, int col, int br, int pbd, int ar) {
         F_ARecord r = new F_ARecord();
         r.year = year;
         Workbook wb = getWorkbook(f);
@@ -2083,36 +2132,116 @@ public class F_Main extends F_Object {
                 String sheetName = sheet.getSheetName();
                 //String s = "Sheet " + i + " of " + numberOfSheets + ": " + sheetName;
                 //System.out.println(s);
-                if (sheetName.equalsIgnoreCase("AT2.1")) {
+                if (sheetName.equalsIgnoreCase(sn)) {
                     String s = "Sheet " + i + " of " + numberOfSheets + ": " + sheetName;
                     System.out.println(s);
                     Row row;
                     Cell cell;
-                    int col = 9;
                     row = sheet.getRow(5);
                     cell = row.getCell(col);
                     if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.allTenures)) {
                         System.out.println("Found \"" + F_Strings.allTenures + "\".");
                     }
-                    row = sheet.getRow(26);
+                    row = sheet.getRow(br);
                     cell = row.getCell(1);
                     if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.bungalow)) {
                         System.out.println("Found \"" + F_Strings.bungalow + "\".");
                         r.totalBungalows = formatCell(df, row.getCell(col));
                     }
-                    row = sheet.getRow(58);
+                    row = sheet.getRow(ar);
                     cell = row.getCell(1);
                     if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.allDwellings)) {
                         System.out.println("Found \"" + F_Strings.allDwellings + "\".");
                         r.allDwellings = formatCell(df, row.getCell(col));
                     }
-                    row = sheet.getRow(28);
+                    row = sheet.getRow(br + pbd);
                     cell = row.getCell(1);
                     if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.purposeBuiltFlatLowRise)) {
                         System.out.println("Found \"" + F_Strings.purposeBuiltFlatLowRise + "\".");
                         r.purposeBuiltFlatLowRise = formatCell(df, row.getCell(col));
                     }
-                    row = sheet.getRow(29);
+                    row = sheet.getRow(br + pbd + 1);
+                    cell = row.getCell(1);
+                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.purposeBuiltFlatHighRise)) {
+                        System.out.println("Found \"" + F_Strings.purposeBuiltFlatHighRise + "\".");
+                        r.purposeBuiltFlatHighRise = formatCell(df, row.getCell(col));
+                    }
+                    System.out.println(r.toString());
+
+//                    for (Row row1 : sheet) {
+//                        int rowNum = row1.getRowNum();
+//                        for (Cell cell1 : row1) {
+//                            int columnIndex = cell1.getColumnIndex();
+//                            String cellValue = df.formatCellValue(cell1);
+//                            if (cellValue.equalsIgnoreCase("bungalow")) {
+//                                System.out.println("row=" + rowNum
+//                                    + ", col=" + columnIndex
+//                                    + ", value=" + df.formatCellValue(cell1));
+//                            }
+//                            if (cellValue.equalsIgnoreCase("all dwellings")) {
+//                                
+//                            }
+//                        }
+//                    }
+                }
+                i++;
+            }
+        }
+        return r;
+    }
+    
+    /**
+     *
+     * @param year Year
+     * @param f File path
+     * @param sn SheetName
+     * @param col All tenures column
+     * @param br Bungalow row
+     * @param ar All Dwellings row
+     * @return
+     */
+    public F_ARecord getARecordHSSF(String year, Path f, String sn, int col, int br, int pbd, int ar) {
+        F_ARecord r = new F_ARecord();
+        r.year = year;
+        HSSFWorkbook wb = getHSSFWorkbook(f);
+        if (wb != null) {
+            DataFormatter df = new DataFormatter();
+            int i = 1;
+            int numberOfSheets = wb.getNumberOfSheets();
+            for (Sheet sheet : wb) {
+                // Write out to text file
+                String sheetName = sheet.getSheetName().trim();
+                //String s = "Sheet " + i + " of " + numberOfSheets + ": " + sheetName;
+                //System.out.println(s);
+                if (sheetName.equalsIgnoreCase(sn)) {
+                    String s = "Sheet " + i + " of " + numberOfSheets + ": " + sheetName;
+                    System.out.println(s);
+                    Row row;
+                    Cell cell;
+                    row = sheet.getRow(5);
+                    cell = row.getCell(col);
+                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.allTenures)) {
+                        System.out.println("Found \"" + F_Strings.allTenures + "\".");
+                    }
+                    row = sheet.getRow(br);
+                    cell = row.getCell(1);
+                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.bungalow)) {
+                        System.out.println("Found \"" + F_Strings.bungalow + "\".");
+                        r.totalBungalows = formatCell(df, row.getCell(col));
+                    }
+                    row = sheet.getRow(ar);
+                    cell = row.getCell(1);
+                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.all_dwellings_types)) {
+                        System.out.println("Found \"" + F_Strings.allDwellings + "\".");
+                        r.allDwellings = formatCell(df, row.getCell(col));
+                    }
+                    row = sheet.getRow(br + pbd);
+                    cell = row.getCell(1);
+                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.purposeBuiltFlatLowRise)) {
+                        System.out.println("Found \"" + F_Strings.purposeBuiltFlatLowRise + "\".");
+                        r.purposeBuiltFlatLowRise = formatCell(df, row.getCell(col));
+                    }
+                    row = sheet.getRow(br + pbd + 1);
                     cell = row.getCell(1);
                     if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.purposeBuiltFlatHighRise)) {
                         System.out.println("Found \"" + F_Strings.purposeBuiltFlatHighRise + "\".");

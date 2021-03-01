@@ -97,6 +97,10 @@ public class F_Strings extends Generic_Strings {
     public static final String BUILDING_EVACUATION_TIME_DESCRIPTION = "BUILDING_EVACUATION_TIME_DESCRIPTION";
     // Variable values
     // FINNCIAL_YEAR
+    public static final String S2010_11 = "2010/11";
+    public static final String S2011_12 = "2011/12";
+    public static final String S2012_13 = "2012/13";
+    public static final String S2013_14 = "2013/14";
     public static final String S2014_15 = "2014/15";
     public static final String S2015_16 = "2015/16";
     public static final String S2016_17 = "2016/17";
@@ -117,6 +121,7 @@ public class F_Strings extends Generic_Strings {
 
     // EHS data
     public static final String allDwellings = "all dwellings";
+    public static final String all_dwellings_types = "all_dwellings_types";
     public static final String allTenures = "all tenures";
     public static final String bungalow = "bungalow";
     public static final String purposeBuiltFlatLowRise = "purpose built flat, low rise";
