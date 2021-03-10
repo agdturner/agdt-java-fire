@@ -503,7 +503,7 @@ public class F_Dwellings_Record extends Data_Record {
     }
 
     public String toCSVString(F_Data data) {
-        String r = getId().toString();
+        String r = "" + getId().id;
         r += ",\"" + getFRS_NAME(data);
         r += "\",\"" + getE_CODE(data);
         r += "\",\"" + getFINANCIAL_YEAR(data);

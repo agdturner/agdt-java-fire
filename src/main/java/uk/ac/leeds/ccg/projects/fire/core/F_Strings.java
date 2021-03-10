@@ -29,7 +29,9 @@ public class F_Strings extends Generic_Strings {
 
     public static final String s_Fire = "Fire";
     public static final String s_Subsets = "Subsets";
+    
     // Variable names
+    // --------------
     public static final String TOTAL = "TOTAL";
     public static final String FRS_NAME = "FRS_NAME";
     public static final String E_CODE = "E_CODE";
@@ -95,8 +97,12 @@ public class F_Strings extends Generic_Strings {
     public static final String EVACUATIONS_CODE = "EVACUATIONS_CODE";
     public static final String BUILDING_EVACUATION_DELAY_DESCRIPTION = "BUILDING_EVACUATION_DELAY_DESCRIPTION";
     public static final String BUILDING_EVACUATION_TIME_DESCRIPTION = "BUILDING_EVACUATION_TIME_DESCRIPTION";
+    
+    
     // Variable values
-    // FINNCIAL_YEAR
+    // ---------------
+    
+    // FINANCIAL_YEAR
     public static final String S2010_11 = "2010/11";
     public static final String S2011_12 = "2011/12";
     public static final String S2012_13 = "2012/13";
@@ -107,21 +113,46 @@ public class F_Strings extends Generic_Strings {
     public static final String S2017_18 = "2017/18";
     public static final String S2018_19 = "2018/19";
     public static final String S2019_20 = "2019/20";
+    
+    // BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION
     public static final String Cladding = "Cladding";
+    
+    // FatalityOrCasualty
     public static final String FatalityOrCasualty = "Fatality/Casualty";
     //public static final String FatalityOrCasualty = "Fatality_OR_Casualty";
-    //public static final String NoCompartmentationInBuilding = "No_compartmentation_in_building";
+    public static final String None = "None";
+        
+    // DAY_NIGHT
+    public static final String Afternoon = "Afternoon";
+    public static final String Evening = "Evening";
+    public static final String Morning = "Morning";
+    public static final String Night = "Night";
+
+    // BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
     public static final String NoCompartmentationInBuilding = "No compartmentation in building";
+    //public static final String NoCompartmentationInBuilding = "No_compartmentation_in_building";
+    
+    // BUILDING_OR_PROPERTY_TYPE
     public static final String BungalowSingleOccupancy = "Bungalow - single occupancy";
     public static final String PurposeBuiltHighRiseFlats = "Purpose Built High Rise (10+) Flats";
     public static final String PurposeBuiltMediumRiseFlats = "Purpose Built Medium Rise (4-9) Flats";
     public static final String PurposeBuiltLowRiseFlats = "Purpose Built Low Rise (1-3) Flats/Maisonettes";
+    
+    // spread_of_fire_d
     public static final String WholeBuildingOrAffectingMoreThan2Floors = "Whole Building/ Affecting more than 2 floors";
     //public static final String WholeBuildingOrAffectingMoreThan2Floors = "Whole_Building_OR__Affecting_more_than_2_floors";
 
+    // STARTING_DELAY_DESCRIPTION 
+    public static final String No_delay = "No delay";
+    public static final String Delay = "Delay"; // This is an amalgam of any delay.
+    
+    // RESCUES
+    public static final String OneOrMore = "OneOrMore"; // This is an amalgam for 1+
+            
     // EHS data
+    // --------
     public static final String allDwellings = "all dwellings";
-    public static final String all_dwellings_types = "all_dwellings_types";
+    public static final String all_dwelling_types = "all dwelling types";
     public static final String allTenures = "all tenures";
     public static final String bungalow = "bungalow";
     public static final String purposeBuiltFlatLowRise = "purpose built flat, low rise";

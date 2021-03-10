@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Andy Turner, CCG, University of Leeds.
+ * Copyright 2021 Andy Turner, CCG, University of Leeds.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,19 +195,68 @@ public class F_Main extends F_Object {
     Map<Integer, Map<Integer, Integer>> mAllBUILDING_EVACUATION_TIME_DESCRIPTION = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION = new HashMap<>();
 
+    Map<Integer, Integer> mMediumRise45 = new HashMap<>();
+    Map<Integer, Integer> mMediumRise45_FATALITY_CASUALTY = new HashMap<>();
+    Map<Integer, Integer> mMediumRise45_NoCompartmentation = new HashMap<>();
+    Map<Integer, Integer> mMediumRise45_NoCompartmentation_FATALITY_CASUALTY = new HashMap<>();
+    Map<Integer, Integer> mMediumRise45_AffectingMoreThan2Floors = new HashMap<>();
+    Map<Integer, Integer> mMediumRise45_AffectingMoreThan2Floors_FATALITY_CASUALTY = new HashMap<>();
+    Map<Integer, Integer> mMediumRise45_Cladding_AffectingMoreThan2Floors = new HashMap<>();
+    Map<Integer, Integer> mMediumRise45_Cladding_AffectingMoreThan2Floors_FATALITY_CASUALTY = new HashMap<>();
+
+    Map<Integer, Integer> mMediumRise6789 = new HashMap<>();
+    Map<Integer, Integer> mMediumRise6789_FATALITY_CASUALTY = new HashMap<>();
+    Map<Integer, Integer> mMediumRise6789_NoCompartmentation = new HashMap<>();
+    Map<Integer, Integer> mMediumRise6789_NoCompartmentation_FATALITY_CASUALTY = new HashMap<>();
+    Map<Integer, Integer> mMediumRise6789_AffectingMoreThan2Floors = new HashMap<>();
+    Map<Integer, Integer> mMediumRise6789_AffectingMoreThan2Floors_FATALITY_CASUALTY = new HashMap<>();
+    Map<Integer, Integer> mMediumRise6789_Cladding_AffectingMoreThan2Floors = new HashMap<>();
+    Map<Integer, Integer> mMediumRise6789_Cladding_AffectingMoreThan2Floors_FATALITY_CASUALTY = new HashMap<>();
+    
+
     // Complex variables
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNight_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, HashMap<Integer, Integer>> mAllNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-    HashMap<Integer, HashMap<Integer, Integer>> mAllAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-    HashMap<Integer, HashMap<Integer, Integer>> mAllTotalCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNight_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_Night_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllAffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllTotalCladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllTotalDelay_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_Delay_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllTotalRescues_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_Rescues_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllTotalDelayEvac_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_DelayEvac_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllTotalEvacGT5_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_EvacGT5_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+
+    // Totals
+    HashMap<Integer, Integer> mTotalNight_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, Integer> mTotalNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-    HashMap<Integer, Integer> mTotalAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-    HashMap<Integer, Integer> mTotalCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNight_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_Night_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalAffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalCladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalDelay_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_Delay_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalRescues_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_Rescues_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalDelayEvac_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_DelayEvac_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalEvacGT5_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_EvacGT5_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
 
     // For convenience
     protected final F_Files files;
@@ -944,11 +993,13 @@ public class F_Main extends F_Object {
             // Single variable
             String name = "SingleVariableSummaries";
             outputSingleVariableCountSummaries(name);
-            // 2 Variables
+            // More variables
             name = "ComplexVariableCountSummaries";
-
             int varFATALITY_CASUALTY = env.data.vname2id.get(F_Strings.FATALITY_CASUALTY);
             int valFATALITY_CASUALTY = env.data.name2ids.get(varFATALITY_CASUALTY).get(F_Strings.FatalityOrCasualty);
+            int varDAY_NIGHT = env.data.vname2id.get(F_Strings.DAY_NIGHT);
+            int valNight = env.data.name2ids.get(varDAY_NIGHT).get(
+                    F_Strings.Night);
             int varBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = env.data.vname2id.get(
                     F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION);
             int valNoCompartmentationInBuilding = env.data.name2ids.get(
@@ -960,10 +1011,38 @@ public class F_Main extends F_Object {
                     varspread_of_fire_d).get(
                             F_Strings.WholeBuildingOrAffectingMoreThan2Floors);
             int varBUILDING_OR_PROPERTY_TYPE = env.data.vname2id.get(F_Strings.BUILDING_OR_PROPERTY_TYPE);
-
             int varBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION = env.data.vname2id.get(
                     F_Strings.BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION);
             int valCladding = env.data.name2ids.get(varBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION).get(F_Strings.Cladding);
+            int varSTARTING_DELAY_DESCRIPTION = env.data.vname2id.get(
+                    F_Strings.STARTING_DELAY_DESCRIPTION);
+            int valSTARTING_DELAY_DESCRIPTION_No_Delay = env.data.name2ids.get(
+                    varSTARTING_DELAY_DESCRIPTION).get(F_Strings.No_delay);
+            int varRESCUES = env.data.vname2id.get(F_Strings.RESCUES);
+            int valRESCUES_0 = env.data.name2ids.get(varRESCUES).get("0");
+
+            int varBUILDING_EVACUATION_DELAY_DESCRIPTION = env.data.vname2id.get(F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION);
+            HashSet<Integer> svalBUILDING_EVACUATION_DELAY_DESCRIPTION = new HashSet<>();
+            svalBUILDING_EVACUATION_DELAY_DESCRIPTION.add(0);
+            svalBUILDING_EVACUATION_DELAY_DESCRIPTION.add(4);
+            svalBUILDING_EVACUATION_DELAY_DESCRIPTION.add(3);
+
+            int varBUILDING_EVACUATION_TIME_DESCRIPTION = env.data.vname2id.get(F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION);
+            HashSet<Integer> svalBUILDING_EVACUATION_TIME_DESCRIPTION = new HashSet<>();
+            svalBUILDING_EVACUATION_TIME_DESCRIPTION.add(2);
+            svalBUILDING_EVACUATION_TIME_DESCRIPTION.add(0);
+            svalBUILDING_EVACUATION_TIME_DESCRIPTION.add(7);
+
+            int varBUILDING_FLOORS_ABOVE_GROUND = env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND);
+            HashSet<Integer> svalBUILDING_FLOORS_ABOVE_GROUND45 = new HashSet<>();
+            svalBUILDING_EVACUATION_DELAY_DESCRIPTION.add(25); // 4
+            svalBUILDING_EVACUATION_DELAY_DESCRIPTION.add(26); // 5
+
+            HashSet<Integer> svalBUILDING_FLOORS_ABOVE_GROUND6789 = new HashSet<>();
+            svalBUILDING_EVACUATION_DELAY_DESCRIPTION.add(27); // 6
+            svalBUILDING_EVACUATION_DELAY_DESCRIPTION.add(29); // 7
+            svalBUILDING_EVACUATION_DELAY_DESCRIPTION.add(30); // 8
+            svalBUILDING_EVACUATION_DELAY_DESCRIPTION.add(31); // 10
 
             Map<Integer, Set<F_Dwellings_Record>> mAffectingMoreThan2FloorsFATALITY_CASUALTY = new HashMap<>();
             Map<Integer, Set<F_Dwellings_Record>> mAffectingMoreThan2FloorsNonFATALITY_CASUALTY = new HashMap<>();
@@ -988,18 +1067,62 @@ public class F_Main extends F_Object {
                     F_Collection c = env.data.getCollection(cid);
                     String year = env.data.id2names.get(0).get(cid.id);
                     System.out.println("cid=" + cid.toString() + ", size=" + c.data.keySet().size());
+                    HashMap<Integer, Integer> mNight_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllNight_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mNight_BY_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
                     HashMap<Integer, Integer> mNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
                     mAllNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
                     HashMap<Integer, Integer> mFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
                     mAllFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mNight_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllNight_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mNight_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_Night_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_Night_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_Night_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE);
                     HashMap<Integer, Integer> mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-                    mAllAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
-                    HashMap<Integer, Integer> mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-                    mAllFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
+                    mAllAffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE);
                     HashMap<Integer, Integer> mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-                    mAllTotalCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
+                    mAllTotalCladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
                     HashMap<Integer, Integer> mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-                    mAllFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
+                    mAllFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mDelay_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllTotalDelay_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mDelay_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_Delay_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_Delay_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_Delay_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mRescues_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllTotalRescues_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mRescues_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_Rescues_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_Rescues_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_Rescues_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mDelayEvac_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllTotalDelayEvac_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mDelayEvac_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_DelayEvac_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_DelayEvac_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_DelayEvac_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mEvacGT5_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllTotalEvacGT5_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mEvacGT5_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_EvacGT5_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_EvacGT5_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_EvacGT5_By_BUILDING_OR_PROPERTY_TYPE);
+                    int mediumRise45 = 0;
+                    int mediumRise45_FATALITY_CASUALTY = 0;
+                    int mediumRise45_NoCompartmentation = 0;
+                    int mediumRise45_NoCompartmentation_FATALITY_CASUALTY = 0;
+                    int mediumRise45_AffectingMoreThan2Floors = 0;
+                    int mediumRise45_AffectingMoreThan2Floors_FATALITY_CASUALTY = 0;
+                    int mediumRise45_Cladding_AffectingMoreThan2Floors = 0;
+                    int mediumRise45_Cladding_AffectingMoreThan2Floors_FATALITY_CASUALTY = 0;
+                    int mediumRise6789 = 0;
+                    int mediumRise6789_FATALITY_CASUALTY = 0;
+                    int mediumRise6789_NoCompartmentation = 0;
+                    int mediumRise6789_NoCompartmentation_FATALITY_CASUALTY = 0;
+                    int mediumRise6789_AffectingMoreThan2Floors = 0;
+                    int mediumRise6789_AffectingMoreThan2Floors_FATALITY_CASUALTY = 0;
+                    int mediumRise6789_Cladding_AffectingMoreThan2Floors = 0;
+                    int mediumRise6789_Cladding_AffectingMoreThan2Floors_FATALITY_CASUALTY = 0;
                     Iterator<F_RecordID> ite2 = c.data.keySet().iterator();
                     while (ite2.hasNext()) {
                         F_RecordID id = ite2.next();
@@ -1008,6 +1131,16 @@ public class F_Main extends F_Object {
 //                            env.data.vname2id.get(F_Strings.ACCIDENTAL_OR_DELIBERATE)).get(r.tACCIDENTAL_OR_DELIBERATE);
 //                    System.out.println("F_Strings.ACCIDENTAL_OR_DELIBERATE " 
 //                            + sACCIDENTAL_OR_DELIBERATE);
+                        if (r.tDAY_NIGHT == valNight) {
+                            Generic_Collections.addToCount(
+                                    mNight_BY_BUILDING_OR_PROPERTY_TYPE,
+                                    r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                            if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                Generic_Collections.addToCount(
+                                        mFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE,
+                                        r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                            }
+                        }
                         if (r.tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION == valNoCompartmentationInBuilding) {
                             Generic_Collections.addToCount(
                                     mNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
@@ -1017,6 +1150,16 @@ public class F_Main extends F_Object {
                                         mFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
                                         r.tBUILDING_OR_PROPERTY_TYPE, 1);
                             }
+                            if (r.tDAY_NIGHT == valNight) {
+                                Generic_Collections.addToCount(
+                                        mNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
+                                        r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                                if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                    Generic_Collections.addToCount(
+                                            mFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
+                                            r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                                }
+                            }
                         }
                         if (r.tspread_of_fire_d == valWholeBuildingOrAffectingMoreThan2Floors) {
                             Generic_Collections.addToCount(
@@ -1024,11 +1167,21 @@ public class F_Main extends F_Object {
                                     r.tBUILDING_OR_PROPERTY_TYPE, 1);
                             if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
                                 Generic_Collections.addToCount(
-                                        mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
                                         r.tBUILDING_OR_PROPERTY_TYPE, 1);
                                 Generic_Collections.addToMap(mAffectingMoreThan2FloorsFATALITY_CASUALTY, Integer.valueOf(r.tBUILDING_OR_PROPERTY_TYPE), r);
                             } else {
                                 Generic_Collections.addToMap(mAffectingMoreThan2FloorsNonFATALITY_CASUALTY, Integer.valueOf(r.tBUILDING_OR_PROPERTY_TYPE), r);
+                            }
+                            if (r.tDAY_NIGHT == valNight) {
+                                Generic_Collections.addToCount(
+                                        mNight_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
+                                        r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                                if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                    Generic_Collections.addToCount(
+                                            mFATALITY_CASUALTY_Night_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
+                                            r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                                }
                             }
                             if (r.tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION == valCladding) {
                                 Generic_Collections.addToCount(
@@ -1060,91 +1213,307 @@ public class F_Main extends F_Object {
                                 }
                             }
                         }
+                        if (r.tSTARTING_DELAY_DESCRIPTION != valSTARTING_DELAY_DESCRIPTION_No_Delay) {
+                            Generic_Collections.addToCount(
+                                    mDelay_By_BUILDING_OR_PROPERTY_TYPE,
+                                    r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                            if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                Generic_Collections.addToCount(
+                                        mFATALITY_CASUALTY_Delay_By_BUILDING_OR_PROPERTY_TYPE,
+                                        r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                            }
+                        }
+                        if (r.tRESCUES != valRESCUES_0) {
+                            Generic_Collections.addToCount(
+                                    mRescues_By_BUILDING_OR_PROPERTY_TYPE,
+                                    r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                            if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                Generic_Collections.addToCount(
+                                        mFATALITY_CASUALTY_Rescues_By_BUILDING_OR_PROPERTY_TYPE,
+                                        r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                            }
+                        }
+                        if (!svalBUILDING_EVACUATION_DELAY_DESCRIPTION.contains(r.tBUILDING_EVACUATION_DELAY_DESCRIPTION)) {
+                            Generic_Collections.addToCount(
+                                    mDelayEvac_By_BUILDING_OR_PROPERTY_TYPE,
+                                    r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                            if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                Generic_Collections.addToCount(
+                                        mFATALITY_CASUALTY_DelayEvac_By_BUILDING_OR_PROPERTY_TYPE,
+                                        r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                            }
+                        }
+                        if (svalBUILDING_EVACUATION_TIME_DESCRIPTION.contains(r.tBUILDING_EVACUATION_TIME_DESCRIPTION)) {
+                            Generic_Collections.addToCount(
+                                    mEvacGT5_By_BUILDING_OR_PROPERTY_TYPE,
+                                    r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                            if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                Generic_Collections.addToCount(
+                                        mFATALITY_CASUALTY_EvacGT5_By_BUILDING_OR_PROPERTY_TYPE,
+                                        r.tBUILDING_OR_PROPERTY_TYPE, 1);
+                            }
+                        }
+                        if (r.tBUILDING_OR_PROPERTY_TYPE == valPurposeBuiltMediumRiseFlats) {
+                            if (svalBUILDING_FLOORS_ABOVE_GROUND45.contains(r.tBUILDING_FLOORS_ABOVE_GROUND)) {
+                                mediumRise45++;
+                                if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                    mediumRise45_FATALITY_CASUALTY++;
+                                }
+                                if (r.tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION == valNoCompartmentationInBuilding) {
+                                    mediumRise45_NoCompartmentation++;
+                                    if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                        mediumRise45_NoCompartmentation_FATALITY_CASUALTY++;
+                                    }
+                                }
+                                if (r.tspread_of_fire_d == valWholeBuildingOrAffectingMoreThan2Floors) {
+                                    mediumRise45_AffectingMoreThan2Floors++;
+                                    if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                        mediumRise45_AffectingMoreThan2Floors_FATALITY_CASUALTY++;
+                                    }
+                                }                                
+                                if (r.tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION == valCladding) {
+                                    if (r.tspread_of_fire_d == valWholeBuildingOrAffectingMoreThan2Floors) {
+                                        mediumRise45_Cladding_AffectingMoreThan2Floors++;
+                                        if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                            mediumRise45_Cladding_AffectingMoreThan2Floors_FATALITY_CASUALTY++;
+                                        }
+                                    }
+                                }
+                            }
+                            if (svalBUILDING_FLOORS_ABOVE_GROUND6789.contains(r.tBUILDING_FLOORS_ABOVE_GROUND)) {
+                                mediumRise6789++;
+                                if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                    mediumRise6789_FATALITY_CASUALTY++;
+                                }
+                                if (r.tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION == valNoCompartmentationInBuilding) {
+                                    mediumRise6789_NoCompartmentation++;
+                                    if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                                        mediumRise6789_NoCompartmentation_FATALITY_CASUALTY++;
+                                    }
+                                }
+                            }
+                        }
                     }
+                    mMediumRise45.put(cid.id, mediumRise45);
+                    mMediumRise45_FATALITY_CASUALTY.put(cid.id, mediumRise45_FATALITY_CASUALTY);
+                    mMediumRise45_NoCompartmentation.put(cid.id, mediumRise45_NoCompartmentation);
+                    mMediumRise45_NoCompartmentation_FATALITY_CASUALTY.put(cid.id, mediumRise45_NoCompartmentation_FATALITY_CASUALTY);
+                    mMediumRise45_AffectingMoreThan2Floors.put(cid.id, mediumRise45_AffectingMoreThan2Floors);
+                    mMediumRise45_AffectingMoreThan2Floors_FATALITY_CASUALTY.put(cid.id, mediumRise45_AffectingMoreThan2Floors_FATALITY_CASUALTY);
+                    mMediumRise45_Cladding_AffectingMoreThan2Floors.put(cid.id, mediumRise45_Cladding_AffectingMoreThan2Floors);
+                    mMediumRise45_Cladding_AffectingMoreThan2Floors_FATALITY_CASUALTY.put(cid.id, mediumRise45_Cladding_AffectingMoreThan2Floors_FATALITY_CASUALTY);
+                    mMediumRise6789.put(cid.id, mediumRise6789);
+                    mMediumRise6789_FATALITY_CASUALTY.put(cid.id, mediumRise6789_FATALITY_CASUALTY);
+                    mMediumRise6789_NoCompartmentation.put(cid.id, mediumRise6789_NoCompartmentation);
+                    mMediumRise6789_NoCompartmentation_FATALITY_CASUALTY.put(cid.id, mediumRise6789_NoCompartmentation_FATALITY_CASUALTY);
+                    mMediumRise6789_AffectingMoreThan2Floors.put(cid.id, mediumRise6789_AffectingMoreThan2Floors);
+                    mMediumRise6789_AffectingMoreThan2Floors_FATALITY_CASUALTY.put(cid.id, mediumRise6789_AffectingMoreThan2Floors_FATALITY_CASUALTY);
+                    mMediumRise6789_Cladding_AffectingMoreThan2Floors.put(cid.id, mediumRise6789_Cladding_AffectingMoreThan2Floors);
+                    mMediumRise6789_Cladding_AffectingMoreThan2Floors_FATALITY_CASUALTY.put(cid.id, mediumRise6789_Cladding_AffectingMoreThan2Floors_FATALITY_CASUALTY);
                     Path dir = getDir(name, year);
-                    output(dir, F_Strings.NoCompartmentationInBuilding + " BY "
+                    output(dir, F_Strings.DAY_NIGHT + " " + F_Strings.Night + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mNight_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, F_Strings.DAY_NIGHT + " " + F_Strings.Night + " AND "
+                            + F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION + " " + F_Strings.NoCompartmentationInBuilding + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION + " " + F_Strings.NoCompartmentationInBuilding + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             varBUILDING_OR_PROPERTY_TYPE,
                             mNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
                             mFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
-                    output(dir, F_Strings.WholeBuildingOrAffectingMoreThan2Floors
+                    output(dir, F_Strings.spread_of_fire_d + " " + F_Strings.WholeBuildingOrAffectingMoreThan2Floors
                             + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             varBUILDING_OR_PROPERTY_TYPE,
                             mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
-                            mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
-                    output(dir, F_Strings.Cladding
+                            mFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, F_Strings.BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION + " " + F_Strings.Cladding
                             + " AND "
-                            + F_Strings.WholeBuildingOrAffectingMoreThan2Floors
+                            + F_Strings.spread_of_fire_d + " " + F_Strings.WholeBuildingOrAffectingMoreThan2Floors
                             + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             varBUILDING_OR_PROPERTY_TYPE,
                             mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
                             mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
-
-                    Generic_Collections.addToCount(
-                            mTotalNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
+                    output(dir, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                            + F_Strings.Delay
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mDelay_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_Delay_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, F_Strings.RESCUES + " "
+                            + "NonZero"
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mRescues_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_Rescues_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION + " "
+                            + "DelayEvac"
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mRescues_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_Rescues_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION + " "
+                            + "GT5"
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mRescues_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_Rescues_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalNight_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mNight_BY_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
                             mNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
-                    Generic_Collections.addToCount(
-                            mTotalFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
                             mFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
-
-                    Generic_Collections.addToCount(
-                            mTotalAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
+                    Generic_Collections.addToCount(mTotalNight_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mNight_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_Night_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_Night_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalAffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
                             mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
-                    Generic_Collections.addToCount(
-                            mTotalFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
-                            mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
-
-                    Generic_Collections.addToCount(
-                            mTotalCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalCladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
                             mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
-                    Generic_Collections.addToCount(
-                            mTotalFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
                             mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
-
+                    Generic_Collections.addToCount(mTotalDelay_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mDelay_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_Delay_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_Delay_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalRescues_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mRescues_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_Rescues_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_Rescues_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalDelayEvac_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mDelayEvac_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_DelayEvac_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_DelayEvac_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalEvacGT5_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mEvacGT5_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_EvacGT5_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_EvacGT5_By_BUILDING_OR_PROPERTY_TYPE);
                 } catch (IOException | ClassNotFoundException ex) {
                     Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             Path dir = getDir(name, yearsAll);
-            output(dir, F_Strings.NoCompartmentationInBuilding + " BY "
+            output(dir, F_Strings.DAY_NIGHT + " " + F_Strings.Night + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalNight_BY_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.DAY_NIGHT + " " + F_Strings.Night + " AND "
+                    + F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION + " " + F_Strings.NoCompartmentationInBuilding + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION + " " + F_Strings.NoCompartmentationInBuilding + " BY "
                     + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                     F_Strings.BUILDING_OR_PROPERTY_TYPE,
                     varBUILDING_OR_PROPERTY_TYPE,
                     mTotalNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
                     mTotalFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE);
-            output(dir, F_Strings.WholeBuildingOrAffectingMoreThan2Floors
+            output(dir, F_Strings.DAY_NIGHT + " " + F_Strings.Night + " AND "
+                    + F_Strings.spread_of_fire_d + " " + F_Strings.WholeBuildingOrAffectingMoreThan2Floors
                     + " BY "
                     + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                     F_Strings.BUILDING_OR_PROPERTY_TYPE,
                     varBUILDING_OR_PROPERTY_TYPE,
-                    mTotalAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
-                    mTotalFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
-            output(dir, F_Strings.Cladding
+                    mTotalNight_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_Night_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.spread_of_fire_d + " " + F_Strings.WholeBuildingOrAffectingMoreThan2Floors
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalAffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION + " " + F_Strings.Cladding
                     + " AND "
-                    + F_Strings.WholeBuildingOrAffectingMoreThan2Floors
+                    + F_Strings.spread_of_fire_d + " " + F_Strings.WholeBuildingOrAffectingMoreThan2Floors
                     + " BY "
                     + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                     F_Strings.BUILDING_OR_PROPERTY_TYPE,
                     varBUILDING_OR_PROPERTY_TYPE,
-                    mTotalCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
-                    mTotalFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
-            Iterator<Integer> itei = mTotalFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.keySet().iterator();
+                    mTotalCladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.STARTING_DELAY_DESCRIPTION + " " + F_Strings.Delay
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalDelay_BY_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_Delay_BY_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.RESCUES + " " + F_Strings.OneOrMore
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalRescues_BY_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_Rescues_BY_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION + " "
+                    + "DelayEvac"
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalDelayEvac_BY_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_DelayEvac_BY_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION + " "
+                    + "GT5"
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalEvacGT5_BY_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_EvacGT5_BY_BUILDING_OR_PROPERTY_TYPE);
+            Iterator<Integer> itei = mTotalFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.keySet().iterator();
             while (itei.hasNext()) {
                 Integer i = itei.next();
                 String tBuildingOrPropertyType = env.data.id2names.get(varBUILDING_OR_PROPERTY_TYPE).get(i);
-                dir = getDir(F_Strings.s_Subsets, "AffectingMoreThan2FloorsFATALITY_CASUALTY");
+                dir = getDir(F_Strings.s_Subsets,
+                        F_Strings.FATALITY_CASUALTY + "_" + F_Strings.FatalityOrCasualty
+                        + "_" + F_Strings.spread_of_fire_d + "_" + F_Strings.WholeBuildingOrAffectingMoreThan2Floors);
                 output(dir, tBuildingOrPropertyType,
                         mAffectingMoreThan2FloorsFATALITY_CASUALTY.get(i));
-                dir = getDir(F_Strings.s_Subsets, "AffectingMoreThan2FloorsNonFATALITY_CASUALTY");
+                dir = getDir(F_Strings.s_Subsets,
+                        F_Strings.FATALITY_CASUALTY + "_" + F_Strings.None
+                        + "_" + F_Strings.spread_of_fire_d + "_" + F_Strings.WholeBuildingOrAffectingMoreThan2Floors);
                 output(dir, tBuildingOrPropertyType,
                         mAffectingMoreThan2FloorsNonFATALITY_CASUALTY.get(i));
             }
-            dir = getDir(F_Strings.s_Subsets, "CladdingAffectingMoreThan2Floors");
+            dir = getDir(F_Strings.s_Subsets,
+                    F_Strings.BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION + " " + F_Strings.Cladding
+                    + "_AND_" + F_Strings.spread_of_fire_d + "_" + F_Strings.WholeBuildingOrAffectingMoreThan2Floors);
             output(dir, "highriseFATALITY_CASUALTY", highriseCladdingAffectingMoreThan2FloorsFATALITY_CASUALTY);
             output(dir, "highriseNonFATALITY_CASUALTY", highriseCladdingAffectingMoreThan2FloorsNonFATALITY_CASUALTY);
             output(dir, "mediumriseFATALITY_CASUALTY", mediumriseCladdingAffectingMoreThan2FloorsFATALITY_CASUALTY);
@@ -1163,7 +1532,7 @@ public class F_Main extends F_Object {
             String sn = "AT2.1";
             int br = 26;
             int ar = 58;
-                    int col = 9;
+            int col = 9;
             int pbd = 2;
             Path f;
             f = Paths.get(indir.toString(),
@@ -1204,7 +1573,7 @@ public class F_Main extends F_Object {
             f = Paths.get(indir.toString(),
                     "2011-12_Chapter_1_Tables__Figures_and_Annex_Tables" + type);
             F_ARecord r1112 = getARecordHSSF("2011/12", f, sn, col, br, pbd, ar);
-            
+
             sn = "AT1.5";
             ar = 18;
             pbd = 4;
@@ -1212,8 +1581,7 @@ public class F_Main extends F_Object {
             f = Paths.get(indir.toString(),
                     "2010-11_2173554" + type);
             F_ARecord r1011 = getARecordHSSF("2010/11", f, sn, col, br, pbd, ar);
-            
-            
+
             // Output
             try {
                 dir = Paths.get(env.files.getOutputDir().toString(), "Stuart");
@@ -1260,6 +1628,36 @@ public class F_Main extends F_Object {
                             + ",PB FATALITY_CASUALTY_AffectingWholeBuildingOrMoreThan2Floors fires"
                             + ",PB Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
                             + ",PB FATALITY_CASUALTY_Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            // PBHR
+                            + ",PBHR dwellings"
+                            + ",PBHR % of Total dwellings"
+                            + ",PBHR fires"
+                            + ",PBHR fires as % of Total fires"
+                            + ",PBHR fires * 10000 / PB dwellings"
+                            + ",PBHR FATALITY_CASUALTY fires"
+                            + ",PBHR FATALITY_CASUALTY fires as % of Total fires"
+                            + ",PBHR FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires"
+                            + ",PBHR NoCompartmentationInBuilding fires"
+                            + ",PBHR FATALITY_CASUALTY_NoCompartmentationInBuilding fires"
+                            + ",PBHR AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",PBHR FATALITY_CASUALTY_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",PBHR Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",PBHR FATALITY_CASUALTY_Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            // PBLR
+                            + ",PBLR dwellings"
+                            + ",PBLR % of Total dwellings"
+                            + ",PBLR fires"
+                            + ",PBLR fires as % of Total fires"
+                            + ",PBLR fires * 10000 / PB dwellings"
+                            + ",PBLR FATALITY_CASUALTY fires"
+                            + ",PBLR FATALITY_CASUALTY fires as % of Total fires"
+                            + ",PBLR FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires"
+                            + ",PBLR NoCompartmentationInBuilding fires"
+                            + ",PBLR FATALITY_CASUALTY_NoCompartmentationInBuilding fires"
+                            + ",PBLR AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",PBLR FATALITY_CASUALTY_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",PBLR Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",PBLR FATALITY_CASUALTY_Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
                     );
                     int yearID;
                     yearID = env.data.name2ids.get(0).get(F_Strings.S2010_11);
@@ -1309,13 +1707,40 @@ public class F_Main extends F_Object {
         Map<Integer, Integer> mFATALITY_CASUALTY = mAllFATALITY_CASUALTY.get(yearID);
         Map<Integer, Integer> mBUILDING_OR_PROPERTY_TYPE = mAllBUILDING_OR_PROPERTY_TYPE.get(yearID);
         Map<Integer, Integer> mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE = mAllFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        Map<Integer, Integer> mNight_BY_BUILDING_OR_PROPERTY_TYPE = mAllNight_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        Map<Integer, Integer> mFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE = mAllFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        Map<Integer, Integer> mNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = mAllNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        Map<Integer, Integer> mFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = mAllFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
         Map<Integer, Integer> mNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = mAllNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
         Map<Integer, Integer> mFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = mAllFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
-        Map<Integer, Integer> mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = mAllAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(yearID);
-        Map<Integer, Integer> mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = mAllFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(yearID);
-        Map<Integer, Integer> mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = mAllTotalCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(yearID);
-        Map<Integer, Integer> mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = mAllFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        Map<Integer, Integer> mNight_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = mAllNight_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        Map<Integer, Integer> mFATALITY_CASUALTY_Night_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = mAllFATALITY_CASUALTY_Night_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        Map<Integer, Integer> mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = mAllAffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        Map<Integer, Integer> mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = mAllFATALITY_CASUALTY_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        Map<Integer, Integer> mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = mAllTotalCladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        Map<Integer, Integer> mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE = mAllFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        //Map<Integer, Integer> mNo_delay_By_BUILDING_OR_PROPERTY_TYPE = mAllTotalDelay_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        //Map<Integer, Integer> mFATALITY_CASUALTY_No_delay_DESCRIPTION_By_BUILDING_OR_PROPERTY_TYPE = mAllFATALITY_CASUALTY_Delay_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        //Map<Integer, Integer> mRescues_By_BUILDING_OR_PROPERTY_TYPE = mAllTotalRescues_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
+        //Map<Integer, Integer> mFATALITY_CASUALTY_Rescues_By_BUILDING_OR_PROPERTY_TYPE = mAllFATALITY_CASUALTY_Rescues_BY_BUILDING_OR_PROPERTY_TYPE.get(yearID);
 
+        int mediumRise45 = mMediumRise45.get(yearID);
+        int mediumRise45FC = mMediumRise45_FATALITY_CASUALTY.get(yearID);
+        int mediumRise45NC = mMediumRise45_NoCompartmentation.get(yearID);
+        int mediumRise45NCFC = mMediumRise45_NoCompartmentation_FATALITY_CASUALTY.get(yearID);
+        int mediumRise45AM2 = mMediumRise45_AffectingMoreThan2Floors.get(yearID);
+        int mediumRise45AM2FC = mMediumRise45_AffectingMoreThan2Floors_FATALITY_CASUALTY.get(yearID);
+        int mediumRise45CAM2 = mMediumRise45_Cladding_AffectingMoreThan2Floors.get(yearID);
+        int mediumRise45CAM2FC = mMediumRise45_Cladding_AffectingMoreThan2Floors_FATALITY_CASUALTY.get(yearID);
+        int mediumRise6789 = mMediumRise6789.get(yearID);
+        int mediumRise6789FC = mMediumRise6789_FATALITY_CASUALTY.get(yearID);
+        int mediumRise6789NC = mMediumRise6789_NoCompartmentation.get(yearID);
+        int mediumRise6789NCFC = mMediumRise6789_NoCompartmentation_FATALITY_CASUALTY.get(yearID);
+        int mediumRise6789AM2 = mMediumRise6789_AffectingMoreThan2Floors.get(yearID);
+        int mediumRise6789AM2FC = mMediumRise6789_AffectingMoreThan2Floors_FATALITY_CASUALTY.get(yearID);
+        int mediumRise6789CAM2 = mMediumRise6789_Cladding_AffectingMoreThan2Floors.get(yearID);
+        int mediumRise6789CAM2FC = mMediumRise6789_Cladding_AffectingMoreThan2Floors_FATALITY_CASUALTY.get(yearID);
+        
         int total = 0;
         Iterator<Integer> ite;
         ite = mFATALITY_CASUALTY.keySet().iterator();
@@ -1367,7 +1792,7 @@ public class F_Main extends F_Object {
         int totalFC = mFATALITY_CASUALTY.get(valFATALITY_CASUALTY);
         int varBUILDING_OR_PROPERTY_TYPE = env.data.vname2id.get(F_Strings.BUILDING_OR_PROPERTY_TYPE);
         int valBungalow = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.BungalowSingleOccupancy);
-        int valPurposeBuiltFlatHighRise = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltHighRiseFlats);
+        int valPurposeBuiltHighRiseFlats = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltHighRiseFlats);
         int valPurposeBuiltMediumRiseFlats = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltMediumRiseFlats);
         int valPurposeBuiltLowRiseFlats = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltLowRiseFlats);
         int b = mBUILDING_OR_PROPERTY_TYPE.get(valBungalow);
@@ -1406,16 +1831,16 @@ public class F_Main extends F_Object {
         if (v != null) {
             bFCCAM2 += v;
         }
-
-        int pb = mBUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltFlatHighRise)
+        // PB
+        int pb = mBUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats)
                 + mBUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltMediumRiseFlats)
                 + mBUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
-        int pbFC = mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltFlatHighRise)
+        int pbFC = mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats)
                 + mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltMediumRiseFlats)
                 + mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
         int rpb = r.purposeBuiltFlatHighRise + r.purposeBuiltFlatLowRise;
         int pbNC = 0;
-        v = mNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltFlatHighRise);
+        v = mNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
         if (v != null) {
             pbNC += v;
         }
@@ -1428,7 +1853,7 @@ public class F_Main extends F_Object {
             pbNC += v;
         }
         int pbFCNC = 0;
-        v = mFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltFlatHighRise);
+        v = mFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
         if (v != null) {
             pbFCNC += v;
         }
@@ -1441,7 +1866,7 @@ public class F_Main extends F_Object {
             pbFCNC += v;
         }
         int pbAM2 = 0;
-        v = mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltFlatHighRise);
+        v = mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
         if (v != null) {
             pbAM2 += v;
         }
@@ -1454,7 +1879,7 @@ public class F_Main extends F_Object {
             pbAM2 += v;
         }
         int pbFCAM2 = 0;
-        v = mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltFlatHighRise);
+        v = mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
         if (v != null) {
             pbFCAM2 += v;
         }
@@ -1467,7 +1892,7 @@ public class F_Main extends F_Object {
             pbFCAM2 += v;
         }
         int pbCAM2 = 0;
-        v = mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltFlatHighRise);
+        v = mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
         if (v != null) {
             pbCAM2 += v;
         }
@@ -1480,7 +1905,7 @@ public class F_Main extends F_Object {
             pbCAM2 += v;
         }
         int pbFCCAM2 = 0;
-        v = mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltFlatHighRise);
+        v = mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
         if (v != null) {
             pbFCCAM2 += v;
         }
@@ -1488,6 +1913,76 @@ public class F_Main extends F_Object {
         if (v != null) {
             pbFCCAM2 += v;
         }
+        v = mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
+        if (v != null) {
+            pbFCCAM2 += v;
+        }
+        // PBHR
+        int pbhr = mBUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats) + mediumRise6789;
+        int pbhrFC = mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats)
+                + mediumRise6789FC;
+        int rpbhr = r.purposeBuiltFlatHighRise;
+        int pbhrNC = mediumRise6789NC;
+        v = mNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
+        if (v != null) {
+            pbhrNC += v;
+        }
+        int pbhrFCNC = mediumRise6789NCFC;
+        v = mFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
+        if (v != null) {
+            pbhrFCNC += v;
+        }
+        int pbhrAM2 = mediumRise6789AM2;
+        v = mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
+        if (v != null) {
+            pbhrAM2 += v;
+        }
+        int pbhrFCAM2 = mediumRise6789AM2FC;
+        v = mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
+        if (v != null) {
+            pbhrFCAM2 += v;
+        }
+        int pbhrCAM2 = mediumRise6789CAM2;
+        v = mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
+        if (v != null) {
+            pbCAM2 += v;
+        }
+        int pbhrFCCAM2 = mediumRise6789CAM2FC;
+        v = mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
+        if (v != null) {
+            pbFCCAM2 += v;
+        }
+        // PBLR 
+        int pblr = mBUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats) + mediumRise45;
+        int pblrFC = mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats)
+                + mediumRise45FC;
+        int rpblr = r.purposeBuiltFlatLowRise;
+        int pblrNC = mediumRise45NC;
+        v = mNoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
+        if (v != null) {
+            pblrNC += v;
+        }
+        int pblrFCNC = mediumRise45NCFC;
+        v = mFATALITY_CASUALTY_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
+        if (v != null) {
+            pblrFCNC += v;
+        }
+        int pblrAM2 = mediumRise45AM2;
+        v = mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
+        if (v != null) {
+            pbhrAM2 += v;
+        }
+        int pblrFCAM2 = mediumRise45AM2FC;
+        v = mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
+        if (v != null) {
+            pbhrFCAM2 += v;
+        }
+        int pblrCAM2 = mediumRise45CAM2;
+        v = mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
+        if (v != null) {
+            pbCAM2 += v;
+        }
+        int pblrFCCAM2 = mediumRise45CAM2FC;
         v = mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
         if (v != null) {
             pbFCCAM2 += v;
@@ -1532,6 +2027,36 @@ public class F_Main extends F_Object {
                 + "," + pbFCAM2 // PB FATALITY_CASUALTY_AffectingMoreThan2Floors
                 + "," + pbCAM2 // PB Cladding_AffectingMoreThan2Floors
                 + "," + pbFCCAM2 // PB FATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors
+                // PBHR
+                + "," + r.purposeBuiltFlatHighRise // PBHR dwellings
+                + "," + (r.purposeBuiltFlatHighRise * 100) / (double) r.allDwellings // PBHR % of Total dwellings
+                + "," + pbhr // PBHR fires
+                + "," + (pbhr * 100) / (double) total // PBHR fires as % of Total fires
+                + "," + (pbhr * 10000) / (double) r.purposeBuiltFlatHighRise
+                + "," + pbhrFC // PBHR FATALITY_CASUALTY fires
+                + "," + (pbhrFC * 100) / (double) total // PBHR FATALITY_CASUALTY fires as % of Total fires
+                + "," + (pbhrFC * 100) / (double) totalFC // PBHR FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires
+                + "," + pbhrNC // PBHR NoCompartmentationInBuilding
+                + "," + pbhrFCNC // PBHR FATALITY_CASUALTY_NoCompartmentationInBuilding
+                + "," + pbhrAM2 // PBHR AffectingMoreThan2Floors
+                + "," + pbhrFCAM2 // PBHR FATALITY_CASUALTY_AffectingMoreThan2Floors
+                + "," + pbhrCAM2 // PBHR Cladding_AffectingMoreThan2Floors
+                + "," + pbhrFCCAM2 // PBHR FATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors
+                // PBLR
+                + "," + r.purposeBuiltFlatLowRise // PBLR dwellings
+                + "," + (r.purposeBuiltFlatLowRise * 100) / (double) r.allDwellings // PBLR % of Total dwellings
+                + "," + pblr // PBLR fires
+                + "," + (pblr * 100) / (double) total // PBLR fires as % of Total fires
+                + "," + (pblr * 10000) / (double) r.purposeBuiltFlatLowRise
+                + "," + pblrFC // PBLR FATALITY_CASUALTY fires
+                + "," + (pblrFC * 100) / (double) total // PBLR FATALITY_CASUALTY fires as % of Total fires
+                + "," + (pblrFC * 100) / (double) totalFC // PBLR FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires
+                + "," + pblrNC // PBLR NoCompartmentationInBuilding
+                + "," + pblrFCNC // PBLR FATALITY_CASUALTY_NoCompartmentationInBuilding
+                + "," + pblrAM2 // PBLR AffectingMoreThan2Floors
+                + "," + pblrFCAM2 // PBLR FATALITY_CASUALTY_AffectingMoreThan2Floors
+                + "," + pblrCAM2 // PBLR Cladding_AffectingMoreThan2Floors
+                + "," + pblrFCCAM2 // PBLR FATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors
         );
     }
 
@@ -2189,7 +2714,7 @@ public class F_Main extends F_Object {
         }
         return r;
     }
-    
+
     /**
      *
      * @param year Year
@@ -2231,8 +2756,8 @@ public class F_Main extends F_Object {
                     }
                     row = sheet.getRow(ar);
                     cell = row.getCell(1);
-                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.all_dwellings_types)) {
-                        System.out.println("Found \"" + F_Strings.allDwellings + "\".");
+                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.all_dwelling_types)) {
+                        System.out.println("Found \"" + F_Strings.all_dwelling_types + "\".");
                         r.allDwellings = formatCell(df, row.getCell(col));
                     }
                     row = sheet.getRow(br + pbd);
