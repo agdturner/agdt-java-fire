@@ -1945,12 +1945,12 @@ public class F_Main extends F_Object {
         int pbhrCAM2 = mediumRise6789CAM2;
         v = mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
         if (v != null) {
-            pbCAM2 += v;
+            pbhrCAM2 += v;
         }
         int pbhrFCCAM2 = mediumRise6789CAM2FC;
         v = mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
         if (v != null) {
-            pbFCCAM2 += v;
+            pbhrFCCAM2 += v;
         }
         // PBLR 
         int pblr = mBUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats) + mediumRise45;
@@ -1970,22 +1970,22 @@ public class F_Main extends F_Object {
         int pblrAM2 = mediumRise45AM2;
         v = mAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
         if (v != null) {
-            pbhrAM2 += v;
+            pblrAM2 += v;
         }
         int pblrFCAM2 = mediumRise45AM2FC;
         v = mFATALITY_CASUALTY_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
         if (v != null) {
-            pbhrFCAM2 += v;
+            pblrFCAM2 += v;
         }
         int pblrCAM2 = mediumRise45CAM2;
         v = mCladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
         if (v != null) {
-            pbCAM2 += v;
+            pblrCAM2 += v;
         }
         int pblrFCCAM2 = mediumRise45CAM2FC;
         v = mFATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
         if (v != null) {
-            pbFCCAM2 += v;
+            pblrFCCAM2 += v;
         }
         pw.println(r.year
                 + "," + r.allDwellings
@@ -2028,11 +2028,11 @@ public class F_Main extends F_Object {
                 + "," + pbCAM2 // PB Cladding_AffectingMoreThan2Floors
                 + "," + pbFCCAM2 // PB FATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors
                 // PBHR
-                + "," + r.purposeBuiltFlatHighRise // PBHR dwellings
-                + "," + (r.purposeBuiltFlatHighRise * 100) / (double) r.allDwellings // PBHR % of Total dwellings
+                + "," + rpbhr // PBHR dwellings
+                + "," + (rpbhr * 100) / (double) r.allDwellings // PBHR % of Total dwellings
                 + "," + pbhr // PBHR fires
                 + "," + (pbhr * 100) / (double) total // PBHR fires as % of Total fires
-                + "," + (pbhr * 10000) / (double) r.purposeBuiltFlatHighRise
+                + "," + (pbhr * 10000) / (double) rpbhr
                 + "," + pbhrFC // PBHR FATALITY_CASUALTY fires
                 + "," + (pbhrFC * 100) / (double) total // PBHR FATALITY_CASUALTY fires as % of Total fires
                 + "," + (pbhrFC * 100) / (double) totalFC // PBHR FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires
@@ -2043,11 +2043,11 @@ public class F_Main extends F_Object {
                 + "," + pbhrCAM2 // PBHR Cladding_AffectingMoreThan2Floors
                 + "," + pbhrFCCAM2 // PBHR FATALITY_CASUALTY_Cladding_AffectingMoreThan2Floors
                 // PBLR
-                + "," + r.purposeBuiltFlatLowRise // PBLR dwellings
-                + "," + (r.purposeBuiltFlatLowRise * 100) / (double) r.allDwellings // PBLR % of Total dwellings
+                + "," + rpblr // PBLR dwellings
+                + "," + (rpblr * 100) / (double) r.allDwellings // PBLR % of Total dwellings
                 + "," + pblr // PBLR fires
                 + "," + (pblr * 100) / (double) total // PBLR fires as % of Total fires
-                + "," + (pblr * 10000) / (double) r.purposeBuiltFlatLowRise
+                + "," + (pblr * 10000) / (double) rpblr
                 + "," + pblrFC // PBLR FATALITY_CASUALTY fires
                 + "," + (pblrFC * 100) / (double) total // PBLR FATALITY_CASUALTY fires as % of Total fires
                 + "," + (pblrFC * 100) / (double) totalFC // PBLR FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires
