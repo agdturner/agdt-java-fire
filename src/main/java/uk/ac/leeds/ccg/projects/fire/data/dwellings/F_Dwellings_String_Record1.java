@@ -5,7 +5,7 @@ package uk.ac.leeds.ccg.projects.fire.data.dwellings;
 
 import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
 
-public class F_Dwellings_Record1 extends F_Dwellings_Record0 {
+public class F_Dwellings_String_Record1 extends F_Dwellings_String_Record0 {
 
     private static final long serialVersionUID = 1L;
 
@@ -15,7 +15,7 @@ public class F_Dwellings_Record1 extends F_Dwellings_Record0 {
     protected String tALARM_SYSTEM_TYPE;
     protected String tALARM_REASON_FOR_POOR_OUTCOME;
 
-    public F_Dwellings_Record1(F_RecordID i, String[] s) throws Exception {
+    public F_Dwellings_String_Record1(F_RecordID i, String[] s) throws Exception {
         super(i);
         inittID_number(s[0]);
         inittFRS_NAME(s[1]);

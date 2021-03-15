@@ -16,6 +16,7 @@
 package uk.ac.leeds.ccg.projects.fire.data.dwellings;
 
 import uk.ac.leeds.ccg.data.Data_Record;
+import uk.ac.leeds.ccg.data.id.Data_RecordID;
 import uk.ac.leeds.ccg.projects.fire.core.F_Strings;
 import uk.ac.leeds.ccg.projects.fire.data.F_Data;
 import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
@@ -25,7 +26,7 @@ import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
  *
  * @author Andy Turner
  */
-public class F_Dwellings_Record extends Data_Record {
+public class F_Dwellings_Integer_Record0 extends Data_Record {
 
     private static final long serialVersionUID = 1L;
 
@@ -95,8 +96,23 @@ public class F_Dwellings_Record extends Data_Record {
     public Integer tBUILDING_EVACUATION_DELAY_DESCRIPTION;
     public Integer tBUILDING_EVACUATION_TIME_DESCRIPTION;
 
-    public F_Dwellings_Record(F_Dwellings_Record0 r, F_Data d) throws Exception {
+    public F_Dwellings_Integer_Record0(Data_RecordID id) {
+        super(id);
+    }
+
+    public F_Dwellings_Integer_Record0(F_Dwellings_String_Record0 r, F_Data d) throws Exception {
         super(r.id);
+        init0(r, d);
+        //tOCCUPANCY_TYPE = d.name2ids.get(d.vname2id.get(F_Strings.OCCUPANCY_TYPE)).get(r.tOCCUPANCY_TYPE);
+        tOCCUPIED_NORMAL = d.name2ids.get(d.vname2id.get(F_Strings.OCCUPIED_NORMAL)).get(r.tOCCUPIED_NORMAL);
+        //tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = d.name2ids.get(d.vname2id.get(F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT)).get(r.tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
+        //tALARM_SYSTEM = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_SYSTEM)).get(r.tALARM_SYSTEM);
+        //tALARM_SYSTEM_TYPE = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_SYSTEM_TYPE)).get(r.tALARM_SYSTEM_TYPE);
+        //tALARM_REASON_FOR_POOR_OUTCOME = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME)).get(r.tALARM_REASON_FOR_POOR_OUTCOME);
+        init0(r, d);
+    }
+
+    protected final void init0(F_Dwellings_String_Record0 r, F_Data d) throws Exception {
         tFRS_NAME = d.name2ids.get(d.vname2id.get(F_Strings.FRS_NAME)).get(r.tFRS_NAME);
         tE_CODE = d.name2ids.get(d.vname2id.get(F_Strings.E_CODE)).get(r.tE_CODE);
         tFINANCIAL_YEAR = d.name2ids.get(d.vname2id.get(F_Strings.FINANCIAL_YEAR)).get(r.tFINANCIAL_YEAR);
@@ -112,12 +128,9 @@ public class F_Dwellings_Record extends Data_Record {
         tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = d.name2ids.get(d.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION)).get(r.tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION);
         tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION = d.name2ids.get(d.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION)).get(r.tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION);
         tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT = d.name2ids.get(d.vname2id.get(F_Strings.BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT)).get(r.tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT);
-        //tOCCUPANCY_TYPE = d.name2ids.get(d.vname2id.get(F_Strings.OCCUPANCY_TYPE)).get(r.tOCCUPANCY_TYPE);
-        tOCCUPIED_NORMAL = d.name2ids.get(d.vname2id.get(F_Strings.OCCUPIED_NORMAL)).get(r.tOCCUPIED_NORMAL);
-        //tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = d.name2ids.get(d.vname2id.get(F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT)).get(r.tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
-        //tALARM_SYSTEM = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_SYSTEM)).get(r.tALARM_SYSTEM);
-        //tALARM_SYSTEM_TYPE = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_SYSTEM_TYPE)).get(r.tALARM_SYSTEM_TYPE);
-        //tALARM_REASON_FOR_POOR_OUTCOME = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME)).get(r.tALARM_REASON_FOR_POOR_OUTCOME);
+    }
+
+    protected final void init1(F_Dwellings_String_Record0 r, F_Data d) throws Exception {
         tACCIDENTAL_OR_DELIBERATE = d.name2ids.get(d.vname2id.get(F_Strings.ACCIDENTAL_OR_DELIBERATE)).get(r.tACCIDENTAL_OR_DELIBERATE);
         tVEHICLES = d.name2ids.get(d.vname2id.get(F_Strings.VEHICLES)).get(r.tVEHICLES);
         tVEHICLES_CODE = d.name2ids.get(d.vname2id.get(F_Strings.VEHICLES_CODE)).get(r.tVEHICLES_CODE);
@@ -222,6 +235,14 @@ public class F_Dwellings_Record extends Data_Record {
 
     public String getBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION(F_Data data) {
         return data.id2names.get(data.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION)).get(tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION);
+    }
+
+    public String getBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT(F_Data data) {
+        return data.id2names.get(data.vname2id.get(F_Strings.BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT)).get(tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT);
+    }
+    
+    public String getOCCUPIED_NORMAL(F_Data data) {
+        return data.id2names.get(data.vname2id.get(F_Strings.OCCUPIED_NORMAL)).get(tOCCUPIED_NORMAL);
     }
 
     public String getACCIDENTAL_OR_DELIBERATE(F_Data data) {
@@ -397,13 +418,24 @@ public class F_Dwellings_Record extends Data_Record {
     }
 
     public static String getCSVHeader() {
-        String r = "ID,FRS_NAME,E_CODE,FINANCIAL_YEAR,MONTH_NAME,"
+        String r = getCSVHeader0()
+                + "OCCUPIED_NORMAL,"
+                + getCSVHeader1();
+        return r;
+    }
+
+    public static String getCSVHeader0() {
+        return "ID,FRS_NAME,E_CODE,FINANCIAL_YEAR,MONTH_NAME,"
                 + "WEEKDAY_WEEKEND,DAY_NIGHT,BUILDING_OR_PROPERTY_TYPE,"
                 + "LATE_CALL,MULTI_SEATED_FLAG,IGNITION_TO_DISCOVERY,"
                 + "DISCOVERY_TO_CALL,HOW_DISCOVERED_DESCRIPTION,"
                 + "BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,"
                 + "BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION,"
-                + "ACCIDENTAL_OR_DELIBERATE,VEHICLES,VEHICLES_CODE,PERSONNEL,"
+                + "BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT,";
+    }
+    
+    public static String getCSVHeader1() {
+        return "ACCIDENTAL_OR_DELIBERATE,VEHICLES,VEHICLES_CODE,PERSONNEL,"
                 + "PERSONNEL_CODE,STARTING_DELAY_DESCRIPTION,"
                 + "ACTION_NON_FRS_DESCRIPTION,ACTION_FRS_DESCRIPTION,"
                 + "CAUSE_OF_FIRE,IGNITION_POWER,SOURCE_OF_IGNITION,"
@@ -437,10 +469,16 @@ public class F_Dwellings_Record extends Data_Record {
                 + "EVACUATIONS_CODE,"
                 + "BUILDING_EVACUATION_DELAY_DESCRIPTION,"
                 + "BUILDING_EVACUATION_TIME_DESCRIPTION";
+    }
+    
+    public String toString(F_Data data) {
+        String r = toString0(data);
+        r += ", OCCUPIED_NORMAL=" + getOCCUPIED_NORMAL(data);
+        r += toString1(data);
         return r;
     }
 
-    public String toString(F_Data data) {
+    public String toString0(F_Data data) {
         String r = "ID=" + getId();
         r += ", FRS_NAME=" + getFRS_NAME(data);
         r += ", E_CODE=" + getE_CODE(data);
@@ -456,7 +494,12 @@ public class F_Dwellings_Record extends Data_Record {
         r += ", HOW_DISCOVERED_DESCRIPTION=" + getHOW_DISCOVERED_DESCRIPTION(data);
         r += ", BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION=" + getBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION(data);
         r += ", BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION=" + getBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION(data);
-        r += ", ACCIDENTAL_OR_DELIBERATE=" + getACCIDENTAL_OR_DELIBERATE(data);
+        r += ", BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT=" + getBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT(data);
+        return r;
+    }
+    
+    public String toString1(F_Data data) {
+       String r = ", ACCIDENTAL_OR_DELIBERATE=" + getACCIDENTAL_OR_DELIBERATE(data);
         r += ", VEHICLES=" + getVEHICLES(data);
         r += ", VEHICLES_CODE=" + getVEHICLES_CODE(data);
         r += ", PERSONNEL=" + getPERSONNEL(data);
@@ -501,8 +544,15 @@ public class F_Dwellings_Record extends Data_Record {
         r += ", BUILDING_EVACUATION_TIME_DESCRIPTION=" + getBUILDING_EVACUATION_TIME_DESCRIPTION(data);
         return r;
     }
-
+    
     public String toCSVString(F_Data data) {
+        String r = toCSVString0(data);
+        r += "\",\"" + getOCCUPIED_NORMAL(data);
+        r += toCSVString1(data);
+        return r;
+    }
+    
+    public String toCSVString0(F_Data data) {
         String r = "" + getId().id;
         r += ",\"" + getFRS_NAME(data);
         r += "\",\"" + getE_CODE(data);
@@ -518,7 +568,12 @@ public class F_Dwellings_Record extends Data_Record {
         r += "\",\"" + getHOW_DISCOVERED_DESCRIPTION(data);
         r += "\",\"" + getBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION(data);
         r += "\",\"" + getBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION(data);
-        r += "\",\"" + getACCIDENTAL_OR_DELIBERATE(data);
+        r += "\",\"" + getBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT(data);
+        return r;
+    }
+    
+    public String toCSVString1(F_Data data) {
+        String r = "\",\"" + getACCIDENTAL_OR_DELIBERATE(data);
         r += "\",\"" + getVEHICLES(data);
         r += "\",\"" + getVEHICLES_CODE(data);
         r += "\",\"" + getPERSONNEL(data);

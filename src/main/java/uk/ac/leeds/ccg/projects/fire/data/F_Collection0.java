@@ -17,7 +17,8 @@ package uk.ac.leeds.ccg.projects.fire.data;
 
 import java.util.HashMap;
 import uk.ac.leeds.ccg.projects.fire.core.F_Object;
-import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_Record0;
+import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_String_Record0;
+import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_String_Record1;
 import uk.ac.leeds.ccg.projects.fire.id.F_CollectionID;
 import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
 
@@ -33,11 +34,13 @@ public class F_Collection0 extends F_Object {
 
     public final F_CollectionID id;
 
-    public final HashMap<F_RecordID, F_Dwellings_Record0> data;
+    public final HashMap<F_RecordID, F_Dwellings_String_Record0> data0;
+    public final HashMap<F_RecordID, F_Dwellings_String_Record1> data1;
 
     public F_Collection0(F_CollectionID i) {
         this.id = i;
-        data = new HashMap<>();
+        data0 = new HashMap<>();
+        data1 = new HashMap<>();
     }
 
 }

@@ -18,7 +18,7 @@ package uk.ac.leeds.ccg.projects.fire.data.dwellings;
 import uk.ac.leeds.ccg.data.Data_Record;
 import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
 
-public class F_Dwellings_Record0 extends Data_Record {
+public class F_Dwellings_String_Record0 extends Data_Record {
 
     private static final long serialVersionUID = 1L;
 
@@ -83,7 +83,7 @@ public class F_Dwellings_Record0 extends Data_Record {
     protected String tBUILDING_EVACUATION_DELAY_DESCRIPTION;
     protected String tBUILDING_EVACUATION_TIME_DESCRIPTION;
     
-    public F_Dwellings_Record0(F_RecordID i){
+    public F_Dwellings_String_Record0(F_RecordID i){
         super(i);
     }
 

@@ -29,7 +29,7 @@ public class F_Strings extends Generic_Strings {
 
     public static final String s_Fire = "Fire";
     public static final String s_Subsets = "Subsets";
-    
+
     // Variable names
     // --------------
     public static final String TOTAL = "TOTAL";
@@ -97,11 +97,9 @@ public class F_Strings extends Generic_Strings {
     public static final String EVACUATIONS_CODE = "EVACUATIONS_CODE";
     public static final String BUILDING_EVACUATION_DELAY_DESCRIPTION = "BUILDING_EVACUATION_DELAY_DESCRIPTION";
     public static final String BUILDING_EVACUATION_TIME_DESCRIPTION = "BUILDING_EVACUATION_TIME_DESCRIPTION";
-    
-    
+
     // Variable values
     // ---------------
-    
     // FINANCIAL_YEAR
     public static final String S2010_11 = "2010/11";
     public static final String S2011_12 = "2011/12";
@@ -113,15 +111,16 @@ public class F_Strings extends Generic_Strings {
     public static final String S2017_18 = "2017/18";
     public static final String S2018_19 = "2018/19";
     public static final String S2019_20 = "2019/20";
-    
+    public static final String s2010_20 = "2010_20";
+
     // BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION
     public static final String Cladding = "Cladding";
-    
+
     // FatalityOrCasualty
     public static final String FatalityOrCasualty = "Fatality/Casualty";
     //public static final String FatalityOrCasualty = "Fatality_OR_Casualty";
     public static final String None = "None";
-        
+
     // DAY_NIGHT
     public static final String Afternoon = "Afternoon";
     public static final String Evening = "Evening";
@@ -131,13 +130,13 @@ public class F_Strings extends Generic_Strings {
     // BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
     public static final String NoCompartmentationInBuilding = "No compartmentation in building";
     //public static final String NoCompartmentationInBuilding = "No_compartmentation_in_building";
-    
+
     // BUILDING_OR_PROPERTY_TYPE
     public static final String BungalowSingleOccupancy = "Bungalow - single occupancy";
     public static final String PurposeBuiltHighRiseFlats = "Purpose Built High Rise (10+) Flats";
     public static final String PurposeBuiltMediumRiseFlats = "Purpose Built Medium Rise (4-9) Flats";
     public static final String PurposeBuiltLowRiseFlats = "Purpose Built Low Rise (1-3) Flats/Maisonettes";
-    
+
     // spread_of_fire_d
     public static final String WholeBuildingOrAffectingMoreThan2Floors = "Whole Building/ Affecting more than 2 floors";
     //public static final String WholeBuildingOrAffectingMoreThan2Floors = "Whole_Building_OR__Affecting_more_than_2_floors";
@@ -145,10 +144,38 @@ public class F_Strings extends Generic_Strings {
     // STARTING_DELAY_DESCRIPTION 
     public static final String No_delay = "No delay";
     public static final String Delay = "Delay"; // This is an amalgam of any delay.
-    
+    //public static final String = "";
+
     // RESCUES
     public static final String OneOrMore = "OneOrMore"; // This is an amalgam for 1+
-            
+
+    // BUILDING_EVACUATION_DELAY_DESCRIPTION
+    public static final String DelayElderlyOrDisabled = "Delay due to: Elderly or disabled";
+    //public static final String = "";
+
+    // OCCUPANCY_TYPE
+    public static final String ThreeOrMoreAdultsUnderPensionableAgeNoChildren = "3 or more adults under pensionable age, no child/ren";
+    public static final String ThreeOrMoreAdultsWithDependantChildren = "3 or more adults with dependant child/ren";
+    public static final String CoupleBothUnderPensionableAgeWithNoChildren = "Couple both under pensionable age with no children";
+    public static final String CoupleOneOrMoreOverPensionableAgeNoChildren  = "Couple one or more over pensionable age, no child/ren";
+    public static final String CoupleWithDependantChildren = "Couple with dependant child/ren";
+    public static final String LoneParentWithDependantChildren = "Lone parent with dependant child/ren";
+    public static final String LonePersonOverPensionableAge = "Lone person over pensionable age";
+    public static final String LonePersonUnderPensionableAge = "Lone person under pensionable age";
+    public static final String NotKnown = "Not known";
+    public static final String Other = "Other";
+    //public static final String = "";
+    
+    // CAUSE_OF_FIRE
+    public static final String AccumulationOfFlammableMaterial = "Accumulation of flammable material";
+    public static final String FaultInEquipmentOrAppliance = "Fault in equipment or appliance";
+    public static final String FaultyFuelSupplyElectricity = "Faulty fuel supply - electricity";
+    public static final String FaultyFuelSupplyGas = "Faulty fuel supply - gas";
+    public static final String FaultyFuelSupplyPetrolProduct = "Faulty fuel supply - petrol product";
+    public static final String FaultyLeadsToEquipmentOrAppliance = "Faulty leads to equipment or appliance";
+    public static final String OverheatingUnknownCause = "Overheating, unknown cause";
+    public static final String FaultyEquipmentOrApplianceOrFuelSupplyOrLeadsOrOverheatingUnknownCause = "FaultyEquipmentOrApplianceOrFuelSupplyOrLeadsOrOverheatingUnknownCause";
+    
     // EHS data
     // --------
     public static final String allDwellings = "all dwellings";
@@ -157,7 +184,7 @@ public class F_Strings extends Generic_Strings {
     public static final String bungalow = "bungalow";
     public static final String purposeBuiltFlatLowRise = "purpose built flat, low rise";
     public static final String purposeBuiltFlatHighRise = "purpose built flat, high rise";
-    
+
     public F_Strings() {
         super();
     }
