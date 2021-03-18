@@ -17,15 +17,13 @@ public class F_Dwellings_Integer_Record1 extends F_Dwellings_Integer_Record0 {
     public Integer tALARM_REASON_FOR_POOR_OUTCOME;
 
     public F_Dwellings_Integer_Record1(F_Dwellings_String_Record1 r, F_Data d) throws Exception {
-        super(r.id);
-        init0(r, d);
+        super(r, d);
         tOCCUPANCY_TYPE = d.name2ids.get(d.vname2id.get(F_Strings.OCCUPANCY_TYPE)).get(r.tOCCUPANCY_TYPE);
         tOCCUPIED_NORMAL = d.name2ids.get(d.vname2id.get(F_Strings.OCCUPIED_NORMAL)).get(r.tOCCUPIED_NORMAL);
         tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = d.name2ids.get(d.vname2id.get(F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT)).get(r.tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
         tALARM_SYSTEM = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_SYSTEM)).get(r.tALARM_SYSTEM);
         tALARM_SYSTEM_TYPE = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_SYSTEM_TYPE)).get(r.tALARM_SYSTEM_TYPE);
         tALARM_REASON_FOR_POOR_OUTCOME = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME)).get(r.tALARM_REASON_FOR_POOR_OUTCOME);
-        init1(r, d);
     }
 
     /**

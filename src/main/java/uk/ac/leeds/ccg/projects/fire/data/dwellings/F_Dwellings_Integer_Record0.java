@@ -102,17 +102,6 @@ public class F_Dwellings_Integer_Record0 extends Data_Record {
 
     public F_Dwellings_Integer_Record0(F_Dwellings_String_Record0 r, F_Data d) throws Exception {
         super(r.id);
-        init0(r, d);
-        //tOCCUPANCY_TYPE = d.name2ids.get(d.vname2id.get(F_Strings.OCCUPANCY_TYPE)).get(r.tOCCUPANCY_TYPE);
-        tOCCUPIED_NORMAL = d.name2ids.get(d.vname2id.get(F_Strings.OCCUPIED_NORMAL)).get(r.tOCCUPIED_NORMAL);
-        //tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = d.name2ids.get(d.vname2id.get(F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT)).get(r.tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
-        //tALARM_SYSTEM = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_SYSTEM)).get(r.tALARM_SYSTEM);
-        //tALARM_SYSTEM_TYPE = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_SYSTEM_TYPE)).get(r.tALARM_SYSTEM_TYPE);
-        //tALARM_REASON_FOR_POOR_OUTCOME = d.name2ids.get(d.vname2id.get(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME)).get(r.tALARM_REASON_FOR_POOR_OUTCOME);
-        init0(r, d);
-    }
-
-    protected final void init0(F_Dwellings_String_Record0 r, F_Data d) throws Exception {
         tFRS_NAME = d.name2ids.get(d.vname2id.get(F_Strings.FRS_NAME)).get(r.tFRS_NAME);
         tE_CODE = d.name2ids.get(d.vname2id.get(F_Strings.E_CODE)).get(r.tE_CODE);
         tFINANCIAL_YEAR = d.name2ids.get(d.vname2id.get(F_Strings.FINANCIAL_YEAR)).get(r.tFINANCIAL_YEAR);
@@ -128,9 +117,7 @@ public class F_Dwellings_Integer_Record0 extends Data_Record {
         tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = d.name2ids.get(d.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION)).get(r.tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION);
         tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION = d.name2ids.get(d.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION)).get(r.tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION);
         tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT = d.name2ids.get(d.vname2id.get(F_Strings.BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT)).get(r.tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT);
-    }
-
-    protected final void init1(F_Dwellings_String_Record0 r, F_Data d) throws Exception {
+        tOCCUPIED_NORMAL = d.name2ids.get(d.vname2id.get(F_Strings.OCCUPIED_NORMAL)).get(r.tOCCUPIED_NORMAL);
         tACCIDENTAL_OR_DELIBERATE = d.name2ids.get(d.vname2id.get(F_Strings.ACCIDENTAL_OR_DELIBERATE)).get(r.tACCIDENTAL_OR_DELIBERATE);
         tVEHICLES = d.name2ids.get(d.vname2id.get(F_Strings.VEHICLES)).get(r.tVEHICLES);
         tVEHICLES_CODE = d.name2ids.get(d.vname2id.get(F_Strings.VEHICLES_CODE)).get(r.tVEHICLES_CODE);
