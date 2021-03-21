@@ -198,6 +198,7 @@ public class F_Strings extends Generic_Strings {
     // other_property_affected_close_d
     //public static final String AnotherPropertyAffected = "Another property was affected";
     //public static final String NoOtherPropertyAffected = "No other property was affected";
+    //
     // FIRE_SIZE_ON_ARRIVAL
     //public static final String LimitedTo2Floors = "Limited to 2 floors";
     //public static final String LimitedToFloorOfOrigin = "Limited to floor of origin (not whole building)";
@@ -206,6 +207,7 @@ public class F_Strings extends Generic_Strings {
     //public static final String NoFireDamage = "No fire damage";
     //public static final String RoofsOrRoofSpaces = "Roofs/ Roof spaces";
     //public static final String WholeBuildingOrAffectingMoreThan2Floors = "Whole Building/ Affecting more than 2 floors";
+    //
     // RESCUES
     public static final String OneOrMore = "OneOrMore"; // This is an amalgam for 1+
 
@@ -287,8 +289,9 @@ public class F_Strings extends Generic_Strings {
     public static final String AlarmPresent = "Alarm Present";
 
     // MULTI_SEATED_FLAG
-    //public static final String No = "no";
-    //public static final String Yes = "yes";
+    public static final String no = "no";
+    public static final String yes = "yes";
+    
     // IGNITION_TO_DISCOVERY
     public static final String FiveToThirtyMinutes = "5 to 30 minutes";
     public static final String Immediately = "Immediately";
@@ -348,6 +351,10 @@ public class F_Strings extends Generic_Strings {
     public static final String E101To250 = "101 to 250";
     public static final String E251To1000 = "251 to 1,000";
 
+    //FIRE_SAFETY Scores
+    public static final String FIRE_SAFETY_SUCCESS_SCORE = "FIRE_SAFETY_SUCCESS_SCORE";
+    public static final String FIRE_SAFETY_FAILURE_SCORE = "FIRE_SAFETY_FAILURE_SCORE";
+    
     //public static final String  = "";
     // EHS data
     // --------

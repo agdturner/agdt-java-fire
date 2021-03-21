@@ -43,7 +43,6 @@ import uk.ac.leeds.ccg.projects.fire.core.F_Object;
 import uk.ac.leeds.ccg.projects.fire.core.F_Strings;
 import uk.ac.leeds.ccg.projects.fire.data.F_Collection0;
 import uk.ac.leeds.ccg.projects.fire.data.F_Data;
-import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_String_Record0;
 import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_String_Record1;
 import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_String_Record2;
 import uk.ac.leeds.ccg.generic.io.Generic_Defaults;
@@ -54,6 +53,8 @@ import uk.ac.leeds.ccg.projects.fire.data.F_Collection;
 import uk.ac.leeds.ccg.projects.fire.data.F_Data0;
 import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_Integer_Record0;
 import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_Integer_Record1;
+import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_Integer_Record2;
+import uk.ac.leeds.ccg.projects.fire.data.dwellings.F_Dwellings_String_Record0;
 import uk.ac.leeds.ccg.projects.fire.data.ehs.F_ARecord;
 import uk.ac.leeds.ccg.projects.fire.id.F_CollectionID;
 import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
@@ -105,18 +106,8 @@ public class F_Main extends F_Object {
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllOCCUPANCY_TYPE = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_OCCUPANCY_TYPE = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllOCCUPIED_NORMAL = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_OCCUPIED_NORMAL = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllALARM_SYSTEM = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_ALARM_SYSTEM = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllALARM_SYSTEM_TYPE = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_ALARM_SYSTEM_TYPE = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllACCIDENTAL_OR_DELIBERATE = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_ACCIDENTAL_OR_DELIBERATE = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllVEHICLES = new HashMap<>();
@@ -201,6 +192,22 @@ public class F_Main extends F_Object {
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_BUILDING_EVACUATION_DELAY_DESCRIPTION = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllBUILDING_EVACUATION_TIME_DESCRIPTION = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION = new HashMap<>();
+    // Normal Dwelling Types
+    Map<Integer, Map<Integer, Integer>> mAllOCCUPANCY_TYPE = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_OCCUPANCY_TYPE = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllALARM_SYSTEM = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_ALARM_SYSTEM = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllALARM_SYSTEM_TYPE = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_ALARM_SYSTEM_TYPE = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
+    // Other Dwelling Types
+    Map<Integer, Map<Integer, Integer>> mAllFSO_APPLY = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_FSO_APPLY = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllSAFETY_SYSTEM = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_SAFETY_SYSTEM = new HashMap<>();
     // For floors 4 and 5 of Purpose Built Medium Rise
     Map<Integer, Integer> mMediumRise45 = new HashMap<>();
     Map<Integer, Integer> mMediumRise45_FATALITY_CASUALTY = new HashMap<>();
@@ -219,6 +226,11 @@ public class F_Main extends F_Object {
     Map<Integer, Integer> mMediumRise6789_WholeBuildingOrAffectingMoreThan2Floors_FATALITY_CASUALTY = new HashMap<>();
     Map<Integer, Integer> mMediumRise6789_Cladding_WholeBuildingOrAffectingMoreThan2Floors = new HashMap<>();
     Map<Integer, Integer> mMediumRise6789_Cladding_WholeBuildingOrAffectingMoreThan2Floors_FATALITY_CASUALTY = new HashMap<>();
+    // FIRE_SAFETY scores
+    Map<Integer, Map<Integer, Integer>> mAllFIRE_SAFETY_SUCCESS_SCORE = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFIRE_SAFETY_FAILURE_SCORE = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE = new HashMap<>();
 
     // Selected variable counts By FINANCIAL YEAR
     // ------------------------------------------
@@ -274,6 +286,11 @@ public class F_Main extends F_Object {
     // BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
     HashMap<Integer, HashMap<Integer, Integer>> mAllBSSMOEDNotApplicable_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_BSSMOEDNotApplicable_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // FIRE_SAFETY scores
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFIRE_SAFETY_SUCCESS_SCORE_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFIRE_SAFETY_FAILURE_SCORE_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
 
     // Multiple variable selections
     // ----------------------------
@@ -359,6 +376,11 @@ public class F_Main extends F_Object {
     // BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
     HashMap<Integer, Integer> mTotalBSSMOEDNotApplicable_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_BSSMOEDNotApplicable_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // FIRE_SAFETY scores
+    HashMap<Integer, Integer> mTotalFIRE_SAFETY_SUCCESS_SCORE_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFIRE_SAFETY_FAILURE_SCORE_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
 
     // Multiple variable selections
     HashMap<Integer, Integer> mTotalNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
@@ -423,8 +445,8 @@ public class F_Main extends F_Object {
      */
     public void run() throws ClassNotFoundException {
         try {
-            boolean doLoadData = true;
-            //boolean doLoadData = false;
+            //boolean doLoadData = true;
+            boolean doLoadData = false;
             if (doLoadData) {
                 env.data0 = new F_Data0(env);
                 env.data = new F_Data(env, 2010, 2019);
@@ -452,7 +474,8 @@ public class F_Main extends F_Object {
         Path indir = Paths.get(files.getInputDir().toString(), "HomeOffice",
                 "Restricted");
 
-        Map<String, Integer> tFINANCIAL_YEARVM = env.data.name2ids.get(0);
+        int varFINANCIAL_YEAR = env.data.vname2id.get(F_Strings.FINANCIAL_YEAR);
+        Map<String, Integer> tFINANCIAL_YEARVM = env.data.name2ids.get(varFINANCIAL_YEAR);
 
         // Load "other building - residential to send.xlsx"        
         Path f = Paths.get(indir.toString(),
@@ -494,12 +517,14 @@ public class F_Main extends F_Object {
                                 line[cell.getColumnIndex()] = getFormatted(df.formatCellValue(cell));
                             }
                             try {
-                                F_RecordID recID = new F_RecordID(Long.valueOf(line[0]));
-                                F_Dwellings_String_Record2 rec = new F_Dwellings_String_Record2(recID, line);
-                                recIDs.add(recID);
-                                c0.data0.put(recID, rec);
-                                Generic_Collections.addToMap(env.data0.cID2recIDs, cID, recID);
-                                env.data0.recID2cID.put(recID, cID);
+                                if (!line[0].isBlank()) {
+                                    F_RecordID recID = new F_RecordID(Long.valueOf(line[0]));
+                                    F_Dwellings_String_Record2 rec = new F_Dwellings_String_Record2(recID, line);
+                                    recIDs.add(recID);
+                                    c0.data2.put(recID, rec);
+                                    Generic_Collections.addToMap(env.data0.cID2recIDs, cID, recID);
+                                    env.data0.recID2cID.put(recID, cID);
+                                }
                             } catch (Exception e) {
                                 System.err.println("Error loading record " + ri + ", recID=" + line[0]);
                             }
@@ -514,7 +539,7 @@ public class F_Main extends F_Object {
             }
         }
         env.data0.cacheCollection(cID, c0);
-        //data.clearCollection(cID);
+        env.data0.clearCollection(cID);
 
         // Load other  dwellings data
         Path[] vfs = new Path[6];
@@ -563,14 +588,15 @@ public class F_Main extends F_Object {
                                     line[cell.getColumnIndex()] = getFormatted(df.formatCellValue(cell));
                                 }
                                 try {
-                                    F_RecordID recID = new F_RecordID(Long.valueOf(line[0]));
-                                    F_Dwellings_String_Record1 rec = new F_Dwellings_String_Record1(recID, line);
-                                    recIDs.add(recID);
-                                    c0.data1.put(recID, rec);
-                                    Generic_Collections.addToMap(env.data0.cID2recIDs, cID, recID);
-                                    env.data0.recID2cID.put(recID, cID);
+                                    if (!line[0].isBlank()) {
+                                        F_RecordID recID = new F_RecordID(Long.valueOf(line[0]));
+                                        recIDs.add(recID);
+                                        c0.data1.put(recID, new F_Dwellings_String_Record1(recID, line));
+                                        Generic_Collections.addToMap(env.data0.cID2recIDs, cID, recID);
+                                        env.data0.recID2cID.put(recID, cID);
+                                    }
                                 } catch (Exception e) {
-                                    //System.err.println("Error loading record " + ri + ", recID=" + line[0]);
+                                    System.err.println("Error loading record " + ri + ", recID=" + line[0]);
                                 }
                                 if (ri % 1000 == 0) {
                                     env.log("loaded record " + ri);
@@ -583,7 +609,7 @@ public class F_Main extends F_Object {
                 }
             }
             env.data0.cacheCollection(cID, c0);
-            //data.clearCollection(cID);
+            env.data0.clearCollection(cID);
         }
         /**
          * Summarise the data and organise it into collections of records for
@@ -617,12 +643,7 @@ public class F_Main extends F_Object {
             HashMap<String, Integer> mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = new HashMap<>();
             HashMap<String, Integer> mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION = new HashMap<>();
             HashMap<String, Integer> mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT = new HashMap<>();
-            HashMap<String, Integer> mOCCUPANCY_TYPE = new HashMap<>();
             HashMap<String, Integer> mOCCUPIED_NORMAL = new HashMap<>();
-            HashMap<String, Integer> mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
-            HashMap<String, Integer> mALARM_SYSTEM = new HashMap<>();
-            HashMap<String, Integer> mALARM_SYSTEM_TYPE = new HashMap<>();
-            HashMap<String, Integer> mALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
             HashMap<String, Integer> mACCIDENTAL_OR_DELIBERATE = new HashMap<>();
             HashMap<String, Integer> mVEHICLES = new HashMap<>();
             HashMap<String, Integer> mVEHICLES_CODE = new HashMap<>();
@@ -660,12 +681,22 @@ public class F_Main extends F_Object {
             HashMap<String, Integer> mRESPONSE_TIME_CODE = new HashMap<>();
             HashMap<String, Integer> mTIME_AT_SCENE = new HashMap<>();
             HashMap<String, Integer> mTIME_AT_SCENE_CODE = new HashMap<>();
-            HashMap<String, Integer> mFATALITY_CASUALTY_ = new HashMap<>();
+            HashMap<String, Integer> mFATALITY_CASUALTY = new HashMap<>();
             HashMap<String, Integer> mRESCUES = new HashMap<>();
             HashMap<String, Integer> mEVACUATIONS = new HashMap<>();
             HashMap<String, Integer> mEVACUATIONS_CODE = new HashMap<>();
             HashMap<String, Integer> mBUILDING_EVACUATION_DELAY_DESCRIPTION = new HashMap<>();
             HashMap<String, Integer> mBUILDING_EVACUATION_TIME_DESCRIPTION = new HashMap<>();
+            // Normal dwelling types 
+            HashMap<String, Integer> mOCCUPANCY_TYPE = new HashMap<>();
+            HashMap<String, Integer> mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
+            HashMap<String, Integer> mALARM_SYSTEM = new HashMap<>();
+            HashMap<String, Integer> mALARM_SYSTEM_TYPE = new HashMap<>();
+            HashMap<String, Integer> mALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
+            // Other dwelling types 
+            HashMap<String, Integer> mFSO_APPLY = new HashMap<>();
+            HashMap<String, Integer> mSAFETY_SYSTEM = new HashMap<>();
+
             System.out.println("env.data0.cID2recIDs.size()=" + env.data0.cID2recIDs.size());
             System.out.println("env.data0.recID2cID.size()=" + env.data0.recID2cID.size());
             System.out.println("env.data0.data.size()=" + env.data0.data.size());
@@ -673,76 +704,153 @@ public class F_Main extends F_Object {
             while (ite.hasNext()) {
                 F_CollectionID cid = ite.next();
                 System.out.println("cid=" + cid.toString());
-                //env.data0.env = env;
+                //env.data2.env = env;
                 c0 = env.data0.getCollection(cid);
                 Iterator<F_RecordID> ite2 = c0.data1.keySet().iterator();
                 while (ite2.hasNext()) {
                     F_RecordID id = ite2.next();
                     F_Dwellings_String_Record1 r = c0.data1.get(id);
-                    Generic_Collections.addToCount(mFRS_NAME, r.gettFRS_NAME(), 1);
-                    Generic_Collections.addToCount(mE_CODE, r.gettE_CODE(), 1);
-                    Generic_Collections.addToCount(mFINANCIAL_YEAR, r.gettFINANCIAL_YEAR(), 1);
-                    Generic_Collections.addToCount(mMONTH_NAME, r.gettMONTH_NAME(), 1);
-                    Generic_Collections.addToCount(mWEEKDAY_WEEKEND, r.gettWEEKDAY_WEEKEND(), 1);
-                    Generic_Collections.addToCount(mDAY_NIGHT, r.gettDAY_NIGHT(), 1);
-                    Generic_Collections.addToCount(mLATE_CALL, r.gettLATE_CALL(), 1);
-                    Generic_Collections.addToCount(mBUILDING_OR_PROPERTY_TYPE, r.gettBUILDING_OR_PROPERTY_TYPE(), 1);
-                    Generic_Collections.addToCount(mMULTI_SEATED_FLAG, r.gettMULTI_SEATED_FLAG(), 1);
-                    Generic_Collections.addToCount(mIGNITION_TO_DISCOVERY, r.gettIGNITION_TO_DISCOVERY(), 1);
-                    Generic_Collections.addToCount(mDISCOVERY_TO_CALL, r.gettDISCOVERY_TO_CALL(), 1);
-                    Generic_Collections.addToCount(mHOW_DISCOVERED_DESCRIPTION, r.gettHOW_DISCOVERED_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, r.gettBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, r.gettBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, r.gettBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT(), 1);
+                    Generic_Collections.addToCount(mFATALITY_CASUALTY, r.gettFATALITY_CASUALTY(), 1);
+                    addToCounts0(r,
+                            mFRS_NAME,
+                            mE_CODE,
+                            mFINANCIAL_YEAR,
+                            mMONTH_NAME,
+                            mWEEKDAY_WEEKEND,
+                            mDAY_NIGHT,
+                            mBUILDING_OR_PROPERTY_TYPE,
+                            mLATE_CALL,
+                            mMULTI_SEATED_FLAG,
+                            mIGNITION_TO_DISCOVERY,
+                            mDISCOVERY_TO_CALL,
+                            mHOW_DISCOVERED_DESCRIPTION,
+                            mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,
+                            mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION,
+                            mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT,
+                            mOCCUPIED_NORMAL,
+                            mACCIDENTAL_OR_DELIBERATE,
+                            mVEHICLES,
+                            mVEHICLES_CODE,
+                            mPERSONNEL,
+                            mPERSONNEL_CODE,
+                            mSTARTING_DELAY_DESCRIPTION,
+                            mACTION_NON_FRS_DESCRIPTION,
+                            mACTION_FRS_DESCRIPTION,
+                            mCAUSE_OF_FIRE,
+                            mIGNITION_POWER,
+                            mSOURCE_OF_IGNITION,
+                            mITEM_IGNITED,
+                            mITEM_CAUSING_SPREAD,
+                            mRAPID_FIRE_GROWTH,
+                            mCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION,
+                            mCAUSE_EXPLOSION_INVOLVED,
+                            mCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION,
+                            mCAUSE_EXPLOSION_STAGE_DESCRIPTION,
+                            mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
+                            mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
+                            mBUILDING_FLOORS_ABOVE_GROUND,
+                            mBUILDING_FLOORS_BELOW_GROUND,
+                            mBUILDING_FLOOR_ORIGIN,
+                            mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
+                            mBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION,
+                            mFIRE_START_LOCATION,
+                            mFIRE_SIZE_ON_ARRIVAL,
+                            mOTHER_PROPERTY_AFFECTED_ON_ARRIVAL,
+                            mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION,
+                            mBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION,
+                            mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION,
+                            mother_property_affected_close_d,
+                            mspread_of_fire_d,
+                            mRESPONSE_TIME,
+                            mRESPONSE_TIME_CODE,
+                            mTIME_AT_SCENE,
+                            mTIME_AT_SCENE_CODE,
+                            mRESCUES,
+                            mEVACUATIONS,
+                            mEVACUATIONS_CODE,
+                            mBUILDING_EVACUATION_DELAY_DESCRIPTION,
+                            mBUILDING_EVACUATION_TIME_DESCRIPTION);
+                    // Normal Dwelling Types
                     Generic_Collections.addToCount(mOCCUPANCY_TYPE, r.gettOCCUPANCY_TYPE(), 1);
-                    Generic_Collections.addToCount(mOCCUPIED_NORMAL, r.gettOCCUPIED_NORMAL(), 1);
                     Generic_Collections.addToCount(mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, r.gettWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT(), 1);
                     Generic_Collections.addToCount(mALARM_SYSTEM, r.gettALARM_SYSTEM(), 1);
                     Generic_Collections.addToCount(mALARM_SYSTEM_TYPE, r.gettALARM_SYSTEM_TYPE(), 1);
                     Generic_Collections.addToCount(mALARM_REASON_FOR_POOR_OUTCOME, r.gettALARM_REASON_FOR_POOR_OUTCOME(), 1);
-                    Generic_Collections.addToCount(mACCIDENTAL_OR_DELIBERATE, r.gettACCIDENTAL_OR_DELIBERATE(), 1);
-                    Generic_Collections.addToCount(mVEHICLES, r.gettVEHICLES(), 1);
-                    Generic_Collections.addToCount(mVEHICLES_CODE, r.gettVEHICLES_CODE(), 1);
-                    Generic_Collections.addToCount(mPERSONNEL, r.gettPERSONNEL(), 1);
-                    Generic_Collections.addToCount(mPERSONNEL_CODE, r.gettPERSONNEL_CODE(), 1);
-                    Generic_Collections.addToCount(mSTARTING_DELAY_DESCRIPTION, r.gettSTARTING_DELAY_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mACTION_NON_FRS_DESCRIPTION, r.gettACTION_NON_FRS_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mACTION_FRS_DESCRIPTION, r.gettACTION_FRS_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mCAUSE_OF_FIRE, r.gettCAUSE_OF_FIRE(), 1);
-                    Generic_Collections.addToCount(mIGNITION_POWER, r.gettIGNITION_POWER(), 1);
-                    Generic_Collections.addToCount(mSOURCE_OF_IGNITION, r.gettSOURCE_OF_IGNITION(), 1);
-                    Generic_Collections.addToCount(mITEM_IGNITED, r.gettITEM_IGNITED(), 1);
-                    Generic_Collections.addToCount(mITEM_CAUSING_SPREAD, r.gettITEM_CAUSING_SPREAD(), 1);
-                    Generic_Collections.addToCount(mRAPID_FIRE_GROWTH, r.gettRAPID_FIRE_GROWTH(), 1);
-                    Generic_Collections.addToCount(mCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION, r.gettCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mCAUSE_EXPLOSION_INVOLVED, r.gettCAUSE_EXPLOSION_INVOLVED(), 1);
-                    Generic_Collections.addToCount(mCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION, r.gettCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mCAUSE_EXPLOSION_STAGE_DESCRIPTION, r.gettCAUSE_EXPLOSION_STAGE_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, r.gettCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, r.gettBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mBUILDING_FLOORS_ABOVE_GROUND, r.gettBUILDING_FLOORS_ABOVE_GROUND(), 1);
-                    Generic_Collections.addToCount(mBUILDING_FLOORS_BELOW_GROUND, r.gettBUILDING_FLOORS_BELOW_GROUND(), 1);
-                    Generic_Collections.addToCount(mBUILDING_FLOOR_ORIGIN, r.gettBUILDING_FLOOR_ORIGIN(), 1);
-                    Generic_Collections.addToCount(mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, r.gettBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION, r.gettBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mFIRE_START_LOCATION, r.gettFIRE_START_LOCATION(), 1);
-                    Generic_Collections.addToCount(mFIRE_SIZE_ON_ARRIVAL, r.gettFIRE_SIZE_ON_ARRIVAL(), 1);
-                    Generic_Collections.addToCount(mOTHER_PROPERTY_AFFECTED_ON_ARRIVAL, r.gettOTHER_PROPERTY_AFFECTED_ON_ARRIVAL(), 1);
-                    Generic_Collections.addToCount(mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION, r.gettBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION, r.gettBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION, r.gettFIRE_SIZE_ON_ARRIVAL_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mother_property_affected_close_d, r.gettother_property_affected_close_d(), 1);
-                    Generic_Collections.addToCount(mspread_of_fire_d, r.gettspread_of_fire_d(), 1);
-                    Generic_Collections.addToCount(mRESPONSE_TIME, r.gettRESPONSE_TIME(), 1);
-                    Generic_Collections.addToCount(mRESPONSE_TIME_CODE, r.gettRESPONSE_TIME_CODE(), 1);
-                    Generic_Collections.addToCount(mTIME_AT_SCENE, r.gettTIME_AT_SCENE(), 1);
-                    Generic_Collections.addToCount(mTIME_AT_SCENE_CODE, r.gettTIME_AT_SCENE_CODE(), 1);
-                    Generic_Collections.addToCount(mFATALITY_CASUALTY_, r.gettFATALITY_CASUALTY(), 1);
-                    Generic_Collections.addToCount(mRESCUES, r.gettRESCUES(), 1);
-                    Generic_Collections.addToCount(mEVACUATIONS, r.gettEVACUATIONS(), 1);
-                    Generic_Collections.addToCount(mEVACUATIONS_CODE, r.gettEVACUATIONS_CODE(), 1);
-                    Generic_Collections.addToCount(mBUILDING_EVACUATION_DELAY_DESCRIPTION, r.gettBUILDING_EVACUATION_DELAY_DESCRIPTION(), 1);
-                    Generic_Collections.addToCount(mBUILDING_EVACUATION_TIME_DESCRIPTION, r.gettBUILDING_EVACUATION_TIME_DESCRIPTION(), 1);
+                }
+            }
+            ite = env.data0.data.keySet().iterator();
+            while (ite.hasNext()) {
+                F_CollectionID cid = ite.next();
+                System.out.println("cid=" + cid.toString());
+                //env.data2.env = env;
+                c0 = env.data0.getCollection(cid);
+                Iterator<F_RecordID> ite2 = c0.data2.keySet().iterator();
+                while (ite2.hasNext()) {
+                    F_RecordID id = ite2.next();
+                    F_Dwellings_String_Record2 r = c0.data2.get(id);
+                    Generic_Collections.addToCount(mFATALITY_CASUALTY, r.gettFATALITY_CASUALTY(), 1);
+                    addToCounts0(r,
+                            mFRS_NAME,
+                            mE_CODE,
+                            mFINANCIAL_YEAR,
+                            mMONTH_NAME,
+                            mWEEKDAY_WEEKEND,
+                            mDAY_NIGHT,
+                            mBUILDING_OR_PROPERTY_TYPE,
+                            mLATE_CALL,
+                            mMULTI_SEATED_FLAG,
+                            mIGNITION_TO_DISCOVERY,
+                            mDISCOVERY_TO_CALL,
+                            mHOW_DISCOVERED_DESCRIPTION,
+                            mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,
+                            mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION,
+                            mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT,
+                            mOCCUPIED_NORMAL,
+                            mACCIDENTAL_OR_DELIBERATE,
+                            mVEHICLES,
+                            mVEHICLES_CODE,
+                            mPERSONNEL,
+                            mPERSONNEL_CODE,
+                            mSTARTING_DELAY_DESCRIPTION,
+                            mACTION_NON_FRS_DESCRIPTION,
+                            mACTION_FRS_DESCRIPTION,
+                            mCAUSE_OF_FIRE,
+                            mIGNITION_POWER,
+                            mSOURCE_OF_IGNITION,
+                            mITEM_IGNITED,
+                            mITEM_CAUSING_SPREAD,
+                            mRAPID_FIRE_GROWTH,
+                            mCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION,
+                            mCAUSE_EXPLOSION_INVOLVED,
+                            mCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION,
+                            mCAUSE_EXPLOSION_STAGE_DESCRIPTION,
+                            mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
+                            mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
+                            mBUILDING_FLOORS_ABOVE_GROUND,
+                            mBUILDING_FLOORS_BELOW_GROUND,
+                            mBUILDING_FLOOR_ORIGIN,
+                            mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
+                            mBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION,
+                            mFIRE_START_LOCATION,
+                            mFIRE_SIZE_ON_ARRIVAL,
+                            mOTHER_PROPERTY_AFFECTED_ON_ARRIVAL,
+                            mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION,
+                            mBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION,
+                            mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION,
+                            mother_property_affected_close_d,
+                            mspread_of_fire_d,
+                            mRESPONSE_TIME,
+                            mRESPONSE_TIME_CODE,
+                            mTIME_AT_SCENE,
+                            mTIME_AT_SCENE_CODE,
+                            mRESCUES,
+                            mEVACUATIONS,
+                            mEVACUATIONS_CODE,
+                            mBUILDING_EVACUATION_DELAY_DESCRIPTION,
+                            mBUILDING_EVACUATION_TIME_DESCRIPTION);
+                    // Other Dwelling Types
+                    Generic_Collections.addToCount(mFSO_APPLY, r.gettFSO_APPLY(), 1);
+                    Generic_Collections.addToCount(mSAFETY_SYSTEM, r.gettSAFETY_SYSTEM(), 1);
                 }
             }
             print(F_Strings.FRS_NAME, mFRS_NAME);
@@ -760,12 +868,7 @@ public class F_Main extends F_Object {
             print(F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION);
             print(F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION);
             print(F_Strings.BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT);
-            print(F_Strings.OCCUPANCY_TYPE, mOCCUPANCY_TYPE);
             print(F_Strings.OCCUPIED_NORMAL, mOCCUPIED_NORMAL);
-            print(F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
-            print(F_Strings.ALARM_SYSTEM, mALARM_SYSTEM);
-            print(F_Strings.ALARM_SYSTEM_TYPE, mALARM_SYSTEM_TYPE);
-            print(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME, mALARM_REASON_FOR_POOR_OUTCOME);
             print(F_Strings.ACCIDENTAL_OR_DELIBERATE, mACCIDENTAL_OR_DELIBERATE);
             print(F_Strings.VEHICLES, mVEHICLES);
             print(F_Strings.VEHICLES_CODE, mVEHICLES_CODE);
@@ -803,13 +906,27 @@ public class F_Main extends F_Object {
             print(F_Strings.RESPONSE_TIME_CODE, mRESPONSE_TIME_CODE);
             print(F_Strings.TIME_AT_SCENE, mTIME_AT_SCENE);
             print(F_Strings.TIME_AT_SCENE_CODE, mTIME_AT_SCENE_CODE);
-            print(F_Strings.FATALITY_CASUALTY, mFATALITY_CASUALTY_);
+            print(F_Strings.FATALITY_CASUALTY, mFATALITY_CASUALTY);
             print(F_Strings.RESCUES, mRESCUES);
             print(F_Strings.EVACUATIONS, mEVACUATIONS);
             print(F_Strings.EVACUATIONS_CODE, mEVACUATIONS_CODE);
             print(F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION, mBUILDING_EVACUATION_DELAY_DESCRIPTION);
             print(F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION, mBUILDING_EVACUATION_TIME_DESCRIPTION);
+            // Normal Dwelling Types
+            print(F_Strings.OCCUPANCY_TYPE, mOCCUPANCY_TYPE);
+            print(F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
+            print(F_Strings.ALARM_SYSTEM, mALARM_SYSTEM);
+            print(F_Strings.ALARM_SYSTEM_TYPE, mALARM_SYSTEM_TYPE);
+            print(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME, mALARM_REASON_FOR_POOR_OUTCOME);
+            // Other Dwelling Types
+            print(F_Strings.FSO_APPLY, mFSO_APPLY);
+            print(F_Strings.SAFETY_SYSTEM, mSAFETY_SYSTEM);
+
+            // ---------------
             // Create env.data
+            // ---------------
+            // Create Lookups
+            // --------------
             createLookups(mFRS_NAME.keySet(), F_Strings.FRS_NAME);
             createLookups(mE_CODE.keySet(), F_Strings.E_CODE);
             //createLookups(mFINANCIAL_YEAR.keySet(), F_Strings.FINANCIAL_YEAR);
@@ -825,12 +942,7 @@ public class F_Main extends F_Object {
             createLookups(mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION.keySet(), F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION);
             createLookups(mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION.keySet(), F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION);
             createLookups(mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT.keySet(), F_Strings.BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT);
-            createLookups(mOCCUPANCY_TYPE.keySet(), F_Strings.OCCUPANCY_TYPE);
             createLookups(mOCCUPIED_NORMAL.keySet(), F_Strings.OCCUPIED_NORMAL);
-            createLookups(mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT.keySet(), F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
-            createLookups(mALARM_SYSTEM.keySet(), F_Strings.ALARM_SYSTEM);
-            createLookups(mALARM_SYSTEM_TYPE.keySet(), F_Strings.ALARM_SYSTEM_TYPE);
-            createLookups(mALARM_REASON_FOR_POOR_OUTCOME.keySet(), F_Strings.ALARM_REASON_FOR_POOR_OUTCOME);
             createLookups(mACCIDENTAL_OR_DELIBERATE.keySet(), F_Strings.ACCIDENTAL_OR_DELIBERATE);
             createLookups(mVEHICLES.keySet(), F_Strings.VEHICLES);
             createLookups(mVEHICLES_CODE.keySet(), F_Strings.VEHICLES_CODE);
@@ -868,64 +980,243 @@ public class F_Main extends F_Object {
             createLookups(mRESPONSE_TIME_CODE.keySet(), F_Strings.RESPONSE_TIME_CODE);
             createLookups(mTIME_AT_SCENE.keySet(), F_Strings.TIME_AT_SCENE);
             createLookups(mTIME_AT_SCENE_CODE.keySet(), F_Strings.TIME_AT_SCENE_CODE);
-            createLookups(mFATALITY_CASUALTY_.keySet(), F_Strings.FATALITY_CASUALTY);
+            createLookups(mFATALITY_CASUALTY.keySet(), F_Strings.FATALITY_CASUALTY);
             createLookups(mRESCUES.keySet(), F_Strings.RESCUES);
             createLookups(mEVACUATIONS.keySet(), F_Strings.EVACUATIONS);
             createLookups(mEVACUATIONS_CODE.keySet(), F_Strings.EVACUATIONS_CODE);
             createLookups(mBUILDING_EVACUATION_DELAY_DESCRIPTION.keySet(), F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION);
             createLookups(mBUILDING_EVACUATION_TIME_DESCRIPTION.keySet(), F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION);
-            // Organise data into collections by financial year
+            // Normal Dwelling Types
+            createLookups(mOCCUPANCY_TYPE.keySet(), F_Strings.OCCUPANCY_TYPE);
+            createLookups(mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT.keySet(), F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
+            createLookups(mALARM_SYSTEM.keySet(), F_Strings.ALARM_SYSTEM);
+            createLookups(mALARM_SYSTEM_TYPE.keySet(), F_Strings.ALARM_SYSTEM_TYPE);
+            createLookups(mALARM_REASON_FOR_POOR_OUTCOME.keySet(), F_Strings.ALARM_REASON_FOR_POOR_OUTCOME);
+            // Other Dwelling Types
+            createLookups(mFSO_APPLY.keySet(), F_Strings.FSO_APPLY);
+            createLookups(mSAFETY_SYSTEM.keySet(), F_Strings.SAFETY_SYSTEM);
+
+            // Organise data into collections by financial year and add FIRE_SAFETY scores 
+            // ---------------------------------------------------------------------------
+            HashMap<Integer, Integer> mFIRE_SAFETY_SUCCESS_SCORE = new HashMap<>();
+            HashMap<Integer, Integer> mFIRE_SAFETY_FAILURE_SCORE = new HashMap<>();
+
+            // MULTI_SEATED_FLAG
+            int varMSF = env.data.vname2id.get(F_Strings.MULTI_SEATED_FLAG);
+            int valMSF_Yes = env.data.name2ids.get(varMSF).get(F_Strings.yes);
+            // IGNITION_TO_DISCOVERY
+            int varITD = env.data.vname2id.get(F_Strings.IGNITION_TO_DISCOVERY);
+            Set<Integer> svalITD = new HashSet<>();
+            svalITD.add(env.data.name2ids.get(varITD).get(F_Strings.Over30MinutesAndUpto2Hours));
+            svalITD.add(env.data.name2ids.get(varITD).get(F_Strings.Over2Hours));
+            // DISCOVERY_TO_CALL
+            int varDTC = env.data.vname2id.get(F_Strings.DISCOVERY_TO_CALL);
+            Set<Integer> svalDTC = new HashSet<>();
+            svalDTC.add(env.data.name2ids.get(varDTC).get(F_Strings.Over30MinutesAndUpto2Hours));
+            svalDTC.add(env.data.name2ids.get(varDTC).get(F_Strings.Over2Hours));
+            // BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
+            int varBSSCD = env.data.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION);
+            int valBSSCD_SOCS = env.data.name2ids.get(varBSSCD).get(F_Strings.StoppedOrCheckedSpread);
+            Set<Integer> svalBSSCD = new HashSet<>();
+            svalBSSCD.add(env.data.name2ids.get(varBSSCD).get(F_Strings.BreachedCurrentBuildingWork));
+            svalBSSCD.add(env.data.name2ids.get(varBSSCD).get(F_Strings.BreachedFireDoorsLeftOpenOrIncorrectlyFitted));
+            svalBSSCD.add(env.data.name2ids.get(varBSSCD).get(F_Strings.BreachedPreviousBuildingWork));
+            svalBSSCD.add(env.data.name2ids.get(varBSSCD).get(F_Strings.DamageToCompartmentation));
+            svalBSSCD.add(env.data.name2ids.get(varBSSCD).get(F_Strings.FireSpreadThroughGapsOrVoidsInConstruction));
+            svalBSSCD.add(env.data.name2ids.get(varBSSCD).get(F_Strings.Other));
+            // BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
+            int varBSSMOED = env.data.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION);
+            int valBSSMOED_SOCS = env.data.name2ids.get(varBSSMOED).get(F_Strings.OKNoVisibleConcerns);
+            Set<Integer> svalBSSMOED = new HashSet<>();
+            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ExitsLocked));
+            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ExitsBlocked));
+            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ExitRouteBlockedBySmokeOrFlames));
+            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.PoorImplementation));
+            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ContentsContributingToAbnormalFireSpreadOrSmokeProduction));
+            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.Other));
+            // ALARM_REASON_FOR_POOR_OUTCOME
+            int varARFPO = env.data.vname2id.get(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME);
+            Set<Integer> svalARFPO = new HashSet<>();
+            svalARFPO.add(env.data.name2ids.get(varARFPO).get(F_Strings.AlarmRaisedBeforeSystemOperated));
+            svalARFPO.add(env.data.name2ids.get(varARFPO).get(F_Strings.DefectiveBattery));
+            svalARFPO.add(env.data.name2ids.get(varARFPO).get(F_Strings.FaultySystemOrIncorrectlyInstalled));
+            svalARFPO.add(env.data.name2ids.get(varARFPO).get(F_Strings.MissingBattery));
+            //svalARFPO.add(env.data.name2ids.get(varALARM_REASON_FOR_POOR_OUTCOME).get(F_Strings.NoAlarmPresent));
+            svalARFPO.add(env.data.name2ids.get(varARFPO).get(F_Strings.NoOtherPersonResponded));
+            svalARFPO.add(env.data.name2ids.get(varARFPO).get(F_Strings.NoPersonInEarshot));
+            svalARFPO.add(env.data.name2ids.get(varARFPO).get(F_Strings.OccupantsDidNotRespond));
+            svalARFPO.add(env.data.name2ids.get(varARFPO).get(F_Strings.OtherActPreventingAlarmFromOperating));
+            // STARTING_DELAY_DESCRIPTION
+            int varSDD = env.data.vname2id.get(F_Strings.STARTING_DELAY_DESCRIPTION);
+            int valSDD_SOCS = env.data.name2ids.get(varSDD).get(F_Strings.No_delay);
+            Set<Integer> svalSDD = new HashSet<>();
+            svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToSentToWrongLocation));
+            svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToVehicleAccessProblems));
+            svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToAccessingFireLargeSite));
+            svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToAccessingFireBuildingType));
+            svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToAccessingFireSecurity));
+            svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToLocationOfFireNotImmediatelyEvident));
+            svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToCivilDisturbance));
+            svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToAssaultOnFirefighters));
+            // CAUSE_OF_FIRE
+            int varCOF = env.data.vname2id.get(F_Strings.CAUSE_OF_FIRE);
+            Set<Integer> svalCOF = new HashSet<>();
+            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.AccumulationOfFlammableMaterial));
+            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultInEquipmentOrAppliance));
+            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyFuelSupplyElectricity));
+            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyFuelSupplyGas));
+            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyFuelSupplyPetrolProduct));
+            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyLeadsToEquipmentOrAppliance));
+            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.OverheatingUnknownCause));
+            // ITEM_CAUSING_SPREAD
+            int varICS = env.data.vname2id.get(F_Strings.ITEM_CAUSING_SPREAD);
+            Set<Integer> svalICS = new HashSet<>();
+            svalICS.add(env.data.name2ids.get(varICS).get(F_Strings.RubbishOrWasteOrRecycling));
+            svalICS.add(env.data.name2ids.get(varICS).get(F_Strings.StructuralOrFixturesOrFittings));
+            // RAPID_FIRE_GROWTH
+            int varRFG = env.data.vname2id.get(F_Strings.RAPID_FIRE_GROWTH);
+            int valRFG = env.data.name2ids.get(varRFG).get(F_Strings.Yes);
+            // BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION
+            int varBSCD = env.data.vname2id.get(F_Strings.BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION);
+            Set<Integer> svalBSCD = new HashSet<>();
+            svalBSCD.add(env.data.name2ids.get(varBSCD).get(F_Strings.Atria));
+            svalBSCD.add(env.data.name2ids.get(varBSCD).get(F_Strings.Cladding));
+            svalBSCD.add(env.data.name2ids.get(varBSCD).get(F_Strings.Other));
+            svalBSCD.add(env.data.name2ids.get(varBSCD).get(F_Strings.SandwichPanels));
+            svalBSCD.add(env.data.name2ids.get(varBSCD).get(F_Strings.TimberFramed));
+            // OTHER_PROPERTY_AFFECTED_ON_ARRIVAL
+            int varOPAOA = env.data.vname2id.get(F_Strings.OTHER_PROPERTY_AFFECTED_ON_ARRIVAL);
+            int valOPAOA = env.data.name2ids.get(varOPAOA).get(F_Strings.AnotherPropertyAffected);
+            // other_property_affected_close_d
+            int varOPAC = env.data.vname2id.get(F_Strings.other_property_affected_close_d);
+            int valOPAC = env.data.name2ids.get(varOPAC).get(F_Strings.AnotherPropertyAffected);
+            // FIRE_SIZE_ON_ARRIVAL
+            int varFSOA = env.data.vname2id.get(F_Strings.FIRE_SIZE_ON_ARRIVAL);
+            Set<Integer> svalFSOASuccess = new HashSet<>();
+            svalFSOASuccess.add(env.data.name2ids.get(varFSOA).get(F_Strings.LimitedToFloorOfOrigin));
+            svalFSOASuccess.add(env.data.name2ids.get(varFSOA).get(F_Strings.LimitedToItem1stIgnited));
+            svalFSOASuccess.add(env.data.name2ids.get(varFSOA).get(F_Strings.LimitedToRoomOfOrigin));
+            svalFSOASuccess.add(env.data.name2ids.get(varFSOA).get(F_Strings.NoFireDamage));
+            // spread_of_fire_d
+            int varSOF = env.data.vname2id.get(F_Strings.spread_of_fire_d);
+            Set<Integer> svalSOFSuccess = new HashSet<>();
+            svalSOFSuccess.add(env.data.name2ids.get(varSOF).get(F_Strings.LimitedToFloorOfOrigin));
+            svalSOFSuccess.add(env.data.name2ids.get(varSOF).get(F_Strings.LimitedToItem1stIgnited));
+            svalSOFSuccess.add(env.data.name2ids.get(varSOF).get(F_Strings.LimitedToRoomOfOrigin));
+            svalSOFSuccess.add(env.data.name2ids.get(varSOF).get(F_Strings.NoFireDamage));
+            // RESPONSE_TIME
+            int varRT = env.data.vname2id.get(F_Strings.RESPONSE_TIME);
+            Set<Integer> svalRTSuccess = new HashSet<>();
+            svalRTSuccess.add(env.data.name2ids.get(varRT).get(F_Strings.T1To2mins));
+            svalRTSuccess.add(env.data.name2ids.get(varRT).get(F_Strings.T2To3mins));
+            svalRTSuccess.add(env.data.name2ids.get(varRT).get(F_Strings.T3To4mins));
+            svalRTSuccess.add(env.data.name2ids.get(varRT).get(F_Strings.T4To5mins));
+            svalRTSuccess.add(env.data.name2ids.get(varRT).get(F_Strings.T5To6mins));
+            svalRTSuccess.add(env.data.name2ids.get(varRT).get(F_Strings.T6To7mins));
+            svalRTSuccess.add(env.data.name2ids.get(varRT).get(F_Strings.T7To8mins));
+            svalRTSuccess.add(env.data.name2ids.get(varRT).get(F_Strings.T8To9mins));
+            svalRTSuccess.add(env.data.name2ids.get(varRT).get(F_Strings.T9To10mins));
+            svalRTSuccess.add(env.data.name2ids.get(varRT).get(F_Strings.T10To15mins));
+            Set<Integer> svalRTFailure = new HashSet<>();
+            svalRTFailure.add(env.data.name2ids.get(varRT).get(F_Strings.T15To20mins));
+            svalRTFailure.add(env.data.name2ids.get(varRT).get(F_Strings.T20To60mins));
+            // FATALITY_CASUALTY
+            int varFC = env.data.vname2id.get(F_Strings.FATALITY_CASUALTY);
+            int valFC = env.data.name2ids.get(varFC).get(F_Strings.FatalityOrCasualty);
+            // RESCUES
+            int varR = env.data.vname2id.get(F_Strings.RESCUES);
+            int valR = env.data.name2ids.get(varR).get(F_Strings.P0);
+            // EVACUATIONS
+            int varE = env.data.vname2id.get(F_Strings.EVACUATIONS);
+            int valE = env.data.name2ids.get(varE).get(F_Strings.P0);
+            // BUILDING_EVACUATION_DELAY_DESCRIPTION
+            int varBEDD = env.data.vname2id.get(F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION);
+            int valBEDD = env.data.name2ids.get(varBEDD).get(F_Strings.NotApplicable);
+            Set<Integer> varBEDDFailure = new HashSet<>();
+            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToFirefightingActionsPublic));
+            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToOccupantsDidNotRespondToAutomaticAlarm));
+            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayElderlyOrDisabled));
+            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToReenteredBuilding));
+            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToBuildingManagementPoor));
+            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToBuildingLayoutOrSignagePoor));
+            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToFirefightingActionsByFireServiceContraflowOnStairs));
+            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeExitsLocked));
+            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeItemsStored));
+            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeNotSuitable));
+            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeOther));
+
             //Map<String, Integer> tFINANCIAL_YEARVM = env.data.name2ids.get(0);
+            int vnameid = env.data.vname2id.size();
+            env.data.vname2id.put(F_Strings.FIRE_SAFETY_SUCCESS_SCORE, vnameid);
+            env.data.id2vname.put(vnameid, F_Strings.FIRE_SAFETY_SUCCESS_SCORE);
+            vnameid = env.data.vname2id.size();
+            env.data.vname2id.put(F_Strings.FIRE_SAFETY_FAILURE_SCORE, vnameid);
+            env.data.id2vname.put(vnameid, F_Strings.FIRE_SAFETY_FAILURE_SCORE);
             ite = env.data0.data.keySet().iterator();
             while (ite.hasNext()) {
-                F_CollectionID cid0 = ite.next();
-                System.out.println("cid=" + cid0.toString());
-                c0 = env.data0.getCollection(cid0);
-                Iterator<F_RecordID> ite2;
-                // Other dwelling types
-                ite2 = c0.data0.keySet().iterator();
-                while (ite2.hasNext()) {
-                    F_RecordID recID = ite2.next();
-                    F_Dwellings_String_Record0 r = c0.data0.get(recID);
-                    Integer year = tFINANCIAL_YEARVM.get(r.gettFINANCIAL_YEAR());
-                    if (year == null) {
-                        System.out.println("year == null, F_Dwellings_Record0=" + r.toString());
-                        System.out.println("r.gettFINANCIAL_YEAR()=\"" + r.gettFINANCIAL_YEAR() + "\"");
-                        print("tFINANCIAL_YEARVM", tFINANCIAL_YEARVM);
-                        System.exit(0);
-                    } else {
+                F_CollectionID cid = ite.next();
+                System.out.println("cid=" + cid.toString());
+                c0 = env.data0.getCollection(cid);
+                if (cid.id == 0) {
+                    // Other dwelling types
+                    Iterator<F_RecordID> ite2 = c0.data2.keySet().iterator();
+                    while (ite2.hasNext()) {
+                        F_RecordID recID = ite2.next();
+                        F_Dwellings_String_Record2 r = c0.data2.get(recID);
+                        Integer year = tFINANCIAL_YEARVM.get(r.gettFINANCIAL_YEAR());
                         cID = new F_CollectionID(year);
-                        F_Collection c = env.data.data.get(cID);
                         env.data.cID2recIDs.get(cID).add(recID);
-                        F_Dwellings_Integer_Record0 rec = new F_Dwellings_Integer_Record0(r, env.data);
-                        c.data0.put(recID, rec);
+                        F_Dwellings_Integer_Record2 rr = new F_Dwellings_Integer_Record2(r, env.data);
+                        rr.initScores0(varMSF, valMSF_Yes, varITD,
+                                svalITD, varDTC, svalDTC, varBSSCD,
+                                valBSSCD_SOCS, svalBSSCD, varBSSMOED,
+                                valBSSMOED_SOCS, svalBSSMOED, varSDD,
+                                valSDD_SOCS, svalSDD, varCOF, svalCOF, varICS,
+                                svalICS, varRFG, valRFG, varBSCD, svalBSCD,
+                                varOPAOA, valOPAOA, varOPAC, valOPAC, varFSOA,
+                                svalFSOASuccess, varSOF, svalSOFSuccess, varRT,
+                                svalRTSuccess, svalRTFailure, varFC, valFC,
+                                varR, valR, varE, valE, varBEDD, valBEDD,
+                                varBEDDFailure);
+                        addToCounts0(rr,
+                                mFIRE_SAFETY_SUCCESS_SCORE,
+                                mFIRE_SAFETY_FAILURE_SCORE);
+                        env.data.data.get(cID).data2.put(recID, rr);
+                        env.data.recID2cID.put(recID, cID);
+                    }
+                } else {
+                    // Main dwelling types
+                    Iterator<F_RecordID> ite2 = c0.data1.keySet().iterator();
+                    while (ite2.hasNext()) {
+                        F_RecordID recID = ite2.next();
+                        F_Dwellings_String_Record1 r = c0.data1.get(recID);
+                        Integer year = tFINANCIAL_YEARVM.get(r.gettFINANCIAL_YEAR());
+                        cID = new F_CollectionID(year);
+                        env.data.cID2recIDs.get(cID).add(recID);
+                        F_Dwellings_Integer_Record1 rr = new F_Dwellings_Integer_Record1(r, env.data);
+                        rr.initScores(varMSF, valMSF_Yes, varITD,
+                                svalITD, varDTC, svalDTC, varBSSCD,
+                                valBSSCD_SOCS, svalBSSCD, varBSSMOED,
+                                valBSSMOED_SOCS, svalBSSMOED, varARFPO,
+                                svalARFPO, varSDD, valSDD_SOCS, svalSDD, varCOF,
+                                svalCOF, varICS, svalICS, varRFG, valRFG,
+                                varBSCD, svalBSCD, varOPAOA, valOPAOA, varOPAC,
+                                valOPAC, varFSOA, svalFSOASuccess, varSOF,
+                                svalSOFSuccess, varRT, svalRTSuccess,
+                                svalRTFailure, varFC, valFC, varR, valR, varE,
+                                valE, varBEDD, valBEDD, varBEDDFailure);
+                        addToCounts0(rr,
+                                mFIRE_SAFETY_SUCCESS_SCORE,
+                                mFIRE_SAFETY_FAILURE_SCORE);
+                        env.data.data.get(cID).data1.put(recID, rr);
                         env.data.recID2cID.put(recID, cID);
                     }
                 }
-                // Main dwelling types
-                ite2 = c0.data1.keySet().iterator();
-                while (ite2.hasNext()) {
-                    F_RecordID recID = ite2.next();
-                    F_Dwellings_String_Record1 r = c0.data1.get(recID);
-                    Integer year = tFINANCIAL_YEARVM.get(r.gettFINANCIAL_YEAR());
-                    if (year == null) {
-                        System.out.println("year == null, F_Dwellings_Record0=" + r.toString());
-                        System.out.println("r.gettFINANCIAL_YEAR()=\"" + r.gettFINANCIAL_YEAR() + "\"");
-                        print("tFINANCIAL_YEARVM", tFINANCIAL_YEARVM);
-                        System.exit(0);
-                    } else {
-                        cID = new F_CollectionID(year);
-                        F_Collection c = env.data.data.get(cID);
-                        env.data.cID2recIDs.get(cID).add(recID);
-                        F_Dwellings_Integer_Record1 rec = new F_Dwellings_Integer_Record1(r, env.data);
-                        c.data1.put(recID, rec);
-                        env.data.recID2cID.put(recID, cID);
-                    }
-                }
-                //env.data0.clearCollection(cid);
+                //env.data2.clearCollection(cid);
                 //env.data.cacheCollection(cid, c);
                 //env.data.clearCollection(cid);
             }
+
             env.data0 = null;
             env.cacheData();
         } catch (IOException | ClassNotFoundException ex) {
@@ -933,6 +1224,250 @@ public class F_Main extends F_Object {
         } catch (Exception ex) {
             Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    protected void addToCounts0(F_Dwellings_String_Record0 r,
+            HashMap<String, Integer> mFRS_NAME,
+            HashMap<String, Integer> mE_CODE,
+            HashMap<String, Integer> mFINANCIAL_YEAR,
+            HashMap<String, Integer> mMONTH_NAME,
+            HashMap<String, Integer> mWEEKDAY_WEEKEND,
+            HashMap<String, Integer> mDAY_NIGHT,
+            HashMap<String, Integer> mBUILDING_OR_PROPERTY_TYPE,
+            HashMap<String, Integer> mLATE_CALL,
+            HashMap<String, Integer> mMULTI_SEATED_FLAG,
+            HashMap<String, Integer> mIGNITION_TO_DISCOVERY,
+            HashMap<String, Integer> mDISCOVERY_TO_CALL,
+            HashMap<String, Integer> mHOW_DISCOVERED_DESCRIPTION,
+            HashMap<String, Integer> mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,
+            HashMap<String, Integer> mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION,
+            HashMap<String, Integer> mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT,
+            HashMap<String, Integer> mOCCUPIED_NORMAL,
+            HashMap<String, Integer> mACCIDENTAL_OR_DELIBERATE,
+            HashMap<String, Integer> mVEHICLES,
+            HashMap<String, Integer> mVEHICLES_CODE,
+            HashMap<String, Integer> mPERSONNEL,
+            HashMap<String, Integer> mPERSONNEL_CODE,
+            HashMap<String, Integer> mSTARTING_DELAY_DESCRIPTION,
+            HashMap<String, Integer> mACTION_NON_FRS_DESCRIPTION,
+            HashMap<String, Integer> mACTION_FRS_DESCRIPTION,
+            HashMap<String, Integer> mCAUSE_OF_FIRE,
+            HashMap<String, Integer> mIGNITION_POWER,
+            HashMap<String, Integer> mSOURCE_OF_IGNITION,
+            HashMap<String, Integer> mITEM_IGNITED,
+            HashMap<String, Integer> mITEM_CAUSING_SPREAD,
+            HashMap<String, Integer> mRAPID_FIRE_GROWTH,
+            HashMap<String, Integer> mCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION,
+            HashMap<String, Integer> mCAUSE_EXPLOSION_INVOLVED,
+            HashMap<String, Integer> mCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION,
+            HashMap<String, Integer> mCAUSE_EXPLOSION_STAGE_DESCRIPTION,
+            HashMap<String, Integer> mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
+            HashMap<String, Integer> mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
+            HashMap<String, Integer> mBUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<String, Integer> mBUILDING_FLOORS_BELOW_GROUND,
+            HashMap<String, Integer> mBUILDING_FLOOR_ORIGIN,
+            HashMap<String, Integer> mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
+            HashMap<String, Integer> mBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION,
+            HashMap<String, Integer> mFIRE_START_LOCATION,
+            HashMap<String, Integer> mFIRE_SIZE_ON_ARRIVAL,
+            HashMap<String, Integer> mOTHER_PROPERTY_AFFECTED_ON_ARRIVAL,
+            HashMap<String, Integer> mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION,
+            HashMap<String, Integer> mBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION,
+            HashMap<String, Integer> mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION,
+            HashMap<String, Integer> mother_property_affected_close_d,
+            HashMap<String, Integer> mspread_of_fire_d,
+            HashMap<String, Integer> mRESPONSE_TIME,
+            HashMap<String, Integer> mRESPONSE_TIME_CODE,
+            HashMap<String, Integer> mTIME_AT_SCENE,
+            HashMap<String, Integer> mTIME_AT_SCENE_CODE,
+            HashMap<String, Integer> mRESCUES,
+            HashMap<String, Integer> mEVACUATIONS,
+            HashMap<String, Integer> mEVACUATIONS_CODE,
+            HashMap<String, Integer> mBUILDING_EVACUATION_DELAY_DESCRIPTION,
+            HashMap<String, Integer> mBUILDING_EVACUATION_TIME_DESCRIPTION
+    ) {
+        Generic_Collections.addToCount(mFRS_NAME, r.gettFRS_NAME(), 1);
+        Generic_Collections.addToCount(mE_CODE, r.gettE_CODE(), 1);
+        Generic_Collections.addToCount(mFINANCIAL_YEAR, r.gettFINANCIAL_YEAR(), 1);
+        Generic_Collections.addToCount(mMONTH_NAME, r.gettMONTH_NAME(), 1);
+        Generic_Collections.addToCount(mWEEKDAY_WEEKEND, r.gettWEEKDAY_WEEKEND(), 1);
+        Generic_Collections.addToCount(mDAY_NIGHT, r.gettDAY_NIGHT(), 1);
+        Generic_Collections.addToCount(mLATE_CALL, r.gettLATE_CALL(), 1);
+        Generic_Collections.addToCount(mBUILDING_OR_PROPERTY_TYPE, r.gettBUILDING_OR_PROPERTY_TYPE(), 1);
+        Generic_Collections.addToCount(mMULTI_SEATED_FLAG, r.gettMULTI_SEATED_FLAG(), 1);
+        Generic_Collections.addToCount(mIGNITION_TO_DISCOVERY, r.gettIGNITION_TO_DISCOVERY(), 1);
+        Generic_Collections.addToCount(mDISCOVERY_TO_CALL, r.gettDISCOVERY_TO_CALL(), 1);
+        Generic_Collections.addToCount(mHOW_DISCOVERED_DESCRIPTION, r.gettHOW_DISCOVERED_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, r.gettBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, r.gettBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, r.gettBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT(), 1);
+        Generic_Collections.addToCount(mOCCUPIED_NORMAL, r.gettOCCUPIED_NORMAL(), 1);
+        Generic_Collections.addToCount(mACCIDENTAL_OR_DELIBERATE, r.gettACCIDENTAL_OR_DELIBERATE(), 1);
+        Generic_Collections.addToCount(mVEHICLES, r.gettVEHICLES(), 1);
+        Generic_Collections.addToCount(mVEHICLES_CODE, r.gettVEHICLES_CODE(), 1);
+        Generic_Collections.addToCount(mPERSONNEL, r.gettPERSONNEL(), 1);
+        Generic_Collections.addToCount(mPERSONNEL_CODE, r.gettPERSONNEL_CODE(), 1);
+        Generic_Collections.addToCount(mSTARTING_DELAY_DESCRIPTION, r.gettSTARTING_DELAY_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mACTION_NON_FRS_DESCRIPTION, r.gettACTION_NON_FRS_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mACTION_FRS_DESCRIPTION, r.gettACTION_FRS_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mCAUSE_OF_FIRE, r.gettCAUSE_OF_FIRE(), 1);
+        Generic_Collections.addToCount(mIGNITION_POWER, r.gettIGNITION_POWER(), 1);
+        Generic_Collections.addToCount(mSOURCE_OF_IGNITION, r.gettSOURCE_OF_IGNITION(), 1);
+        Generic_Collections.addToCount(mITEM_IGNITED, r.gettITEM_IGNITED(), 1);
+        Generic_Collections.addToCount(mITEM_CAUSING_SPREAD, r.gettITEM_CAUSING_SPREAD(), 1);
+        Generic_Collections.addToCount(mRAPID_FIRE_GROWTH, r.gettRAPID_FIRE_GROWTH(), 1);
+        Generic_Collections.addToCount(mCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION, r.gettCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mCAUSE_EXPLOSION_INVOLVED, r.gettCAUSE_EXPLOSION_INVOLVED(), 1);
+        Generic_Collections.addToCount(mCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION, r.gettCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mCAUSE_EXPLOSION_STAGE_DESCRIPTION, r.gettCAUSE_EXPLOSION_STAGE_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, r.gettCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, r.gettBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mBUILDING_FLOORS_ABOVE_GROUND, r.gettBUILDING_FLOORS_ABOVE_GROUND(), 1);
+        Generic_Collections.addToCount(mBUILDING_FLOORS_BELOW_GROUND, r.gettBUILDING_FLOORS_BELOW_GROUND(), 1);
+        Generic_Collections.addToCount(mBUILDING_FLOOR_ORIGIN, r.gettBUILDING_FLOOR_ORIGIN(), 1);
+        Generic_Collections.addToCount(mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, r.gettBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION, r.gettBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mFIRE_START_LOCATION, r.gettFIRE_START_LOCATION(), 1);
+        Generic_Collections.addToCount(mFIRE_SIZE_ON_ARRIVAL, r.gettFIRE_SIZE_ON_ARRIVAL(), 1);
+        Generic_Collections.addToCount(mOTHER_PROPERTY_AFFECTED_ON_ARRIVAL, r.gettOTHER_PROPERTY_AFFECTED_ON_ARRIVAL(), 1);
+        Generic_Collections.addToCount(mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION, r.gettBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION, r.gettBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION, r.gettFIRE_SIZE_ON_ARRIVAL_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mother_property_affected_close_d, r.gettother_property_affected_close_d(), 1);
+        Generic_Collections.addToCount(mspread_of_fire_d, r.gettspread_of_fire_d(), 1);
+        Generic_Collections.addToCount(mRESPONSE_TIME, r.gettRESPONSE_TIME(), 1);
+        Generic_Collections.addToCount(mRESPONSE_TIME_CODE, r.gettRESPONSE_TIME_CODE(), 1);
+        Generic_Collections.addToCount(mTIME_AT_SCENE, r.gettTIME_AT_SCENE(), 1);
+        Generic_Collections.addToCount(mTIME_AT_SCENE_CODE, r.gettTIME_AT_SCENE_CODE(), 1);
+        Generic_Collections.addToCount(mRESCUES, r.gettRESCUES(), 1);
+        Generic_Collections.addToCount(mEVACUATIONS, r.gettEVACUATIONS(), 1);
+        Generic_Collections.addToCount(mEVACUATIONS_CODE, r.gettEVACUATIONS_CODE(), 1);
+        Generic_Collections.addToCount(mBUILDING_EVACUATION_DELAY_DESCRIPTION, r.gettBUILDING_EVACUATION_DELAY_DESCRIPTION(), 1);
+        Generic_Collections.addToCount(mBUILDING_EVACUATION_TIME_DESCRIPTION, r.gettBUILDING_EVACUATION_TIME_DESCRIPTION(), 1);
+    }
+
+    protected void addToCounts0(F_Dwellings_Integer_Record0 r,
+            HashMap<Integer, Integer> mFIRE_SAFETY_SUCCESS_SCORE,
+            HashMap<Integer, Integer> mFIRE_SAFETY_FAILURE_SCORE) {
+        Generic_Collections.addToCount(mFIRE_SAFETY_SUCCESS_SCORE, r.FIRE_SAFETY_SUCCESS_SCORE, 1);
+        Generic_Collections.addToCount(mFIRE_SAFETY_FAILURE_SCORE, r.FIRE_SAFETY_FAILURE_SCORE, 1);
+    }
+
+    protected void addToCounts0(F_Dwellings_Integer_Record0 r,
+            HashMap<Integer, Integer> mFRS_NAME,
+            HashMap<Integer, Integer> mE_CODE,
+            HashMap<Integer, Integer> mMONTH_NAME,
+            HashMap<Integer, Integer> mWEEKDAY_WEEKEND,
+            HashMap<Integer, Integer> mDAY_NIGHT,
+            HashMap<Integer, Integer> mBUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mLATE_CALL,
+            HashMap<Integer, Integer> mMULTI_SEATED_FLAG,
+            HashMap<Integer, Integer> mIGNITION_TO_DISCOVERY,
+            HashMap<Integer, Integer> mDISCOVERY_TO_CALL,
+            HashMap<Integer, Integer> mHOW_DISCOVERED_DESCRIPTION,
+            HashMap<Integer, Integer> mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,
+            HashMap<Integer, Integer> mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION,
+            HashMap<Integer, Integer> mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT,
+            HashMap<Integer, Integer> mOCCUPIED_NORMAL,
+            HashMap<Integer, Integer> mACCIDENTAL_OR_DELIBERATE,
+            HashMap<Integer, Integer> mVEHICLES,
+            HashMap<Integer, Integer> mVEHICLES_CODE,
+            HashMap<Integer, Integer> mPERSONNEL,
+            HashMap<Integer, Integer> mPERSONNEL_CODE,
+            HashMap<Integer, Integer> mSTARTING_DELAY_DESCRIPTION,
+            HashMap<Integer, Integer> mACTION_NON_FRS_DESCRIPTION,
+            HashMap<Integer, Integer> mACTION_FRS_DESCRIPTION,
+            HashMap<Integer, Integer> mCAUSE_OF_FIRE,
+            HashMap<Integer, Integer> mIGNITION_POWER,
+            HashMap<Integer, Integer> mSOURCE_OF_IGNITION,
+            HashMap<Integer, Integer> mITEM_IGNITED,
+            HashMap<Integer, Integer> mITEM_CAUSING_SPREAD,
+            HashMap<Integer, Integer> mRAPID_FIRE_GROWTH,
+            HashMap<Integer, Integer> mCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION,
+            HashMap<Integer, Integer> mCAUSE_EXPLOSION_INVOLVED,
+            HashMap<Integer, Integer> mCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION,
+            HashMap<Integer, Integer> mCAUSE_EXPLOSION_STAGE_DESCRIPTION,
+            HashMap<Integer, Integer> mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
+            HashMap<Integer, Integer> mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
+            HashMap<Integer, Integer> mBUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mBUILDING_FLOORS_BELOW_GROUND,
+            HashMap<Integer, Integer> mBUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
+            HashMap<Integer, Integer> mBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION,
+            HashMap<Integer, Integer> mFIRE_START_LOCATION,
+            HashMap<Integer, Integer> mFIRE_SIZE_ON_ARRIVAL,
+            HashMap<Integer, Integer> mOTHER_PROPERTY_AFFECTED_ON_ARRIVAL,
+            HashMap<Integer, Integer> mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION,
+            HashMap<Integer, Integer> mBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION,
+            HashMap<Integer, Integer> mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION,
+            HashMap<Integer, Integer> mother_property_affected_close_d,
+            HashMap<Integer, Integer> mspread_of_fire_d,
+            HashMap<Integer, Integer> mRESPONSE_TIME,
+            HashMap<Integer, Integer> mRESPONSE_TIME_CODE,
+            HashMap<Integer, Integer> mTIME_AT_SCENE,
+            HashMap<Integer, Integer> mTIME_AT_SCENE_CODE,
+            HashMap<Integer, Integer> mRESCUES,
+            HashMap<Integer, Integer> mEVACUATIONS,
+            HashMap<Integer, Integer> mEVACUATIONS_CODE,
+            HashMap<Integer, Integer> mBUILDING_EVACUATION_DELAY_DESCRIPTION,
+            HashMap<Integer, Integer> mBUILDING_EVACUATION_TIME_DESCRIPTION) {
+        Generic_Collections.addToCount(mFRS_NAME, r.tFRS_NAME, 1);
+        Generic_Collections.addToCount(mE_CODE, r.tE_CODE, 1);
+        Generic_Collections.addToCount(mMONTH_NAME, r.tMONTH_NAME, 1);
+        Generic_Collections.addToCount(mWEEKDAY_WEEKEND, r.tWEEKDAY_WEEKEND, 1);
+        Generic_Collections.addToCount(mDAY_NIGHT, r.tDAY_NIGHT, 1);
+        Generic_Collections.addToCount(mLATE_CALL, r.tLATE_CALL, 1);
+        Generic_Collections.addToCount(mBUILDING_OR_PROPERTY_TYPE, r.tBUILDING_OR_PROPERTY_TYPE, 1);
+        Generic_Collections.addToCount(mMULTI_SEATED_FLAG, r.tMULTI_SEATED_FLAG, 1);
+        Generic_Collections.addToCount(mIGNITION_TO_DISCOVERY, r.tIGNITION_TO_DISCOVERY, 1);
+        Generic_Collections.addToCount(mDISCOVERY_TO_CALL, r.tDISCOVERY_TO_CALL, 1);
+        Generic_Collections.addToCount(mHOW_DISCOVERED_DESCRIPTION, r.tHOW_DISCOVERED_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, r.tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, r.tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, r.tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, 1);
+        Generic_Collections.addToCount(mOCCUPIED_NORMAL, r.tOCCUPIED_NORMAL, 1);
+        Generic_Collections.addToCount(mACCIDENTAL_OR_DELIBERATE, r.tACCIDENTAL_OR_DELIBERATE, 1);
+        Generic_Collections.addToCount(mVEHICLES, r.tVEHICLES, 1);
+        Generic_Collections.addToCount(mVEHICLES_CODE, r.tVEHICLES_CODE, 1);
+        Generic_Collections.addToCount(mPERSONNEL, r.tPERSONNEL, 1);
+        Generic_Collections.addToCount(mPERSONNEL_CODE, r.tPERSONNEL_CODE, 1);
+        Generic_Collections.addToCount(mSTARTING_DELAY_DESCRIPTION, r.tSTARTING_DELAY_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mACTION_NON_FRS_DESCRIPTION, r.tACTION_NON_FRS_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mACTION_FRS_DESCRIPTION, r.tACTION_FRS_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mCAUSE_OF_FIRE, r.tCAUSE_OF_FIRE, 1);
+        Generic_Collections.addToCount(mIGNITION_POWER, r.tIGNITION_POWER, 1);
+        Generic_Collections.addToCount(mSOURCE_OF_IGNITION, r.tSOURCE_OF_IGNITION, 1);
+        Generic_Collections.addToCount(mITEM_IGNITED, r.tITEM_IGNITED, 1);
+        Generic_Collections.addToCount(mITEM_CAUSING_SPREAD, r.tITEM_CAUSING_SPREAD, 1);
+        Generic_Collections.addToCount(mRAPID_FIRE_GROWTH, r.tRAPID_FIRE_GROWTH, 1);
+        Generic_Collections.addToCount(mCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION, r.tCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mCAUSE_EXPLOSION_INVOLVED, r.tCAUSE_EXPLOSION_INVOLVED, 1);
+        Generic_Collections.addToCount(mCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION, r.tCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mCAUSE_EXPLOSION_STAGE_DESCRIPTION, r.tCAUSE_EXPLOSION_STAGE_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, r.tCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, r.tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mBUILDING_FLOORS_ABOVE_GROUND, r.tBUILDING_FLOORS_ABOVE_GROUND, 1);
+        Generic_Collections.addToCount(mBUILDING_FLOORS_BELOW_GROUND, r.tBUILDING_FLOORS_BELOW_GROUND, 1);
+        Generic_Collections.addToCount(mBUILDING_FLOOR_ORIGIN, r.tBUILDING_FLOOR_ORIGIN, 1);
+        Generic_Collections.addToCount(mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, r.tBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION, r.tBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mFIRE_START_LOCATION, r.tFIRE_START_LOCATION, 1);
+        Generic_Collections.addToCount(mFIRE_SIZE_ON_ARRIVAL, r.tFIRE_SIZE_ON_ARRIVAL, 1);
+        Generic_Collections.addToCount(mOTHER_PROPERTY_AFFECTED_ON_ARRIVAL, r.tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL, 1);
+        Generic_Collections.addToCount(mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION, r.tBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION, r.tBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION, r.tFIRE_SIZE_ON_ARRIVAL_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mother_property_affected_close_d, r.tother_property_affected_close_d, 1);
+        Generic_Collections.addToCount(mspread_of_fire_d, r.tspread_of_fire_d, 1);
+        Generic_Collections.addToCount(mRESPONSE_TIME, r.tRESPONSE_TIME, 1);
+        Generic_Collections.addToCount(mRESPONSE_TIME_CODE, r.tRESPONSE_TIME_CODE, 1);
+        Generic_Collections.addToCount(mTIME_AT_SCENE, r.tTIME_AT_SCENE, 1);
+        Generic_Collections.addToCount(mTIME_AT_SCENE_CODE, r.tTIME_AT_SCENE_CODE, 1);
+        Generic_Collections.addToCount(mRESCUES, r.tRESCUES, 1);
+        Generic_Collections.addToCount(mEVACUATIONS, r.tEVACUATIONS, 1);
+        Generic_Collections.addToCount(mEVACUATIONS_CODE, r.tEVACUATIONS_CODE, 1);
+        Generic_Collections.addToCount(mBUILDING_EVACUATION_DELAY_DESCRIPTION, r.tBUILDING_EVACUATION_DELAY_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mBUILDING_EVACUATION_TIME_DESCRIPTION, r.tBUILDING_EVACUATION_TIME_DESCRIPTION, 1);
     }
 
     public String getFormatted(String s) {
@@ -980,25 +1515,39 @@ public class F_Main extends F_Object {
     }
 
     /**
-     * Prints out all things in {@code m} to std.out.
+     * Prints out all things in {@code s} to std.out.
      *
      * @param dirname The directory name for the output.
      * @param name The name of the thing to output out - this will be the start
      * of the filename.
      * @param s The set containing values to output out.
      */
-    public void output(Path dir, String name0, String name1, Set<F_Dwellings_Integer_Record0> s) {
+    public <T extends F_Dwellings_Integer_Record0> void output(Path dir,
+            String name0, String name1, Set<T> s) {
         try {
             Path p = Paths.get(dir.toString(),
                     F_Files.getFormattedFilenameString(name0 + " " + name1) + ".csv");
             System.out.println("output " + name1);
             try (PrintWriter pw = new PrintWriter(p.toFile())) {
-                pw.println(F_Dwellings_Integer_Record0.getCSVHeader());
+                Iterator<T> ite = s.iterator();
+                if (ite.hasNext()) {
+                    pw.println(getHeader(s.iterator().next()));
+                }
                 s.stream().forEach(i -> pw.println(i.toCSVString(env.data)));
             }
         } catch (IOException ex) {
             Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    protected String getHeader(F_Dwellings_Integer_Record0 i) {
+        String r;
+        if (i instanceof F_Dwellings_Integer_Record1) {
+            r = ((F_Dwellings_Integer_Record1) i).getCSVHeader();
+        } else {
+            r = ((F_Dwellings_Integer_Record2) i).getCSVHeader();
+        }
+        return r;
     }
 
     /**
@@ -1086,7 +1635,50 @@ public class F_Main extends F_Object {
                 //m.keySet().stream().forEach(i -> pw.println("\"" + i + "\"," + m.get(i)));
             }
         } catch (IOException ex) {
-            Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(F_Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    /**
+     * Prints out all things in {@code m} to std.out.
+     *
+     * @param dirname The directory name for the output.
+     * @param name0 Prepend to filename.
+     * @param name1 The name of the thing to output out - this will be the start
+     * of the filename.
+     * @param <K> The type.
+     * @param s The set containing values to output out.
+     */
+    public void outputScores(Path dir, String name0, String vname,
+            Integer vid, Map<Integer, Integer> m, Map<Integer, Integer> mfc) {
+        try {
+            Path p = Paths.get(dir.toString(), F_Files.getFormattedFilenameString(name0 + " " + vname) + ".csv");
+            System.out.println("output " + vname);
+            try (PrintWriter pw = new PrintWriter(p.toFile())) {
+                //pw.println(name + " Table length=" + m.size());
+                pw.println("\"" + vname + "\",Count,FATAL_CASUALTY_Count,%FATAL_CASUALTY");
+                //m.keySet().stream().forEach(i -> pw.println("\"" + i + "\",\"" + m.get(i) + "\""));
+                Iterator<Integer> ites = m.keySet().iterator();
+                while (ites.hasNext()) {
+                    Integer k = ites.next();
+                    Integer v = m.get(k);
+                    Integer vfc = mfc.get(k);
+                    double percentagefc;
+                    if (vfc == null) {
+                        vfc = 0;
+                        percentagefc = 0;
+                    } else {
+                        percentagefc = (100.0d * vfc) / ((double) v);
+                    }
+                    pw.println("\"" + k.toString() + "\"," + v
+                            + "," + vfc + "," + Double.toString(percentagefc));
+                }
+                //m.keySet().stream().forEach(i -> pw.println("\"" + i + "\"," + m.get(i)));
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(F_Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -1155,6 +1747,16 @@ public class F_Main extends F_Object {
             // Single variable
             // ---------------
             String name = "SingleVariableSummaries";
+//            int varFIRE_SAFETY_SUCCESS_SCORE = env.data.vname2id.size();
+//            env.data.vname2id.put(F_Strings.FIRE_SAFETY_SUCCESS_SCORE, varFIRE_SAFETY_SUCCESS_SCORE);
+//            env.data.id2vname.put(varFIRE_SAFETY_SUCCESS_SCORE, F_Strings.FIRE_SAFETY_SUCCESS_SCORE);
+//            env.data.id2names.put(varFIRE_SAFETY_SUCCESS_SCORE, mFIRE_SAFETY_SUCCESS_SCORE);
+//            env.data.name2ids.put(varFIRE_SAFETY_SUCCESS_SCORE, mFIRE_SAFETY_SUCCESS_SCORE);
+//            int varFIRE_SAFETY_FAILURE_SCORE = env.data.vname2id.size();
+//            env.data.vname2id.put(F_Strings.FIRE_SAFETY_FAILURE_SCORE, varFIRE_SAFETY_FAILURE_SCORE);
+//            env.data.id2vname.put(varFIRE_SAFETY_FAILURE_SCORE, F_Strings.FIRE_SAFETY_FAILURE_SCORE);
+//            env.data.id2names.put(varFIRE_SAFETY_FAILURE_SCORE, mFIRE_SAFETY_FAILURE_SCORE);
+//            env.data.name2ids.put(varFIRE_SAFETY_FAILURE_SCORE, mFIRE_SAFETY_FAILURE_SCORE);
             outputSingleVariableCountSummaries(name);
 
             // --------------
@@ -1261,16 +1863,19 @@ public class F_Main extends F_Object {
             // Subsets
             // -------
             // BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION valCladding 
-            HashSet<F_Dwellings_Integer_Record0> highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY = new HashSet<>();
-            HashSet<F_Dwellings_Integer_Record0> highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY = new HashSet<>();
+            Set<F_Dwellings_Integer_Record1> highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY = new HashSet<>();
+            Set<F_Dwellings_Integer_Record1> highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY = new HashSet<>();
             int valPurposeBuiltHighRiseFlats = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltHighRiseFlats);
-            HashSet<F_Dwellings_Integer_Record0> mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY = new HashSet<>();
-            HashSet<F_Dwellings_Integer_Record0> mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY = new HashSet<>();
+            Set<F_Dwellings_Integer_Record1> mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY = new HashSet<>();
+            Set<F_Dwellings_Integer_Record1> mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY = new HashSet<>();
             int valPurposeBuiltMediumRiseFlats = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltMediumRiseFlats);
-            HashSet<F_Dwellings_Integer_Record0> lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY = new HashSet<>();
-            HashSet<F_Dwellings_Integer_Record0> lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY = new HashSet<>();
+            Set<F_Dwellings_Integer_Record1> lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY = new HashSet<>();
+            Set<F_Dwellings_Integer_Record1> lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY = new HashSet<>();
             int valPurposeBuiltLowRiseFlats = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltLowRiseFlats);
+            Set<F_Dwellings_Integer_Record1> purposeBuilt_BSSMOED_NotApplicable = new HashSet<>();
 
+            Set<F_Dwellings_Integer_Record1> FIRE_SAFETY_FAILURE_SCORE_GE6 = new HashSet<>();
+            
             Iterator<F_CollectionID> ite = env.data.data.keySet().iterator();
             while (ite.hasNext()) {
                 try {
@@ -1367,6 +1972,15 @@ public class F_Main extends F_Object {
                     mAllBSSMOEDNotApplicable_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mBSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE);
                     HashMap<Integer, Integer> mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
                     mAllFATALITY_CASUALTY_BSSMOEDNotApplicable_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE);
+                    // FIRE_SAFETY scores
+                    HashMap<Integer, Integer> mFIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFIRE_SAFETY_SUCCESS_SCORE_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFIRE_SAFETY_FAILURE_SCORE_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_BY_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE);
 
                     // Multiple variable counts
                     // ------------------------
@@ -1516,6 +2130,10 @@ public class F_Main extends F_Object {
                                 valBSSMOEDNotApplicable,
                                 mBSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE,
                                 mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE);
+//                                mFIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+//                                mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+//                                mFIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+//                                mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE);
                         if (r.tBUILDING_OR_PROPERTY_TYPE == valPurposeBuiltMediumRiseFlats) {
                             if (svalBUILDING_FLOORS_ABOVE_GROUND45.contains(r.tBUILDING_FLOORS_ABOVE_GROUND)) {
                                 mediumRise45++;
@@ -1629,11 +2247,17 @@ public class F_Main extends F_Object {
                                         mFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_LonePersonUnderPensionableAge_By_BUILDING_OR_PROPERTY_TYPE);
                             }
                         }
+                        if (r.tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION == valBSSMOEDNotApplicable) {
+                            purposeBuilt_BSSMOED_NotApplicable.add(r);
+                        }
+                        if (r.FIRE_SAFETY_FAILURE_SCORE >= 6) {
+                            FIRE_SAFETY_FAILURE_SCORE_GE6.add(r);
+                        }
                     }
-                    ite2 = c.data0.keySet().iterator();
+                    ite2 = c.data2.keySet().iterator();
                     while (ite2.hasNext()) {
                         F_RecordID id = ite2.next();
-                        F_Dwellings_Integer_Record0 r = c.data0.get(id);
+                        F_Dwellings_Integer_Record2 r = c.data2.get(id);
                         addToCountsAndSets(r, valFATALITY_CASUALTY, valNight,
                                 mNight_BY_BUILDING_OR_PROPERTY_TYPE,
                                 mFATALITY_CASUALTY_Night_BY_BUILDING_OR_PROPERTY_TYPE,
@@ -1709,6 +2333,7 @@ public class F_Main extends F_Object {
                     mMediumRise6789_WholeBuildingOrAffectingMoreThan2Floors_FATALITY_CASUALTY.put(cid.id, mediumRise6789_WholeBuildingOrAffectingMoreThan2Floors_FATALITY_CASUALTY);
                     mMediumRise6789_Cladding_WholeBuildingOrAffectingMoreThan2Floors.put(cid.id, mediumRise6789_Cladding_WholeBuildingOrAffectingMoreThan2Floors);
                     mMediumRise6789_Cladding_WholeBuildingOrAffectingMoreThan2Floors_FATALITY_CASUALTY.put(cid.id, mediumRise6789_Cladding_WholeBuildingOrAffectingMoreThan2Floors_FATALITY_CASUALTY);
+                    
                     Path dir = getDir(name, year);
                     // Single variable
                     output(dir, year, F_Strings.DAY_NIGHT + " " + F_Strings.Night
@@ -1964,6 +2589,15 @@ public class F_Main extends F_Object {
                             mBSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE);
                     Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_BSSMOEDNotApplicable_BY_BUILDING_OR_PROPERTY_TYPE,
                             mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE);
+                    // FIRE_SAFETY Scores
+                    Generic_Collections.addToCount(mTotalFIRE_SAFETY_SUCCESS_SCORE_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFIRE_SAFETY_FAILURE_SCORE_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_BY_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE);
 
                     // Multiple variables
                     Generic_Collections.addToCount(mTotalNight_NoCompartmentationInBuilding_BY_BUILDING_OR_PROPERTY_TYPE,
@@ -2025,7 +2659,8 @@ public class F_Main extends F_Object {
                             mFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_FaultyEquipmentOrApplianceOrFuelSupplyOrLeadsOrOverheatingUnknownCause_By_BUILDING_OR_PROPERTY_TYPE);
 
                 } catch (IOException | ClassNotFoundException ex) {
-                    Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(F_Main.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
             Path dir = getDir(name, yearsAll);
@@ -2363,6 +2998,13 @@ public class F_Main extends F_Object {
             output(dir, F_Strings.s2010_20, "mediumriseNonFATALITY_CASUALTY", mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY);
             output(dir, F_Strings.s2010_20, "lowriseFATALITY_CASUALTY", lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY);
             output(dir, F_Strings.s2010_20, "lowriseNonFATALITY_CASUALTY", lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY);
+            output(dir.getParent(), F_Strings.s2010_20, "purposeBuilt_"
+                    + F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
+                    + "_" + F_Strings.NotApplicable, purposeBuilt_BSSMOED_NotApplicable);
+            output(dir.getParent(), F_Strings.s2010_20, "FIRE_SAFETY_FAILURE_SCORE_GE6"
+                    + F_Strings.FIRE_SAFETY_FAILURE_SCORE
+                    + "_" + F_Strings.NotApplicable, FIRE_SAFETY_FAILURE_SCORE_GE6);
+
             // Load EnglishHousingSurvey
             Path indir = Paths.get(System.getProperty("user.home"),
                     F_Strings.s_data, "projects", "Fire", F_Strings.s_data, "input",
@@ -2528,11 +3170,13 @@ public class F_Main extends F_Object {
                     print(r1920, pw, yearID);
                 }
             } catch (IOException ex) {
-                Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(F_Main.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (IOException ex) {
-            Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(F_Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -2559,7 +3203,7 @@ public class F_Main extends F_Object {
         }
     }
 
-    protected void addToCountsAndSets(F_Dwellings_Integer_Record0 r,
+    protected <T extends F_Dwellings_Integer_Record0> void addToCountsAndSets(T r,
             int valFATALITY_CASUALTY,
             int valNight,
             HashMap<Integer, Integer> mNight_BY_BUILDING_OR_PROPERTY_TYPE,
@@ -2572,22 +3216,22 @@ public class F_Main extends F_Object {
             int valWholeBuildingOrAffectingMoreThan2Floors,
             HashMap<Integer, Integer> mWholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
             HashMap<Integer, Integer> mFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
-            Map<Integer, Set<F_Dwellings_Integer_Record0>> mWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY,
-            Map<Integer, Set<F_Dwellings_Integer_Record0>> mWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
+            Map<Integer, Set<T>> mWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY,
+            Map<Integer, Set<T>> mWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
             HashMap<Integer, Integer> mNight_WholeBuildingOrAffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
             HashMap<Integer, Integer> mFATALITY_CASUALTY_Night_WholeBuildingOrAffectingMoreThan2Floors_BY_BUILDING_OR_PROPERTY_TYPE,
             int valCladding,
             HashMap<Integer, Integer> mCladding_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
             HashMap<Integer, Integer> mFATALITY_CASUALTY_Cladding_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
             int valPurposeBuiltHighRiseFlats,
-            HashSet<F_Dwellings_Integer_Record0> highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY,
+            Set<F_Dwellings_Integer_Record1> highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY,
             int valPurposeBuiltMediumRiseFlats,
-            HashSet<F_Dwellings_Integer_Record0> mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY,
+            Set<F_Dwellings_Integer_Record1> mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY,
             int valPurposeBuiltLowRiseFlats,
-            HashSet<F_Dwellings_Integer_Record0> lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY,
-            HashSet<F_Dwellings_Integer_Record0> highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
-            HashSet<F_Dwellings_Integer_Record0> mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
-            HashSet<F_Dwellings_Integer_Record0> lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
+            Set<F_Dwellings_Integer_Record1> lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY,
+            Set<F_Dwellings_Integer_Record1> highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
+            Set<F_Dwellings_Integer_Record1> mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
+            Set<F_Dwellings_Integer_Record1> lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
             int valSTARTING_DELAY_DESCRIPTION_No_Delay,
             HashMap<Integer, Integer> mDelay_By_BUILDING_OR_PROPERTY_TYPE,
             HashMap<Integer, Integer> mFATALITY_CASUALTY_Delay_By_BUILDING_OR_PROPERTY_TYPE,
@@ -2620,6 +3264,10 @@ public class F_Main extends F_Object {
             int valBSSMOEDNotApplicable,
             HashMap<Integer, Integer> mBSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE,
             HashMap<Integer, Integer> mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE) {
+//           HashMap<Integer, Integer>  mFIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+//                              HashMap<Integer, Integer>   mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+//                              HashMap<Integer, Integer>   mFIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+//                              HashMap<Integer, Integer>   mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE) {
         if (r.tDAY_NIGHT == valNight) {
             addToCount(r, valFATALITY_CASUALTY,
                     mNight_BY_BUILDING_OR_PROPERTY_TYPE,
@@ -2657,23 +3305,23 @@ public class F_Main extends F_Object {
                         mFATALITY_CASUALTY_Cladding_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
                 if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
                     if (r.tBUILDING_OR_PROPERTY_TYPE == valPurposeBuiltHighRiseFlats) {
-                        highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY.add(r);
+                        highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY.add((F_Dwellings_Integer_Record1) r);
                     }
                     if (r.tBUILDING_OR_PROPERTY_TYPE == valPurposeBuiltMediumRiseFlats) {
-                        mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY.add(r);
+                        mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY.add((F_Dwellings_Integer_Record1) r);
                     }
                     if (r.tBUILDING_OR_PROPERTY_TYPE == valPurposeBuiltLowRiseFlats) {
-                        lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY.add(r);
+                        lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsFATALITY_CASUALTY.add((F_Dwellings_Integer_Record1) r);
                     }
                 } else {
                     if (r.tBUILDING_OR_PROPERTY_TYPE == valPurposeBuiltHighRiseFlats) {
-                        highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY.add(r);
+                        highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY.add((F_Dwellings_Integer_Record1) r);
                     }
                     if (r.tBUILDING_OR_PROPERTY_TYPE == valPurposeBuiltMediumRiseFlats) {
-                        mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY.add(r);
+                        mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY.add((F_Dwellings_Integer_Record1) r);
                     }
                     if (r.tBUILDING_OR_PROPERTY_TYPE == valPurposeBuiltLowRiseFlats) {
-                        lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY.add(r);
+                        lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY.add((F_Dwellings_Integer_Record1) r);
                     }
                 }
             }
@@ -2682,6 +3330,9 @@ public class F_Main extends F_Object {
             addToCount(r, valFATALITY_CASUALTY,
                     mDelay_By_BUILDING_OR_PROPERTY_TYPE,
                     mFATALITY_CASUALTY_Delay_By_BUILDING_OR_PROPERTY_TYPE);
+        }
+        if (r.tRESCUES == null) {
+            int debug = 1;
         }
         if (r.tRESCUES != valRESCUES_0) {
             addToCount(r, valFATALITY_CASUALTY,
@@ -2742,7 +3393,8 @@ public class F_Main extends F_Object {
         try {
             Files.createDirectories(dir);
         } catch (IOException ex) {
-            Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(F_Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         return dir;
     }
@@ -3183,36 +3835,11 @@ public class F_Main extends F_Object {
                 mAllBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT.put(cid.id, mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT);
                 HashMap<Integer, Integer> mFATALITY_CASUALTY_BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT = new HashMap<>();
                 mAllFATALITY_CASUALTY_BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT.put(cid.id, mFATALITY_CASUALTY_BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT);
-                // OCCUPANCY_TYPE
-                HashMap<Integer, Integer> mOCCUPANCY_TYPE = new HashMap<>();
-                mAllOCCUPANCY_TYPE.put(cid.id, mOCCUPANCY_TYPE);
-                HashMap<Integer, Integer> mFATALITY_CASUALTY_OCCUPANCY_TYPE = new HashMap<>();
-                mAllFATALITY_CASUALTY_OCCUPANCY_TYPE.put(cid.id, mFATALITY_CASUALTY_OCCUPANCY_TYPE);
                 // OCCUPIED_NORMAL
                 HashMap<Integer, Integer> mOCCUPIED_NORMAL = new HashMap<>();
                 mAllOCCUPIED_NORMAL.put(cid.id, mOCCUPIED_NORMAL);
                 HashMap<Integer, Integer> mFATALITY_CASUALTY_OCCUPIED_NORMAL = new HashMap<>();
                 mAllFATALITY_CASUALTY_OCCUPIED_NORMAL.put(cid.id, mFATALITY_CASUALTY_OCCUPIED_NORMAL);
-                // WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT
-                HashMap<Integer, Integer> mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
-                mAllWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT.put(cid.id, mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
-                HashMap<Integer, Integer> mFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
-                mAllFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT.put(cid.id, mFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
-                // ALARM_SYSTEM
-                HashMap<Integer, Integer> mALARM_SYSTEM = new HashMap<>();
-                mAllALARM_SYSTEM.put(cid.id, mALARM_SYSTEM);
-                HashMap<Integer, Integer> mFATALITY_CASUALTY_ALARM_SYSTEM = new HashMap<>();
-                mAllFATALITY_CASUALTY_ALARM_SYSTEM.put(cid.id, mFATALITY_CASUALTY_ALARM_SYSTEM);
-                // ALARM_SYSTEM_TYPE
-                HashMap<Integer, Integer> mALARM_SYSTEM_TYPE = new HashMap<>();
-                mAllALARM_SYSTEM_TYPE.put(cid.id, mALARM_SYSTEM_TYPE);
-                HashMap<Integer, Integer> mFATALITY_CASUALTY_ALARM_SYSTEM_TYPE = new HashMap<>();
-                mAllFATALITY_CASUALTY_ALARM_SYSTEM_TYPE.put(cid.id, mFATALITY_CASUALTY_ALARM_SYSTEM_TYPE);
-                // ALARM_REASON_FOR_POOR_OUTCOME
-                HashMap<Integer, Integer> mALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
-                mAllALARM_REASON_FOR_POOR_OUTCOME.put(cid.id, mALARM_REASON_FOR_POOR_OUTCOME);
-                HashMap<Integer, Integer> mFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
-                mAllFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME.put(cid.id, mFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME);
                 // ACCIDENTAL_OR_DELIBERATE
                 HashMap<Integer, Integer> mACCIDENTAL_OR_DELIBERATE = new HashMap<>();
                 mAllACCIDENTAL_OR_DELIBERATE.put(cid.id, mACCIDENTAL_OR_DELIBERATE);
@@ -3423,137 +4050,251 @@ public class F_Main extends F_Object {
                 mAllBUILDING_EVACUATION_TIME_DESCRIPTION.put(cid.id, mBUILDING_EVACUATION_TIME_DESCRIPTION);
                 HashMap<Integer, Integer> mFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION = new HashMap<>();
                 mAllFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION.put(cid.id, mFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION);
-                Iterator<F_RecordID> ite2 = c.data1.keySet().iterator();
+                // Normal Dwelling Types
+                // OCCUPANCY_TYPE
+                HashMap<Integer, Integer> mOCCUPANCY_TYPE = new HashMap<>();
+                mAllOCCUPANCY_TYPE.put(cid.id, mOCCUPANCY_TYPE);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_OCCUPANCY_TYPE = new HashMap<>();
+                mAllFATALITY_CASUALTY_OCCUPANCY_TYPE.put(cid.id, mFATALITY_CASUALTY_OCCUPANCY_TYPE);
+                // WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT
+                HashMap<Integer, Integer> mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
+                mAllWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT.put(cid.id, mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT = new HashMap<>();
+                mAllFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT.put(cid.id, mFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
+                // ALARM_SYSTEM
+                HashMap<Integer, Integer> mALARM_SYSTEM = new HashMap<>();
+                mAllALARM_SYSTEM.put(cid.id, mALARM_SYSTEM);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_ALARM_SYSTEM = new HashMap<>();
+                mAllFATALITY_CASUALTY_ALARM_SYSTEM.put(cid.id, mFATALITY_CASUALTY_ALARM_SYSTEM);
+                // ALARM_SYSTEM_TYPE
+                HashMap<Integer, Integer> mALARM_SYSTEM_TYPE = new HashMap<>();
+                mAllALARM_SYSTEM_TYPE.put(cid.id, mALARM_SYSTEM_TYPE);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_ALARM_SYSTEM_TYPE = new HashMap<>();
+                mAllFATALITY_CASUALTY_ALARM_SYSTEM_TYPE.put(cid.id, mFATALITY_CASUALTY_ALARM_SYSTEM_TYPE);
+                // ALARM_REASON_FOR_POOR_OUTCOME
+                HashMap<Integer, Integer> mALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
+                mAllALARM_REASON_FOR_POOR_OUTCOME.put(cid.id, mALARM_REASON_FOR_POOR_OUTCOME);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME = new HashMap<>();
+                mAllFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME.put(cid.id, mFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME);
+                // Other Dwelling Types 
+                HashMap<Integer, Integer> mFSO_APPLY = new HashMap<>();
+                mAllFSO_APPLY.put(cid.id, mFSO_APPLY);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_FSO_APPLY = new HashMap<>();
+                mAllFATALITY_CASUALTY_FSO_APPLY.put(cid.id, mFATALITY_CASUALTY_FSO_APPLY);
+                HashMap<Integer, Integer> mSAFETY_SYSTEM = new HashMap<>();
+                mAllSAFETY_SYSTEM.put(cid.id, mSAFETY_SYSTEM);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_SAFETY_SYSTEM = new HashMap<>();
+                mAllFATALITY_CASUALTY_SAFETY_SYSTEM.put(cid.id, mFATALITY_CASUALTY_SAFETY_SYSTEM);
+                // FIRE_SAFETY scores
+                HashMap<Integer, Integer> mFIRE_SAFETY_SUCCESS_SCORE = new HashMap<>();
+                mAllFIRE_SAFETY_SUCCESS_SCORE.put(cid.id, mFIRE_SAFETY_SUCCESS_SCORE);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE = new HashMap<>();
+                mAllFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE.put(cid.id, mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE);
+                HashMap<Integer, Integer> mFIRE_SAFETY_FAILURE_SCORE = new HashMap<>();
+                mAllFIRE_SAFETY_FAILURE_SCORE.put(cid.id, mFIRE_SAFETY_FAILURE_SCORE);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE = new HashMap<>();
+                mAllFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE.put(cid.id, mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE);
+                Iterator<F_RecordID> ite2;
+                // Normal Dwelling Types
+                ite2 = c.data1.keySet().iterator();
                 while (ite2.hasNext()) {
                     F_RecordID id = ite2.next();
                     F_Dwellings_Integer_Record1 r = c.data1.get(id);
                     total++;
+                    addToCounts0(r, mFRS_NAME, mE_CODE, mMONTH_NAME,
+                            mWEEKDAY_WEEKEND, mDAY_NIGHT,
+                            mBUILDING_OR_PROPERTY_TYPE, mLATE_CALL,
+                            mMULTI_SEATED_FLAG, mIGNITION_TO_DISCOVERY,
+                            mDISCOVERY_TO_CALL, mHOW_DISCOVERED_DESCRIPTION,
+                            mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,
+                            mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION,
+                            mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT,
+                            mOCCUPIED_NORMAL, mACCIDENTAL_OR_DELIBERATE,
+                            mVEHICLES, mVEHICLES_CODE, mPERSONNEL,
+                            mPERSONNEL_CODE, mSTARTING_DELAY_DESCRIPTION,
+                            mACTION_NON_FRS_DESCRIPTION,
+                            mACTION_FRS_DESCRIPTION, mCAUSE_OF_FIRE,
+                            mIGNITION_POWER, mSOURCE_OF_IGNITION,
+                            mITEM_IGNITED, mITEM_CAUSING_SPREAD,
+                            mRAPID_FIRE_GROWTH,
+                            mCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION,
+                            mCAUSE_EXPLOSION_INVOLVED,
+                            mCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION,
+                            mCAUSE_EXPLOSION_STAGE_DESCRIPTION,
+                            mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
+                            mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
+                            mBUILDING_FLOORS_ABOVE_GROUND,
+                            mBUILDING_FLOORS_BELOW_GROUND,
+                            mBUILDING_FLOOR_ORIGIN,
+                            mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
+                            mBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION,
+                            mFIRE_START_LOCATION, mFIRE_SIZE_ON_ARRIVAL,
+                            mOTHER_PROPERTY_AFFECTED_ON_ARRIVAL,
+                            mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION,
+                            mBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION,
+                            mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION,
+                            mother_property_affected_close_d,
+                            mspread_of_fire_d, mRESPONSE_TIME,
+                            mRESPONSE_TIME_CODE, mTIME_AT_SCENE,
+                            mTIME_AT_SCENE_CODE,
+                            mRESCUES, mEVACUATIONS, mEVACUATIONS_CODE,
+                            mBUILDING_EVACUATION_DELAY_DESCRIPTION,
+                            mBUILDING_EVACUATION_TIME_DESCRIPTION);
                     Generic_Collections.addToCount(mFATALITY_CASUALTY, r.tFATALITY_CASUALTY, 1);
-                    Generic_Collections.addToCount(mFRS_NAME, r.tFRS_NAME, 1);
-                    Generic_Collections.addToCount(mE_CODE, r.tE_CODE, 1);
-                    Generic_Collections.addToCount(mMONTH_NAME, r.tMONTH_NAME, 1);
-                    Generic_Collections.addToCount(mWEEKDAY_WEEKEND, r.tWEEKDAY_WEEKEND, 1);
-                    Generic_Collections.addToCount(mDAY_NIGHT, r.tDAY_NIGHT, 1);
-                    Generic_Collections.addToCount(mLATE_CALL, r.tLATE_CALL, 1);
-                    Generic_Collections.addToCount(mBUILDING_OR_PROPERTY_TYPE, r.tBUILDING_OR_PROPERTY_TYPE, 1);
-                    Generic_Collections.addToCount(mMULTI_SEATED_FLAG, r.tMULTI_SEATED_FLAG, 1);
-                    Generic_Collections.addToCount(mIGNITION_TO_DISCOVERY, r.tIGNITION_TO_DISCOVERY, 1);
-                    Generic_Collections.addToCount(mDISCOVERY_TO_CALL, r.tDISCOVERY_TO_CALL, 1);
-                    Generic_Collections.addToCount(mHOW_DISCOVERED_DESCRIPTION, r.tHOW_DISCOVERED_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, r.tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, r.tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, r.tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, 1);
                     Generic_Collections.addToCount(mOCCUPANCY_TYPE, r.tOCCUPANCY_TYPE, 1);
-                    Generic_Collections.addToCount(mOCCUPIED_NORMAL, r.tOCCUPIED_NORMAL, 1);
                     Generic_Collections.addToCount(mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, r.tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, 1);
                     Generic_Collections.addToCount(mALARM_SYSTEM, r.tALARM_SYSTEM, 1);
                     Generic_Collections.addToCount(mALARM_SYSTEM_TYPE, r.tALARM_SYSTEM_TYPE, 1);
                     Generic_Collections.addToCount(mALARM_REASON_FOR_POOR_OUTCOME, r.tALARM_REASON_FOR_POOR_OUTCOME, 1);
-                    Generic_Collections.addToCount(mACCIDENTAL_OR_DELIBERATE, r.tACCIDENTAL_OR_DELIBERATE, 1);
-                    Generic_Collections.addToCount(mVEHICLES, r.tVEHICLES, 1);
-                    Generic_Collections.addToCount(mVEHICLES_CODE, r.tVEHICLES_CODE, 1);
-                    Generic_Collections.addToCount(mPERSONNEL, r.tPERSONNEL, 1);
-                    Generic_Collections.addToCount(mPERSONNEL_CODE, r.tPERSONNEL_CODE, 1);
-                    Generic_Collections.addToCount(mSTARTING_DELAY_DESCRIPTION, r.tSTARTING_DELAY_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mACTION_NON_FRS_DESCRIPTION, r.tACTION_NON_FRS_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mACTION_FRS_DESCRIPTION, r.tACTION_FRS_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mCAUSE_OF_FIRE, r.tCAUSE_OF_FIRE, 1);
-                    Generic_Collections.addToCount(mIGNITION_POWER, r.tIGNITION_POWER, 1);
-                    Generic_Collections.addToCount(mSOURCE_OF_IGNITION, r.tSOURCE_OF_IGNITION, 1);
-                    Generic_Collections.addToCount(mITEM_IGNITED, r.tITEM_IGNITED, 1);
-                    Generic_Collections.addToCount(mITEM_CAUSING_SPREAD, r.tITEM_CAUSING_SPREAD, 1);
-                    Generic_Collections.addToCount(mRAPID_FIRE_GROWTH, r.tRAPID_FIRE_GROWTH, 1);
-                    Generic_Collections.addToCount(mCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION, r.tCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mCAUSE_EXPLOSION_INVOLVED, r.tCAUSE_EXPLOSION_INVOLVED, 1);
-                    Generic_Collections.addToCount(mCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION, r.tCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mCAUSE_EXPLOSION_STAGE_DESCRIPTION, r.tCAUSE_EXPLOSION_STAGE_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, r.tCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, r.tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mBUILDING_FLOORS_ABOVE_GROUND, r.tBUILDING_FLOORS_ABOVE_GROUND, 1);
-                    Generic_Collections.addToCount(mBUILDING_FLOORS_BELOW_GROUND, r.tBUILDING_FLOORS_BELOW_GROUND, 1);
-                    Generic_Collections.addToCount(mBUILDING_FLOOR_ORIGIN, r.tBUILDING_FLOOR_ORIGIN, 1);
-                    Generic_Collections.addToCount(mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, r.tBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION, r.tBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mFIRE_START_LOCATION, r.tFIRE_START_LOCATION, 1);
-                    Generic_Collections.addToCount(mFIRE_SIZE_ON_ARRIVAL, r.tFIRE_SIZE_ON_ARRIVAL, 1);
-                    Generic_Collections.addToCount(mOTHER_PROPERTY_AFFECTED_ON_ARRIVAL, r.tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL, 1);
-                    Generic_Collections.addToCount(mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION, r.tBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION, r.tBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION, r.tFIRE_SIZE_ON_ARRIVAL_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mother_property_affected_close_d, r.tother_property_affected_close_d, 1);
-                    Generic_Collections.addToCount(mspread_of_fire_d, r.tspread_of_fire_d, 1);
-                    Generic_Collections.addToCount(mRESPONSE_TIME, r.tRESPONSE_TIME, 1);
-                    Generic_Collections.addToCount(mRESPONSE_TIME_CODE, r.tRESPONSE_TIME_CODE, 1);
-                    Generic_Collections.addToCount(mTIME_AT_SCENE, r.tTIME_AT_SCENE, 1);
-                    Generic_Collections.addToCount(mTIME_AT_SCENE_CODE, r.tTIME_AT_SCENE_CODE, 1);
-                    Generic_Collections.addToCount(mRESCUES, r.tRESCUES, 1);
-                    Generic_Collections.addToCount(mEVACUATIONS, r.tEVACUATIONS, 1);
-                    Generic_Collections.addToCount(mEVACUATIONS_CODE, r.tEVACUATIONS_CODE, 1);
-                    Generic_Collections.addToCount(mBUILDING_EVACUATION_DELAY_DESCRIPTION, r.tBUILDING_EVACUATION_DELAY_DESCRIPTION, 1);
-                    Generic_Collections.addToCount(mBUILDING_EVACUATION_TIME_DESCRIPTION, r.tBUILDING_EVACUATION_TIME_DESCRIPTION, 1);
+                    // FIRE_SAFETY scores
+                    Generic_Collections.addToCount(mFIRE_SAFETY_SUCCESS_SCORE, r.FIRE_SAFETY_SUCCESS_SCORE, 1);
+                    Generic_Collections.addToCount(mFIRE_SAFETY_FAILURE_SCORE, r.FIRE_SAFETY_FAILURE_SCORE, 1);
                     if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FRS_NAME, r.tFRS_NAME, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_E_CODE, r.tE_CODE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_MONTH_NAME, r.tMONTH_NAME, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_WEEKDAY_WEEKEND, r.tWEEKDAY_WEEKEND, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_DAY_NIGHT, r.tDAY_NIGHT, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_LATE_CALL, r.tLATE_CALL, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE, r.tBUILDING_OR_PROPERTY_TYPE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_MULTI_SEATED_FLAG, r.tMULTI_SEATED_FLAG, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_IGNITION_TO_DISCOVERY, r.tIGNITION_TO_DISCOVERY, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_DISCOVERY_TO_CALL, r.tDISCOVERY_TO_CALL, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_HOW_DISCOVERED_DESCRIPTION, r.tHOW_DISCOVERED_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, r.tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, r.tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, r.tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, 1);
+                        addToCounts0(r, mFATALITY_CASUALTY_FRS_NAME, mFATALITY_CASUALTY_E_CODE, mFATALITY_CASUALTY_MONTH_NAME,
+                                mFATALITY_CASUALTY_WEEKDAY_WEEKEND, mFATALITY_CASUALTY_DAY_NIGHT,
+                                mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE, mFATALITY_CASUALTY_LATE_CALL,
+                                mFATALITY_CASUALTY_MULTI_SEATED_FLAG, mFATALITY_CASUALTY_IGNITION_TO_DISCOVERY,
+                                mFATALITY_CASUALTY_DISCOVERY_TO_CALL, mFATALITY_CASUALTY_HOW_DISCOVERED_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT,
+                                mFATALITY_CASUALTY_OCCUPIED_NORMAL, mFATALITY_CASUALTY_ACCIDENTAL_OR_DELIBERATE,
+                                mFATALITY_CASUALTY_VEHICLES, mFATALITY_CASUALTY_VEHICLES_CODE, mFATALITY_CASUALTY_PERSONNEL,
+                                mFATALITY_CASUALTY_PERSONNEL_CODE, mFATALITY_CASUALTY_STARTING_DELAY_DESCRIPTION,
+                                mFATALITY_CASUALTY_ACTION_NON_FRS_DESCRIPTION,
+                                mFATALITY_CASUALTY_ACTION_FRS_DESCRIPTION, mFATALITY_CASUALTY_CAUSE_OF_FIRE,
+                                mFATALITY_CASUALTY_IGNITION_POWER, mFATALITY_CASUALTY_SOURCE_OF_IGNITION,
+                                mFATALITY_CASUALTY_ITEM_IGNITED, mFATALITY_CASUALTY_ITEM_CAUSING_SPREAD,
+                                mFATALITY_CASUALTY_RAPID_FIRE_GROWTH,
+                                mFATALITY_CASUALTY_CAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION,
+                                mFATALITY_CASUALTY_CAUSE_EXPLOSION_INVOLVED,
+                                mFATALITY_CASUALTY_CAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION,
+                                mFATALITY_CASUALTY_CAUSE_EXPLOSION_STAGE_DESCRIPTION,
+                                mFATALITY_CASUALTY_CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_BUILDING_FLOORS_BELOW_GROUND,
+                                mFATALITY_CASUALTY_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION,
+                                mFATALITY_CASUALTY_FIRE_START_LOCATION, mFATALITY_CASUALTY_FIRE_SIZE_ON_ARRIVAL,
+                                mFATALITY_CASUALTY_OTHER_PROPERTY_AFFECTED_ON_ARRIVAL,
+                                mFATALITY_CASUALTY_BUILDING_FIRE_DAMAGE_AREA_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION,
+                                mFATALITY_CASUALTY_FIRE_SIZE_ON_ARRIVAL_DESCRIPTION,
+                                mFATALITY_CASUALTY_other_property_affected_close_d,
+                                mFATALITY_CASUALTY_spread_of_fire_d, mFATALITY_CASUALTY_RESPONSE_TIME,
+                                mFATALITY_CASUALTY_RESPONSE_TIME_CODE, mFATALITY_CASUALTY_TIME_AT_SCENE,
+                                mFATALITY_CASUALTY_TIME_AT_SCENE_CODE,
+                                mFATALITY_CASUALTY_RESCUES, mFATALITY_CASUALTY_EVACUATIONS, mFATALITY_CASUALTY_EVACUATIONS_CODE,
+                                mFATALITY_CASUALTY_BUILDING_EVACUATION_DELAY_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_OCCUPANCY_TYPE, r.tOCCUPANCY_TYPE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_OCCUPIED_NORMAL, r.tOCCUPIED_NORMAL, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, r.tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_ALARM_SYSTEM, r.tALARM_SYSTEM, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_ALARM_SYSTEM_TYPE, r.tALARM_SYSTEM_TYPE, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME, r.tALARM_REASON_FOR_POOR_OUTCOME, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_ACCIDENTAL_OR_DELIBERATE, r.tACCIDENTAL_OR_DELIBERATE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_VEHICLES, r.tVEHICLES, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_VEHICLES_CODE, r.tVEHICLES_CODE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_PERSONNEL, r.tPERSONNEL, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_PERSONNEL_CODE, r.tPERSONNEL_CODE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_STARTING_DELAY_DESCRIPTION, r.tSTARTING_DELAY_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_ACTION_NON_FRS_DESCRIPTION, r.tACTION_NON_FRS_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_ACTION_FRS_DESCRIPTION, r.tACTION_FRS_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_CAUSE_OF_FIRE, r.tCAUSE_OF_FIRE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_IGNITION_POWER, r.tIGNITION_POWER, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_SOURCE_OF_IGNITION, r.tSOURCE_OF_IGNITION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_ITEM_IGNITED, r.tITEM_IGNITED, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_ITEM_CAUSING_SPREAD, r.tITEM_CAUSING_SPREAD, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_RAPID_FIRE_GROWTH, r.tRAPID_FIRE_GROWTH, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_CAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION, r.tCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_CAUSE_EXPLOSION_INVOLVED, r.tCAUSE_EXPLOSION_INVOLVED, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_CAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION, r.tCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_CAUSE_EXPLOSION_STAGE_DESCRIPTION, r.tCAUSE_EXPLOSION_STAGE_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, r.tCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, r.tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND, r.tBUILDING_FLOORS_ABOVE_GROUND, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_FLOORS_BELOW_GROUND, r.tBUILDING_FLOORS_BELOW_GROUND, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_FLOOR_ORIGIN, r.tBUILDING_FLOOR_ORIGIN, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, r.tBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION, r.tBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FIRE_START_LOCATION, r.tFIRE_START_LOCATION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FIRE_SIZE_ON_ARRIVAL, r.tFIRE_SIZE_ON_ARRIVAL, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_OTHER_PROPERTY_AFFECTED_ON_ARRIVAL, r.tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_FIRE_DAMAGE_AREA_DESCRIPTION, r.tBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION, r.tBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FIRE_SIZE_ON_ARRIVAL_DESCRIPTION, r.tFIRE_SIZE_ON_ARRIVAL_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_other_property_affected_close_d, r.tother_property_affected_close_d, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_spread_of_fire_d, r.tspread_of_fire_d, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_RESPONSE_TIME, r.tRESPONSE_TIME, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_RESPONSE_TIME_CODE, r.tRESPONSE_TIME_CODE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_TIME_AT_SCENE, r.tTIME_AT_SCENE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_TIME_AT_SCENE_CODE, r.tTIME_AT_SCENE_CODE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_RESCUES, r.tRESCUES, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_EVACUATIONS, r.tEVACUATIONS, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_EVACUATIONS_CODE, r.tEVACUATIONS_CODE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_EVACUATION_DELAY_DESCRIPTION, r.tBUILDING_EVACUATION_DELAY_DESCRIPTION, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION, r.tBUILDING_EVACUATION_TIME_DESCRIPTION, 1);
+                        // FIRE_SAFETY scores
+                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE, r.FIRE_SAFETY_SUCCESS_SCORE, 1);
+                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE, r.FIRE_SAFETY_FAILURE_SCORE, 1);
+                    }
+                }
+                // Other Dwelling Types
+                ite2 = c.data2.keySet().iterator();
+                while (ite2.hasNext()) {
+                    F_RecordID id = ite2.next();
+                    F_Dwellings_Integer_Record2 r = c.data2.get(id);
+                    total++;
+                    addToCounts0(r, mFRS_NAME, mE_CODE, mMONTH_NAME,
+                            mWEEKDAY_WEEKEND, mDAY_NIGHT,
+                            mBUILDING_OR_PROPERTY_TYPE, mLATE_CALL,
+                            mMULTI_SEATED_FLAG, mIGNITION_TO_DISCOVERY,
+                            mDISCOVERY_TO_CALL, mHOW_DISCOVERED_DESCRIPTION,
+                            mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,
+                            mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION,
+                            mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT,
+                            mOCCUPIED_NORMAL, mACCIDENTAL_OR_DELIBERATE,
+                            mVEHICLES, mVEHICLES_CODE, mPERSONNEL,
+                            mPERSONNEL_CODE, mSTARTING_DELAY_DESCRIPTION,
+                            mACTION_NON_FRS_DESCRIPTION,
+                            mACTION_FRS_DESCRIPTION, mCAUSE_OF_FIRE,
+                            mIGNITION_POWER, mSOURCE_OF_IGNITION,
+                            mITEM_IGNITED, mITEM_CAUSING_SPREAD,
+                            mRAPID_FIRE_GROWTH,
+                            mCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION,
+                            mCAUSE_EXPLOSION_INVOLVED,
+                            mCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION,
+                            mCAUSE_EXPLOSION_STAGE_DESCRIPTION,
+                            mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
+                            mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
+                            mBUILDING_FLOORS_ABOVE_GROUND,
+                            mBUILDING_FLOORS_BELOW_GROUND,
+                            mBUILDING_FLOOR_ORIGIN,
+                            mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
+                            mBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION,
+                            mFIRE_START_LOCATION, mFIRE_SIZE_ON_ARRIVAL,
+                            mOTHER_PROPERTY_AFFECTED_ON_ARRIVAL,
+                            mBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION,
+                            mBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION,
+                            mFIRE_SIZE_ON_ARRIVAL_DESCRIPTION,
+                            mother_property_affected_close_d,
+                            mspread_of_fire_d, mRESPONSE_TIME,
+                            mRESPONSE_TIME_CODE, mTIME_AT_SCENE,
+                            mTIME_AT_SCENE_CODE,
+                            mRESCUES, mEVACUATIONS, mEVACUATIONS_CODE,
+                            mBUILDING_EVACUATION_DELAY_DESCRIPTION,
+                            mBUILDING_EVACUATION_TIME_DESCRIPTION);
+                    Generic_Collections.addToCount(mFATALITY_CASUALTY, r.tFATALITY_CASUALTY, 1);
+                    Generic_Collections.addToCount(mFSO_APPLY, r.tFSO_APPLY, 1);
+                    Generic_Collections.addToCount(mSAFETY_SYSTEM, r.tSAFETY_SYSTEM, 1);
+                    // FIRE_SAFETY scores
+                    Generic_Collections.addToCount(mFIRE_SAFETY_SUCCESS_SCORE, r.FIRE_SAFETY_SUCCESS_SCORE, 1);
+                    Generic_Collections.addToCount(mFIRE_SAFETY_FAILURE_SCORE, r.FIRE_SAFETY_FAILURE_SCORE, 1);
+                    if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                        addToCounts0(r, mFATALITY_CASUALTY_FRS_NAME, mFATALITY_CASUALTY_E_CODE, mFATALITY_CASUALTY_MONTH_NAME,
+                                mFATALITY_CASUALTY_WEEKDAY_WEEKEND, mFATALITY_CASUALTY_DAY_NIGHT,
+                                mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE, mFATALITY_CASUALTY_LATE_CALL,
+                                mFATALITY_CASUALTY_MULTI_SEATED_FLAG, mFATALITY_CASUALTY_IGNITION_TO_DISCOVERY,
+                                mFATALITY_CASUALTY_DISCOVERY_TO_CALL, mFATALITY_CASUALTY_HOW_DISCOVERED_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT,
+                                mFATALITY_CASUALTY_OCCUPIED_NORMAL, mFATALITY_CASUALTY_ACCIDENTAL_OR_DELIBERATE,
+                                mFATALITY_CASUALTY_VEHICLES, mFATALITY_CASUALTY_VEHICLES_CODE, mFATALITY_CASUALTY_PERSONNEL,
+                                mFATALITY_CASUALTY_PERSONNEL_CODE, mFATALITY_CASUALTY_STARTING_DELAY_DESCRIPTION,
+                                mFATALITY_CASUALTY_ACTION_NON_FRS_DESCRIPTION,
+                                mFATALITY_CASUALTY_ACTION_FRS_DESCRIPTION, mFATALITY_CASUALTY_CAUSE_OF_FIRE,
+                                mFATALITY_CASUALTY_IGNITION_POWER, mFATALITY_CASUALTY_SOURCE_OF_IGNITION,
+                                mFATALITY_CASUALTY_ITEM_IGNITED, mFATALITY_CASUALTY_ITEM_CAUSING_SPREAD,
+                                mFATALITY_CASUALTY_RAPID_FIRE_GROWTH,
+                                mFATALITY_CASUALTY_CAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION,
+                                mFATALITY_CASUALTY_CAUSE_EXPLOSION_INVOLVED,
+                                mFATALITY_CASUALTY_CAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION,
+                                mFATALITY_CASUALTY_CAUSE_EXPLOSION_STAGE_DESCRIPTION,
+                                mFATALITY_CASUALTY_CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_BUILDING_FLOORS_BELOW_GROUND,
+                                mFATALITY_CASUALTY_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION,
+                                mFATALITY_CASUALTY_FIRE_START_LOCATION, mFATALITY_CASUALTY_FIRE_SIZE_ON_ARRIVAL,
+                                mFATALITY_CASUALTY_OTHER_PROPERTY_AFFECTED_ON_ARRIVAL,
+                                mFATALITY_CASUALTY_BUILDING_FIRE_DAMAGE_AREA_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION,
+                                mFATALITY_CASUALTY_FIRE_SIZE_ON_ARRIVAL_DESCRIPTION,
+                                mFATALITY_CASUALTY_other_property_affected_close_d,
+                                mFATALITY_CASUALTY_spread_of_fire_d, mFATALITY_CASUALTY_RESPONSE_TIME,
+                                mFATALITY_CASUALTY_RESPONSE_TIME_CODE, mFATALITY_CASUALTY_TIME_AT_SCENE,
+                                mFATALITY_CASUALTY_TIME_AT_SCENE_CODE,
+                                mFATALITY_CASUALTY_RESCUES, mFATALITY_CASUALTY_EVACUATIONS, mFATALITY_CASUALTY_EVACUATIONS_CODE,
+                                mFATALITY_CASUALTY_BUILDING_EVACUATION_DELAY_DESCRIPTION,
+                                mFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION);
+                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FSO_APPLY, r.tFSO_APPLY, 1);
+                        Generic_Collections.addToCount(mFATALITY_CASUALTY_SAFETY_SYSTEM, r.tSAFETY_SYSTEM, 1);
+                        // FIRE_SAFETY scores
+                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE, r.FIRE_SAFETY_SUCCESS_SCORE, 1);
+                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE, r.FIRE_SAFETY_FAILURE_SCORE, 1);
                     }
                 }
                 allTotal += total;
@@ -3573,12 +4314,7 @@ public class F_Main extends F_Object {
                 output(dir, tFINANCIAL_YEAR, F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION), mBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, mFATALITY_CASUALTY_BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION);
                 output(dir, tFINANCIAL_YEAR, F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION), mBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, mFATALITY_CASUALTY_BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION);
                 output(dir, tFINANCIAL_YEAR, F_Strings.BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, env.data.vname2id.get(F_Strings.BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT), mBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, mFATALITY_CASUALTY_BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT);
-                output(dir, tFINANCIAL_YEAR, F_Strings.OCCUPANCY_TYPE, env.data.vname2id.get(F_Strings.OCCUPANCY_TYPE), mOCCUPANCY_TYPE, mFATALITY_CASUALTY_OCCUPANCY_TYPE);
                 output(dir, tFINANCIAL_YEAR, F_Strings.OCCUPIED_NORMAL, env.data.vname2id.get(F_Strings.OCCUPIED_NORMAL), mOCCUPIED_NORMAL, mFATALITY_CASUALTY_OCCUPIED_NORMAL);
-                output(dir, tFINANCIAL_YEAR, F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, env.data.vname2id.get(F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT), mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, mFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
-                output(dir, tFINANCIAL_YEAR, F_Strings.ALARM_SYSTEM, env.data.vname2id.get(F_Strings.ALARM_SYSTEM), mALARM_SYSTEM, mFATALITY_CASUALTY_ALARM_SYSTEM);
-                output(dir, tFINANCIAL_YEAR, F_Strings.ALARM_SYSTEM_TYPE, env.data.vname2id.get(F_Strings.ALARM_SYSTEM_TYPE), mALARM_SYSTEM_TYPE, mFATALITY_CASUALTY_ALARM_SYSTEM_TYPE);
-                output(dir, tFINANCIAL_YEAR, F_Strings.ALARM_REASON_FOR_POOR_OUTCOME, env.data.vname2id.get(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME), mALARM_REASON_FOR_POOR_OUTCOME, mFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME);
                 output(dir, tFINANCIAL_YEAR, F_Strings.ACCIDENTAL_OR_DELIBERATE, env.data.vname2id.get(F_Strings.ACCIDENTAL_OR_DELIBERATE), mACCIDENTAL_OR_DELIBERATE, mFATALITY_CASUALTY_ACCIDENTAL_OR_DELIBERATE);
                 output(dir, tFINANCIAL_YEAR, F_Strings.VEHICLES, env.data.vname2id.get(F_Strings.VEHICLES), mVEHICLES, mFATALITY_CASUALTY_VEHICLES);
                 output(dir, tFINANCIAL_YEAR, F_Strings.VEHICLES_CODE, env.data.vname2id.get(F_Strings.VEHICLES_CODE), mVEHICLES_CODE, mFATALITY_CASUALTY_VEHICLES_CODE);
@@ -3621,6 +4357,18 @@ public class F_Main extends F_Object {
                 output(dir, tFINANCIAL_YEAR, F_Strings.EVACUATIONS_CODE, env.data.vname2id.get(F_Strings.EVACUATIONS_CODE), mEVACUATIONS_CODE, mFATALITY_CASUALTY_EVACUATIONS_CODE);
                 output(dir, tFINANCIAL_YEAR, F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION), mBUILDING_EVACUATION_DELAY_DESCRIPTION, mFATALITY_CASUALTY_BUILDING_EVACUATION_DELAY_DESCRIPTION);
                 output(dir, tFINANCIAL_YEAR, F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION), mBUILDING_EVACUATION_TIME_DESCRIPTION, mFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION);
+                // Normal Dwelling Types
+                output(dir, tFINANCIAL_YEAR, F_Strings.OCCUPANCY_TYPE, env.data.vname2id.get(F_Strings.OCCUPANCY_TYPE), mOCCUPANCY_TYPE, mFATALITY_CASUALTY_OCCUPANCY_TYPE);
+                output(dir, tFINANCIAL_YEAR, F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, env.data.vname2id.get(F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT), mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, mFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT);
+                output(dir, tFINANCIAL_YEAR, F_Strings.ALARM_SYSTEM, env.data.vname2id.get(F_Strings.ALARM_SYSTEM), mALARM_SYSTEM, mFATALITY_CASUALTY_ALARM_SYSTEM);
+                output(dir, tFINANCIAL_YEAR, F_Strings.ALARM_SYSTEM_TYPE, env.data.vname2id.get(F_Strings.ALARM_SYSTEM_TYPE), mALARM_SYSTEM_TYPE, mFATALITY_CASUALTY_ALARM_SYSTEM_TYPE);
+                output(dir, tFINANCIAL_YEAR, F_Strings.ALARM_REASON_FOR_POOR_OUTCOME, env.data.vname2id.get(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME), mALARM_REASON_FOR_POOR_OUTCOME, mFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME);
+                // Other Dwelling Types
+                output(dir, tFINANCIAL_YEAR, F_Strings.FSO_APPLY, env.data.vname2id.get(F_Strings.FSO_APPLY), mFSO_APPLY, mFATALITY_CASUALTY_FSO_APPLY);
+                output(dir, tFINANCIAL_YEAR, F_Strings.SAFETY_SYSTEM, env.data.vname2id.get(F_Strings.SAFETY_SYSTEM), mSAFETY_SYSTEM, mFATALITY_CASUALTY_SAFETY_SYSTEM);
+                // FIRE_SAFETY scores
+                outputScores(dir, tFINANCIAL_YEAR, F_Strings.FIRE_SAFETY_SUCCESS_SCORE, env.data.vname2id.get(F_Strings.FIRE_SAFETY_SUCCESS_SCORE), mFIRE_SAFETY_SUCCESS_SCORE, mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE);
+                outputScores(dir, tFINANCIAL_YEAR, F_Strings.FIRE_SAFETY_FAILURE_SCORE, env.data.vname2id.get(F_Strings.FIRE_SAFETY_FAILURE_SCORE), mFIRE_SAFETY_FAILURE_SCORE, mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE);
             }
             Path dir = getDir(name, F_Strings.s2010_20);
             output(dir, F_Strings.s2010_20, F_Strings.FATALITY_CASUALTY, varFATALITY_CASUALTY, allTotal, collectCounts(mAllFATALITY_CASUALTY));
@@ -3638,12 +4386,7 @@ public class F_Main extends F_Object {
             output(dir, F_Strings.s2010_20, F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION), collectCounts(mAllBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION), collectCounts(mAllFATALITY_CASUALTY_BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION));
             output(dir, F_Strings.s2010_20, F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION), collectCounts(mAllBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION), collectCounts(mAllFATALITY_CASUALTY_BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION));
             output(dir, F_Strings.s2010_20, F_Strings.BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT, env.data.vname2id.get(F_Strings.BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT), collectCounts(mAllBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT), collectCounts(mAllFATALITY_CASUALTY_BUILDING_OCCUPIED_AT_TIME_OF_INCIDENT));
-            output(dir, F_Strings.s2010_20, F_Strings.OCCUPANCY_TYPE, env.data.vname2id.get(F_Strings.OCCUPANCY_TYPE), collectCounts(mAllOCCUPANCY_TYPE), collectCounts(mAllFATALITY_CASUALTY_OCCUPANCY_TYPE));
             output(dir, F_Strings.s2010_20, F_Strings.OCCUPIED_NORMAL, env.data.vname2id.get(F_Strings.OCCUPIED_NORMAL), collectCounts(mAllOCCUPIED_NORMAL), collectCounts(mAllFATALITY_CASUALTY_OCCUPIED_NORMAL));
-            output(dir, F_Strings.s2010_20, F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, env.data.vname2id.get(F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT), collectCounts(mAllWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT), collectCounts(mAllFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT));
-            output(dir, F_Strings.s2010_20, F_Strings.ALARM_SYSTEM, env.data.vname2id.get(F_Strings.ALARM_SYSTEM), collectCounts(mAllALARM_SYSTEM), collectCounts(mAllFATALITY_CASUALTY_ALARM_SYSTEM));
-            output(dir, F_Strings.s2010_20, F_Strings.ALARM_SYSTEM_TYPE, env.data.vname2id.get(F_Strings.ALARM_SYSTEM_TYPE), collectCounts(mAllALARM_SYSTEM_TYPE), collectCounts(mAllFATALITY_CASUALTY_ALARM_SYSTEM_TYPE));
-            output(dir, F_Strings.s2010_20, F_Strings.ALARM_REASON_FOR_POOR_OUTCOME, env.data.vname2id.get(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME), collectCounts(mAllALARM_REASON_FOR_POOR_OUTCOME), collectCounts(mAllFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME));
             output(dir, F_Strings.s2010_20, F_Strings.ACCIDENTAL_OR_DELIBERATE, env.data.vname2id.get(F_Strings.ACCIDENTAL_OR_DELIBERATE), collectCounts(mAllACCIDENTAL_OR_DELIBERATE), collectCounts(mAllFATALITY_CASUALTY_ACCIDENTAL_OR_DELIBERATE));
             output(dir, F_Strings.s2010_20, F_Strings.VEHICLES, env.data.vname2id.get(F_Strings.VEHICLES), collectCounts(mAllVEHICLES), collectCounts(mAllFATALITY_CASUALTY_VEHICLES));
             output(dir, F_Strings.s2010_20, F_Strings.VEHICLES_CODE, env.data.vname2id.get(F_Strings.VEHICLES_CODE), collectCounts(mAllVEHICLES_CODE), collectCounts(mAllFATALITY_CASUALTY_VEHICLES_CODE));
@@ -3686,8 +4429,21 @@ public class F_Main extends F_Object {
             output(dir, F_Strings.s2010_20, F_Strings.EVACUATIONS_CODE, env.data.vname2id.get(F_Strings.EVACUATIONS_CODE), collectCounts(mAllEVACUATIONS_CODE), collectCounts(mAllFATALITY_CASUALTY_EVACUATIONS_CODE));
             output(dir, F_Strings.s2010_20, F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION), collectCounts(mAllBUILDING_EVACUATION_DELAY_DESCRIPTION), collectCounts(mAllFATALITY_CASUALTY_BUILDING_EVACUATION_DELAY_DESCRIPTION));
             output(dir, F_Strings.s2010_20, F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION), collectCounts(mAllBUILDING_EVACUATION_TIME_DESCRIPTION), collectCounts(mAllFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION));
+            // Normal Dwelling Types
+            output(dir, F_Strings.s2010_20, F_Strings.OCCUPANCY_TYPE, env.data.vname2id.get(F_Strings.OCCUPANCY_TYPE), collectCounts(mAllOCCUPANCY_TYPE), collectCounts(mAllFATALITY_CASUALTY_OCCUPANCY_TYPE));
+            output(dir, F_Strings.s2010_20, F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, env.data.vname2id.get(F_Strings.WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT), collectCounts(mAllWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT), collectCounts(mAllFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT));
+            output(dir, F_Strings.s2010_20, F_Strings.ALARM_SYSTEM, env.data.vname2id.get(F_Strings.ALARM_SYSTEM), collectCounts(mAllALARM_SYSTEM), collectCounts(mAllFATALITY_CASUALTY_ALARM_SYSTEM));
+            output(dir, F_Strings.s2010_20, F_Strings.ALARM_SYSTEM_TYPE, env.data.vname2id.get(F_Strings.ALARM_SYSTEM_TYPE), collectCounts(mAllALARM_SYSTEM_TYPE), collectCounts(mAllFATALITY_CASUALTY_ALARM_SYSTEM_TYPE));
+            output(dir, F_Strings.s2010_20, F_Strings.ALARM_REASON_FOR_POOR_OUTCOME, env.data.vname2id.get(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME), collectCounts(mAllALARM_REASON_FOR_POOR_OUTCOME), collectCounts(mAllFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME));
+            // Other Dwelling Types
+            output(dir, F_Strings.s2010_20, F_Strings.FSO_APPLY, env.data.vname2id.get(F_Strings.FSO_APPLY), collectCounts(mAllFSO_APPLY), collectCounts(mAllFATALITY_CASUALTY_FSO_APPLY));
+            output(dir, F_Strings.s2010_20, F_Strings.SAFETY_SYSTEM, env.data.vname2id.get(F_Strings.SAFETY_SYSTEM), collectCounts(mAllSAFETY_SYSTEM), collectCounts(mAllFATALITY_CASUALTY_SAFETY_SYSTEM));
+//            // FIRE_SAFETY scores
+            outputScores(dir, F_Strings.s2010_20, F_Strings.FIRE_SAFETY_SUCCESS_SCORE, env.data.vname2id.get(F_Strings.FIRE_SAFETY_SUCCESS_SCORE), collectCounts(mAllFIRE_SAFETY_SUCCESS_SCORE), collectCounts(mAllFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE));
+            outputScores(dir, F_Strings.s2010_20, F_Strings.FIRE_SAFETY_FAILURE_SCORE, env.data.vname2id.get(F_Strings.FIRE_SAFETY_FAILURE_SCORE), collectCounts(mAllFIRE_SAFETY_FAILURE_SCORE), collectCounts(mAllFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE));
         } catch (IOException | ClassNotFoundException ex) {
-            Logger.getLogger(F_Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(F_Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }
 

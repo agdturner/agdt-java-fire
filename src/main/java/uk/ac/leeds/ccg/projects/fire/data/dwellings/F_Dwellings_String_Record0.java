@@ -15,10 +15,11 @@
  */
 package uk.ac.leeds.ccg.projects.fire.data.dwellings;
 
+import java.io.IOException;
 import uk.ac.leeds.ccg.data.Data_Record;
 import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
 
-public class F_Dwellings_String_Record0 extends Data_Record {
+public abstract class F_Dwellings_String_Record0 extends Data_Record {
 
     private static final long serialVersionUID = 1L;
 
@@ -87,6 +88,191 @@ public class F_Dwellings_String_Record0 extends Data_Record {
         super(i);
     }
 
+    protected final int init0(String[] s) throws IOException {
+        int n = 0;
+        check(s[n]);
+        tID_number = Integer.parseInt(s[n]);
+        n ++;
+        check(s[n]);
+        tFRS_NAME = s[n];
+        n ++;
+        check(s[n]);
+        tE_CODE = s[n];
+        n ++;
+        check(s[n]);
+        tFINANCIAL_YEAR = s[n];
+        n ++;
+        check(s[n]);
+        tMONTH_NAME = s[n];
+        n ++;
+        check(s[n]);
+        tWEEKDAY_WEEKEND = s[n];
+        n ++;
+        check(s[n]);
+        tDAY_NIGHT = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_OR_PROPERTY_TYPE = s[n];
+        n ++;
+        check(s[n]);
+        tLATE_CALL = s[n];
+        n ++;
+        check(s[n]);
+        tMULTI_SEATED_FLAG = s[n];
+        n ++;
+        check(s[n]);
+        tIGNITION_TO_DISCOVERY = s[n];
+        n ++;
+        check(s[n]);
+        tDISCOVERY_TO_CALL = s[n];
+        n ++;
+        check(s[n]);
+        tHOW_DISCOVERED_DESCRIPTION = s[n];
+        return n;
+    }
+    
+    protected final int init1(String[] s, int n) throws IOException {
+        n ++;
+        check(s[n]);
+        tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION = s[n];
+        return n;
+    }
+        
+    protected final void init2(String[] s, int n) throws IOException {        
+        n ++;
+        check(s[n]);
+        tACCIDENTAL_OR_DELIBERATE = s[n];
+        n ++;
+        check(s[n]);
+        tVEHICLES = s[n];
+        n ++;
+        check(s[n]);
+        tVEHICLES_CODE = s[n];
+        n ++;
+        check(s[n]);
+        tPERSONNEL = s[n];
+        n ++;
+        check(s[n]);
+        tPERSONNEL_CODE = s[n];
+        n ++;
+        check(s[n]);
+        tSTARTING_DELAY_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tACTION_NON_FRS_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tACTION_FRS_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tCAUSE_OF_FIRE = s[n];
+        n ++;
+        check(s[n]);
+        tIGNITION_POWER = s[n];
+        n ++;
+        check(s[n]);
+        tSOURCE_OF_IGNITION = s[n];
+        n ++;
+        check(s[n]);
+        tITEM_IGNITED = s[n];
+        n ++;
+        check(s[n]);
+        tITEM_CAUSING_SPREAD = s[n];
+        n ++;
+        check(s[n]);
+        tRAPID_FIRE_GROWTH = s[n];
+        n ++;
+        check(s[n]);
+        tCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tCAUSE_EXPLOSION_INVOLVED = s[n];
+        n ++;
+        check(s[n]);
+        tCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tCAUSE_EXPLOSION_STAGE_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_FLOORS_ABOVE_GROUND = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_FLOORS_BELOW_GROUND = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_FLOOR_ORIGIN = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tFIRE_START_LOCATION = s[n];
+        n ++;
+        check(s[n]);
+        tFIRE_SIZE_ON_ARRIVAL = s[n];
+        n ++;
+        check(s[n]);
+        tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tFIRE_SIZE_ON_ARRIVAL_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tother_property_affected_close_d = s[n];
+        n ++;
+        check(s[n]);
+        tspread_of_fire_d = s[n];
+        n ++;
+        check(s[n]);
+        tRESPONSE_TIME = s[n];
+        n ++;
+        check(s[n]);
+        tRESPONSE_TIME_CODE = s[n];
+        n ++;
+        check(s[n]);
+        tTIME_AT_SCENE = s[n];
+        n ++;
+        check(s[n]);
+        tTIME_AT_SCENE_CODE = s[n];
+        n ++;
+        check(s[n]);
+        tFATALITY_CASUALTY = s[n];
+        n ++;
+        check(s[n]);
+        tRESCUES = s[n];
+        n ++;
+        check(s[n]);
+        tEVACUATIONS = s[n];
+        n ++;
+        check(s[n]);
+        tEVACUATIONS_CODE = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_EVACUATION_DELAY_DESCRIPTION = s[n];
+        n ++;
+        check(s[n]);
+        tBUILDING_EVACUATION_TIME_DESCRIPTION = s[n];
+    }
+    
     protected String toString0() {
         String r = "FRS_NAME=" + tFRS_NAME;
         r += ", E_CODE=" + tE_CODE;
@@ -155,503 +341,15 @@ public class F_Dwellings_String_Record0 extends Data_Record {
         r += ", BUILDING_EVACUATION_TIME_DESCRIPTION=" + tBUILDING_EVACUATION_TIME_DESCRIPTION;
         return r;
     }
-        
-//    /**
-//     * @return A String representation of this.
-//     */
-//    @Override
-//    public String toString() {
-//        //return getId().getClass().getSimpleName() + id.toString();
-//        //return id.toString();
-//        String r = toString0();
-//        r += ", OCCUPIED_NORMAL=" + tOCCUPIED_NORMAL;
-//        r += toString1();
-//        return r;
-//    }
-
+    
     @Override
     public F_RecordID getId() {
         return (F_RecordID) id;
     }
 
-    protected final void inittID_number(String s) {
-        if (!s.trim().isEmpty()) {
-            tID_number = Integer.parseInt(s);
-        } else {
-            tID_number = null;
-        }
-    }
-
-    protected final void inittFRS_NAME(String s) {
-        if (!s.trim().isEmpty()) {
-            tFRS_NAME = s;
-        } else {
-            tFRS_NAME = null;
-        }
-    }
-
-    protected final void inittE_CODE(String s) {
-        if (!s.trim().isEmpty()) {
-            tE_CODE = s;
-        } else {
-            tE_CODE = null;
-        }
-    }
-
-    protected final void inittFINANCIAL_YEAR(String s) {
-        if (!s.trim().isEmpty()) {
-            //tFINANCIAL_YEAR = Integer.parseInt(s);
-            tFINANCIAL_YEAR = s;
-        } else {
-            tFINANCIAL_YEAR = null;
-        }
-    }
-
-    protected final void inittMONTH_NAME(String s) {
-        if (!s.trim().isEmpty()) {
-            tMONTH_NAME = s;
-        } else {
-            tMONTH_NAME = null;
-        }
-    }
-
-    protected final void inittWEEKDAY_WEEKEND(String s) {
-        if (!s.trim().isEmpty()) {
-            tWEEKDAY_WEEKEND = s;
-        } else {
-            tWEEKDAY_WEEKEND = null;
-        }
-    }
-
-    protected final void inittDAY_NIGHT(String s) {
-        if (!s.trim().isEmpty()) {
-            tDAY_NIGHT = s;
-        } else {
-            tDAY_NIGHT = null;
-        }
-    }
-
-    protected final void inittBUILDING_OR_PROPERTY_TYPE(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_OR_PROPERTY_TYPE = s;
-        } else {
-            tBUILDING_OR_PROPERTY_TYPE = null;
-        }
-    }
-
-    protected final void inittLATE_CALL(String s) {
-        if (!s.trim().isEmpty()) {
-            tLATE_CALL = s;
-        } else {
-            tLATE_CALL = null;
-        }
-    }
-
-    protected final void inittMULTI_SEATED_FLAG(String s) {
-        if (!s.trim().isEmpty()) {
-            tMULTI_SEATED_FLAG = s;
-        } else {
-            tMULTI_SEATED_FLAG = null;
-        }
-    }
-
-    protected final void inittIGNITION_TO_DISCOVERY(String s) {
-        if (!s.trim().isEmpty()) {
-            tIGNITION_TO_DISCOVERY = s;
-        } else {
-            tIGNITION_TO_DISCOVERY = null;
-        }
-    }
-
-    protected final void inittDISCOVERY_TO_CALL(String s) {
-        if (!s.trim().isEmpty()) {
-            tDISCOVERY_TO_CALL = s;
-        } else {
-            tDISCOVERY_TO_CALL = null;
-        }
-    }
-
-    protected final void inittHOW_DISCOVERED_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tHOW_DISCOVERED_DESCRIPTION = s;
-        } else {
-            tHOW_DISCOVERED_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = s;
-        } else {
-            tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION = s;
-        } else {
-            tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT = s;
-        } else {
-            tBUILDING_OCCUPIED_AT_TIME_OF_INCIDENT = null;
-        }
-    }
-
-    protected final void inittOCCUPIED_NORMAL(String s) {
-        if (!s.trim().isEmpty()) {
-            tOCCUPIED_NORMAL = s;
-        } else {
-            tOCCUPIED_NORMAL = null;
-        }
-    }
-
-    protected final void inittACCIDENTAL_OR_DELIBERATE(String s) {
-        if (!s.trim().isEmpty()) {
-            tACCIDENTAL_OR_DELIBERATE = s;
-        } else {
-            tACCIDENTAL_OR_DELIBERATE = null;
-        }
-    }
-
-    protected final void inittVEHICLES(String s) {
-        if (!s.trim().isEmpty()) {
-            tVEHICLES = s;
-        } else {
-            tVEHICLES = null;
-        }
-    }
-
-    protected final void inittVEHICLES_CODE(String s) {
-        if (!s.trim().isEmpty()) {
-            tVEHICLES_CODE = s;
-        } else {
-            tVEHICLES_CODE = null;
-        }
-    }
-
-    protected final void inittPERSONNEL(String s) {
-        if (!s.trim().isEmpty()) {
-            tPERSONNEL = s;
-        } else {
-            tPERSONNEL = null;
-        }
-    }
-
-    protected final void inittPERSONNEL_CODE(String s) {
-        if (!s.trim().isEmpty()) {
-            tPERSONNEL_CODE = s;
-        } else {
-            tPERSONNEL_CODE = null;
-        }
-    }
-
-    protected final void inittSTARTING_DELAY_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tSTARTING_DELAY_DESCRIPTION = s;
-        } else {
-            tSTARTING_DELAY_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittACTION_NON_FRS_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tACTION_NON_FRS_DESCRIPTION = s;
-        } else {
-            tACTION_NON_FRS_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittACTION_FRS_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tACTION_FRS_DESCRIPTION = s;
-        } else {
-            tACTION_FRS_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittCAUSE_OF_FIRE(String s) {
-        if (!s.trim().isEmpty()) {
-            tCAUSE_OF_FIRE = s;
-        } else {
-            tCAUSE_OF_FIRE = null;
-        }
-    }
-
-    protected final void inittIGNITION_POWER(String s) {
-        if (!s.trim().isEmpty()) {
-            tIGNITION_POWER = s;
-        } else {
-            tIGNITION_POWER = null;
-        }
-    }
-
-    protected final void inittSOURCE_OF_IGNITION(String s) {
-        if (!s.trim().isEmpty()) {
-            tSOURCE_OF_IGNITION = s;
-        } else {
-            tSOURCE_OF_IGNITION = null;
-        }
-    }
-
-    protected final void inittITEM_IGNITED(String s) {
-        if (!s.trim().isEmpty()) {
-            tITEM_IGNITED = s;
-        } else {
-            tITEM_IGNITED = null;
-        }
-    }
-
-    protected final void inittITEM_CAUSING_SPREAD(String s) {
-        if (!s.trim().isEmpty()) {
-            tITEM_CAUSING_SPREAD = s;
-        } else {
-            tITEM_CAUSING_SPREAD = null;
-        }
-    }
-
-    protected final void inittRAPID_FIRE_GROWTH(String s) {
-        if (!s.trim().isEmpty()) {
-            tRAPID_FIRE_GROWTH = s;
-        } else {
-            tRAPID_FIRE_GROWTH = null;
-        }
-    }
-
-    protected final void inittCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION = s;
-        } else {
-            tCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittCAUSE_EXPLOSION_INVOLVED(String s) {
-        if (!s.trim().isEmpty()) {
-            tCAUSE_EXPLOSION_INVOLVED = s;
-        } else {
-            tCAUSE_EXPLOSION_INVOLVED = null;
-        }
-    }
-
-    protected final void inittCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION = s;
-        } else {
-            tCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittCAUSE_EXPLOSION_STAGE_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tCAUSE_EXPLOSION_STAGE_DESCRIPTION = s;
-        } else {
-            tCAUSE_EXPLOSION_STAGE_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION = s;
-        } else {
-            tCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION = s;
-        } else {
-            tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittBUILDING_FLOORS_ABOVE_GROUND(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_FLOORS_ABOVE_GROUND = s;
-        } else {
-            tBUILDING_FLOORS_ABOVE_GROUND = null;
-        }
-    }
-
-    protected final void inittBUILDING_FLOORS_BELOW_GROUND(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_FLOORS_BELOW_GROUND = s;
-        } else {
-            tBUILDING_FLOORS_BELOW_GROUND = null;
-        }
-    }
-
-    protected final void inittBUILDING_FLOOR_ORIGIN(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_FLOOR_ORIGIN = s;
-        } else {
-            tBUILDING_FLOOR_ORIGIN = null;
-        }
-    }
-
-    protected final void inittBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION = s;
-        } else {
-            tBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION = s;
-        } else {
-            tBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittFIRE_START_LOCATION(String s) {
-        if (!s.trim().isEmpty()) {
-            tFIRE_START_LOCATION = s;
-        } else {
-            tFIRE_START_LOCATION = null;
-        }
-    }
-
-    protected final void inittFIRE_SIZE_ON_ARRIVAL(String s) {
-        if (!s.trim().isEmpty()) {
-            tFIRE_SIZE_ON_ARRIVAL = s;
-        } else {
-            tFIRE_SIZE_ON_ARRIVAL = null;
-        }
-    }
-
-    protected final void inittOTHER_PROPERTY_AFFECTED_ON_ARRIVAL(String s) {
-        if (!s.trim().isEmpty()) {
-            tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL = s;
-        } else {
-            tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL = null;
-        }
-    }
-
-    protected final void inittBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION = s;
-        } else {
-            tBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION = s;
-        } else {
-            tBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittFIRE_SIZE_ON_ARRIVAL_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tFIRE_SIZE_ON_ARRIVAL_DESCRIPTION = s;
-        } else {
-            tFIRE_SIZE_ON_ARRIVAL_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittother_property_affected_close_d(String s) {
-        if (!s.trim().isEmpty()) {
-            tother_property_affected_close_d = s;
-        } else {
-            tother_property_affected_close_d = null;
-        }
-    }
-
-    protected final void inittspread_of_fire_d(String s) {
-        if (!s.trim().isEmpty()) {
-            tspread_of_fire_d = s;
-        } else {
-            tspread_of_fire_d = null;
-        }
-    }
-
-    protected final void inittRESPONSE_TIME(String s) {
-        if (!s.trim().isEmpty()) {
-            tRESPONSE_TIME = s;
-        } else {
-            tRESPONSE_TIME = null;
-        }
-    }
-
-    protected final void inittRESPONSE_TIME_CODE(String s) {
-        if (!s.trim().isEmpty()) {
-            tRESPONSE_TIME_CODE = s;
-        } else {
-            tRESPONSE_TIME_CODE = null;
-        }
-    }
-
-    protected final void inittTIME_AT_SCENE(String s) {
-        if (!s.trim().isEmpty()) {
-            tTIME_AT_SCENE = s;
-        } else {
-            tTIME_AT_SCENE = null;
-        }
-    }
-
-    protected final void inittTIME_AT_SCENE_CODE(String s) {
-        if (!s.trim().isEmpty()) {
-            tTIME_AT_SCENE_CODE = s;
-        } else {
-            tTIME_AT_SCENE_CODE = null;
-        }
-    }
-
-    protected final void inittFATALITY_CASUALTY(String s) {
-        if (!s.trim().isEmpty()) {
-            tFATALITY_CASUALTY = s;
-        } else {
-            tFATALITY_CASUALTY = null;
-        }
-    }
-
-    protected final void inittRESCUES(String s) {
-        if (!s.trim().isEmpty()) {
-            tRESCUES = s;
-        } else {
-            tRESCUES = null;
-        }
-    }
-
-    protected final void inittEVACUATIONS(String s) {
-        if (!s.trim().isEmpty()) {
-            tEVACUATIONS = s;
-        } else {
-            tEVACUATIONS = null;
-        }
-    }
-
-    protected final void inittEVACUATIONS_CODE(String s) {
-        if (!s.trim().isEmpty()) {
-            tEVACUATIONS_CODE = s;
-        } else {
-            tEVACUATIONS_CODE = null;
-        }
-    }
-
-    protected final void inittBUILDING_EVACUATION_DELAY_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_EVACUATION_DELAY_DESCRIPTION = s;
-        } else {
-            tBUILDING_EVACUATION_DELAY_DESCRIPTION = null;
-        }
-    }
-
-    protected final void inittBUILDING_EVACUATION_TIME_DESCRIPTION(String s) {
-        if (!s.trim().isEmpty()) {
-            tBUILDING_EVACUATION_TIME_DESCRIPTION = s;
-        } else {
-            tBUILDING_EVACUATION_TIME_DESCRIPTION = null;
+    protected final void check(String s) throws IOException {
+        if (s.isBlank()) {
+            throw new IOException("Blank value!");
         }
     }
 
