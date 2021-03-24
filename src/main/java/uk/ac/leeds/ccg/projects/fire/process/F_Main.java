@@ -449,8 +449,8 @@ public class F_Main extends F_Object {
      */
     public void run() throws ClassNotFoundException {
         try {
-            boolean doLoadData = true;
-            //boolean doLoadData = false;
+            //boolean doLoadData = true;
+            boolean doLoadData = false;
             if (doLoadData) {
                 env.data0 = new F_Data0(env);
                 env.data = new F_Data(env, 2010, 2019);
@@ -1033,13 +1033,17 @@ public class F_Main extends F_Object {
             // BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
             int varBSSMOED = env.data.vname2id.get(F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION);
             int valBSSMOED_SOCS = env.data.name2ids.get(varBSSMOED).get(F_Strings.OKNoVisibleConcerns);
-            Set<Integer> svalBSSMOED = new HashSet<>();
-            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ExitsLocked));
-            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ExitsBlocked));
-            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ExitRouteBlockedBySmokeOrFlames));
-            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.PoorImplementation));
-            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ContentsContributingToAbnormalFireSpreadOrSmokeProduction));
-            svalBSSMOED.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.Other));
+            Set<Integer> svalBSSMOEDDanger = new HashSet<>();
+            svalBSSMOEDDanger.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ExitRouteBlockedBySmokeOrFlames));
+            svalBSSMOEDDanger.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ContentsContributingToAbnormalFireSpreadOrSmokeProduction));
+            Set<Integer> svalBSSMOEDManagement = new HashSet<>();
+            svalBSSMOEDDanger.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ExitsLocked));
+            svalBSSMOEDDanger.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.ExitsBlocked));
+            svalBSSMOEDDanger.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.PoorImplementation));
+            svalBSSMOEDDanger.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.Other));
+            Set<Integer> svalBSSMOEDConstruction = new HashSet<>();
+            svalBSSMOEDDanger.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.PoorImplementation));
+            svalBSSMOEDDanger.add(env.data.name2ids.get(varBSSMOED).get(F_Strings.Other));
             // ALARM_REASON_FOR_POOR_OUTCOME
             int varARFPO = env.data.vname2id.get(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME);
             Set<Integer> svalARFPO = new HashSet<>();
@@ -1180,7 +1184,8 @@ public class F_Main extends F_Object {
                         rr.initScores0(varMSF, valMSF_Yes, varITD,
                                 svalITD, varDTC, svalDTC, varBSSCD,
                                 valBSSCD_SOCS, svalBSSCD, varBSSMOED,
-                                valBSSMOED_SOCS, svalBSSMOED, varSDD,
+                                valBSSMOED_SOCS, svalBSSMOEDDanger, svalBSSMOEDManagement, svalBSSMOEDConstruction,
+                                varSDD,
                                 valSDD_SOCS, svalSDD, svalSDD2, varCOF, svalCOF, varICS,
                                 svalICS, svalICS2, varRFG, valRFG, varBSCD, svalBSCD,
                                 varOPAOA, valOPAOA, varOPAC, valOPAC, varFSOA,
@@ -1207,7 +1212,9 @@ public class F_Main extends F_Object {
                         rr.initScores(varMSF, valMSF_Yes, varITD,
                                 svalITD, varDTC, svalDTC, varBSSCD,
                                 valBSSCD_SOCS, svalBSSCD, varBSSMOED,
-                                valBSSMOED_SOCS, svalBSSMOED, varARFPO,
+                                valBSSMOED_SOCS, svalBSSMOEDDanger, 
+                                svalBSSMOEDManagement, svalBSSMOEDConstruction,
+                                varARFPO,
                                 svalARFPO, varSDD, valSDD_SOCS, svalSDD, svalSDD2, varCOF,
                                 svalCOF, varICS, svalICS, svalICS2, varRFG, valRFG,
                                 varBSCD, svalBSCD, varOPAOA, valOPAOA, varOPAC,
@@ -1889,7 +1896,7 @@ public class F_Main extends F_Object {
             int valPurposeBuiltLowRiseFlats = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltLowRiseFlats);
             Set<F_Dwellings_Integer_Record1> purposeBuilt_BSSMOED_NotApplicable = new HashSet<>();
 
-            Set<F_Dwellings_Integer_Record1> FDScore_GE3 = new HashSet<>();
+            Set<F_Dwellings_Integer_Record1> FDScore_GE5 = new HashSet<>();
             
             Iterator<F_CollectionID> ite = env.data.data.keySet().iterator();
             while (ite.hasNext()) {
@@ -2265,8 +2272,8 @@ public class F_Main extends F_Object {
                         if (r.tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION == valBSSMOEDNotApplicable) {
                             purposeBuilt_BSSMOED_NotApplicable.add(r);
                         }
-                        if (r.fDScore >= 3) {
-                            FDScore_GE3.add(r);
+                        if (r.fDScore >= 5) {
+                            FDScore_GE5.add(r);
                         }
                     }
                     ite2 = c.data2.keySet().iterator();
@@ -2844,6 +2851,17 @@ public class F_Main extends F_Object {
                     mTotalBSSMOEDNotApplicable_BY_BUILDING_OR_PROPERTY_TYPE,
                     mTotalFATALITY_CASUALTY_BSSMOEDNotApplicable_BY_BUILDING_OR_PROPERTY_TYPE);
 
+//            // FIRE_SAFETY
+//            // 
+//            output(dir, F_Strings.s2010_20, F_Strings.FIRE_DANGER_SCORE
+//                    + " " + F_Strings.NotApplicable
+//                    + " BY "
+//                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+//                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+//                    varBUILDING_OR_PROPERTY_TYPE,
+//                    mTotalBSSMOEDNotApplicable_BY_BUILDING_OR_PROPERTY_TYPE,
+//                    mTotalFATALITY_CASUALTY_BSSMOEDNotApplicable_BY_BUILDING_OR_PROPERTY_TYPE);
+
             // Multiple variables
             // ------------------
             // DAY_NIGHT AND BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
@@ -3016,9 +3034,8 @@ public class F_Main extends F_Object {
             output(dir.getParent(), F_Strings.s2010_20, "purposeBuilt_"
                     + F_Strings.BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
                     + "_" + F_Strings.NotApplicable, purposeBuilt_BSSMOED_NotApplicable);
-            output(dir.getParent(), F_Strings.s2010_20, "FIRE_SAFETY_FAILURE_SCORE_GE6"
-                    + F_Strings.FIRE_SAFETY_FAILURE_SCORE
-                    + "_" + F_Strings.NotApplicable, FDScore_GE3);
+            output(dir.getParent(), F_Strings.s2010_20, "FIRE_DANGER_SCORE"
+                    + "_GE5", FDScore_GE5);
 
             // Load EnglishHousingSurvey
             Path indir = Paths.get(System.getProperty("user.home"),

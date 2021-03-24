@@ -15,7 +15,6 @@
  */
 package uk.ac.leeds.ccg.projects.fire.data.dwellings;
 
-import java.util.HashSet;
 import java.util.Set;
 import uk.ac.leeds.ccg.projects.fire.core.F_Strings;
 import uk.ac.leeds.ccg.projects.fire.data.F_Data;
@@ -128,7 +127,7 @@ public class F_Dwellings_Integer_Record1 extends F_Dwellings_Integer_Record0 {
      * variable ID.
      * @param valBSSMOED_SOCS BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
      * variable value indicating FIRE_SAFETY_SUCCESS.
-     * @param svalBSSMOED Set of DISCOVERY_TO_CALL variable values indicating
+     * @param svalBSSMOEDDanger Set of DISCOVERY_TO_CALL variable values indicating
      * FIRE_SAFETY_FAILURE.
      * @param varARFPO ALARM_REASON_FOR_POOR_OUTCOME variable ID.
      * @param svalARFPO Set of ALARM_REASON_FOR_POOR_OUTCOME variable values
@@ -195,7 +194,8 @@ public class F_Dwellings_Integer_Record1 extends F_Dwellings_Integer_Record0 {
     public void initScores(int varMSF, int valMSF_Yes, int varITD,
             Set<Integer> svalITD, int varDTC, Set<Integer> svalDTC,
             int varBSSCD, int valBSSCD_SOCS, Set<Integer> svalBSSCD,
-            int varBSSMOED, int valBSSMOED_SOCS, Set<Integer> svalBSSMOED,
+            int varBSSMOED, int valBSSMOED_SOCS, Set<Integer> svalBSSMOEDDanger,
+            Set<Integer> svalBSSMOEDManagement, Set<Integer> svalBSSMOEDConstruction,
             int varARFPO, Set<Integer> svalARFPO, int varSDD, int valSDD_SOCS,
             Set<Integer> svalSDD, Set<Integer> svalSDD2, int varCOF, Set<Integer> svalCOF,
             int varICS, Set<Integer> svalICS, Set<Integer> svalICS2,
@@ -209,7 +209,8 @@ public class F_Dwellings_Integer_Record1 extends F_Dwellings_Integer_Record0 {
                                 Set<Integer> svalBEDDFailureConstructionAndManagement) {
         super.initScores0(varMSF, valMSF_Yes, varITD, svalITD, varDTC,
                 svalDTC, varBSSCD, valBSSCD_SOCS, svalBSSCD, varBSSMOED,
-                valBSSMOED_SOCS, svalBSSMOED, varSDD, valSDD_SOCS, svalSDD, svalSDD2,
+                valBSSMOED_SOCS, svalBSSMOEDDanger, svalBSSMOEDManagement, svalBSSMOEDConstruction,
+                varSDD, valSDD_SOCS, svalSDD, svalSDD2,
                 varCOF, svalCOF, varICS, svalICS, svalICS2, varRFG, valRFG, varBSCD,
                 svalBSCD, varOPAOA, valOPAOA, varOPAC, valOPAC, varFSOA,
                 svalFSOASuccess, varSOF, svalSOFSuccess, varRT, svalRTSuccess,

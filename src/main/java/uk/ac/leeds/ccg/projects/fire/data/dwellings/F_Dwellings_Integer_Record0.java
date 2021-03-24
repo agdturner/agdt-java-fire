@@ -513,8 +513,10 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
                 + "EVACUATIONS_CODE,"
                 + "BUILDING_EVACUATION_DELAY_DESCRIPTION,"
                 + "BUILDING_EVACUATION_TIME_DESCRIPTION,"
-                + "FIRE_SAFETY_FAILURE_SCORE,"
-                + "FIRE_SAFETY_SUCCESS_SCORE";
+                + "FIRE_SAFETY_DANGER_SCORE,"
+                + "FIRE_SAFETY_FAILURE_SCORE_MANAGEMENT,"
+                + "FIRE_SAFETY_FAILURE_SCORE_CONSTRUCTION,"
+                + "FIRE_SAFETY_FAILURE_SCORE_FIRE_FIGHTING";
     }
 
     public abstract String toString(F_Data data);
@@ -670,11 +672,11 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
         r += "\"," + fDScore;
         //r += "\"," + fSFScore;
         //r += "," + fSSScore;
-        r += "\"," + fSFScoreConstruction;
+        r += "," + fSFScoreConstruction;
         //r += "," + fSSScoreConstruction;
-        r += "\"," + fSFScoreManagement;
+        r += "," + fSFScoreManagement;
         //r += "," + fSSScoreManagement;
-        r += "\"," + fSFScoreFireFighting;
+        r += "," + fSFScoreFireFighting;
         //r += "," + fSSScoreFireFighting;
         return r;
     }
@@ -700,7 +702,7 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
      * variable ID.
      * @param valBSSMOED_SOCS BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
      * variable value indicating FIRE_SAFETY_SUCCESS.
-     * @param svalBSSMOED Set of DISCOVERY_TO_CALL variable values indicating
+     * @param svalBSSMOEDDanger Set of DISCOVERY_TO_CALL variable values indicating
      * FIRE_SAFETY_FAILURE.
      * @param varARFPO ALARM_REASON_FOR_POOR_OUTCOME variable ID.
      * @param svalARFPO Set of ALARM_REASON_FOR_POOR_OUTCOME variable values
@@ -764,7 +766,8 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
             // BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
             int varBSSCD, int valBSSCD_SOCS, Set<Integer> svalBSSCD,
             // BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
-            int varBSSMOED, int valBSSMOED_SOCS, Set<Integer> svalBSSMOED,
+            int varBSSMOED, int valBSSMOED_SOCS, Set<Integer> svalBSSMOEDDanger,
+            Set<Integer> svalBSSMOEDManagement, Set<Integer> svalBSSMOEDConstruction,
             // STARTING_DELAY_DESCRIPTION
             int varSDD, int valSDD_SOCS, Set<Integer> svalSDD, Set<Integer> svalSDD2,
             // CAUSE_OF_FIRE
@@ -827,8 +830,14 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
 //        if (tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION == valBSSMOED_SOCS) {
 //            fSSScoreManagement++;
 //        }
-        if (svalBSSMOED.contains(tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION)) {
+        if (svalBSSMOEDDanger.contains(tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION)) {
+            fDScore++;
+        }
+        if (svalBSSMOEDManagement.contains(tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION)) {
             fSFScoreManagement++;
+        }
+        if (svalBSSMOEDConstruction.contains(tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION)) {
+            fSFScoreConstruction++;
         }
 //        // STARTING_DELAY_DESCRIPTION
 //        if (tSTARTING_DELAY_DESCRIPTION == valSDD_SOCS) {
@@ -888,14 +897,14 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
 //        } else {
 //            fSSScore++;
 //        }
-        // RESCUES
-        if (tRESCUES != valR) {
-            fDScore++;
-        }
-        // EVACUATIONS
-        if (tEVACUATIONS != valE) {
-            fDScore++;
-        }
+//        // RESCUES
+//        if (tRESCUES != valR) {
+//            fDScore++;
+//        }
+//        // EVACUATIONS
+//        if (tEVACUATIONS != valE) {
+//            fDScore++;
+//        }
 //        // BUILDING_EVACUATION_DELAY_DESCRIPTION
 //        if (tBUILDING_EVACUATION_DELAY_DESCRIPTION == valBEDD) {
 //            fSSScore++;
