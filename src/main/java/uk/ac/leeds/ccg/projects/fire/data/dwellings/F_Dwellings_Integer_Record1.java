@@ -106,58 +106,119 @@ public class F_Dwellings_Integer_Record1 extends F_Dwellings_Integer_Record0 {
         return data.id2names.get(data.vname2id.get(F_Strings.ALARM_REASON_FOR_POOR_OUTCOME)).get(tALARM_REASON_FOR_POOR_OUTCOME);
     }
 
-    public void initScores(
-            // MULTI_SEATED_FLAG
-            int varMSF, int valMSF_Yes,
-            // IGNITION_TO_DISCOVERY
-            int varITD, Set<Integer> svalITD,
-            // DISCOVERY_TO_CALL
-            int varDTC, Set<Integer> svalDTC,
-            // BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
+    /**
+     * @param varMSF MULTI_SEATED_FLAG variable ID.
+     * @param valMSF_Yes MULTI_SEATED_FLAG variable value indicating
+     * FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
+     * @param varITD IGNITION_TO_DISCOVERY variable ID.
+     * @param svalITD Set of IGNITION_TO_DISCOVERY variable values indicating
+     * FIRE_SAFETY_FAILURE.
+     * @param varDTC DISCOVERY_TO_CALL variable ID.
+     * @param svalDTC Set of DISCOVERY_TO_CALL variable values indicating
+     * FIRE_SAFETY_FAILURE.
+     * @param varBSSCD BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
+     * variable ID.
+     * @param valBSSCD_SOCS BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
+     * variable value indicating FIRE_SAFETY_SUCCESS.
+     * @param svalBSSCD Set of
+     * BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION variable values
+     * indicating FIRE_SAFETY_FAILURE.
+     * @param varBSSMOED BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
+     * variable ID.
+     * @param valBSSMOED_SOCS BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
+     * variable value indicating FIRE_SAFETY_SUCCESS.
+     * @param svalBSSMOED Set of DISCOVERY_TO_CALL variable values indicating
+     * FIRE_SAFETY_FAILURE.
+     * @param varARFPO ALARM_REASON_FOR_POOR_OUTCOME variable ID.
+     * @param svalARFPO Set of ALARM_REASON_FOR_POOR_OUTCOME variable values
+     * indicating FIRE_SAFETY_FAILURE.
+     * @param varARFPO ALARM_REASON_FOR_POOR_OUTCOME variable ID.
+     * @param svalARFPO Set of ALARM_REASON_FOR_POOR_OUTCOME variable values
+     * indicating FIRE_SAFETY_FAILURE.
+     * @param varSDD STARTING_DELAY_DESCRIPTION variable ID.
+     * @param valSDD_SOCS STARTING_DELAY_DESCRIPTION variable value indicating
+     * FIRE_SAFETY_SUCCESS.
+     * @param svalSDD Set of STARTING_DELAY_DESCRIPTION variable values
+     * indicating FIRE_SAFETY_FAILURE fire fighting.
+     * @param svalSDD2 Set of STARTING_DELAY_DESCRIPTION variable values
+     * indicating increased fire danger.
+     * @param varCOF CAUSE_OF_FIRE variable ID.
+     * @param svalCOF Set of CAUSE_OF_FIRE variable values indicating
+     * FIRE_SAFETY_FAILURE.
+     * @param varICS ITEM_CAUSING_SPREAD variable ID.
+     * @param svalICS Set of ITEM_CAUSING_SPREAD variable values indicating
+     * FIRE_SAFETY_FAILURE.
+     * @param varRFG RAPID_FIRE_GROWTH variable ID.
+     * @param valRFG RAPID_FIRE_GROWTH variable value indicating
+     * FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
+     * @param varBSCD BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION variable ID.
+     * @param svalBSCD Set of BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION variable
+     * values indicating FIRE_SAFETY_FAILURE.
+     * @param varOPAOA OTHER_PROPERTY_AFFECTED_ON_ARRIVAL variable ID.
+     * @param valOPAOA OTHER_PROPERTY_AFFECTED_ON_ARRIVAL variable value
+     * indicating FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
+     * @param varOPAC other_property_affected_close_d variable ID.
+     * @param valOPAC other_property_affected_close_d variable value indicating
+     * FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
+     * @param varFSOA FIRE_SIZE_ON_ARRIVAL variable ID.
+     * @param svalFSOASuccess Set of FIRE_SIZE_ON_ARRIVAL variable values
+     * indicating FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
+     * @param varSOF spread_of_fire_d variable ID.
+     * @param svalSOFSuccess Set of spread_of_fire_d variable values indicating
+     * FIRE_SAFETY_SUCCESS.
+     * @param varRT RESPONSE_TIME variable ID.
+     * @param svalRTSuccess Set of RESPONSE_TIME variable values indicating
+     * FIRE_SAFETY_SUCCESS.
+     * @param svalRTFailure Set of RESPONSE_TIME variable values indicating
+     * FIRE_SAFETY_FAILURE.
+     * @param varFC FATALITY_CASUALTY variable ID.
+     * @param valFC FATALITY_CASUALTY variable value indicating
+     * FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
+     * @param varR RESCUES variable ID.
+     * @param valR RESCUES variable value indicating FIRE_SAFETY_SUCCESS. The
+     * other value is regarded as a FIRE_SAFETY_FAILURE.
+     * @param varE EVACUATIONS variable ID.
+     * @param valE EVACUATIONS variable value indicating FIRE_SAFETY_SUCCESS.
+     * The other value is regarded as a FIRE_SAFETY_FAILURE.
+     * @param varBEDD BUILDING_EVACUATION_DELAY_DESCRIPTION variable ID.
+     * @param valBEDD BUILDING_EVACUATION_DELAY_DESCRIPTION variable value
+     * indicating FIRE_SAFETY_SUCCESS.
+     * @param svalBEDDFailure Set of BUILDING_EVACUATION_DELAY_DESCRIPTION
+     * values indicating FIRE_SAFETY_FAILURE.
+     */
+    public void initScores(int varMSF, int valMSF_Yes, int varITD,
+            Set<Integer> svalITD, int varDTC, Set<Integer> svalDTC,
             int varBSSCD, int valBSSCD_SOCS, Set<Integer> svalBSSCD,
-            // BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
             int varBSSMOED, int valBSSMOED_SOCS, Set<Integer> svalBSSMOED,
-            // ALARM_REASON_FOR_POOR_OUTCOME
-            int varARFPO, Set<Integer> svalARFPO,
-            // STARTING_DELAY_DESCRIPTION
-            int varSDD, int valSDD_SOCS, Set<Integer> svalSDD,
-            // CAUSE_OF_FIRE
-            int varCOF, Set<Integer> svalCOF,
-            // ITEM_CAUSING_SPREAD
-            int varICS, Set<Integer> svalICS,
-            // RAPID_FIRE_GROWTH
+            int varARFPO, Set<Integer> svalARFPO, int varSDD, int valSDD_SOCS,
+            Set<Integer> svalSDD, Set<Integer> svalSDD2, int varCOF, Set<Integer> svalCOF,
+            int varICS, Set<Integer> svalICS, Set<Integer> svalICS2,
             int varRFG, int valRFG,
-            // BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION
-            int varBSCD, Set<Integer> svalBSCD,
-            // OTHER_PROPERTY_AFFECTED_ON_ARRIVAL
-            int varOPAOA, int valOPAOA,
-            // other_property_affected_close_d
-            int varOPAC, int valOPAC,
-            // FIRE_SIZE_ON_ARRIVAL
-            int varFSOA, Set<Integer> svalFSOASuccess,
-            // spread_of_fire_d
+            int varBSCD, Set<Integer> svalBSCD, int varOPAOA, int valOPAOA,
+            int varOPAC, int valOPAC, int varFSOA, Set<Integer> svalFSOASuccess,
             int varSOF, Set<Integer> svalSOFSuccess,
-            // RESPONSE_TIME
             int varRT, Set<Integer> svalRTSuccess, Set<Integer> svalRTFailure,
-            // FATALITY_CASUALTY
-            int varFC, int valFC,
-            // RESCUES
-            int varR, int valR,
-            // EVACUATIONS
-            int varE, int valE,
-            // BUILDING_EVACUATION_DELAY_DESCRIPTION
-            int varBEDD, int valBEDD, Set<Integer> varBEDDFailure) {
+            int varFC, int valFC, int varR, int valR, int varE, int valE,
+            int varBEDD, int valBEDD, Set<Integer> svalBEDDDanger, Set<Integer> svalBEDDFailureManagement, 
+                                Set<Integer> svalBEDDFailureConstructionAndManagement) {
         super.initScores0(varMSF, valMSF_Yes, varITD, svalITD, varDTC,
                 svalDTC, varBSSCD, valBSSCD_SOCS, svalBSSCD, varBSSMOED,
-                valBSSMOED_SOCS, svalBSSMOED, varSDD, valSDD_SOCS, svalSDD,
-                varCOF, svalCOF, varICS, svalICS, varRFG, valRFG, varBSCD,
+                valBSSMOED_SOCS, svalBSSMOED, varSDD, valSDD_SOCS, svalSDD, svalSDD2,
+                varCOF, svalCOF, varICS, svalICS, svalICS2, varRFG, valRFG, varBSCD,
                 svalBSCD, varOPAOA, valOPAOA, varOPAC, valOPAC, varFSOA,
                 svalFSOASuccess, varSOF, svalSOFSuccess, varRT, svalRTSuccess,
                 svalRTFailure, varFC, valFC, varR, valR, varE, valE, varBEDD,
-                valBEDD, varBEDDFailure);
-        // ALARM_REASON_FOR_POOR_OUTCOME
-        if (svalARFPO.contains(tALARM_REASON_FOR_POOR_OUTCOME)) {
-            FIRE_SAFETY_FAILURE_SCORE++;
-        }
+                valBEDD, svalBEDDDanger, svalBEDDFailureManagement, 
+                svalBEDDFailureConstructionAndManagement);
+//        // ALARM_REASON_FOR_POOR_OUTCOME
+//        if (svalARFPO.contains(tALARM_REASON_FOR_POOR_OUTCOME)) {
+//            fSFScore++;
+//        }
     }
 }

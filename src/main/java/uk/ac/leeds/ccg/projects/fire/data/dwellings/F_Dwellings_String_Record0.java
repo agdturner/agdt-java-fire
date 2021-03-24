@@ -19,6 +19,12 @@ import java.io.IOException;
 import uk.ac.leeds.ccg.data.Data_Record;
 import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
 
+/**
+ * Most variables are stored as Strings. The variables are coded from the Fire
+ * Incident Reporting System: https://www.irs.fire.gov.uk/irshelp/default.htm
+ *
+ * @author Andy Turner
+ */
 public abstract class F_Dwellings_String_Record0 extends Data_Record {
 
     private static final long serialVersionUID = 1L;
@@ -83,8 +89,8 @@ public abstract class F_Dwellings_String_Record0 extends Data_Record {
     protected String tEVACUATIONS_CODE;
     protected String tBUILDING_EVACUATION_DELAY_DESCRIPTION;
     protected String tBUILDING_EVACUATION_TIME_DESCRIPTION;
-    
-    public F_Dwellings_String_Record0(F_RecordID i){
+
+    public F_Dwellings_String_Record0(F_RecordID i) {
         super(i);
     }
 
@@ -92,187 +98,187 @@ public abstract class F_Dwellings_String_Record0 extends Data_Record {
         int n = 0;
         check(s[n]);
         tID_number = Integer.parseInt(s[n]);
-        n ++;
+        n++;
         check(s[n]);
         tFRS_NAME = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tE_CODE = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tFINANCIAL_YEAR = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tMONTH_NAME = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tWEEKDAY_WEEKEND = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tDAY_NIGHT = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_OR_PROPERTY_TYPE = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tLATE_CALL = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tMULTI_SEATED_FLAG = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tIGNITION_TO_DISCOVERY = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tDISCOVERY_TO_CALL = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tHOW_DISCOVERED_DESCRIPTION = s[n];
         return n;
     }
-    
+
     protected final int init1(String[] s, int n) throws IOException {
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION = s[n];
         return n;
     }
-        
-    protected final void init2(String[] s, int n) throws IOException {        
-        n ++;
+
+    protected final void init2(String[] s, int n) throws IOException {
+        n++;
         check(s[n]);
         tACCIDENTAL_OR_DELIBERATE = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tVEHICLES = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tVEHICLES_CODE = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tPERSONNEL = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tPERSONNEL_CODE = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tSTARTING_DELAY_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tACTION_NON_FRS_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tACTION_FRS_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tCAUSE_OF_FIRE = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tIGNITION_POWER = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tSOURCE_OF_IGNITION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tITEM_IGNITED = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tITEM_CAUSING_SPREAD = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tRAPID_FIRE_GROWTH = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tCAUSE_SUBSTANCES_DANGEROUS_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tCAUSE_EXPLOSION_INVOLVED = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tCAUSE_SUBSTANCES_EXPLOSION_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tCAUSE_EXPLOSION_STAGE_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_FLOORS_ABOVE_GROUND = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_FLOORS_BELOW_GROUND = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_FLOOR_ORIGIN = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_ORIGIN_ROOM_SIZE_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tFIRE_START_LOCATION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tFIRE_SIZE_ON_ARRIVAL = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_FIRE_DAMAGE_AREA_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_TOTAL_DAMAGE_AREA_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tFIRE_SIZE_ON_ARRIVAL_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tother_property_affected_close_d = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tspread_of_fire_d = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tRESPONSE_TIME = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tRESPONSE_TIME_CODE = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tTIME_AT_SCENE = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tTIME_AT_SCENE_CODE = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tFATALITY_CASUALTY = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tRESCUES = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tEVACUATIONS = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tEVACUATIONS_CODE = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_EVACUATION_DELAY_DESCRIPTION = s[n];
-        n ++;
+        n++;
         check(s[n]);
         tBUILDING_EVACUATION_TIME_DESCRIPTION = s[n];
     }
-    
+
     protected String toString0() {
         String r = "FRS_NAME=" + tFRS_NAME;
         r += ", E_CODE=" + tE_CODE;
@@ -288,13 +294,13 @@ public abstract class F_Dwellings_String_Record0 extends Data_Record {
         r += ", HOW_DISCOVERED_DESCRIPTION=" + tHOW_DISCOVERED_DESCRIPTION;
         return r;
     }
-        
+
     protected String toString1() {
         String r = ", BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION=" + tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION;
         r += ", BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION=" + tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION;
         return r;
     }
-    
+
     protected String toString2() {
         String r = ", ACCIDENTAL_OR_DELIBERATE=" + tACCIDENTAL_OR_DELIBERATE;
         r += ", VEHICLES=" + tVEHICLES;
@@ -341,7 +347,7 @@ public abstract class F_Dwellings_String_Record0 extends Data_Record {
         r += ", BUILDING_EVACUATION_TIME_DESCRIPTION=" + tBUILDING_EVACUATION_TIME_DESCRIPTION;
         return r;
     }
-    
+
     @Override
     public F_RecordID getId() {
         return (F_RecordID) id;

@@ -227,10 +227,14 @@ public class F_Main extends F_Object {
     Map<Integer, Integer> mMediumRise6789_Cladding_WholeBuildingOrAffectingMoreThan2Floors = new HashMap<>();
     Map<Integer, Integer> mMediumRise6789_Cladding_WholeBuildingOrAffectingMoreThan2Floors_FATALITY_CASUALTY = new HashMap<>();
     // FIRE_SAFETY scores
-    Map<Integer, Map<Integer, Integer>> mAllFIRE_SAFETY_SUCCESS_SCORE = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllFIRE_SAFETY_FAILURE_SCORE = new HashMap<>();
-    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFDScore = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_FDScore = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFSFScoreManagement = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_FSFScoreManagement = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFSFScoreConstruction = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_FSFScoreConstruction = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFSFScoreFireFighting = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_FSFScoreFireFighting = new HashMap<>();
 
     // Selected variable counts By FINANCIAL YEAR
     // ------------------------------------------
@@ -445,8 +449,8 @@ public class F_Main extends F_Object {
      */
     public void run() throws ClassNotFoundException {
         try {
-            //boolean doLoadData = true;
-            boolean doLoadData = false;
+            boolean doLoadData = true;
+            //boolean doLoadData = false;
             if (doLoadData) {
                 env.data0 = new F_Data0(env);
                 env.data = new F_Data(env, 2010, 2019);
@@ -998,8 +1002,10 @@ public class F_Main extends F_Object {
 
             // Organise data into collections by financial year and add FIRE_SAFETY scores 
             // ---------------------------------------------------------------------------
-            HashMap<Integer, Integer> mFIRE_SAFETY_SUCCESS_SCORE = new HashMap<>();
-            HashMap<Integer, Integer> mFIRE_SAFETY_FAILURE_SCORE = new HashMap<>();
+            HashMap<Integer, Integer> mFDScore = new HashMap<>();
+            HashMap<Integer, Integer> mFSFScoreManagement = new HashMap<>();
+            HashMap<Integer, Integer> mFSFScoreConstruction = new HashMap<>();
+            HashMap<Integer, Integer> mFSFScoreFireFighting = new HashMap<>();
 
             // MULTI_SEATED_FLAG
             int varMSF = env.data.vname2id.get(F_Strings.MULTI_SEATED_FLAG);
@@ -1056,23 +1062,25 @@ public class F_Main extends F_Object {
             svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToAccessingFireBuildingType));
             svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToAccessingFireSecurity));
             svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToLocationOfFireNotImmediatelyEvident));
-            svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToCivilDisturbance));
-            svalSDD.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToAssaultOnFirefighters));
+            Set<Integer> svalSDD2 = new HashSet<>();            
+            svalSDD2.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToCivilDisturbance));
+            svalSDD2.add(env.data.name2ids.get(varSDD).get(F_Strings.DelayDueToAssaultOnFirefighters));
             // CAUSE_OF_FIRE
             int varCOF = env.data.vname2id.get(F_Strings.CAUSE_OF_FIRE);
             Set<Integer> svalCOF = new HashSet<>();
             svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.AccumulationOfFlammableMaterial));
-            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultInEquipmentOrAppliance));
-            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyFuelSupplyElectricity));
-            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyFuelSupplyGas));
-            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyFuelSupplyPetrolProduct));
-            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyLeadsToEquipmentOrAppliance));
-            svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.OverheatingUnknownCause));
+            //svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultInEquipmentOrAppliance));
+            //svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyFuelSupplyElectricity));
+            //svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyFuelSupplyGas));
+            //svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyFuelSupplyPetrolProduct));
+            //svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.FaultyLeadsToEquipmentOrAppliance));
+            //svalCOF.add(env.data.name2ids.get(varCOF).get(F_Strings.OverheatingUnknownCause));
             // ITEM_CAUSING_SPREAD
             int varICS = env.data.vname2id.get(F_Strings.ITEM_CAUSING_SPREAD);
             Set<Integer> svalICS = new HashSet<>();
             svalICS.add(env.data.name2ids.get(varICS).get(F_Strings.RubbishOrWasteOrRecycling));
-            svalICS.add(env.data.name2ids.get(varICS).get(F_Strings.StructuralOrFixturesOrFittings));
+            Set<Integer> svalICS2 = new HashSet<>();
+            svalICS2.add(env.data.name2ids.get(varICS).get(F_Strings.StructuralOrFixturesOrFittings));
             // RAPID_FIRE_GROWTH
             int varRFG = env.data.vname2id.get(F_Strings.RAPID_FIRE_GROWTH);
             int valRFG = env.data.name2ids.get(varRFG).get(F_Strings.Yes);
@@ -1132,19 +1140,21 @@ public class F_Main extends F_Object {
             // BUILDING_EVACUATION_DELAY_DESCRIPTION
             int varBEDD = env.data.vname2id.get(F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION);
             int valBEDD = env.data.name2ids.get(varBEDD).get(F_Strings.NotApplicable);
-            Set<Integer> varBEDDFailure = new HashSet<>();
-            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToFirefightingActionsPublic));
-            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToOccupantsDidNotRespondToAutomaticAlarm));
-            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayElderlyOrDisabled));
-            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToReenteredBuilding));
-            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToBuildingManagementPoor));
-            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToBuildingLayoutOrSignagePoor));
-            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToFirefightingActionsByFireServiceContraflowOnStairs));
-            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeExitsLocked));
-            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeItemsStored));
-            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeNotSuitable));
-            varBEDDFailure.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeOther));
-
+            Set<Integer> svalBEDDDanger = new HashSet<>();
+            svalBEDDDanger.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToFirefightingActionsPublic));
+            svalBEDDDanger.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToOccupantsDidNotRespondToAutomaticAlarm));
+            svalBEDDDanger.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayElderlyOrDisabled));
+            svalBEDDDanger.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToReenteredBuilding));
+            svalBEDDDanger.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToFirefightingActionsByFireServiceContraflowOnStairs));
+            svalBEDDDanger.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeOther));
+            Set<Integer> svalBEDDFailureManagement = new HashSet<>();
+            svalBEDDFailureManagement.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToBuildingManagementPoor));
+            svalBEDDFailureManagement.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeExitsLocked));
+            svalBEDDFailureManagement.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeItemsStored));
+            Set<Integer> svalBEDDFailureConstructionAndManagement = new HashSet<>();
+            svalBEDDFailureConstructionAndManagement.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToBuildingLayoutOrSignagePoor));
+            svalBEDDFailureConstructionAndManagement.add(env.data.name2ids.get(varBEDD).get(F_Strings.DelayDueToMeansOfEscapeNotSuitable));
+            
             //Map<String, Integer> tFINANCIAL_YEARVM = env.data.name2ids.get(0);
             int vnameid = env.data.vname2id.size();
             env.data.vname2id.put(F_Strings.FIRE_SAFETY_SUCCESS_SCORE, vnameid);
@@ -1171,16 +1181,16 @@ public class F_Main extends F_Object {
                                 svalITD, varDTC, svalDTC, varBSSCD,
                                 valBSSCD_SOCS, svalBSSCD, varBSSMOED,
                                 valBSSMOED_SOCS, svalBSSMOED, varSDD,
-                                valSDD_SOCS, svalSDD, varCOF, svalCOF, varICS,
-                                svalICS, varRFG, valRFG, varBSCD, svalBSCD,
+                                valSDD_SOCS, svalSDD, svalSDD2, varCOF, svalCOF, varICS,
+                                svalICS, svalICS2, varRFG, valRFG, varBSCD, svalBSCD,
                                 varOPAOA, valOPAOA, varOPAC, valOPAC, varFSOA,
                                 svalFSOASuccess, varSOF, svalSOFSuccess, varRT,
                                 svalRTSuccess, svalRTFailure, varFC, valFC,
                                 varR, valR, varE, valE, varBEDD, valBEDD,
-                                varBEDDFailure);
-                        addToCounts0(rr,
-                                mFIRE_SAFETY_SUCCESS_SCORE,
-                                mFIRE_SAFETY_FAILURE_SCORE);
+                                svalBEDDDanger, svalBEDDFailureManagement, 
+                                svalBEDDFailureConstructionAndManagement);
+                        addToCounts0(rr, mFDScore, mFSFScoreManagement, 
+                                mFSFScoreConstruction, mFSFScoreFireFighting);
                         env.data.data.get(cID).data2.put(recID, rr);
                         env.data.recID2cID.put(recID, cID);
                     }
@@ -1198,16 +1208,17 @@ public class F_Main extends F_Object {
                                 svalITD, varDTC, svalDTC, varBSSCD,
                                 valBSSCD_SOCS, svalBSSCD, varBSSMOED,
                                 valBSSMOED_SOCS, svalBSSMOED, varARFPO,
-                                svalARFPO, varSDD, valSDD_SOCS, svalSDD, varCOF,
-                                svalCOF, varICS, svalICS, varRFG, valRFG,
+                                svalARFPO, varSDD, valSDD_SOCS, svalSDD, svalSDD2, varCOF,
+                                svalCOF, varICS, svalICS, svalICS2, varRFG, valRFG,
                                 varBSCD, svalBSCD, varOPAOA, valOPAOA, varOPAC,
                                 valOPAC, varFSOA, svalFSOASuccess, varSOF,
                                 svalSOFSuccess, varRT, svalRTSuccess,
                                 svalRTFailure, varFC, valFC, varR, valR, varE,
-                                valE, varBEDD, valBEDD, varBEDDFailure);
-                        addToCounts0(rr,
-                                mFIRE_SAFETY_SUCCESS_SCORE,
-                                mFIRE_SAFETY_FAILURE_SCORE);
+                                valE, varBEDD, valBEDD, svalBEDDDanger, 
+                                svalBEDDFailureManagement, 
+                                svalBEDDFailureConstructionAndManagement);
+                        addToCounts0(rr, mFDScore, mFSFScoreManagement, 
+                                mFSFScoreConstruction, mFSFScoreFireFighting);
                         env.data.data.get(cID).data1.put(recID, rr);
                         env.data.recID2cID.put(recID, cID);
                     }
@@ -1347,10 +1358,14 @@ public class F_Main extends F_Object {
     }
 
     protected void addToCounts0(F_Dwellings_Integer_Record0 r,
-            HashMap<Integer, Integer> mFIRE_SAFETY_SUCCESS_SCORE,
-            HashMap<Integer, Integer> mFIRE_SAFETY_FAILURE_SCORE) {
-        Generic_Collections.addToCount(mFIRE_SAFETY_SUCCESS_SCORE, r.FIRE_SAFETY_SUCCESS_SCORE, 1);
-        Generic_Collections.addToCount(mFIRE_SAFETY_FAILURE_SCORE, r.FIRE_SAFETY_FAILURE_SCORE, 1);
+            HashMap<Integer, Integer> mFDScore,
+            HashMap<Integer, Integer> mFSFScoreManagement,
+            HashMap<Integer, Integer> mFSFScoreConstruction,
+            HashMap<Integer, Integer> mFSFScoreFireFighting) {
+        Generic_Collections.addToCount(mFDScore, r.fDScore, 1);
+        Generic_Collections.addToCount(mFSFScoreManagement, r.fSFScoreManagement, 1);
+        Generic_Collections.addToCount(mFSFScoreConstruction, r.fSFScoreConstruction, 1);
+        Generic_Collections.addToCount(mFSFScoreFireFighting, r.fSFScoreFireFighting, 1);
     }
 
     protected void addToCounts0(F_Dwellings_Integer_Record0 r,
@@ -1748,13 +1763,13 @@ public class F_Main extends F_Object {
             // ---------------
             String name = "SingleVariableSummaries";
 //            int varFIRE_SAFETY_SUCCESS_SCORE = env.data.vname2id.size();
-//            env.data.vname2id.put(F_Strings.FIRE_SAFETY_SUCCESS_SCORE, varFIRE_SAFETY_SUCCESS_SCORE);
-//            env.data.id2vname.put(varFIRE_SAFETY_SUCCESS_SCORE, F_Strings.FIRE_SAFETY_SUCCESS_SCORE);
+//            env.data.vname2id.put(F_Strings.fSSScore, varFIRE_SAFETY_SUCCESS_SCORE);
+//            env.data.id2vname.put(varFIRE_SAFETY_SUCCESS_SCORE, F_Strings.fSSScore);
 //            env.data.id2names.put(varFIRE_SAFETY_SUCCESS_SCORE, mFIRE_SAFETY_SUCCESS_SCORE);
 //            env.data.name2ids.put(varFIRE_SAFETY_SUCCESS_SCORE, mFIRE_SAFETY_SUCCESS_SCORE);
 //            int varFIRE_SAFETY_FAILURE_SCORE = env.data.vname2id.size();
-//            env.data.vname2id.put(F_Strings.FIRE_SAFETY_FAILURE_SCORE, varFIRE_SAFETY_FAILURE_SCORE);
-//            env.data.id2vname.put(varFIRE_SAFETY_FAILURE_SCORE, F_Strings.FIRE_SAFETY_FAILURE_SCORE);
+//            env.data.vname2id.put(F_Strings.fSFScore, varFIRE_SAFETY_FAILURE_SCORE);
+//            env.data.id2vname.put(varFIRE_SAFETY_FAILURE_SCORE, F_Strings.fSFScore);
 //            env.data.id2names.put(varFIRE_SAFETY_FAILURE_SCORE, mFIRE_SAFETY_FAILURE_SCORE);
 //            env.data.name2ids.put(varFIRE_SAFETY_FAILURE_SCORE, mFIRE_SAFETY_FAILURE_SCORE);
             outputSingleVariableCountSummaries(name);
@@ -1874,7 +1889,7 @@ public class F_Main extends F_Object {
             int valPurposeBuiltLowRiseFlats = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltLowRiseFlats);
             Set<F_Dwellings_Integer_Record1> purposeBuilt_BSSMOED_NotApplicable = new HashSet<>();
 
-            Set<F_Dwellings_Integer_Record1> FIRE_SAFETY_FAILURE_SCORE_GE6 = new HashSet<>();
+            Set<F_Dwellings_Integer_Record1> FDScore_GE3 = new HashSet<>();
             
             Iterator<F_CollectionID> ite = env.data.data.keySet().iterator();
             while (ite.hasNext()) {
@@ -2250,8 +2265,8 @@ public class F_Main extends F_Object {
                         if (r.tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION == valBSSMOEDNotApplicable) {
                             purposeBuilt_BSSMOED_NotApplicable.add(r);
                         }
-                        if (r.FIRE_SAFETY_FAILURE_SCORE >= 6) {
-                            FIRE_SAFETY_FAILURE_SCORE_GE6.add(r);
+                        if (r.fDScore >= 3) {
+                            FDScore_GE3.add(r);
                         }
                     }
                     ite2 = c.data2.keySet().iterator();
@@ -3003,7 +3018,7 @@ public class F_Main extends F_Object {
                     + "_" + F_Strings.NotApplicable, purposeBuilt_BSSMOED_NotApplicable);
             output(dir.getParent(), F_Strings.s2010_20, "FIRE_SAFETY_FAILURE_SCORE_GE6"
                     + F_Strings.FIRE_SAFETY_FAILURE_SCORE
-                    + "_" + F_Strings.NotApplicable, FIRE_SAFETY_FAILURE_SCORE_GE6);
+                    + "_" + F_Strings.NotApplicable, FDScore_GE3);
 
             // Load EnglishHousingSurvey
             Path indir = Paths.get(System.getProperty("user.home"),
@@ -3330,9 +3345,6 @@ public class F_Main extends F_Object {
             addToCount(r, valFATALITY_CASUALTY,
                     mDelay_By_BUILDING_OR_PROPERTY_TYPE,
                     mFATALITY_CASUALTY_Delay_By_BUILDING_OR_PROPERTY_TYPE);
-        }
-        if (r.tRESCUES == null) {
-            int debug = 1;
         }
         if (r.tRESCUES != valRESCUES_0) {
             addToCount(r, valFATALITY_CASUALTY,
@@ -4085,15 +4097,26 @@ public class F_Main extends F_Object {
                 mAllSAFETY_SYSTEM.put(cid.id, mSAFETY_SYSTEM);
                 HashMap<Integer, Integer> mFATALITY_CASUALTY_SAFETY_SYSTEM = new HashMap<>();
                 mAllFATALITY_CASUALTY_SAFETY_SYSTEM.put(cid.id, mFATALITY_CASUALTY_SAFETY_SYSTEM);
-                // FIRE_SAFETY scores
-                HashMap<Integer, Integer> mFIRE_SAFETY_SUCCESS_SCORE = new HashMap<>();
-                mAllFIRE_SAFETY_SUCCESS_SCORE.put(cid.id, mFIRE_SAFETY_SUCCESS_SCORE);
-                HashMap<Integer, Integer> mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE = new HashMap<>();
-                mAllFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE.put(cid.id, mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE);
-                HashMap<Integer, Integer> mFIRE_SAFETY_FAILURE_SCORE = new HashMap<>();
-                mAllFIRE_SAFETY_FAILURE_SCORE.put(cid.id, mFIRE_SAFETY_FAILURE_SCORE);
-                HashMap<Integer, Integer> mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE = new HashMap<>();
-                mAllFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE.put(cid.id, mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE);
+                // FDScore
+                HashMap<Integer, Integer> mFDScore = new HashMap<>();
+                mAllFDScore.put(cid.id, mFDScore);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_FDScore = new HashMap<>();
+                mAllFATALITY_CASUALTY_FDScore.put(cid.id, mFATALITY_CASUALTY_FDScore);
+                // FSFScoreManagement
+                HashMap<Integer, Integer> mFSFScoreManagement = new HashMap<>();
+                mAllFSFScoreManagement.put(cid.id, mFSFScoreManagement);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_FSFScoreManagement = new HashMap<>();
+                mAllFATALITY_CASUALTY_FSFScoreManagement.put(cid.id, mFATALITY_CASUALTY_FSFScoreManagement);
+                // FSFScoreConstruction
+                HashMap<Integer, Integer> mFSFScoreConstruction = new HashMap<>();
+                mAllFSFScoreConstruction.put(cid.id, mFSFScoreConstruction);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_FSFScoreConstruction = new HashMap<>();
+                mAllFATALITY_CASUALTY_FSFScoreConstruction.put(cid.id, mFATALITY_CASUALTY_FSFScoreConstruction);
+                // FSFScoreFireFighting
+                HashMap<Integer, Integer> mFSFScoreFireFighting = new HashMap<>();
+                mAllFSFScoreFireFighting.put(cid.id, mFSFScoreFireFighting);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_FSFScoreFireFighting = new HashMap<>();
+                mAllFATALITY_CASUALTY_FSFScoreFireFighting.put(cid.id, mFATALITY_CASUALTY_FSFScoreFireFighting);
                 Iterator<F_RecordID> ite2;
                 // Normal Dwelling Types
                 ite2 = c.data1.keySet().iterator();
@@ -4147,8 +4170,10 @@ public class F_Main extends F_Object {
                     Generic_Collections.addToCount(mALARM_SYSTEM_TYPE, r.tALARM_SYSTEM_TYPE, 1);
                     Generic_Collections.addToCount(mALARM_REASON_FOR_POOR_OUTCOME, r.tALARM_REASON_FOR_POOR_OUTCOME, 1);
                     // FIRE_SAFETY scores
-                    Generic_Collections.addToCount(mFIRE_SAFETY_SUCCESS_SCORE, r.FIRE_SAFETY_SUCCESS_SCORE, 1);
-                    Generic_Collections.addToCount(mFIRE_SAFETY_FAILURE_SCORE, r.FIRE_SAFETY_FAILURE_SCORE, 1);
+                    Generic_Collections.addToCount(mFDScore, r.fDScore, 1);
+                    Generic_Collections.addToCount(mFSFScoreManagement, r.fSFScoreManagement, 1);
+                    Generic_Collections.addToCount(mFSFScoreConstruction, r.fSFScoreConstruction, 1);
+                    Generic_Collections.addToCount(mFSFScoreFireFighting, r.fSFScoreFireFighting, 1);
                     if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
                         addToCounts0(r, mFATALITY_CASUALTY_FRS_NAME, mFATALITY_CASUALTY_E_CODE, mFATALITY_CASUALTY_MONTH_NAME,
                                 mFATALITY_CASUALTY_WEEKDAY_WEEKEND, mFATALITY_CASUALTY_DAY_NIGHT,
@@ -4195,8 +4220,10 @@ public class F_Main extends F_Object {
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_ALARM_SYSTEM_TYPE, r.tALARM_SYSTEM_TYPE, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_ALARM_REASON_FOR_POOR_OUTCOME, r.tALARM_REASON_FOR_POOR_OUTCOME, 1);
                         // FIRE_SAFETY scores
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE, r.FIRE_SAFETY_SUCCESS_SCORE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE, r.FIRE_SAFETY_FAILURE_SCORE, 1);
+                    Generic_Collections.addToCount(mFATALITY_CASUALTY_FDScore, r.fDScore, 1);
+                    Generic_Collections.addToCount(mFATALITY_CASUALTY_FSFScoreManagement, r.fSFScoreManagement, 1);
+                    Generic_Collections.addToCount(mFATALITY_CASUALTY_FSFScoreConstruction, r.fSFScoreConstruction, 1);
+                    Generic_Collections.addToCount(mFATALITY_CASUALTY_FSFScoreFireFighting, r.fSFScoreFireFighting, 1);
                     }
                 }
                 // Other Dwelling Types
@@ -4248,8 +4275,10 @@ public class F_Main extends F_Object {
                     Generic_Collections.addToCount(mFSO_APPLY, r.tFSO_APPLY, 1);
                     Generic_Collections.addToCount(mSAFETY_SYSTEM, r.tSAFETY_SYSTEM, 1);
                     // FIRE_SAFETY scores
-                    Generic_Collections.addToCount(mFIRE_SAFETY_SUCCESS_SCORE, r.FIRE_SAFETY_SUCCESS_SCORE, 1);
-                    Generic_Collections.addToCount(mFIRE_SAFETY_FAILURE_SCORE, r.FIRE_SAFETY_FAILURE_SCORE, 1);
+                    Generic_Collections.addToCount(mFDScore, r.fDScore, 1);
+                    Generic_Collections.addToCount(mFSFScoreManagement, r.fSFScoreManagement, 1);
+                    Generic_Collections.addToCount(mFSFScoreConstruction, r.fSFScoreConstruction, 1);
+                    Generic_Collections.addToCount(mFSFScoreFireFighting, r.fSFScoreFireFighting, 1);
                     if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
                         addToCounts0(r, mFATALITY_CASUALTY_FRS_NAME, mFATALITY_CASUALTY_E_CODE, mFATALITY_CASUALTY_MONTH_NAME,
                                 mFATALITY_CASUALTY_WEEKDAY_WEEKEND, mFATALITY_CASUALTY_DAY_NIGHT,
@@ -4293,8 +4322,10 @@ public class F_Main extends F_Object {
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_FSO_APPLY, r.tFSO_APPLY, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_SAFETY_SYSTEM, r.tSAFETY_SYSTEM, 1);
                         // FIRE_SAFETY scores
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE, r.FIRE_SAFETY_SUCCESS_SCORE, 1);
-                        Generic_Collections.addToCount(mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE, r.FIRE_SAFETY_FAILURE_SCORE, 1);
+                    Generic_Collections.addToCount(mFATALITY_CASUALTY_FDScore, r.fDScore, 1);
+                    Generic_Collections.addToCount(mFATALITY_CASUALTY_FSFScoreManagement, r.fSFScoreManagement, 1);
+                    Generic_Collections.addToCount(mFATALITY_CASUALTY_FSFScoreConstruction, r.fSFScoreConstruction, 1);
+                    Generic_Collections.addToCount(mFATALITY_CASUALTY_FSFScoreFireFighting, r.fSFScoreFireFighting, 1);
                     }
                 }
                 allTotal += total;
@@ -4367,8 +4398,10 @@ public class F_Main extends F_Object {
                 output(dir, tFINANCIAL_YEAR, F_Strings.FSO_APPLY, env.data.vname2id.get(F_Strings.FSO_APPLY), mFSO_APPLY, mFATALITY_CASUALTY_FSO_APPLY);
                 output(dir, tFINANCIAL_YEAR, F_Strings.SAFETY_SYSTEM, env.data.vname2id.get(F_Strings.SAFETY_SYSTEM), mSAFETY_SYSTEM, mFATALITY_CASUALTY_SAFETY_SYSTEM);
                 // FIRE_SAFETY scores
-                outputScores(dir, tFINANCIAL_YEAR, F_Strings.FIRE_SAFETY_SUCCESS_SCORE, env.data.vname2id.get(F_Strings.FIRE_SAFETY_SUCCESS_SCORE), mFIRE_SAFETY_SUCCESS_SCORE, mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE);
-                outputScores(dir, tFINANCIAL_YEAR, F_Strings.FIRE_SAFETY_FAILURE_SCORE, env.data.vname2id.get(F_Strings.FIRE_SAFETY_FAILURE_SCORE), mFIRE_SAFETY_FAILURE_SCORE, mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE);
+                outputScores(dir, tFINANCIAL_YEAR, F_Strings.FIRE_DANGER_SCORE, env.data.vname2id.get(F_Strings.FIRE_DANGER_SCORE), mFDScore, mFATALITY_CASUALTY_FDScore);
+                outputScores(dir, tFINANCIAL_YEAR, F_Strings.FIRE_SAFETY_FAILURE_SCORE_CONSTRUCTION, env.data.vname2id.get(F_Strings.FIRE_SAFETY_FAILURE_SCORE_CONSTRUCTION), mFSFScoreConstruction, mFATALITY_CASUALTY_FSFScoreConstruction);
+                outputScores(dir, tFINANCIAL_YEAR, F_Strings.FIRE_SAFETY_FAILURE_SCORE_MANAGEMENT, env.data.vname2id.get(F_Strings.FIRE_SAFETY_FAILURE_SCORE_MANAGEMENT), mFSFScoreManagement, mFATALITY_CASUALTY_FSFScoreManagement);
+                outputScores(dir, tFINANCIAL_YEAR, F_Strings.FIRE_SAFETY_FAILURE_SCORE_FIRE_FIGHTING, env.data.vname2id.get(F_Strings.FIRE_SAFETY_FAILURE_SCORE_FIRE_FIGHTING), mFSFScoreFireFighting, mFATALITY_CASUALTY_FSFScoreFireFighting);
             }
             Path dir = getDir(name, F_Strings.s2010_20);
             output(dir, F_Strings.s2010_20, F_Strings.FATALITY_CASUALTY, varFATALITY_CASUALTY, allTotal, collectCounts(mAllFATALITY_CASUALTY));
@@ -4439,8 +4472,10 @@ public class F_Main extends F_Object {
             output(dir, F_Strings.s2010_20, F_Strings.FSO_APPLY, env.data.vname2id.get(F_Strings.FSO_APPLY), collectCounts(mAllFSO_APPLY), collectCounts(mAllFATALITY_CASUALTY_FSO_APPLY));
             output(dir, F_Strings.s2010_20, F_Strings.SAFETY_SYSTEM, env.data.vname2id.get(F_Strings.SAFETY_SYSTEM), collectCounts(mAllSAFETY_SYSTEM), collectCounts(mAllFATALITY_CASUALTY_SAFETY_SYSTEM));
 //            // FIRE_SAFETY scores
-            outputScores(dir, F_Strings.s2010_20, F_Strings.FIRE_SAFETY_SUCCESS_SCORE, env.data.vname2id.get(F_Strings.FIRE_SAFETY_SUCCESS_SCORE), collectCounts(mAllFIRE_SAFETY_SUCCESS_SCORE), collectCounts(mAllFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE));
-            outputScores(dir, F_Strings.s2010_20, F_Strings.FIRE_SAFETY_FAILURE_SCORE, env.data.vname2id.get(F_Strings.FIRE_SAFETY_FAILURE_SCORE), collectCounts(mAllFIRE_SAFETY_FAILURE_SCORE), collectCounts(mAllFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE));
+            outputScores(dir, F_Strings.s2010_20, F_Strings.FIRE_DANGER_SCORE, env.data.vname2id.get(F_Strings.FIRE_DANGER_SCORE), collectCounts(mAllFDScore), collectCounts(mAllFATALITY_CASUALTY_FDScore));
+            outputScores(dir, F_Strings.s2010_20, F_Strings.FIRE_SAFETY_FAILURE_SCORE_MANAGEMENT, env.data.vname2id.get(F_Strings.FIRE_SAFETY_FAILURE_SCORE_MANAGEMENT), collectCounts(mAllFSFScoreManagement), collectCounts(mAllFATALITY_CASUALTY_FSFScoreManagement));
+            outputScores(dir, F_Strings.s2010_20, F_Strings.FIRE_SAFETY_FAILURE_SCORE_CONSTRUCTION, env.data.vname2id.get(F_Strings.FIRE_SAFETY_FAILURE_SCORE_CONSTRUCTION), collectCounts(mAllFSFScoreConstruction), collectCounts(mAllFATALITY_CASUALTY_FSFScoreConstruction));
+            outputScores(dir, F_Strings.s2010_20, F_Strings.FIRE_SAFETY_FAILURE_SCORE_FIRE_FIGHTING, env.data.vname2id.get(F_Strings.FIRE_SAFETY_FAILURE_SCORE_FIRE_FIGHTING), collectCounts(mAllFSFScoreFireFighting), collectCounts(mAllFATALITY_CASUALTY_FSFScoreFireFighting));
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(F_Main.class
                     .getName()).log(Level.SEVERE, null, ex);

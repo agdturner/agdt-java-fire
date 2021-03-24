@@ -354,6 +354,11 @@ public class F_Strings extends Generic_Strings {
     //FIRE_SAFETY Scores
     public static final String FIRE_SAFETY_SUCCESS_SCORE = "FIRE_SAFETY_SUCCESS_SCORE";
     public static final String FIRE_SAFETY_FAILURE_SCORE = "FIRE_SAFETY_FAILURE_SCORE";
+    public static final String FIRE_DANGER_SCORE = "FIRE_DANGER_SCORE";
+    public static final String FIRE_SAFETY_FAILURE_SCORE_MANAGEMENT = "FIRE_SAFETY_FAILURE_SCORE_MANAGEMENT";
+    public static final String FIRE_SAFETY_FAILURE_SCORE_CONSTRUCTION = "FIRE_SAFETY_FAILURE_SCORE_CONSTRUCTION";
+    public static final String FIRE_SAFETY_FAILURE_SCORE_FIRE_FIGHTING = "FIRE_SAFETY_FAILURE_SCORE_FIRE_FIGHTING";
+    
     
     //public static final String  = "";
     // EHS data
