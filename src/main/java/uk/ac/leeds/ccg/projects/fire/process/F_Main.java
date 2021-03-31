@@ -2710,7 +2710,7 @@ public class F_Main extends F_Object {
                     // START_DELAY_DESCRIPTION
                     // BuildingType
                     output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
-                            + F_Strings.DelayDueToAccessingFireBuildingType
+                            + F_Strings.sDelayDueToAccessingFireBuildingType
                             + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
@@ -2719,7 +2719,7 @@ public class F_Main extends F_Object {
                             mFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_OR_PROPERTY_TYPE);
                     // LargeSite
                     output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
-                            + F_Strings.DelayDueToAccessingFireLargeSite
+                            + F_Strings.sDelayDueToAccessingFireLargeSite
                             + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
@@ -2728,7 +2728,7 @@ public class F_Main extends F_Object {
                             mFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_OR_PROPERTY_TYPE);
                     // Security
                     output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
-                            + F_Strings.DelayDueToAccessingFireSecurity
+                            + F_Strings.sDelayDueToAccessingFireSecurity
                             + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
@@ -2737,7 +2737,7 @@ public class F_Main extends F_Object {
                             mFATALITY_CASUALTY_SDD_Security_By_BUILDING_OR_PROPERTY_TYPE);
                     // Assault
                     output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
-                            + F_Strings.DelayDueToAssaultOnFirefighters
+                            + F_Strings.sDelayDueToAssaultOnFirefighters
                             + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
@@ -2746,7 +2746,7 @@ public class F_Main extends F_Object {
                             mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_OR_PROPERTY_TYPE);
                     // Civil
                     output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
-                            + F_Strings.DelayDueToCivilDisturbance
+                            + F_Strings.sDelayDueToCivilDisturbance
                             + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
@@ -2755,7 +2755,7 @@ public class F_Main extends F_Object {
                             mFATALITY_CASUALTY_SDD_Civil_By_BUILDING_OR_PROPERTY_TYPE);
                     // Location
                     output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
-                            + F_Strings.DelayDueToLocationOfFireNotImmediatelyEvident
+                            + F_Strings.sDelayDueToLocationOfFireNotImmediatelyEvident
                             + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
@@ -2764,7 +2764,7 @@ public class F_Main extends F_Object {
                             mFATALITY_CASUALTY_SDD_Location_By_BUILDING_OR_PROPERTY_TYPE);
                     // Wrong
                     output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
-                            + F_Strings.DelayDueToSentToWrongLocation
+                            + F_Strings.sDelayDueToSentToWrongLocation
                             + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
@@ -2773,7 +2773,7 @@ public class F_Main extends F_Object {
                             mFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_OR_PROPERTY_TYPE);
                     // Vehicle
                     output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
-                            + F_Strings.DelayDueToVehicleAccessProblems
+                            + F_Strings.sDelayDueToVehicleAccessProblems
                             + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
@@ -2791,7 +2791,7 @@ public class F_Main extends F_Object {
                             mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_OR_PROPERTY_TYPE);
                     // NoDelay
                     output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
-                            + F_Strings.NoDelay
+                            + F_Strings.sNoDelay
                             + " BY "
                             + F_Strings.BUILDING_OR_PROPERTY_TYPE,
                             F_Strings.BUILDING_OR_PROPERTY_TYPE,
@@ -3218,7 +3218,80 @@ public class F_Main extends F_Object {
                     varBUILDING_OR_PROPERTY_TYPE,
                     mTotalWholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE,
                     mTotalFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE);
-            // STARTING_DELAY_DESCRIPTION
+            // START_DELAY_DESCRIPTION
+            // BuildingType
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToAccessingFireBuildingType
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalSDD_BuildingType_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_OR_PROPERTY_TYPE);
+            // LargeSite
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToAccessingFireLargeSite
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalSDD_LargeSite_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_OR_PROPERTY_TYPE);
+            // Security
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToAccessingFireSecurity
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalSDD_Security_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_SDD_Security_By_BUILDING_OR_PROPERTY_TYPE);
+            // Assault
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToAssaultOnFirefighters
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalSDD_Assault_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_SDD_Assault_By_BUILDING_OR_PROPERTY_TYPE);
+            // Civil
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToCivilDisturbance
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalSDD_Civil_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_SDD_Civil_By_BUILDING_OR_PROPERTY_TYPE);
+            // Location
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToLocationOfFireNotImmediatelyEvident
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalSDD_Location_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_SDD_Location_By_BUILDING_OR_PROPERTY_TYPE);
+            // Wrong
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToSentToWrongLocation
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalSDD_Wrong_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_OR_PROPERTY_TYPE);
+            // Vehicle
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToVehicleAccessProblems
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalSDD_Vehicle_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_OR_PROPERTY_TYPE);
+            // Delay
             output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " " + F_Strings.Delay
                     + " BY "
                     + F_Strings.BUILDING_OR_PROPERTY_TYPE,
@@ -3226,6 +3299,15 @@ public class F_Main extends F_Object {
                     varBUILDING_OR_PROPERTY_TYPE,
                     mTotalSDD_Delay_By_BUILDING_OR_PROPERTY_TYPE,
                     mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_OR_PROPERTY_TYPE);
+            // NoDelay
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sNoDelay
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalSDD_NoDelay_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_OR_PROPERTY_TYPE);
             // RESCUES
             output(dir, F_Strings.s2010_20, F_Strings.RESCUES + " " + F_Strings.OneOrMore
                     + " BY "

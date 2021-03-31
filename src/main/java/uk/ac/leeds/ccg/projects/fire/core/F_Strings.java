@@ -165,14 +165,23 @@ public class F_Strings extends Generic_Strings {
     // STARTING_DELAY_DESCRIPTION
     public static final String Delay = "Delay"; // This is an amalgam of any delay.
     public static final String DelayDueToAccessingFireBuildingType = "Delay due to: Accessing fire - due to building type e.g. high rise building";
+    public static final String sDelayDueToAccessingFireBuildingType = "DelayDueToAccessingFireBuildingType";
     public static final String DelayDueToAccessingFireLargeSite = "Delay due to: Accessing fire - large site";
+    public static final String sDelayDueToAccessingFireLargeSite = "DelayDueToAccessingFireLargeSite";
     public static final String DelayDueToAccessingFireSecurity = "Delay due to: Accessing fire - security doors/other security measures";
+    public static final String sDelayDueToAccessingFireSecurity = "DelayDueToAccessingFireSecurity";
     public static final String DelayDueToAssaultOnFirefighters = "Delay due to: Assault on Firefighters";
+    public static final String sDelayDueToAssaultOnFirefighters = "DelayDueToAssaultOnFirefighters";
     public static final String DelayDueToCivilDisturbance = "Delay due to: Civil disturbance";
+    public static final String sDelayDueToCivilDisturbance = "DelayDueToCivilDisturbance";
     public static final String DelayDueToLocationOfFireNotImmediatelyEvident = "Delay due to: Location of fire not immediately evident";
+    public static final String sDelayDueToLocationOfFireNotImmediatelyEvident = "DelayDueToLocationOfFireNotImmediatelyEvident";
     public static final String DelayDueToSentToWrongLocation = "Delay due to: Sent to wrong location";
+    public static final String sDelayDueToSentToWrongLocation = "DelayDueToSentToWrongLocation";
     public static final String DelayDueToVehicleAccessProblems = "Delay due to: Vehicle access problems";
+    public static final String sDelayDueToVehicleAccessProblems = "DelayDueToVehicleAccessProblems";
     public static final String NoDelay = "No delay";
+    public static final String sNoDelay = "NoDelay";
 
     // ITEM_CAUSING_SPREAD
     public static final String ClothingOrTextiles = "Clothing/ Textiles";
