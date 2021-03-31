@@ -172,7 +172,7 @@ public class F_Strings extends Generic_Strings {
     public static final String DelayDueToLocationOfFireNotImmediatelyEvident = "Delay due to: Location of fire not immediately evident";
     public static final String DelayDueToSentToWrongLocation = "Delay due to: Sent to wrong location";
     public static final String DelayDueToVehicleAccessProblems = "Delay due to: Vehicle access problems";
-    public static final String No_delay = "No delay";
+    public static final String NoDelay = "No delay";
 
     // ITEM_CAUSING_SPREAD
     public static final String ClothingOrTextiles = "Clothing/ Textiles";
@@ -291,7 +291,7 @@ public class F_Strings extends Generic_Strings {
     // MULTI_SEATED_FLAG
     public static final String no = "no";
     public static final String yes = "yes";
-    
+
     // IGNITION_TO_DISCOVERY
     public static final String FiveToThirtyMinutes = "5 to 30 minutes";
     public static final String Immediately = "Immediately";
@@ -358,8 +358,12 @@ public class F_Strings extends Generic_Strings {
     public static final String FIRE_SAFETY_FAILURE_SCORE_MANAGEMENT = "FIRE_SAFETY_FAILURE_SCORE_MANAGEMENT";
     public static final String FIRE_SAFETY_FAILURE_SCORE_CONSTRUCTION = "FIRE_SAFETY_FAILURE_SCORE_CONSTRUCTION";
     public static final String FIRE_SAFETY_FAILURE_SCORE_FIRE_FIGHTING = "FIRE_SAFETY_FAILURE_SCORE_FIRE_FIGHTING";
-    
-    
+
+    public static final String CombinedScore = "CombinedScore";
+    public static final String HoleyCheese = "HoleyCheese";
+    public static final String DelaysToFireFightingAndNotFirespreadHoleyCheese = "DelaysToFireFightingAndNotFirespreadHoleyCheese";
+    public static final String FirespreadAndNotDelaysToFireFightingHoleyCheese = "FirespreadAndNotDelaysToFireFightingHoleyCheese";
+
     //public static final String  = "";
     // EHS data
     // --------

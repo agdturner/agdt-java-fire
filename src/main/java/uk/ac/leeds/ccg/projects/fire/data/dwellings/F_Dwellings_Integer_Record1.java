@@ -127,8 +127,8 @@ public class F_Dwellings_Integer_Record1 extends F_Dwellings_Integer_Record0 {
      * variable ID.
      * @param valBSSMOED_SOCS BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
      * variable value indicating FIRE_SAFETY_SUCCESS.
-     * @param svalBSSMOEDDanger Set of DISCOVERY_TO_CALL variable values indicating
-     * FIRE_SAFETY_FAILURE.
+     * @param svalBSSMOEDDanger Set of DISCOVERY_TO_CALL variable values
+     * indicating FIRE_SAFETY_FAILURE.
      * @param varARFPO ALARM_REASON_FOR_POOR_OUTCOME variable ID.
      * @param svalARFPO Set of ALARM_REASON_FOR_POOR_OUTCOME variable values
      * indicating FIRE_SAFETY_FAILURE.
@@ -197,29 +197,36 @@ public class F_Dwellings_Integer_Record1 extends F_Dwellings_Integer_Record0 {
             int varBSSMOED, int valBSSMOED_SOCS, Set<Integer> svalBSSMOEDDanger,
             Set<Integer> svalBSSMOEDManagement, Set<Integer> svalBSSMOEDConstruction,
             int varARFPO, Set<Integer> svalARFPO, int varSDD, int valSDD_SOCS,
-            Set<Integer> svalSDD, Set<Integer> svalSDD2, int varCOF, Set<Integer> svalCOF,
+            Set<Integer> svalSDD, Set<Integer> svalSDD2,
+            int varCOF, Set<Integer> svalCOF, Set<Integer> svalCOF2,
             int varICS, Set<Integer> svalICS, Set<Integer> svalICS2,
             int varRFG, int valRFG,
             int varBSCD, Set<Integer> svalBSCD, int varOPAOA, int valOPAOA,
-            int varOPAC, int valOPAC, int varFSOA, Set<Integer> svalFSOASuccess,
-            int varSOF, Set<Integer> svalSOFSuccess,
+            int varOPAC, int valOPAC,
+            int varFSOA, Set<Integer> svalFSOASuccess, Set<Integer> svalFSOAFailure,
+            int varSOF, Set<Integer> svalSOFSuccess, Set<Integer> svalSOFFailure,
             int varRT, Set<Integer> svalRTSuccess, Set<Integer> svalRTFailure,
             int varFC, int valFC, int varR, int valR, int varE, int valE,
-            int varBEDD, int valBEDD, Set<Integer> svalBEDDDanger, Set<Integer> svalBEDDFailureManagement, 
-                                Set<Integer> svalBEDDFailureConstructionAndManagement) {
+            int varBEDD, int valBEDD, Set<Integer> svalBEDDDanger, Set<Integer> svalBEDDFailureManagement,
+            Set<Integer> svalBEDDFailureConstructionAndManagement) {
         super.initScores0(varMSF, valMSF_Yes, varITD, svalITD, varDTC,
                 svalDTC, varBSSCD, valBSSCD_SOCS, svalBSSCD, varBSSMOED,
                 valBSSMOED_SOCS, svalBSSMOEDDanger, svalBSSMOEDManagement, svalBSSMOEDConstruction,
                 varSDD, valSDD_SOCS, svalSDD, svalSDD2,
-                varCOF, svalCOF, varICS, svalICS, svalICS2, varRFG, valRFG, varBSCD,
-                svalBSCD, varOPAOA, valOPAOA, varOPAC, valOPAC, varFSOA,
-                svalFSOASuccess, varSOF, svalSOFSuccess, varRT, svalRTSuccess,
+                varCOF, svalCOF, svalCOF2,
+                varICS, svalICS, svalICS2, varRFG, valRFG, varBSCD,
+                svalBSCD, varOPAOA, valOPAOA, varOPAC, valOPAC,
+                varFSOA, svalFSOASuccess, svalFSOAFailure,
+                varSOF, svalSOFSuccess, svalSOFFailure,
+                varRT, svalRTSuccess,
                 svalRTFailure, varFC, valFC, varR, valR, varE, valE, varBEDD,
-                valBEDD, svalBEDDDanger, svalBEDDFailureManagement, 
+                valBEDD, svalBEDDDanger, svalBEDDFailureManagement,
                 svalBEDDFailureConstructionAndManagement);
-//        // ALARM_REASON_FOR_POOR_OUTCOME
-//        if (svalARFPO.contains(tALARM_REASON_FOR_POOR_OUTCOME)) {
-//            fSFScore++;
-//        }
+        // ALARM_REASON_FOR_POOR_OUTCOME
+        if (svalARFPO.contains(tALARM_REASON_FOR_POOR_OUTCOME)) {
+            //fSFScore++;
+            delaysToFireFightingScore++;
+            combinedScore++;
+        }
     }
 }

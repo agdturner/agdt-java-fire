@@ -22,13 +22,13 @@ import uk.ac.leeds.ccg.projects.fire.data.F_Data;
 import uk.ac.leeds.ccg.projects.fire.id.F_RecordID;
 
 /**
- * All variables store the IDs of values. The String version of the values can 
- * be looked up using these IDs from the maps stored with the data 
+ * All variables store the IDs of values. The String version of the values can
+ * be looked up using these IDs from the maps stored with the data
  * ({@link F_Data#id2names} and {@link F_Data#vname2id}).
- * 
+ *
  * The variables are coded from the Fire Incident Reporting System:
  * https://www.irs.fire.gov.uk/irshelp/default.htm
- * 
+ *
  * @author Andy Turner
  */
 public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
@@ -100,60 +100,141 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
     public Integer tEVACUATIONS_CODE;
     public Integer tBUILDING_EVACUATION_DELAY_DESCRIPTION;
     public Integer tBUILDING_EVACUATION_TIME_DESCRIPTION;
+
+    /**
+     * Type 1: Failure Flags - these are flags to indicate where something went
+     * wrong at any point in this incident but without attributing blame / cause
+     * / connection. These are like an early warning system for us. So they will
+     * incorporate all the existing failure flags plus any more we think of.
+     * These flags simply alert us to every field where something happened that
+     * should not happen. We could equally call them Exceptional Event Flags.
+     * They would include rescues, evacuations, casualties and fatalities; plus
+     * when the fire fighters are attacked by residents!
+     */
+    /**
+     * Type 2: Building System Failure Flags - these are flags to indicate where
+     * existing alarms, compartmentation, means of escape, special types of
+     * construction and delays to fire fighting caused by building issues were
+     * present. These are indicative of mis-management, poor construction, and
+     * regulatory failures, but further exploration would be needed to pass
+     * judgement if possible. So these are just clear failures of the building.
+     * They would include fire spread flags.
+     */
+    /**
+     * Type 3: Fire Fighting Failure Flags - these are flags to indicate where
+     * actions taken by the fire service impeded the fire and rescue. That would
+     * include slow response times, delays to fire fighting caused by the FRS,
+     * issues to do with evacuation (if we can see these).
+     */
+    /**
+     * Type 4: Enhanced Risks Flags - these are similar to Andy's Danger Flags
+     * and Phil's idea of the swiss cheese. But also a bit different. I think we
+     * need to identify all types of data we have that suggest enhanced risks of
+     * something going wrong, additional danger, that is really about connecting
+     * type of building, type of occupant and type of fire together. Some of
+     * these risks are already identified in previous flags but there may be
+     * more across different fields or within those we previously looked at and
+     * did not include as Failures. For example, here I am thinking of:
+     * <pre>
+     * i) time of fire
+     * ii) lone occupiers or those over pension age
+     * iii) fire that starts through faulty equipment / services or while people
+     * are asleep or deliberately - limiting capacity of occupiers to detect and 
+     * put out fire themselves or call 999
+     * iv) fires in buildings with cladding or timber frames
+     * v) buildings with clear evidence of poor management
+     * vi) buildings where not active suppression systems are present or no 
+     * alarms fitted 
+     * vii) buildings above floors and the higher up the greater problems for 
+     * escaping and fire fighting etc.
+     * </pre> 
+     * The point of the Enhanced Risk Flags is to identify all of the possible 
+     * things that could turn a fire - however small at the outset - into a 
+     * raging inferno and killing machine. Another Grenfell
+     * These risks will definitely overlap other types of flags. When we combine
+     * these additional risks with failures of building / fire fighting and 
+     * exceptional / unexpected events, we get more than swiss cheese. 
+     * We get fondue.
+     */
+    
+    /**
+     * Connectivity Flags
+     */
     
     /**
      * Variable added for project analysis to classify fires by fire danger.
      */
     public Integer fDScore;
-    
+
     /**
-     * Variable added for project analysis to classify fires by fire safety
-     * failures for all types of failure.
+     * Variable added for project analysis to classify fires in terms of
+     * potential failures as a result of delays to fire fighting.
      */
-    //public Integer fSFScore;
-    
+    public Integer combinedScore;
+
     /**
-     * Variable added for project analysis to classify fires by fire safety
-     * successes.
+     * Variable added for project analysis to classify fires in terms of
+     * potential failures as a result of delays to fire fighting.
      */
-    //public Integer fSSScore;
-            
+    public Integer delaysToFireFightingScore;
+
+    /**
+     * Variable added for project analysis to classify fires in terms of
+     * potential failures as a result of cause of fire.
+     */
+    public Integer causeOfFireScore;
+
+    /**
+     * Variable added for project analysis to classify fires in terms of
+     * potential failures as a result of fire spread issues.
+     */
+    public Integer fireSpreadScore;
+
+    /**
+     * Variable added for project analysis to classify fires in terms of
+     * potential failures as a result of evacuation issues.
+     */
+    public Integer evacuationScore;
+
+    /**
+     * Variable added for project analysis to classify fires in terms of
+     * potential failures as a result of delays to fire fighting, cause of fire,
+     * fire spread issues and evacuation issues.
+     */
+    public Integer holeyCheese;
+
+    /**
+     * Variable added for project analysis to classify fires in terms of
+     * potential failures as a result of delays to fire fighting and not
+     * fire spread issues.
+     */
+    public Integer delaysToFireFightingAndNotFirespreadHoleyCheese;
+
+    /**
+     * Variable added for project analysis to classify fires in terms of
+     * potential failures as a result of fire spread issues and not delays to 
+     * fire fighting.
+     */
+    public Integer firespreadAndNotDelaysToFireFightingHoleyCheese;
+    
     /**
      * Variable added for project analysis to classify fires by fire safety
      * failures for Construction.
      */
     public Integer fSFScoreConstruction;
-    
-    /**
-     * Variable added for project analysis to classify fires by fire safety
-     * successes for Construction.
-     */
-    //public Integer fSSScoreConstruction;
-            
+
     /**
      * Variable added for project analysis to classify fires by fire safety
      * failures for Management.
      */
     public Integer fSFScoreManagement;
-    
-    /**
-     * Variable added for project analysis to classify fires by fire safety
-     * successes for Management.
-     */
-    //public Integer fSSScoreManagement;
-    
+
     /**
      * Variable added for project analysis to classify fires by fire safety
      * failures for Construction.
      */
     public Integer fSFScoreFireFighting;
-    
-    /**
-     * Variable added for project analysis to classify fires by fire safety
-     * successes for Construction.
-     */
-    //public Integer fSSScoreFireFighting;
-    
+
     public F_Dwellings_Integer_Record0(F_Dwellings_String_Record0 r, F_Data d) throws Exception {
         super(r.id);
         tID_number = r.tID_number;
@@ -516,7 +597,13 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
                 + "FIRE_SAFETY_DANGER_SCORE,"
                 + "FIRE_SAFETY_FAILURE_SCORE_MANAGEMENT,"
                 + "FIRE_SAFETY_FAILURE_SCORE_CONSTRUCTION,"
-                + "FIRE_SAFETY_FAILURE_SCORE_FIRE_FIGHTING";
+                + "FIRE_SAFETY_FAILURE_SCORE_FIRE_FIGHTING,"
+                + "COMBINED_FAILURE_SCORE,"
+                + "FAILURE_SCORE_DELAYS_TO_FIRE_FIGHTING,"
+                + "FAILURE_SCORE_CAUSE_OF_FIRE,"
+                + "FAILURE_SCORE_FIRE_SPREAD,"
+                + "FAILURE_SCORE_EVACUATION,"
+                + "HoleyCheese";
     }
 
     public abstract String toString(F_Data data);
@@ -588,15 +675,19 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
         r += ", EVACUATIONS_CODE=" + getEVACUATIONS_CODE(data);
         r += ", BUILDING_EVACUATION_DELAY_DESCRIPTION=" + getBUILDING_EVACUATION_DELAY_DESCRIPTION(data);
         r += ", BUILDING_EVACUATION_TIME_DESCRIPTION=" + getBUILDING_EVACUATION_TIME_DESCRIPTION(data);
-        r += ", fDScore=" + fDScore;
         //r += ", fSFScore=" + fSFScore;
         //r += ", fSSScore=" + fSSScore;
+        r += ", fDScore=" + fDScore;
         r += ", fSFScoreConstruction=" + fSFScoreConstruction;
-        //r += ", fSSScoreConstruction=" + fSSScoreConstruction;
         r += ", fSFScoreManagement=" + fSFScoreManagement;
-        //r += ", fSSScoreManagement=" + fSSScoreManagement;
         r += ", fSFScoreFireFighting=" + fSFScoreFireFighting;
-        //r += ", fSSScoreFireFighting=" + fSSScoreFireFighting;
+        r += ", combinedScore=" + combinedScore;
+        r += ", delaysToFireFightingScore=" + delaysToFireFightingScore;
+        r += ", causeOfFireScore=" + causeOfFireScore;
+        r += ", fireSpreadScore=" + fireSpreadScore;
+        r += ", evacuationScore=" + evacuationScore;
+        r += ", holeyCheese=" + holeyCheese;
+        r += ", delaysToFireFightingAndNotFirespreadHoleyCheese=" + delaysToFireFightingAndNotFirespreadHoleyCheese;
         return r;
     }
 
@@ -669,22 +760,27 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
         r += "\",\"" + getEVACUATIONS_CODE(data);
         r += "\",\"" + getBUILDING_EVACUATION_DELAY_DESCRIPTION(data);
         r += "\",\"" + getBUILDING_EVACUATION_TIME_DESCRIPTION(data);
-        r += "\"," + fDScore;
         //r += "\"," + fSFScore;
         //r += "," + fSSScore;
+        r += "\"," + fDScore;
         r += "," + fSFScoreConstruction;
-        //r += "," + fSSScoreConstruction;
         r += "," + fSFScoreManagement;
-        //r += "," + fSSScoreManagement;
         r += "," + fSFScoreFireFighting;
-        //r += "," + fSSScoreFireFighting;
+        r += "," + combinedScore;
+        r += "," + delaysToFireFightingScore;
+        r += "," + causeOfFireScore;
+        r += "," + fireSpreadScore;
+        r += "," + evacuationScore;
+        r += "," + holeyCheese;
+        r += "," + delaysToFireFightingAndNotFirespreadHoleyCheese;
         return r;
     }
 
     /**
      * @param varMSF MULTI_SEATED_FLAG variable ID.
      * @param valMSF_Yes MULTI_SEATED_FLAG variable value indicating
-     * FIRE_SAFETY_FAILURE. The other value is regarded as a FIRE_SAFETY_SUCCESS.
+     * FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
      * @param varITD IGNITION_TO_DISCOVERY variable ID.
      * @param svalITD Set of IGNITION_TO_DISCOVERY variable values indicating
      * FIRE_SAFETY_FAILURE.
@@ -702,8 +798,8 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
      * variable ID.
      * @param valBSSMOED_SOCS BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
      * variable value indicating FIRE_SAFETY_SUCCESS.
-     * @param svalBSSMOEDDanger Set of DISCOVERY_TO_CALL variable values indicating
-     * FIRE_SAFETY_FAILURE.
+     * @param svalBSSMOEDDanger Set of DISCOVERY_TO_CALL variable values
+     * indicating FIRE_SAFETY_FAILURE.
      * @param varARFPO ALARM_REASON_FOR_POOR_OUTCOME variable ID.
      * @param svalARFPO Set of ALARM_REASON_FOR_POOR_OUTCOME variable values
      * indicating FIRE_SAFETY_FAILURE.
@@ -722,19 +818,23 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
      * FIRE_SAFETY_FAILURE.
      * @param varRFG RAPID_FIRE_GROWTH variable ID.
      * @param valRFG RAPID_FIRE_GROWTH variable value indicating
-     * FIRE_SAFETY_FAILURE. The other value is regarded as a FIRE_SAFETY_SUCCESS.
+     * FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
      * @param varBSCD BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION variable ID.
      * @param svalBSCD Set of BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION variable
      * values indicating FIRE_SAFETY_FAILURE.
      * @param varOPAOA OTHER_PROPERTY_AFFECTED_ON_ARRIVAL variable ID.
      * @param valOPAOA OTHER_PROPERTY_AFFECTED_ON_ARRIVAL variable value
-     * indicating FIRE_SAFETY_FAILURE. The other value is regarded as a FIRE_SAFETY_SUCCESS.
+     * indicating FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
      * @param varOPAC other_property_affected_close_d variable ID.
      * @param valOPAC other_property_affected_close_d variable value indicating
-     * FIRE_SAFETY_FAILURE. The other value is regarded as a FIRE_SAFETY_SUCCESS.
+     * FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
      * @param varFSOA FIRE_SIZE_ON_ARRIVAL variable ID.
      * @param svalFSOASuccess Set of FIRE_SIZE_ON_ARRIVAL variable values
-     * indicating FIRE_SAFETY_FAILURE. The other value is regarded as a FIRE_SAFETY_SUCCESS.
+     * indicating FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
      * @param varSOF spread_of_fire_d variable ID.
      * @param svalSOFSuccess Set of spread_of_fire_d variable values indicating
      * FIRE_SAFETY_SUCCESS.
@@ -745,16 +845,19 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
      * FIRE_SAFETY_FAILURE.
      * @param varFC FATALITY_CASUALTY variable ID.
      * @param valFC FATALITY_CASUALTY variable value indicating
-     * FIRE_SAFETY_FAILURE. The other value is regarded as a FIRE_SAFETY_SUCCESS.
+     * FIRE_SAFETY_FAILURE. The other value is regarded as a
+     * FIRE_SAFETY_SUCCESS.
      * @param varR RESCUES variable ID.
-     * @param valR RESCUES variable value indicating FIRE_SAFETY_SUCCESS. The other value is regarded as a FIRE_SAFETY_FAILURE.
+     * @param valR RESCUES variable value indicating FIRE_SAFETY_SUCCESS. The
+     * other value is regarded as a FIRE_SAFETY_FAILURE.
      * @param varE EVACUATIONS variable ID.
-     * @param valE EVACUATIONS variable value indicating FIRE_SAFETY_SUCCESS. The other value is regarded as a FIRE_SAFETY_FAILURE.
+     * @param valE EVACUATIONS variable value indicating FIRE_SAFETY_SUCCESS.
+     * The other value is regarded as a FIRE_SAFETY_FAILURE.
      * @param varBEDD BUILDING_EVACUATION_DELAY_DESCRIPTION variable ID.
      * @param valBEDD BUILDING_EVACUATION_DELAY_DESCRIPTION variable value
      * indicating FIRE_SAFETY_SUCCESS.
-     * @param svalBEDDFailure Set of BUILDING_EVACUATION_DELAY_DESCRIPTION values indicating
-     * FIRE_SAFETY_FAILURE.
+     * @param svalBEDDFailure Set of BUILDING_EVACUATION_DELAY_DESCRIPTION
+     * values indicating FIRE_SAFETY_FAILURE.
      */
     public void initScores0(
             // MULTI_SEATED_FLAG
@@ -771,9 +874,9 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
             // STARTING_DELAY_DESCRIPTION
             int varSDD, int valSDD_SOCS, Set<Integer> svalSDD, Set<Integer> svalSDD2,
             // CAUSE_OF_FIRE
-            int varCOF, Set<Integer> svalCOF,
+            int varCOF, Set<Integer> svalCOF, Set<Integer> svalCOF2,
             // ITEM_CAUSING_SPREAD
-            int varICS, Set<Integer> svalICS, Set<Integer> svalICS2, 
+            int varICS, Set<Integer> svalICS, Set<Integer> svalICS2,
             // RAPID_FIRE_GROWTH
             int varRFG, int valRFG,
             // BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION
@@ -783,9 +886,9 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
             // other_property_affected_close_d
             int varOPAC, int valOPAC,
             // FIRE_SIZE_ON_ARRIVAL
-            int varFSOA, Set<Integer> svalFSOASuccess,
+            int varFSOA, Set<Integer> svalFSOASuccess, Set<Integer> svalFSOAFailure,
             // spread_of_fire_d
-            int varSOF, Set<Integer> svalSOFSuccess,
+            int varSOF, Set<Integer> svalSOFSuccess, Set<Integer> svalSOFFailure,
             // RESPONSE_TIME
             int varRT, Set<Integer> svalRTSuccess, Set<Integer> svalRTFailure,
             // FATALITY_CASUALTY
@@ -795,18 +898,23 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
             // EVACUATIONS
             int varE, int valE,
             // BUILDING_EVACUATION_DELAY_DESCRIPTION
-            int varBEDD, int valBEDD, Set<Integer> svalBEDDDanger, 
-            Set<Integer> svalBEDDFailureManagement, 
+            int varBEDD, int valBEDD, Set<Integer> svalBEDDDanger,
+            Set<Integer> svalBEDDFailureManagement,
             Set<Integer> svalBEDDFailureConstructionAndManagement) {
         fDScore = 0;
         //fSFScore = 0;
         //fSSScore = 0;
         fSFScoreConstruction = 0;
-        //fSSScoreConstruction = 0;
         fSFScoreManagement = 0;
-        //fSSScoreManagement = 0;
         fSFScoreFireFighting = 0;
-        //fSSScoreFireFighting = 0;
+        combinedScore = 0;
+        delaysToFireFightingScore = 0;
+        causeOfFireScore = 0;
+        fireSpreadScore = 0;
+        evacuationScore = 0;
+        holeyCheese = 0;
+        delaysToFireFightingAndNotFirespreadHoleyCheese = 0;
+        firespreadAndNotDelaysToFireFightingHoleyCheese = 0;
         // MULTI_SEATED_FLAG
         if (tMULTI_SEATED_FLAG == valMSF_Yes) {
             fDScore++;
@@ -814,10 +922,14 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
         // IGNITION_TO_DISCOVERY
         if (svalITD.contains(tIGNITION_TO_DISCOVERY)) {
             fDScore++;
+            delaysToFireFightingScore++;
+            combinedScore++;
         }
         // DISCOVERY_TO_CALL
         if (svalDTC.contains(tDISCOVERY_TO_CALL)) {
             fSFScoreManagement++;
+            delaysToFireFightingScore++;
+            combinedScore++;
         }
 //        // BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
 //        if (tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION == valBSSCD_SOCS) {
@@ -825,6 +937,8 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
 //        }
         if (svalBSSCD.contains(tBUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION)) {
             fSFScoreConstruction++;
+            fireSpreadScore++;
+            combinedScore++;
         }
 //        // BUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION
 //        if (tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION == valBSSMOED_SOCS) {
@@ -832,6 +946,8 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
 //        }
         if (svalBSSMOEDDanger.contains(tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION)) {
             fDScore++;
+            evacuationScore++;
+            combinedScore++;
         }
         if (svalBSSMOEDManagement.contains(tBUILDING_SAFETY_SYSTEM_MEANS_OF_ESCAPE_DESCRIPTION)) {
             fSFScoreManagement++;
@@ -845,44 +961,74 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
 //        }
         if (svalSDD.contains(tSTARTING_DELAY_DESCRIPTION)) {
             fSFScoreFireFighting++;
+            delaysToFireFightingScore++;
+            combinedScore++;
         }
         if (svalSDD2.contains(tSTARTING_DELAY_DESCRIPTION)) {
             fDScore++;
+            delaysToFireFightingScore++;
+            combinedScore++;
         }
         // CAUSE_OF_FIRE
         if (svalCOF.contains(tCAUSE_OF_FIRE)) {
             fSFScoreManagement++;
+            causeOfFireScore++;
+            combinedScore++;
+        }
+        if (svalCOF2.contains(tCAUSE_OF_FIRE)) {
+            causeOfFireScore++;
+            combinedScore++;
         }
         // ITEM_CAUSING_SPREAD
         if (svalICS.contains(tITEM_CAUSING_SPREAD)) {
             fSFScoreManagement++;
+            fireSpreadScore++;
+            combinedScore++;
         }
         if (svalICS2.contains(tITEM_CAUSING_SPREAD)) {
             fSFScoreConstruction++;
-        }        
+            fireSpreadScore++;
+            combinedScore++;
+        }
         // RAPID_FIRE_GROWTH
         if (tRAPID_FIRE_GROWTH == valRFG) {
             fDScore++;
+            fireSpreadScore++;
+            combinedScore++;
         }
         // BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION
         if (svalBSCD.contains(tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION)) {
             fSFScoreConstruction++;
+            fireSpreadScore++;
+            combinedScore++;
         }
         // OTHER_PROPERTY_AFFECTED_ON_ARRIVAL
         if (tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL == valOPAOA) {
             fDScore++;
+            fireSpreadScore++;
+            combinedScore++;
         }
         // other_property_affected_close_d
         if (tother_property_affected_close_d == valOPAC) {
             fDScore++;
+            fireSpreadScore++;
+            combinedScore++;
         }
         // FIRE_SIZE_ON_ARRIVAL
         if (!svalFSOASuccess.contains(tFIRE_SIZE_ON_ARRIVAL)) {
             fDScore++;
         }
+        if (svalFSOAFailure.contains(tFIRE_SIZE_ON_ARRIVAL)) {
+            fireSpreadScore++;
+            combinedScore++;
+        }
         // spread_of_fire_d
         if (!svalSOFSuccess.contains(tspread_of_fire_d)) {
             fDScore++;
+        }
+        if (svalSOFSuccess.contains(tFIRE_SIZE_ON_ARRIVAL)) {
+            fireSpreadScore++;
+            combinedScore++;
         }
 //        // RESPONSE_TIME
 //        if (svalRTSuccess.contains(tRESPONSE_TIME)) {
@@ -890,6 +1036,8 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
 //        }
         if (svalRTFailure.contains(tRESPONSE_TIME)) {
             fSFScoreFireFighting++;
+            delaysToFireFightingScore++;
+            combinedScore++;
         }
 //        // FATALITY_CASUALTY
 //        if (tFATALITY_CASUALTY == valFC) {
@@ -911,13 +1059,38 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
 //        }
         if (svalBEDDDanger.contains(tBUILDING_EVACUATION_DELAY_DESCRIPTION)) {
             fDScore++;
+            evacuationScore++;
+            combinedScore++;
         }
         if (svalBEDDFailureManagement.contains(tBUILDING_EVACUATION_DELAY_DESCRIPTION)) {
             fSFScoreManagement++;
+            evacuationScore++;
+            combinedScore++;
         }
         if (svalBEDDFailureConstructionAndManagement.contains(tBUILDING_EVACUATION_DELAY_DESCRIPTION)) {
             fSFScoreManagement++;
             fSFScoreConstruction++;
+            evacuationScore++;
+            combinedScore++;
+        }
+        if (delaysToFireFightingScore > 0) {
+            holeyCheese++;
+            if (fireSpreadScore == 0) {
+                delaysToFireFightingAndNotFirespreadHoleyCheese++;
+            }
+        } else {
+            if (fireSpreadScore > 0) {
+                    firespreadAndNotDelaysToFireFightingHoleyCheese ++;
+            }
+        }
+        if (causeOfFireScore > 0) {
+            holeyCheese++;
+        }
+        if (fireSpreadScore > 0) {
+            holeyCheese++;
+        }
+        if (evacuationScore > 0) {
+            holeyCheese++;
         }
     }
 }
