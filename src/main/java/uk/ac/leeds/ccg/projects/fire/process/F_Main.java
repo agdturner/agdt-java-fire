@@ -4841,6 +4841,7 @@ public class F_Main extends F_Object {
                     Generic_Collections.addToCount(mCombinedScore, r.combinedScore, 1);
                     Generic_Collections.addToCount(mHoleyCheese, r.holeyCheese, 1);
                     Generic_Collections.addToCount(mDelaysToFireFightingAndNotFirespreadHoleyCheese, r.delaysToFireFightingAndNotFirespreadHoleyCheese, 1);
+                    Generic_Collections.addToCount(mFirespreadAndNotDelaysToFireFightingHoleyCheese, r.firespreadAndNotDelaysToFireFightingHoleyCheese, 1);
                     if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
                         addToCounts0(r, mFATALITY_CASUALTY_FRS_NAME, mFATALITY_CASUALTY_E_CODE, mFATALITY_CASUALTY_MONTH_NAME,
                                 mFATALITY_CASUALTY_WEEKDAY_WEEKEND, mFATALITY_CASUALTY_DAY_NIGHT,
@@ -4953,6 +4954,7 @@ public class F_Main extends F_Object {
                     Generic_Collections.addToCount(mCombinedScore, r.combinedScore, 1);
                     Generic_Collections.addToCount(mHoleyCheese, r.holeyCheese, 1);
                     Generic_Collections.addToCount(mDelaysToFireFightingAndNotFirespreadHoleyCheese, r.delaysToFireFightingAndNotFirespreadHoleyCheese, 1);
+                    Generic_Collections.addToCount(mFirespreadAndNotDelaysToFireFightingHoleyCheese, r.firespreadAndNotDelaysToFireFightingHoleyCheese, 1);
                     if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
                         addToCounts0(r, mFATALITY_CASUALTY_FRS_NAME, mFATALITY_CASUALTY_E_CODE, mFATALITY_CASUALTY_MONTH_NAME,
                                 mFATALITY_CASUALTY_WEEKDAY_WEEKEND, mFATALITY_CASUALTY_DAY_NIGHT,

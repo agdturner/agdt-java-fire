@@ -139,28 +139,25 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
      * i) time of fire
      * ii) lone occupiers or those over pension age
      * iii) fire that starts through faulty equipment / services or while people
-     * are asleep or deliberately - limiting capacity of occupiers to detect and 
+     * are asleep or deliberately - limiting capacity of occupiers to detect and
      * put out fire themselves or call 999
      * iv) fires in buildings with cladding or timber frames
      * v) buildings with clear evidence of poor management
-     * vi) buildings where not active suppression systems are present or no 
-     * alarms fitted 
-     * vii) buildings above floors and the higher up the greater problems for 
+     * vi) buildings where not active suppression systems are present or no
+     * alarms fitted
+     * vii) buildings above floors and the higher up the greater problems for
      * escaping and fire fighting etc.
-     * </pre> 
-     * The point of the Enhanced Risk Flags is to identify all of the possible 
-     * things that could turn a fire - however small at the outset - into a 
-     * raging inferno and killing machine. Another Grenfell
-     * These risks will definitely overlap other types of flags. When we combine
-     * these additional risks with failures of building / fire fighting and 
-     * exceptional / unexpected events, we get more than swiss cheese. 
-     * We get fondue.
+     * </pre> The point of the Enhanced Risk Flags is to identify all of the
+     * possible things that could turn a fire - however small at the outset -
+     * into a raging inferno and killing machine. Another Grenfell These risks
+     * will definitely overlap other types of flags. When we combine these
+     * additional risks with failures of building / fire fighting and
+     * exceptional / unexpected events, we get more than swiss cheese. We get
+     * fondue.
      */
-    
     /**
      * Connectivity Flags
      */
-    
     /**
      * Variable added for project analysis to classify fires by fire danger.
      */
@@ -205,18 +202,18 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
 
     /**
      * Variable added for project analysis to classify fires in terms of
-     * potential failures as a result of delays to fire fighting and not
-     * fire spread issues.
+     * potential failures as a result of delays to fire fighting and not fire
+     * spread issues.
      */
     public Integer delaysToFireFightingAndNotFirespreadHoleyCheese;
 
     /**
      * Variable added for project analysis to classify fires in terms of
-     * potential failures as a result of fire spread issues and not delays to 
+     * potential failures as a result of fire spread issues and not delays to
      * fire fighting.
      */
     public Integer firespreadAndNotDelaysToFireFightingHoleyCheese;
-    
+
     /**
      * Variable added for project analysis to classify fires by fire safety
      * failures for Construction.
@@ -1080,7 +1077,7 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
             }
         } else {
             if (fireSpreadScore > 0) {
-                    firespreadAndNotDelaysToFireFightingHoleyCheese ++;
+                firespreadAndNotDelaysToFireFightingHoleyCheese++;
             }
         }
         if (causeOfFireScore > 0) {
