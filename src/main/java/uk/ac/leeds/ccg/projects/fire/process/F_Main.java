@@ -391,6 +391,48 @@ public class F_Main extends F_Object {
     HashMap<Integer, HashMap<Integer, Integer>> mAllSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
     HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
 
+    // Single variable selections by BUILDING_FLOOR_ORIGIN
+    // ---------------------------------------------------
+    // STARTING_DELAY_DESCRIPTION
+    // BuildingType
+    // DelayDueToAccessingFireBuildingType = "Delay due to: Accessing fire - due to building type e.g. high rise building"
+    HashMap<Integer, HashMap<Integer, Integer>> mAllSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // LargeSite
+    // DelayDueToAccessingFireLargeSite = "Delay due to: Accessing fire - large site"
+    HashMap<Integer, HashMap<Integer, Integer>> mAllSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Security
+    // DelayDueToAccessingFireSecurity = "Delay due to: Accessing fire - security doors/other security measures"
+    HashMap<Integer, HashMap<Integer, Integer>> mAllSDD_Security_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Assault
+    // DelayDueToAssaultOnFirefighters = "Delay due to: Assault on Firefighters"
+    HashMap<Integer, HashMap<Integer, Integer>> mAllSDD_Assault_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Civil
+    // DelayDueToCivilDisturbance = "Delay due to: Civil disturbance"
+    HashMap<Integer, HashMap<Integer, Integer>> mAllSDD_Civil_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Location
+    // DelayDueToLocationOfFireNotImmediatelyEvident = "Delay due to: Location of fire not immediately evident"
+    HashMap<Integer, HashMap<Integer, Integer>> mAllSDD_Location_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Wrong
+    // DelayDueToSentToWrongLocation = "Delay due to: Sent to wrong location"
+    HashMap<Integer, HashMap<Integer, Integer>> mAllSDD_Wrong_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Vehicle
+    // DelayDueToVehicleAccessProblems = "Delay due to: Vehicle access problems"
+    HashMap<Integer, HashMap<Integer, Integer>> mAllSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Delay
+    HashMap<Integer, HashMap<Integer, Integer>> mAllSDD_Delay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // NoDelay = "No delay"
+    HashMap<Integer, HashMap<Integer, Integer>> mAllSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+
     // Multiple variable selections
     // ----------------------------
     HashMap<Integer, HashMap<Integer, Integer>> mAllNight_NoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
@@ -577,6 +619,38 @@ public class F_Main extends F_Object {
     // NoDelay
     HashMap<Integer, Integer> mTotalSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
     HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // Single variable by BUILDING_FLOOR_ORIGIN
+    // STARTING_DELAY_DESCRIPTION
+    // BuildingType
+    HashMap<Integer, Integer> mTotalSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // LargeSite
+    HashMap<Integer, Integer> mTotalSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Security
+    HashMap<Integer, Integer> mTotalSDD_Security_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Assault
+    HashMap<Integer, Integer> mTotalSDD_Assault_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Civil
+    HashMap<Integer, Integer> mTotalSDD_Civil_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Location
+    HashMap<Integer, Integer> mTotalSDD_Location_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Wrong
+    HashMap<Integer, Integer> mTotalSDD_Wrong_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Vehicle
+    HashMap<Integer, Integer> mTotalSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // Delay
+    HashMap<Integer, Integer> mTotalSDD_Delay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    // NoDelay
+    HashMap<Integer, Integer> mTotalSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
     // For convenience
     protected final F_Files files;
 
@@ -1867,28 +1941,13 @@ public class F_Main extends F_Object {
         }
     }
 
-//    /**
-//     * @param dirname The directory name for the output.
-//     * @param name0 Prepend to filename.
-//     * @param name1 The name of the thing to output out - this will be the start
-//     * of the filename.
-//     * @param <K> The type.
-//     * @param s The set containing values to output out.
-//     */
-//    public void outputCombined(Path dir, String name0, String name1, String vname,
-//            Integer vid,
-//            Map<Integer, Map<Integer, Integer>> ms,
-//            Map<Integer, Map<Integer, Integer>> mfcs) {
-//    }
     /**
-     * @param dirname The directory name for the output.
+     * @param dir The directory for the output.
      * @param name0 Prepend to filename.
      * @param name1 The name of the thing to output out - this will be the start
      * of the filename.
-     * @param <K> The type.
-     * @param s The set containing values to output out.
      */
-    public void outputCombined(Path dir, String name0, String name1, String vname,
+    public void outputBUILDING_FLOORS_ABOVE_GROUND(Path dir, String name0, String name1, String vname,
             Integer vid,
             //int varBUILDING_FLOORS_ABOVE_GROUND,
             Map<Integer, Integer> mTotalSDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND,
@@ -1921,7 +1980,7 @@ public class F_Main extends F_Object {
             Map<Integer, Integer> mTotalSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
             Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND
     ) {
-        ArrayList<String> BUILDING_FLOORS_ABOVE_GROUND_ValueList = getBUILDING_FLOORS_ABOVE_GROUND_ValueList();
+        ArrayList<String> ofl = getOrderedFloorsList();
 //        TreeSet<Integer> keys = new TreeSet<>(); 
 //        keys.addAll(env.data.id2names.get(vid).keySet());
 ////        keys.addAll(mTotalSDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND.keySet());
@@ -1934,7 +1993,6 @@ public class F_Main extends F_Object {
 ////        keys.addAll(mTotalSDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND.keySet());
 ////        keys.addAll(mTotalSDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND.keySet());
 //        keys.addAll(mTotalSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND.keySet());
-
         try {
             Path p = Paths.get(dir.toString(), F_Files.getFormattedFilenameString(name0 + " " + name1) + ".csv");
             System.out.println("output " + name1);
@@ -1943,43 +2001,153 @@ public class F_Main extends F_Object {
                 //pw.println(name + " Table length=" + m.size());
                 pw.println("\"" + vname + "\",\"" + vname + "_ID\","
                         + "SDD_BuildingType_Count,SDD_BuildingType_FATAL_CASUALTY_Count,SDD_BuildingType_%FATAL_CASUALTY"
-                        + "SDD_LargeSite_Count,SDD_LargeSite_FATAL_CASUALTY_Count,SDD_LargeSite_%FATAL_CASUALTY"
-                        + "SDD_Security_Count,SDD_Security_FATAL_CASUALTY_Count,SDD_Security_%FATAL_CASUALTY"
-                        + "SDD_Assault_Count,SDD_Assault_FATAL_CASUALTY_Count,SDD_Assault_%FATAL_CASUALTY"
-                        + "SDD_Civil_Count,SDD_Civil_FATAL_CASUALTY_Count,SDD_Civil_%FATAL_CASUALTY"
-                        + "SDD_Location_Count,SDD_Location_FATAL_CASUALTY_Count,SDD_Location_%FATAL_CASUALTY"
-                        + "SDD_Wrong_Count,SDD_Wrong_FATAL_CASUALTY_Count,SDD_Wrong_%FATAL_CASUALTY"
-                        + "SDD_Vehicle_Count,SDD_Vehicle_FATAL_CASUALTY_Count,SDD_Vehicle_%FATAL_CASUALTY"
-                        + "SDD_Delay_Count,SDD_Delay_FATAL_CASUALTY_Count,SDD_Delay_%FATAL_CASUALTY"
-                        + "SDD_NoDelay_Count,SDD_NoDelay_FATAL_CASUALTY_Count,SDD_NoDelay_%FATAL_CASUALTY");
+                        + ",SDD_LargeSite_Count,SDD_LargeSite_FATAL_CASUALTY_Count,SDD_LargeSite_%FATAL_CASUALTY"
+                        + ",SDD_Security_Count,SDD_Security_FATAL_CASUALTY_Count,SDD_Security_%FATAL_CASUALTY"
+                        + ",SDD_Assault_Count,SDD_Assault_FATAL_CASUALTY_Count,SDD_Assault_%FATAL_CASUALTY"
+                        + ",SDD_Civil_Count,SDD_Civil_FATAL_CASUALTY_Count,SDD_Civil_%FATAL_CASUALTY"
+                        + ",SDD_Location_Count,SDD_Location_FATAL_CASUALTY_Count,SDD_Location_%FATAL_CASUALTY"
+                        + ",SDD_Wrong_Count,SDD_Wrong_FATAL_CASUALTY_Count,SDD_Wrong_%FATAL_CASUALTY"
+                        + ",SDD_Vehicle_Count,SDD_Vehicle_FATAL_CASUALTY_Count,SDD_Vehicle_%FATAL_CASUALTY"
+                        + ",SDD_Delay_Count,SDD_Delay_FATAL_CASUALTY_Count,SDD_Delay_%FATAL_CASUALTY"
+                        + ",SDD_NoDelay_Count,SDD_NoDelay_FATAL_CASUALTY_Count,SDD_NoDelay_%FATAL_CASUALTY");
                 //m.keySet().stream().forEach(i -> pw.println("\"" + i + "\",\"" + m.get(i) + "\""));
-                Iterator<String> ites = BUILDING_FLOORS_ABOVE_GROUND_ValueList.iterator();
+                Iterator<String> ites = ofl.iterator();
                 while (ites.hasNext()) {
                     String s = ites.next();
                     Integer k = name2id.get(s);
-                    pw.print("\"" + s + "\",\"" + k.toString() + "\"");
-                    print(pw, mTotalSDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
-                            mTotalFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
-                    print(pw, mTotalSDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
-                            mTotalFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
-                    print(pw, mTotalSDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
-                            mTotalFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
-                    print(pw, mTotalSDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
-                            mTotalFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
-                    print(pw, mTotalSDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
-                            mTotalFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
-                    print(pw, mTotalSDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
-                            mTotalFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
-                    
-                    print(pw, mTotalSDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
-                            mTotalFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
-                    print(pw, mTotalSDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
-                            mTotalFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
-                    print(pw, mTotalSDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
-                            mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
-                    print(pw, mTotalSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
-                            mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
-                    pw.println();
+                    if (k != null) {
+                        pw.print("\"" + s + "\",\"" + k.toString() + "\"");
+                        print(pw, mTotalSDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalSDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalSDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalSDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalSDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalSDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalSDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalSDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalSDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        pw.println();
+                    }
+                }
+                //m.keySet().stream().forEach(i -> pw.println("\"" + i + "\"," + m.get(i)));
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(F_Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    /**
+     * @param dirname The directory name for the output.
+     * @param name0 Prepend to filename.
+     * @param name1 The name of the thing to output out - this will be the start
+     * of the filename.
+     * @param <K> The type.
+     * @param s The set containing values to output out.
+     */
+    public void outputBUILDING_FLOOR_ORIGIN(Path dir, String name0, String name1, String vname,
+            Integer vid,
+            //int varBUILDING_FLOOR_ORIGIN,
+            Map<Integer, Integer> mTotalSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+            // LargeSite
+            Map<Integer, Integer> mTotalSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+            // Security
+            Map<Integer, Integer> mTotalSDD_Security_By_BUILDING_FLOOR_ORIGIN,
+            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN,
+            // Assault
+            Map<Integer, Integer> mTotalSDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+            // Civil
+            Map<Integer, Integer> mTotalSDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+            // Location
+            Map<Integer, Integer> mTotalSDD_Location_By_BUILDING_FLOOR_ORIGIN,
+            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN,
+            // Wrong
+            Map<Integer, Integer> mTotalSDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+            // Vehicle
+            Map<Integer, Integer> mTotalSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+            // Delay
+            Map<Integer, Integer> mTotalSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+            // NoDelay
+            Map<Integer, Integer> mTotalSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN
+    ) {
+        ArrayList<String> ofl = getOrderedFloorsList();
+//        TreeSet<Integer> keys = new TreeSet<>(); 
+//        keys.addAll(env.data.id2names.get(vid).keySet());
+////        keys.addAll(mTotalSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN.keySet());
+////        keys.addAll(mTotalSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN.keySet());
+////        keys.addAll(mTotalSDD_Security_By_BUILDING_FLOOR_ORIGIN.keySet());
+////        keys.addAll(mTotalSDD_Assault_By_BUILDING_FLOOR_ORIGIN.keySet());
+////        keys.addAll(mTotalSDD_Civil_By_BUILDING_FLOOR_ORIGIN.keySet());
+////        keys.addAll(mTotalSDD_Location_By_BUILDING_FLOOR_ORIGIN.keySet());
+////        keys.addAll(mTotalSDD_Wrong_By_BUILDING_FLOOR_ORIGIN.keySet());
+////        keys.addAll(mTotalSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN.keySet());
+////        keys.addAll(mTotalSDD_Delay_By_BUILDING_FLOOR_ORIGIN.keySet());
+//        keys.addAll(mTotalSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN.keySet());
+        try {
+            Path p = Paths.get(dir.toString(), F_Files.getFormattedFilenameString(name0 + " " + name1) + ".csv");
+            System.out.println("output " + name1);
+            try (PrintWriter pw = new PrintWriter(p.toFile())) {
+                HashMap<String, Integer> name2id = env.data.name2ids.get(vid);
+                //pw.println(name + " Table length=" + m.size());
+                pw.println("\"" + vname + "\",\"" + vname + "_ID\","
+                        + "SDD_BuildingType_Count,SDD_BuildingType_FATAL_CASUALTY_Count,SDD_BuildingType_%FATAL_CASUALTY"
+                        + ",SDD_LargeSite_Count,SDD_LargeSite_FATAL_CASUALTY_Count,SDD_LargeSite_%FATAL_CASUALTY"
+                        + ",SDD_Security_Count,SDD_Security_FATAL_CASUALTY_Count,SDD_Security_%FATAL_CASUALTY"
+                        + ",SDD_Assault_Count,SDD_Assault_FATAL_CASUALTY_Count,SDD_Assault_%FATAL_CASUALTY"
+                        + ",SDD_Civil_Count,SDD_Civil_FATAL_CASUALTY_Count,SDD_Civil_%FATAL_CASUALTY"
+                        + ",SDD_Location_Count,SDD_Location_FATAL_CASUALTY_Count,SDD_Location_%FATAL_CASUALTY"
+                        + ",SDD_Wrong_Count,SDD_Wrong_FATAL_CASUALTY_Count,SDD_Wrong_%FATAL_CASUALTY"
+                        + ",SDD_Vehicle_Count,SDD_Vehicle_FATAL_CASUALTY_Count,SDD_Vehicle_%FATAL_CASUALTY"
+                        + ",SDD_Delay_Count,SDD_Delay_FATAL_CASUALTY_Count,SDD_Delay_%FATAL_CASUALTY"
+                        + ",SDD_NoDelay_Count,SDD_NoDelay_FATAL_CASUALTY_Count,SDD_NoDelay_%FATAL_CASUALTY");
+                //m.keySet().stream().forEach(i -> pw.println("\"" + i + "\",\"" + m.get(i) + "\""));
+                Iterator<String> ites = ofl.iterator();
+                while (ites.hasNext()) {
+                    String s = ites.next();
+                    Integer k = name2id.get(s);
+                    if (k != null) {
+                        pw.print("\"" + s + "\",\"" + k.toString() + "\"");
+                        print(pw, mTotalSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN.get(k));
+                        print(pw, mTotalSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN.get(k));
+                        print(pw, mTotalSDD_Security_By_BUILDING_FLOOR_ORIGIN.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN.get(k));
+                        print(pw, mTotalSDD_Assault_By_BUILDING_FLOOR_ORIGIN.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN.get(k));
+                        print(pw, mTotalSDD_Civil_By_BUILDING_FLOOR_ORIGIN.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN.get(k));
+                        print(pw, mTotalSDD_Location_By_BUILDING_FLOOR_ORIGIN.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN.get(k));
+                        print(pw, mTotalSDD_Wrong_By_BUILDING_FLOOR_ORIGIN.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN.get(k));
+                        print(pw, mTotalSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN.get(k));
+                        print(pw, mTotalSDD_Delay_By_BUILDING_FLOOR_ORIGIN.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN.get(k));
+                        print(pw, mTotalSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN.get(k),
+                                mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN.get(k));
+                        pw.println();
+                    }
                 }
                 //m.keySet().stream().forEach(i -> pw.println("\"" + i + "\"," + m.get(i)));
             }
@@ -1996,6 +2164,9 @@ public class F_Main extends F_Object {
             percentagefc = 0;
         } else {
             percentagefc = (100.0d * vfc) / ((double) v);
+        }
+        if (v == null) {
+            v = 0;
         }
         pw.print("," + v + "," + vfc + "," + Double.toString(percentagefc));
     }
@@ -2132,6 +2303,7 @@ public class F_Main extends F_Object {
             sPurposeBuiltTypes.add(env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltMediumRiseFlats));
             sPurposeBuiltTypes.add(env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltLowRiseFlats));
             int varBUILDING_FLOORS_ABOVE_GROUND = env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND);
+            int varBUILDING_FLOOR_ORIGIN = env.data.vname2id.get(F_Strings.BUILDING_FLOOR_ORIGIN);
             // FATALITY_CASUALTY
             int varFATALITY_CASUALTY = env.data.vname2id.get(F_Strings.FATALITY_CASUALTY);
             int valFATALITY_CASUALTY = env.data.name2ids.get(varFATALITY_CASUALTY).get(F_Strings.FatalityOrCasualty);
@@ -2484,6 +2656,59 @@ public class F_Main extends F_Object {
                     mAllSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
                     HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
                     mAllFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // Single variable selections by BUILDING_FLOOR_ORIGIN
+                    // ----------------------------------------------------------
+                    // STARTING_DELAY_DESCRIPTION
+                    // BuildingType
+                    HashMap<Integer, Integer> mSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN);
+                    // LargeSite
+                    HashMap<Integer, Integer> mSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN);
+                    // Security
+                    HashMap<Integer, Integer> mSDD_Security_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllSDD_Security_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mSDD_Security_By_BUILDING_FLOOR_ORIGIN);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN);
+                    // Assault
+                    HashMap<Integer, Integer> mSDD_Assault_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllSDD_Assault_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mSDD_Assault_By_BUILDING_FLOOR_ORIGIN);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN);
+                    // Civil
+                    HashMap<Integer, Integer> mSDD_Civil_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllSDD_Civil_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mSDD_Civil_By_BUILDING_FLOOR_ORIGIN);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN);
+                    // Location
+                    HashMap<Integer, Integer> mSDD_Location_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllSDD_Location_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mSDD_Location_By_BUILDING_FLOOR_ORIGIN);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN);
+                    // Wrong
+                    HashMap<Integer, Integer> mSDD_Wrong_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllSDD_Wrong_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mSDD_Wrong_By_BUILDING_FLOOR_ORIGIN);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN);
+                    // Vehicle
+                    HashMap<Integer, Integer> mSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN);
+                    // Delay
+                    HashMap<Integer, Integer> mSDD_Delay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllSDD_Delay_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mSDD_Delay_By_BUILDING_FLOOR_ORIGIN);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN);
+                    // NoDelay
+                    HashMap<Integer, Integer> mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN = new HashMap<>();
+                    mAllFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN.put(cid.id, mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
                     // Multiple variable counts
                     // ------------------------
                     // DAY_NIGHT AND BUILDING_SAFETY_SYSTEM_COMPARTMENTATION_DESCRIPTION
@@ -2601,7 +2826,7 @@ public class F_Main extends F_Object {
                                 highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
                                 mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
                                 lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
-                                // START_DELAY_DESCRIPTION
+                                // START_DELAY_DESCRIPTION BUILDING_FLOORS_ABOVE_GROUND
                                 // BuildingType
                                 valSDD_BuildingType,
                                 mSDD_BuildingType_By_BUILDING_OR_PROPERTY_TYPE,
@@ -2660,6 +2885,36 @@ public class F_Main extends F_Object {
                                 mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_OR_PROPERTY_TYPE,
                                 mSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
                                 mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // START_DELAY_DESCRIPTION BUILDING_FLOOR_ORIGIN
+                                // BuildingType
+                                mSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+                                // LargeSite
+                                mSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+                                // Security
+                                mSDD_Security_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN,
+                                // Assault
+                                mSDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+                                // Civil
+                                mSDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+                                // Location
+                                mSDD_Location_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN,
+                                // Wrong
+                                mSDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+                                // Vehicle
+                                mSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+                                // NoDelay
+                                mSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                                mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
                                 // RESCUES
                                 valRESCUES_0,
                                 mRescues_By_BUILDING_OR_PROPERTY_TYPE,
@@ -2857,7 +3112,7 @@ public class F_Main extends F_Object {
                                 highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
                                 mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
                                 lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
-                                // START_DELAY_DESCRIPTION
+                                // START_DELAY_DESCRIPTION BUILDING_FLOORS_ABOVE_GROUND
                                 // BuildingType
                                 valSDD_BuildingType,
                                 mSDD_BuildingType_By_BUILDING_OR_PROPERTY_TYPE,
@@ -2916,6 +3171,36 @@ public class F_Main extends F_Object {
                                 mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_OR_PROPERTY_TYPE,
                                 mSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
                                 mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // START_DELAY_DESCRIPTION BUILDING_FLOOR_ORIGIN
+                                // BuildingType
+                                mSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+                                // LargeSite
+                                mSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+                                // Security
+                                mSDD_Security_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN,
+                                // Assault
+                                mSDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+                                // Civil
+                                mSDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+                                // Location
+                                mSDD_Location_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN,
+                                // Wrong
+                                mSDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+                                // Vehicle
+                                mSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+                                // NoDelay
+                                mSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                                mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+                                mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
                                 // RESCUES
                                 valRESCUES_0,
                                 mRescues_By_BUILDING_OR_PROPERTY_TYPE,
@@ -3286,6 +3571,99 @@ public class F_Main extends F_Object {
                             varBUILDING_FLOORS_ABOVE_GROUND,
                             mSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
                             mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // Output single variable selections by BUILDING_FLOOR_ORIGIN
+                    // ----------------------------------------------------------------
+                    // START_DELAY_DESCRIPTION
+                    // BuildingType
+                    output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                            + F_Strings.sDelayDueToAccessingFireBuildingType
+                            + " BY "
+                            + F_Strings.BUILDING_FLOOR_ORIGIN,
+                            F_Strings.BUILDING_FLOOR_ORIGIN,
+                            varBUILDING_FLOOR_ORIGIN,
+                            mSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN);
+                    // LargeSite
+                    output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                            + F_Strings.sDelayDueToAccessingFireLargeSite
+                            + " BY "
+                            + F_Strings.BUILDING_FLOOR_ORIGIN,
+                            F_Strings.BUILDING_FLOOR_ORIGIN,
+                            varBUILDING_FLOOR_ORIGIN,
+                            mSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN);
+                    // Security
+                    output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                            + F_Strings.sDelayDueToAccessingFireSecurity
+                            + " BY "
+                            + F_Strings.BUILDING_FLOOR_ORIGIN,
+                            F_Strings.BUILDING_FLOOR_ORIGIN,
+                            varBUILDING_FLOOR_ORIGIN,
+                            mSDD_Security_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN);
+                    // Assault
+                    output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                            + F_Strings.sDelayDueToAssaultOnFirefighters
+                            + " BY "
+                            + F_Strings.BUILDING_FLOOR_ORIGIN,
+                            F_Strings.BUILDING_FLOOR_ORIGIN,
+                            varBUILDING_FLOOR_ORIGIN,
+                            mSDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN);
+                    // Civil
+                    output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                            + F_Strings.sDelayDueToCivilDisturbance
+                            + " BY "
+                            + F_Strings.BUILDING_FLOOR_ORIGIN,
+                            F_Strings.BUILDING_FLOOR_ORIGIN,
+                            varBUILDING_FLOOR_ORIGIN,
+                            mSDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN);
+                    // Location
+                    output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                            + F_Strings.sDelayDueToLocationOfFireNotImmediatelyEvident
+                            + " BY "
+                            + F_Strings.BUILDING_FLOOR_ORIGIN,
+                            F_Strings.BUILDING_FLOOR_ORIGIN,
+                            varBUILDING_FLOOR_ORIGIN,
+                            mSDD_Location_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN);
+                    // Wrong
+                    output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                            + F_Strings.sDelayDueToSentToWrongLocation
+                            + " BY "
+                            + F_Strings.BUILDING_FLOOR_ORIGIN,
+                            F_Strings.BUILDING_FLOOR_ORIGIN,
+                            varBUILDING_FLOOR_ORIGIN,
+                            mSDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN);
+                    // Vehicle
+                    output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                            + F_Strings.sDelayDueToVehicleAccessProblems
+                            + " BY "
+                            + F_Strings.BUILDING_FLOOR_ORIGIN,
+                            F_Strings.BUILDING_FLOOR_ORIGIN,
+                            varBUILDING_FLOOR_ORIGIN,
+                            mSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN);
+                    // Delay
+                    output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                            + F_Strings.Delay
+                            + " BY "
+                            + F_Strings.BUILDING_FLOOR_ORIGIN,
+                            F_Strings.BUILDING_FLOOR_ORIGIN,
+                            varBUILDING_FLOOR_ORIGIN,
+                            mSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN);
+                    // NoDelay
+                    output(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                            + F_Strings.sNoDelay
+                            + " BY "
+                            + F_Strings.BUILDING_FLOOR_ORIGIN,
+                            F_Strings.BUILDING_FLOOR_ORIGIN,
+                            varBUILDING_FLOOR_ORIGIN,
+                            mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
                     // Multiple Variables
                     // ------------------
                     output(dir, year, F_Strings.DAY_NIGHT + " " + F_Strings.Night + " AND "
@@ -3618,7 +3996,59 @@ public class F_Main extends F_Object {
                             mSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
                     Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
                             mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
-
+                    // Single variable count summaries BUILDING_FLOOR_ORIGIN
+                    // ---------------------------------------------------------
+                    // STARTING_DELAY_DESCRIPTION
+                    // BuildingType
+                    Generic_Collections.addToCount(mTotalSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+                            mSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN);
+                    // LargeSite
+                    Generic_Collections.addToCount(mTotalSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+                            mSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN);
+                    // Security
+                    Generic_Collections.addToCount(mTotalSDD_Security_By_BUILDING_FLOOR_ORIGIN,
+                            mSDD_Security_By_BUILDING_FLOOR_ORIGIN);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN);
+                    // Assault
+                    Generic_Collections.addToCount(mTotalSDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+                            mSDD_Assault_By_BUILDING_FLOOR_ORIGIN);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN);
+                    // Civil
+                    Generic_Collections.addToCount(mTotalSDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+                            mSDD_Civil_By_BUILDING_FLOOR_ORIGIN);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN);
+                    // Location
+                    Generic_Collections.addToCount(mTotalSDD_Location_By_BUILDING_FLOOR_ORIGIN,
+                            mSDD_Location_By_BUILDING_FLOOR_ORIGIN);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN);
+                    // Wrong
+                    Generic_Collections.addToCount(mTotalSDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+                            mSDD_Wrong_By_BUILDING_FLOOR_ORIGIN);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN);
+                    // Vehicle
+                    Generic_Collections.addToCount(mTotalSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+                            mSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN);
+                    // Delay
+                    Generic_Collections.addToCount(mTotalSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                            mSDD_Delay_By_BUILDING_FLOOR_ORIGIN);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN);
+                    // NoDelay
+                    Generic_Collections.addToCount(mTotalSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+                            mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+                            mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
                 } catch (IOException | ClassNotFoundException ex) {
                     Logger.getLogger(F_Main.class
                             .getName()).log(Level.SEVERE, null, ex);
@@ -3991,7 +4421,7 @@ public class F_Main extends F_Object {
                     varBUILDING_FLOORS_ABOVE_GROUND,
                     mTotalSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
-            outputCombined(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION 
+            outputBUILDING_FLOORS_ABOVE_GROUND(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION
                     + " BY "
                     + F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
                     F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
@@ -4025,6 +4455,131 @@ public class F_Main extends F_Object {
                     // NoDelay
                     mTotalSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
+            // Single variables by BUILDING_FLOOR_ORIGIN
+            // START_DELAY_DESCRIPTION
+            // BuildingType
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToAccessingFireBuildingType
+                    + " BY "
+                    + F_Strings.BUILDING_FLOOR_ORIGIN,
+                    F_Strings.BUILDING_FLOOR_ORIGIN,
+                    varBUILDING_FLOOR_ORIGIN,
+                    mTotalSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN);
+            // LargeSite
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToAccessingFireLargeSite
+                    + " BY "
+                    + F_Strings.BUILDING_FLOOR_ORIGIN,
+                    F_Strings.BUILDING_FLOOR_ORIGIN,
+                    varBUILDING_FLOOR_ORIGIN,
+                    mTotalSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN);
+            // Security
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToAccessingFireSecurity
+                    + " BY "
+                    + F_Strings.BUILDING_FLOOR_ORIGIN,
+                    F_Strings.BUILDING_FLOOR_ORIGIN,
+                    varBUILDING_FLOOR_ORIGIN,
+                    mTotalSDD_Security_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN);
+            // Assault
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToAssaultOnFirefighters
+                    + " BY "
+                    + F_Strings.BUILDING_FLOOR_ORIGIN,
+                    F_Strings.BUILDING_FLOOR_ORIGIN,
+                    varBUILDING_FLOOR_ORIGIN,
+                    mTotalSDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN);
+            // Civil
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToCivilDisturbance
+                    + " BY "
+                    + F_Strings.BUILDING_FLOOR_ORIGIN,
+                    F_Strings.BUILDING_FLOOR_ORIGIN,
+                    varBUILDING_FLOOR_ORIGIN,
+                    mTotalSDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN);
+            // Location
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToLocationOfFireNotImmediatelyEvident
+                    + " BY "
+                    + F_Strings.BUILDING_FLOOR_ORIGIN,
+                    F_Strings.BUILDING_FLOOR_ORIGIN,
+                    varBUILDING_FLOOR_ORIGIN,
+                    mTotalSDD_Location_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN);
+            // Wrong
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToSentToWrongLocation
+                    + " BY "
+                    + F_Strings.BUILDING_FLOOR_ORIGIN,
+                    F_Strings.BUILDING_FLOOR_ORIGIN,
+                    varBUILDING_FLOOR_ORIGIN,
+                    mTotalSDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN);
+            // Vehicle
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sDelayDueToVehicleAccessProblems
+                    + " BY "
+                    + F_Strings.BUILDING_FLOOR_ORIGIN,
+                    F_Strings.BUILDING_FLOOR_ORIGIN,
+                    varBUILDING_FLOOR_ORIGIN,
+                    mTotalSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN);
+            // Delay
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " " + F_Strings.Delay
+                    + " BY "
+                    + F_Strings.BUILDING_FLOOR_ORIGIN,
+                    F_Strings.BUILDING_FLOOR_ORIGIN,
+                    varBUILDING_FLOOR_ORIGIN,
+                    mTotalSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN);
+            // NoDelay
+            output(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION + " "
+                    + F_Strings.sNoDelay
+                    + " BY "
+                    + F_Strings.BUILDING_FLOOR_ORIGIN,
+                    F_Strings.BUILDING_FLOOR_ORIGIN,
+                    varBUILDING_FLOOR_ORIGIN,
+                    mTotalSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
+            outputBUILDING_FLOOR_ORIGIN(dir, F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION
+                    + " BY "
+                    + F_Strings.BUILDING_FLOOR_ORIGIN,
+                    F_Strings.BUILDING_FLOOR_ORIGIN,
+                    varBUILDING_FLOOR_ORIGIN,
+                    mTotalSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+                    // LargeSite
+                    mTotalSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+                    // Security
+                    mTotalSDD_Security_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN,
+                    // Assault
+                    mTotalSDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+                    // Civil
+                    mTotalSDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+                    // Location
+                    mTotalSDD_Location_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN,
+                    // Wrong
+                    mTotalSDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+                    // Vehicle
+                    mTotalSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+                    // Delay
+                    mTotalSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                    // NoDelay
+                    mTotalSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+                    mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
 
             // Multiple variables
             // ------------------
@@ -4401,7 +4956,7 @@ public class F_Main extends F_Object {
     }
 
     /**
-     * Adds to counts in m and mFATALITY_CASUALTY
+     * Adds to counts in m and mFATALITY_CASUALTY BUILDING_FLOORS_ABOVE_GROUND
      *
      * @param r
      * @param valFATALITY_CASUALTY
@@ -4416,6 +4971,28 @@ public class F_Main extends F_Object {
             if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
                 Generic_Collections.addToCount(mFATALITY_CASUALTY,
                         r.tBUILDING_FLOORS_ABOVE_GROUND, 1);
+            }
+        } else {
+            System.out.println(r.toString());
+        }
+    }
+
+    /**
+     * Adds to counts in m and mFATALITY_CASUALTY BUILDING_FLOOR_ORIGIN
+     *
+     * @param r
+     * @param valFATALITY_CASUALTY
+     * @param m
+     * @param mFATALITY_CASUALTY
+     */
+    protected void addToCount_BUILDING_FLOOR_ORIGIN(F_Dwellings_Integer_Record0 r,
+            int valFATALITY_CASUALTY, HashMap<Integer, Integer> m,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY) {
+        Generic_Collections.addToCount(m, r.tBUILDING_FLOOR_ORIGIN, 1);
+        if (r.tFATALITY_CASUALTY != null) { //
+            if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
+                Generic_Collections.addToCount(mFATALITY_CASUALTY,
+                        r.tBUILDING_FLOOR_ORIGIN, 1);
             }
         } else {
             System.out.println(r.toString());
@@ -4451,7 +5028,7 @@ public class F_Main extends F_Object {
             Set<F_Dwellings_Integer_Record1> highriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
             Set<F_Dwellings_Integer_Record1> mediumriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
             Set<F_Dwellings_Integer_Record1> lowriseCladdingWholeBuildingOrAffectingMoreThan2FloorsNonFATALITY_CASUALTY,
-            // START_DELAY_DESCRIPTION
+            // START_DELAY_DESCRIPTION BUILDING_FLOORS_ABOVE_GROUND
             // BuildingType
             int valSDD_BuildingType,
             HashMap<Integer, Integer> mSDD_BuildingType_By_BUILDING_OR_PROPERTY_TYPE,
@@ -4510,6 +5087,36 @@ public class F_Main extends F_Object {
             HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_OR_PROPERTY_TYPE,
             HashMap<Integer, Integer> mSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
             HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // START_DELAY_DESCRIPTION BUILDING_FLOOR_ORIGIN
+            // BuildingType
+            HashMap<Integer, Integer> mSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+            // LargeSite
+            HashMap<Integer, Integer> mSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+            // Security
+            HashMap<Integer, Integer> mSDD_Security_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN,
+            // Assault
+            HashMap<Integer, Integer> mSDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+            // Civil
+            HashMap<Integer, Integer> mSDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+            // Location
+            HashMap<Integer, Integer> mSDD_Location_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN,
+            // Wrong
+            HashMap<Integer, Integer> mSDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+            // Vehicle
+            HashMap<Integer, Integer> mSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+            // NoDelay
+            HashMap<Integer, Integer> mSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
             // RESCUES
             int valRESCUES_0,
             HashMap<Integer, Integer> mRescues_By_BUILDING_OR_PROPERTY_TYPE,
@@ -4618,6 +5225,9 @@ public class F_Main extends F_Object {
             addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
                     mSDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND);
+            addToCount_BUILDING_FLOOR_ORIGIN(r, valFATALITY_CASUALTY,
+                    mSDD_BuildingType_By_BUILDING_FLOOR_ORIGIN,
+                    mFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOOR_ORIGIN);
         } else if (r.tSTARTING_DELAY_DESCRIPTION == valSDD_LargeSite) {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
                     mSDD_LargeSite_By_BUILDING_OR_PROPERTY_TYPE,
@@ -4625,6 +5235,9 @@ public class F_Main extends F_Object {
             addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
                     mSDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND);
+            addToCount_BUILDING_FLOOR_ORIGIN(r, valFATALITY_CASUALTY,
+                    mSDD_LargeSite_By_BUILDING_FLOOR_ORIGIN,
+                    mFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOOR_ORIGIN);
         } else if (r.tSTARTING_DELAY_DESCRIPTION == valSDD_Security) {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
                     mSDD_Security_By_BUILDING_OR_PROPERTY_TYPE,
@@ -4632,6 +5245,9 @@ public class F_Main extends F_Object {
             addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
                     mSDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND);
+            addToCount_BUILDING_FLOOR_ORIGIN(r, valFATALITY_CASUALTY,
+                    mSDD_Security_By_BUILDING_FLOOR_ORIGIN,
+                    mFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOOR_ORIGIN);
         } else if (r.tSTARTING_DELAY_DESCRIPTION == valSDD_Civil) {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
                     mSDD_Civil_By_BUILDING_OR_PROPERTY_TYPE,
@@ -4639,13 +5255,19 @@ public class F_Main extends F_Object {
             addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
                     mSDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND);
+            addToCount_BUILDING_FLOOR_ORIGIN(r, valFATALITY_CASUALTY,
+                    mSDD_Civil_By_BUILDING_FLOOR_ORIGIN,
+                    mFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOOR_ORIGIN);
         } else if (r.tSTARTING_DELAY_DESCRIPTION == valSDD_Assault) {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
                     mSDD_Assault_By_BUILDING_OR_PROPERTY_TYPE,
                     mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_OR_PROPERTY_TYPE);
-            addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+            addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
                     mSDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND);
+            addToCount_BUILDING_FLOOR_ORIGIN(r, valFATALITY_CASUALTY,
+                    mSDD_Assault_By_BUILDING_FLOOR_ORIGIN,
+                    mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOOR_ORIGIN);
         } else if (r.tSTARTING_DELAY_DESCRIPTION == valSDD_Location) {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
                     mSDD_Location_By_BUILDING_OR_PROPERTY_TYPE,
@@ -4653,6 +5275,9 @@ public class F_Main extends F_Object {
             addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
                     mSDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND);
+            addToCount_BUILDING_FLOOR_ORIGIN(r, valFATALITY_CASUALTY,
+                    mSDD_Location_By_BUILDING_FLOOR_ORIGIN,
+                    mFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOOR_ORIGIN);
         } else if (r.tSTARTING_DELAY_DESCRIPTION == valSDD_Wrong) {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
                     mSDD_Wrong_By_BUILDING_OR_PROPERTY_TYPE,
@@ -4660,6 +5285,9 @@ public class F_Main extends F_Object {
             addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
                     mSDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND);
+            addToCount_BUILDING_FLOOR_ORIGIN(r, valFATALITY_CASUALTY,
+                    mSDD_Wrong_By_BUILDING_FLOOR_ORIGIN,
+                    mFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOOR_ORIGIN);
         } else if (r.tSTARTING_DELAY_DESCRIPTION == valSDD_Vehicle) {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
                     mSDD_Vehicle_By_BUILDING_OR_PROPERTY_TYPE,
@@ -4667,13 +5295,20 @@ public class F_Main extends F_Object {
             addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
                     mSDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND);
-        } else if (r.tSTARTING_DELAY_DESCRIPTION == valSDD_NoDelay) {
+            addToCount_BUILDING_FLOOR_ORIGIN(r, valFATALITY_CASUALTY,
+                    mSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
+                    mFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN);
+        }
+        if (r.tSTARTING_DELAY_DESCRIPTION == valSDD_NoDelay) {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
                     mSDD_NoDelay_By_BUILDING_OR_PROPERTY_TYPE,
                     mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_OR_PROPERTY_TYPE);
             addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
                     mSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
+            addToCount_BUILDING_FLOOR_ORIGIN(r, valFATALITY_CASUALTY,
+                    mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+                    mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
         } else {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
                     mSDD_Delay_By_BUILDING_OR_PROPERTY_TYPE,
@@ -4681,6 +5316,9 @@ public class F_Main extends F_Object {
             addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
                     mSDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND);
+            addToCount_BUILDING_FLOOR_ORIGIN(r, valFATALITY_CASUALTY,
+                    mSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                    mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN);
         }
         if (r.tRESCUES != valRESCUES_0) {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
@@ -6056,63 +6694,15 @@ public class F_Main extends F_Object {
         return Math_BigDecimal.round(new BigDecimal(cell.getNumericCellValue()).multiply(THOUSAND), 0).intValueExact();
     }
 
-    protected ArrayList<String> getBUILDING_FLOORS_ABOVE_GROUND_ValueList() {
+    protected ArrayList<String> getOrderedFloorsList() {
         ArrayList<String> r = new ArrayList<>();
-        // BUILDING_FLOORS_ABOVE_GROUND
-        r.add("0");
-        r.add("1");
-        r.add("2");
-        r.add("3");
-        r.add("4");
-        r.add("5");
-        r.add("6");
-        r.add("7");
-        r.add("8");
-        r.add("9");
-        r.add("10");
-        r.add("11");
-        r.add("12");
-        r.add("13");
-        r.add("14");
-        r.add("15");
-        r.add("16");
-        r.add("17");
-        r.add("18");
-        r.add("19");
-        r.add("20");
-        r.add("21");
-        r.add("22");
-        r.add("23");
-        r.add("24");
-        r.add("25");
-        r.add("26");
-        r.add("27");
-        r.add("28");
-        r.add("29");
-        r.add("30");
-        r.add("31");
-        r.add("32");
-        r.add("33");
-        r.add("34");
-        r.add("35");
-        r.add("36");
-        r.add("37");
-        r.add("38");
-        r.add("39");
-        r.add("43");
-        r.add("44");
-        r.add("47");
-        r.add("48");
-        r.add("50");
-        r.add("72");
-        r.add("88");
-        r.add("90");
-        r.add("99");
-        r.add("114");
-        r.add("127");
-        r.add("238");
+        // BUILDING_FLOOR_ORIGIN
+        for (int i = -10; i < 101; i++) {
+            r.add(Integer.toString(i));
+        }
         r.add("999");
         r.add("NULL");
         return r;
     }
+
 }
