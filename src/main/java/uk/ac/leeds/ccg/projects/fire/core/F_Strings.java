@@ -149,6 +149,8 @@ public class F_Strings extends Generic_Strings {
 
     // BUILDING_OR_PROPERTY_TYPE
     public static final String BungalowSingleOccupancy = "Bungalow - single occupancy";
+    public static final String PurposeBuilt = "PurposeBuilt";
+    public static final String NotPurposeBuilt = "NotPurposeBuilt";
     public static final String PurposeBuiltHighRiseFlats = "Purpose Built High Rise (10+) Flats";
     public static final String PurposeBuiltMediumRiseFlats = "Purpose Built Medium Rise (4-9) Flats";
     public static final String PurposeBuiltLowRiseFlats = "Purpose Built Low Rise (1-3) Flats/Maisonettes";
