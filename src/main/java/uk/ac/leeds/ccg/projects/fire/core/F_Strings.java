@@ -149,12 +149,30 @@ public class F_Strings extends Generic_Strings {
 
     // BUILDING_OR_PROPERTY_TYPE
     public static final String BungalowSingleOccupancy = "Bungalow - single occupancy";
+    public static final String ConvertedFlatOrMaisonetteSingleOccupancy = "Converted Flat/Maisonette - single occupancy";
+    public static final String DwellingMultipleOccupancy = "Dwelling - Multiple occupancy";
+    public static final String Hospital = "Hospital";
+    public static final String Hostel = "Hostel";
+    public static final String HotelOrMotel = "Hotel / Motel";
+    public static final String HouseSingleOccupancy = "House - single occupancy";
+    public static final String MedicalCareNotHospital = "Medical care (not including Hospital)";
+    public static final String NursingOrCareHome = "Nursing / Care Home";
+    public static final String OtherResidentialHome = "Other Residential Home";
+    public static final String OtherDwelling = "Other dwelling";
+    public static final String PreSchoolOrNurseryOrInfantOrPrimarySchool = "Pre School / Nursery / Infant / Primary School";
+    public static final String PrisonOrYoungOffendersUnit = "Prison / Young Offenders Unit";
+    public static final String PurposeBuiltHighRiseFlats = "Purpose Built High Rise (10+) Flats";
+    public static final String PurposeBuiltLowRiseFlats = "Purpose Built Low Rise (1-3) Flats/Maisonettes";
+    public static final String PurposeBuiltMediumRiseFlats = "Purpose Built Medium Rise (4-9) Flats";
+    public static final String ResidentialNotADwelling = "Residential (not a dwelling)";
+    public static final String RetirementCareHome = "Retirement Care Home";
+    public static final String SecondarySchool = "Secondary School";
+    public static final String ShelteredHousingNotSelfContained = "Sheltered Housing - not self contained";
+    public static final String StudentHallOfResidence = "Student Hall of Residence";
+    // Extras
     public static final String PurposeBuilt = "PurposeBuilt";
     public static final String NotPurposeBuilt = "NotPurposeBuilt";
-    public static final String PurposeBuiltHighRiseFlats = "Purpose Built High Rise (10+) Flats";
-    public static final String PurposeBuiltMediumRiseFlats = "Purpose Built Medium Rise (4-9) Flats";
-    public static final String PurposeBuiltLowRiseFlats = "Purpose Built Low Rise (1-3) Flats/Maisonettes";
-
+    
     // spread_of_fire_d
     public static final String LimitedTo2Floors = "Limited to 2 floors";
     public static final String LimitedToFloorOfOrigin = "Limited to floor of origin (not whole building)";
@@ -382,6 +400,14 @@ public class F_Strings extends Generic_Strings {
     public static final String all_dwelling_types = "all dwelling types";
     public static final String allTenures = "all tenures";
     public static final String bungalow = "bungalow";
+    public static final String endTerrace = "end terrace";
+    public static final String midTerrace = "mid terrace";
+    //public static final String allTerracedHouses = "all terraced houses";
+    public static final String smallTerraced = "small terraced house";
+    public static final String mediumOrLargeTerraced = "medium/large terraced house";
+    public static final String semiDetached = "semi-detached house";
+    public static final String detached = "detached house";
+    public static final String convertedFlat = "converted flat";
     public static final String purposeBuiltFlatLowRise = "purpose built flat, low rise";
     public static final String purposeBuiltFlatHighRise = "purpose built flat, high rise";
 

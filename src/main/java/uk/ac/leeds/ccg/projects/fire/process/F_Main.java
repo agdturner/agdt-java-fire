@@ -28,7 +28,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -2323,7 +2322,11 @@ public class F_Main extends F_Object {
             vfc = 0;
             percentagefc = 0;
         } else {
-            percentagefc = (100.0d * vfc) / ((double) v);
+            if (v == null) {
+                percentagefc = 0;
+            } else {
+                percentagefc = (100.0d * vfc) / ((double) v);
+            }
         }
         if (v == null) {
             v = 0;
@@ -3228,7 +3231,7 @@ public class F_Main extends F_Object {
                                 mPBFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
                                 mNPBSDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
                                 mNPBFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
-                                // NoDelay
+                                // Delay
                                 valSDD_NoDelay,
                                 mSDD_Delay_By_BUILDING_OR_PROPERTY_TYPE,
                                 mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_OR_PROPERTY_TYPE,
@@ -3238,6 +3241,7 @@ public class F_Main extends F_Object {
                                 mPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
                                 mNPBSDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
                                 mNPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // No Delay
                                 mSDD_NoDelay_By_BUILDING_OR_PROPERTY_TYPE,
                                 mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_OR_PROPERTY_TYPE,
                                 mSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
@@ -3303,13 +3307,14 @@ public class F_Main extends F_Object {
                                 mPBFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
                                 mNPBSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
                                 mNPBFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
-                                // NoDelay
+                                // Delay
                                 mSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
                                 mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
                                 mPBSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
                                 mPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
                                 mNPBSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
                                 mNPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+                                // No Delay
                                 mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
                                 mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
                                 mPBSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
@@ -4683,7 +4688,7 @@ public class F_Main extends F_Object {
                             mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
                     Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
                             mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
-                    Generic_Collections.addToCount(mTotalNPBSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+                    Generic_Collections.addToCount(mTotalPBSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
                             mPBSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
                     Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
                             mPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
@@ -5097,8 +5102,9 @@ public class F_Main extends F_Object {
                     // NoDelay
                     mTotalSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
-            outputBUILDING_FLOORS_ABOVE_GROUND(dir, F_Strings.NotPurposeBuilt + " "
-                    + F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION
+            outputBUILDING_FLOORS_ABOVE_GROUND(dir, F_Strings.s2010_20,
+                    F_Strings.PurposeBuilt + " "
+                    + F_Strings.STARTING_DELAY_DESCRIPTION
                     + " BY "
                     + F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
                     F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
@@ -5133,7 +5139,7 @@ public class F_Main extends F_Object {
                     mTotalPBSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
                     mTotalPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
             outputBUILDING_FLOORS_ABOVE_GROUND(dir, F_Strings.s2010_20,
-                    F_Strings.PurposeBuilt + " " + F_Strings.STARTING_DELAY_DESCRIPTION
+                    F_Strings.NotPurposeBuilt + " " + F_Strings.STARTING_DELAY_DESCRIPTION
                     + " BY "
                     + F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
                     F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
@@ -5292,8 +5298,9 @@ public class F_Main extends F_Object {
                     // NoDelay
                     mTotalSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
                     mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
-            outputBUILDING_FLOOR_ORIGIN(dir, F_Strings.PurposeBuilt + " "
-                    + F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION
+            outputBUILDING_FLOOR_ORIGIN(dir, F_Strings.s2010_20,
+                    F_Strings.PurposeBuilt + " "
+                    + F_Strings.STARTING_DELAY_DESCRIPTION
                     + " BY "
                     + F_Strings.BUILDING_FLOOR_ORIGIN,
                     F_Strings.BUILDING_FLOOR_ORIGIN,
@@ -5327,8 +5334,9 @@ public class F_Main extends F_Object {
                     // NoDelay
                     mTotalPBSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
                     mTotalPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN);
-            outputBUILDING_FLOOR_ORIGIN(dir, F_Strings.NotPurposeBuilt + " "
-                    + F_Strings.s2010_20, F_Strings.STARTING_DELAY_DESCRIPTION
+            outputBUILDING_FLOOR_ORIGIN(dir, F_Strings.s2010_20,
+                    F_Strings.NotPurposeBuilt + " "
+                    + F_Strings.STARTING_DELAY_DESCRIPTION
                     + " BY "
                     + F_Strings.BUILDING_FLOOR_ORIGIN,
                     F_Strings.BUILDING_FLOOR_ORIGIN,
@@ -5543,62 +5551,92 @@ public class F_Main extends F_Object {
             Path indir = Paths.get(System.getProperty("user.home"),
                     F_Strings.s_data, "projects", "Fire", F_Strings.s_data, "input",
                     "EnglishHousingSurvey", "Headline");
-            //Path indir = Paths.get(files.getInputDir().toString(),
-            //        "EnglishHousingSurvey", "Headline");
-            String type = ".xlsx"; // "csv";
-            // Load "other building - residential to send.xlsx"
+            String type = ".xlsx";
             String sn = "AT2.1";
+            int str = 20;
+            int mltr = 21;
+            int sdr = 24;
+            int dr = 25;
             int br = 26;
+            int cfr = 27;
+            int pblr = 28;
+            int pbhr = 29;
             int ar = 58;
             int col = 9;
-            int pbd = 2;
             Path f;
             f = Paths.get(indir.toString(),
                     "2019-20_EHS_Headline_Report_Section_2_Stock_Annex_Tables" + type);
-            F_ARecord r1920 = getARecord("2019/20", f, sn, col, br, pbd, ar);
+            F_ARecord r1920 = getARecord("2019/20", f, sn, col, str, mltr, sdr, dr, br, cfr, pblr, pbhr, ar);
             f = Paths.get(indir.toString(),
                     "2018-19_Section_2_Housing_Stock_Annex_Tables" + type);
-            F_ARecord r1819 = getARecord("2018/19", f, sn, col, br, pbd, ar);
+            F_ARecord r1819 = getARecord("2018/19", f, sn, col, str, mltr, sdr, dr, br, cfr, pblr, pbhr, ar);
             f = Paths.get(indir.toString(),
                     "2017-18_Section_2_Housing_Stock_Annex_Tables" + type);
-            F_ARecord r1718 = getARecord("2017/18", f, sn, col, br, pbd, ar);
+            F_ARecord r1718 = getARecord("2017/18", f, sn, col, str, mltr, sdr, dr, br, cfr, pblr, pbhr, ar);
             f = Paths.get(indir.toString(),
                     "2016-17_Section_2_Housing_Stock_annex_tables" + type);
-            F_ARecord r1617 = getARecord("2016/17", f, sn, col, br, pbd, ar);
+            F_ARecord r1617 = getARecord("2016/17", f, sn, col, str, mltr, sdr, dr, br, cfr, pblr, pbhr, ar);
             f = Paths.get(indir.toString(),
                     "2015-16_Section_2_Housing_Stock_annex_tables" + type);
-            F_ARecord r1516 = getARecord("2015/16", f, sn, col, br, pbd, ar);
+            F_ARecord r1516 = getARecord("2015/16", f, sn, col, str, mltr, sdr, dr, br, cfr, pblr, pbhr, ar);
             f = Paths.get(indir.toString(),
                     "2014-15_Section_2_Housing_Stock_tables_and_figures_FINAL" + type);
-            F_ARecord r1415 = getARecord("2014/15", f, sn, col, br, pbd, ar);
+            F_ARecord r1415 = getARecord("2014/15", f, sn, col, str, mltr, sdr, dr, br, cfr, pblr, pbhr, ar);
             f = Paths.get(indir.toString(),
                     "2013-14_Chapter_1_Tables_Figures_and_Annex_Tables" + type);
             sn = "AT1.1";
+            str = 15;
+            mltr = 16;
+            sdr = 17;
+            dr = 18;
             br = 19;
+            cfr = 20;
+            pblr = 21;
+            pbhr = 22;
             ar = 29;
             col = 6;
-            F_ARecord r1314 = getARecord("2013/14", f, sn, col, br, pbd, ar);
+            F_ARecord r1314 = getARecord("2013/14", f, sn, col, str, mltr, sdr, dr, br, cfr, pblr, pbhr, ar);
             sn = "AT1.1";
+            int etr = 15;
+            int mtr = 16;
+            sdr = 17;
+            dr = 18;
             br = 19;
+            cfr = 20;
+            pblr = 21;
+            pbhr = 22;
             ar = 24;
             f = Paths.get(indir.toString(),
                     "2012-13_Chapter_1_Stock_profile_tables_figures_and_annex_tables" + type);
-            F_ARecord r1213 = getARecord("2012/13", f, sn, col, br, pbd, ar);
+            F_ARecord r1213 = getARecord("2012/13", f, sn, col, etr, mtr, sdr, dr, br, cfr, pblr, pbhr, ar);
             sn = "AT1.4";
+            etr = 6;
+            mtr = 7;
+            sdr = 8;
+            dr = 9;
             br = 10;
+            cfr = 11;
+            pblr = 12;
+            pbhr = 13;
             ar = 15;
             type = ".xls";
             f = Paths.get(indir.toString(),
                     "2011-12_Chapter_1_Tables__Figures_and_Annex_Tables" + type);
-            F_ARecord r1112 = getARecordHSSF("2011/12", f, sn, col, br, pbd, ar);
-
+            F_ARecord r1112 = getARecordHSSF("2011/12", f, sn, col, etr, mtr, sdr, dr, br, cfr, pblr, pbhr, ar);
             sn = "AT1.5";
+            etr = 6;
+            mtr = 7;
+            sdr = 8;
+            dr = 9;
+            br = 10;
+            cfr = 13;
+            pblr = 14;
+            pbhr = 15;
             ar = 18;
-            pbd = 4;
             type = ".xls";
             f = Paths.get(indir.toString(),
                     "2010-11_2173554" + type);
-            F_ARecord r1011 = getARecordHSSF("2010/11", f, sn, col, br, pbd, ar);
+            F_ARecord r1011 = getARecordHSSF("2010/11", f, sn, col, etr, mtr, sdr, dr, br, cfr, pblr, pbhr, ar);
 
             // Output
             try {
@@ -5680,6 +5718,38 @@ public class F_Main extends F_Object {
                             + ",PBLR FATALITY_CASUALTY_AffectingWholeBuildingOrMoreThan2Floors fires"
                             + ",PBLR Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
                             + ",PBLR FATALITY_CASUALTY_Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            // Houses
+                            + ",Houses dwellings"
+                            + ",Houses % of Total dwellings"
+                            + ",Houses fires"
+                            + ",Houses fires as % of Total fires"
+                            + ",Houses fires * 10000 / PB dwellings"
+                            + ",Houses FATALITY_CASUALTY fires"
+                            + ",Houses FATALITY_CASUALTY fires as % of Total fires"
+                            + ",Houses FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires"
+                            + ",Houses FATALITY_CASUALTY fires as % of Houses fires"
+                            + ",Houses NoCompartmentationInBuilding fires"
+                            + ",Houses FATALITY_CASUALTY_NoCompartmentationInBuilding fires"
+                            + ",Houses AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",Houses FATALITY_CASUALTY_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",Houses Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",Houses FATALITY_CASUALTY_Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            // ConvertedFlats
+                            + ",ConvertedFlats dwellings"
+                            + ",ConvertedFlats % of Total dwellings"
+                            + ",ConvertedFlats fires"
+                            + ",ConvertedFlats fires as % of Total fires"
+                            + ",ConvertedFlats fires * 10000 / PB dwellings"
+                            + ",ConvertedFlats FATALITY_CASUALTY fires"
+                            + ",ConvertedFlats FATALITY_CASUALTY fires as % of Total fires"
+                            + ",ConvertedFlats FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires"
+                            + ",ConvertedFlats FATALITY_CASUALTY fires as % of ConvertedFlats fires"
+                            + ",ConvertedFlats NoCompartmentationInBuilding fires"
+                            + ",ConvertedFlats FATALITY_CASUALTY_NoCompartmentationInBuilding fires"
+                            + ",ConvertedFlats AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",ConvertedFlats FATALITY_CASUALTY_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",ConvertedFlats Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
+                            + ",ConvertedFlats FATALITY_CASUALTY_Cladding_AffectingWholeBuildingOrMoreThan2Floors fires"
                     );
                     int yearID;
                     yearID = env.data.name2ids.get(0).get(F_Strings.S2010_11);
@@ -5932,7 +6002,7 @@ public class F_Main extends F_Object {
             HashMap<Integer, Integer> mPBFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
             HashMap<Integer, Integer> mNPBSDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
             HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
-            // NoDelay
+            // Delay
             int valSDD_NoDelay,
             HashMap<Integer, Integer> mSDD_Delay_By_BUILDING_OR_PROPERTY_TYPE,
             HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_OR_PROPERTY_TYPE,
@@ -5942,6 +6012,7 @@ public class F_Main extends F_Object {
             HashMap<Integer, Integer> mPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
             HashMap<Integer, Integer> mNPBSDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
             HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // No Delay
             HashMap<Integer, Integer> mSDD_NoDelay_By_BUILDING_OR_PROPERTY_TYPE,
             HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_OR_PROPERTY_TYPE,
             HashMap<Integer, Integer> mSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
@@ -6007,17 +6078,18 @@ public class F_Main extends F_Object {
             HashMap<Integer, Integer> mPBFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
             HashMap<Integer, Integer> mNPBSDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
             HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOOR_ORIGIN,
-            // NoDelay
+            // Delay
             HashMap<Integer, Integer> mSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
             HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
-            HashMap<Integer, Integer> mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
-            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
             HashMap<Integer, Integer> mPBSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
             HashMap<Integer, Integer> mPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
-            HashMap<Integer, Integer> mPBSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
-            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
             HashMap<Integer, Integer> mNPBSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
             HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
+            // NoDelay
+            HashMap<Integer, Integer> mSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mPBSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
             HashMap<Integer, Integer> mNPBSDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
             HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOOR_ORIGIN,
             // RESCUES
@@ -6495,6 +6567,10 @@ public class F_Main extends F_Object {
         int valPurposeBuiltHighRiseFlats = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltHighRiseFlats);
         int valPurposeBuiltMediumRiseFlats = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltMediumRiseFlats);
         int valPurposeBuiltLowRiseFlats = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.PurposeBuiltLowRiseFlats);
+        int valDwellingMultipleOccupancy = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.DwellingMultipleOccupancy);
+        int valHouseSingleOccupancy = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.HouseSingleOccupancy);
+        int valConvertedFlatOrMaisonetteSingleOccupancy = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE).get(F_Strings.ConvertedFlatOrMaisonetteSingleOccupancy);
+        // Bungalow
         int b = mBUILDING_OR_PROPERTY_TYPE.get(valBungalow);
         int bFC = 0;
         v = mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valBungalow);
@@ -6538,7 +6614,7 @@ public class F_Main extends F_Object {
         int pbFC = mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats)
                 + mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltMediumRiseFlats)
                 + mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
-        int rpb = r.purposeBuiltFlatHighRise + r.purposeBuiltFlatLowRise;
+        int rpb = r.purposeBuiltHighRiseFlats + r.purposeBuiltLowRiseFlats;
         int pbNC = 0;
         v = mNoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
         if (v != null) {
@@ -6621,7 +6697,7 @@ public class F_Main extends F_Object {
         int pbhr = mBUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats) + mediumRise6789;
         int pbhrFC = mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats)
                 + mediumRise6789FC;
-        int rpbhr = r.purposeBuiltFlatHighRise;
+        int rpbhr = r.purposeBuiltHighRiseFlats;
         int pbhrNC = mediumRise6789NC;
         v = mNoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltHighRiseFlats);
         if (v != null) {
@@ -6656,7 +6732,7 @@ public class F_Main extends F_Object {
         int pblr = mBUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats) + mediumRise45;
         int pblrFC = mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats)
                 + mediumRise45FC;
-        int rpblr = r.purposeBuiltFlatLowRise;
+        int rpblr = r.purposeBuiltLowRiseFlats;
         int pblrNC = mediumRise45NC;
         v = mNoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE.get(valPurposeBuiltLowRiseFlats);
         if (v != null) {
@@ -6687,6 +6763,104 @@ public class F_Main extends F_Object {
         if (v != null) {
             pblrFCCAM2 += v;
         }
+        // Houses ()
+        int h = mBUILDING_OR_PROPERTY_TYPE.get(valDwellingMultipleOccupancy)
+                + mBUILDING_OR_PROPERTY_TYPE.get(valHouseSingleOccupancy);
+        int hFC = mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valDwellingMultipleOccupancy)
+                + mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valHouseSingleOccupancy);
+        int rh = r.houses;
+        int hNC = 0;
+        v = mNoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE.get(valDwellingMultipleOccupancy);
+        if (v != null) {
+            hNC += v;
+        }
+        v = mNoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE.get(valHouseSingleOccupancy);
+        if (v != null) {
+            hNC += v;
+        }
+        int hFCNC = 0;
+        v = mFATALITY_CASUALTY_NoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE.get(valDwellingMultipleOccupancy);
+        if (v != null) {
+            hFCNC += v;
+        }
+        v = mFATALITY_CASUALTY_NoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE.get(valHouseSingleOccupancy);
+        if (v != null) {
+            hFCNC += v;
+        }
+        int hAM2 = 0;
+        v = mWholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valDwellingMultipleOccupancy);
+        if (v != null) {
+            hAM2 += v;
+        }
+        v = mWholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valHouseSingleOccupancy);
+        if (v != null) {
+            hAM2 += v;
+        }
+        int hFCAM2 = 0;
+        v = mFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valDwellingMultipleOccupancy);
+        if (v != null) {
+            hFCAM2 += v;
+        }
+        v = mFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valHouseSingleOccupancy);
+        if (v != null) {
+            hFCAM2 += v;
+        }
+        int hCAM2 = 0;
+        v = mCladding_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valDwellingMultipleOccupancy);
+        if (v != null) {
+            hCAM2 += v;
+        }
+        v = mCladding_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valHouseSingleOccupancy);
+        if (v != null) {
+            hCAM2 += v;
+        }
+        int hFCCAM2 = 0;
+        v = mFATALITY_CASUALTY_Cladding_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valDwellingMultipleOccupancy);
+        if (v != null) {
+            hFCCAM2 += v;
+        }
+        v = mFATALITY_CASUALTY_Cladding_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valHouseSingleOccupancy);
+        if (v != null) {
+            hFCCAM2 += v;
+        }
+        // Converted Flat Or Maisonette Single Occupancy
+        int c = mBUILDING_OR_PROPERTY_TYPE.get(valConvertedFlatOrMaisonetteSingleOccupancy);
+        int rc = r.convertedFlatsAndMaisonettes;
+        int cFC = 0;
+        v = mFATALITY_CASUALTY_BUILDING_OR_PROPERTY_TYPE.get(valConvertedFlatOrMaisonetteSingleOccupancy);
+        if (v != null) {
+            cFC += v;
+        }
+        int cNC = 0;
+        v = mNoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE.get(valConvertedFlatOrMaisonetteSingleOccupancy);
+        if (v != null) {
+            cNC += v;
+        }
+        int cFCNC = 0;
+        v = mFATALITY_CASUALTY_NoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE.get(valConvertedFlatOrMaisonetteSingleOccupancy);
+        if (v != null) {
+            cFCNC += v;
+        }
+        int cAM2 = 0;
+        v = mWholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valConvertedFlatOrMaisonetteSingleOccupancy);
+        if (v != null) {
+            cAM2 += v;
+        }
+        int cFCAM2 = 0;
+        v = mFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valConvertedFlatOrMaisonetteSingleOccupancy);
+        if (v != null) {
+            cFCAM2 += v;
+        }
+        int cCAM2 = 0;
+        v = mCladding_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valConvertedFlatOrMaisonetteSingleOccupancy);
+        if (v != null) {
+            cCAM2 += v;
+        }
+        int cFCCAM2 = 0;
+        v = mFATALITY_CASUALTY_Cladding_WholeBuildingOrAffectingMoreThan2Floors_By_BUILDING_OR_PROPERTY_TYPE.get(valConvertedFlatOrMaisonetteSingleOccupancy);
+        if (v != null) {
+            cFCCAM2 += v;
+        }
         pw.println(r.year
                 + "," + r.allDwellings
                 + "," + total // Total fires
@@ -6699,11 +6873,12 @@ public class F_Main extends F_Object {
                 + "," + totalFCAM2 // FATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors
                 + "," + totalCAM2 // Cladding_WholeBuildingOrAffectingMoreThan2Floors
                 + "," + totalFCCAM2 // FATALITY_CASUALTY_Cladding_WholeBuildingOrAffectingMoreThan2Floors
-                + "," + r.totalBungalows // Bungalow dwellings
-                + "," + (r.totalBungalows * 100) / (double) r.allDwellings // Bungalow % of Total dwellings
+                // Bungalows
+                + "," + r.bungalows // Bungalow dwellings
+                + "," + (r.bungalows * 100) / (double) r.allDwellings // Bungalow % of Total dwellings
                 + "," + b // Bungalow fires
                 + "," + (b * 100) / (double) total // Bungalow fires as % of Total fires
-                + "," + (b * 10000) / (double) r.totalBungalows // Bungalow fires * 10000 / Bungalow dwellings
+                + "," + (b * 10000) / (double) r.bungalows // Bungalow fires * 10000 / Bungalow dwellings
                 + "," + bFC // Bungalow FATALITY_CASUALTY fires
                 + "," + (bFC * 100) / (double) total // Bungalow FATALITY_CASUALTY fires as % of Total fires
                 + "," + (bFC * 100) / (double) totalFC // Bungalow FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires
@@ -6714,6 +6889,7 @@ public class F_Main extends F_Object {
                 + "," + bFCAM2 // Bungalow FATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors
                 + "," + bCAM2 // Bungalow Cladding_WholeBuildingOrAffectingMoreThan2Floors
                 + "," + bFCCAM2 // Bungalow FATALITY_CASUALTY_Cladding_WholeBuildingOrAffectingMoreThan2Floors
+                // PB
                 + "," + rpb // PB dwellings
                 + "," + (rpb * 100) / (double) r.allDwellings // PB % of Total dwellings
                 + "," + pb // PB fires
@@ -6761,6 +6937,38 @@ public class F_Main extends F_Object {
                 + "," + pblrFCAM2 // PBLR FATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors
                 + "," + pblrCAM2 // PBLR Cladding_WholeBuildingOrAffectingMoreThan2Floors
                 + "," + pblrFCCAM2 // PBLR FATALITY_CASUALTY_Cladding_WholeBuildingOrAffectingMoreThan2Floors
+                // Houses
+                + "," + rh // House dwellings
+                + "," + (rh * 100) / (double) r.allDwellings // House % of Total dwellings
+                + "," + h // House fires
+                + "," + (h * 100) / (double) total // House fires as % of Total fires
+                + "," + (h * 10000) / (double) rh
+                + "," + hFC // House FATALITY_CASUALTY fires
+                + "," + (hFC * 100) / (double) total // House FATALITY_CASUALTY fires as % of Total fires
+                + "," + (hFC * 100) / (double) totalFC // House FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires
+                + "," + (hFC * 100) / (double) h // House FATALITY_CASUALTY fires as % of PB fires
+                + "," + hNC // House NoCompartmentationInBuilding
+                + "," + hFCNC // House FATALITY_CASUALTY_NoCompartmentationInBuilding
+                + "," + hAM2 // House WholeBuildingOrAffectingMoreThan2Floors
+                + "," + hFCAM2 // House FATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors
+                + "," + hCAM2 // House Cladding_WholeBuildingOrAffectingMoreThan2Floors
+                + "," + hFCCAM2 // House FATALITY_CASUALTY_Cladding_WholeBuildingOrAffectingMoreThan2Floors
+                // Converted Flat Or Maisonette Single Occupancy
+                + "," + rc // Converted Flat Or Maisonette Single Occupancy dwellings
+                + "," + (rc * 100) / (double) r.allDwellings // Converted Flat Or Maisonette Single Occupancy % of Total dwellings
+                + "," + c // Converted Flat Or Maisonette Single Occupancy fires
+                + "," + (c * 100) / (double) total // Converted Flat Or Maisonette Single Occupancy fires as % of Total fires
+                + "," + (c * 10000) / (double) rc
+                + "," + cFC // Converted Flat Or Maisonette Single Occupancy FATALITY_CASUALTY fires
+                + "," + (cFC * 100) / (double) total // Converted Flat Or Maisonette Single Occupancy FATALITY_CASUALTY fires as % of Total fires
+                + "," + (cFC * 100) / (double) totalFC // Converted Flat Or Maisonette Single Occupancy FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires
+                + "," + (cFC * 100) / (double) c // Converted Flat Or Maisonette Single Occupancy FATALITY_CASUALTY fires as % of PB fires
+                + "," + cNC // Converted Flat Or Maisonette Single Occupancy NoCompartmentationInBuilding
+                + "," + cFCNC // Converted Flat Or Maisonette Single Occupancy FATALITY_CASUALTY_NoCompartmentationInBuilding
+                + "," + cAM2 // Converted Flat Or Maisonette Single Occupancy WholeBuildingOrAffectingMoreThan2Floors
+                + "," + cFCAM2 // Converted Flat Or Maisonette Single Occupancy FATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors
+                + "," + cCAM2 // Converted Flat Or Maisonette Single Occupancy Cladding_WholeBuildingOrAffectingMoreThan2Floors
+                + "," + cFCCAM2 // Converted Flat Or Maisonette Single Occupancy FATALITY_CASUALTY_Cladding_WholeBuildingOrAffectingMoreThan2Floors
         );
     }
 
@@ -7531,16 +7739,24 @@ public class F_Main extends F_Object {
     }
 
     /**
-     *
      * @param year Year
      * @param f File path
      * @param sn SheetName
      * @param col All tenures column
+     * @param str Small Terrace row
+     * @param mltr Medium/Large Terrace row
+     * @param sdr Semi-Detached row
+     * @param dr Detached row
      * @param br Bungalow row
+     * @param cfr Converted Flat row
+     * @param pblr Purpose Built Low-rise row
+     * @param pbhr Purpose Built High-rise row
      * @param ar All Dwellings row
-     * @return
+     * @return F_ARecord
      */
-    public F_ARecord getARecord(String year, Path f, String sn, int col, int br, int pbd, int ar) {
+    public F_ARecord getARecord(String year, Path f, String sn, int col,
+            int str_or_etr, int mltr_or_mtr, int sdr, int dr, int br, int cfr, 
+            int pblr,            int pbhr, int ar) {
         F_ARecord r = new F_ARecord();
         r.year = year;
         Workbook wb = getWorkbook(f);
@@ -7549,79 +7765,109 @@ public class F_Main extends F_Object {
             int i = 1;
             int numberOfSheets = wb.getNumberOfSheets();
             for (Sheet sheet : wb) {
-                // Write out to text file
-                String sheetName = sheet.getSheetName();
-                //String s = "Sheet " + i + " of " + numberOfSheets + ": " + sheetName;
-                //System.out.println(s);
-                if (sheetName.equalsIgnoreCase(sn)) {
-                    String s = "Sheet " + i + " of " + numberOfSheets + ": " + sheetName;
-                    System.out.println(s);
-                    Row row;
-                    Cell cell;
-                    row = sheet.getRow(5);
-                    cell = row.getCell(col);
-                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.allTenures)) {
-                        System.out.println("Found \"" + F_Strings.allTenures + "\".");
-                    }
-                    row = sheet.getRow(br);
-                    cell = row.getCell(1);
-                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.bungalow)) {
-                        System.out.println("Found \"" + F_Strings.bungalow + "\".");
-                        r.totalBungalows = formatCell(df, row.getCell(col));
-                    }
-                    row = sheet.getRow(ar);
-                    cell = row.getCell(1);
-                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.allDwellings)) {
-                        System.out.println("Found \"" + F_Strings.allDwellings + "\".");
-                        r.allDwellings = formatCell(df, row.getCell(col));
-                    }
-                    row = sheet.getRow(br + pbd);
-                    cell = row.getCell(1);
-                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.purposeBuiltFlatLowRise)) {
-                        System.out.println("Found \"" + F_Strings.purposeBuiltFlatLowRise + "\".");
-                        r.purposeBuiltFlatLowRise = formatCell(df, row.getCell(col));
-                    }
-                    row = sheet.getRow(br + pbd + 1);
-                    cell = row.getCell(1);
-                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.purposeBuiltFlatHighRise)) {
-                        System.out.println("Found \"" + F_Strings.purposeBuiltFlatHighRise + "\".");
-                        r.purposeBuiltFlatHighRise = formatCell(df, row.getCell(col));
-                    }
-                    System.out.println(r.toString());
-
-//                    for (Row row1 : sheet) {
-//                        int rowNum = row1.getRowNum();
-//                        for (Cell cell1 : row1) {
-//                            int columnIndex = cell1.getColumnIndex();
-//                            String cellValue = df.formatCellValue(cell1);
-//                            if (cellValue.equalsIgnoreCase("bungalow")) {
-//                                System.out.println("row=" + rowNum
-//                                    + ", col=" + columnIndex
-//                                    + ", value=" + df.formatCellValue(cell1));
-//                            }
-//                            if (cellValue.equalsIgnoreCase("all dwellings")) {
-//                                
-//                            }
-//                        }
-//                    }
-                }
+                parse(sheet, df, i, numberOfSheets, sn, col, str_or_etr,
+                        mltr_or_mtr, sdr, dr, br, cfr, pblr, pbhr, ar, r,
+                        F_Strings.allDwellings);
                 i++;
             }
         }
         return r;
     }
 
+    private void parse(Sheet sheet, DataFormatter df, int i, int numberOfSheets,
+            String sn, int col, int str_or_etr, int mltr_or_mtr, int sdr, int dr, int br,
+            int cfr, int pblr, int pbhr, int ar, F_ARecord r, String allDwellings) {
+        String sheetName = sheet.getSheetName().trim();
+        if (sheetName.equalsIgnoreCase(sn)) {
+            String s = "Sheet " + i + " of " + numberOfSheets + ": " + sheetName;
+            System.out.println(s);
+            Row row;
+            Cell cell;
+            row = sheet.getRow(5);
+            cell = row.getCell(col);
+            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.allTenures)) {
+                System.out.println("Found \"" + F_Strings.allTenures + "\".");
+            }
+            row = sheet.getRow(br);
+            cell = row.getCell(1);
+            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.bungalow)) {
+                System.out.println("Found \"" + F_Strings.bungalow + "\".");
+                r.bungalows = formatCell(df, row.getCell(col));
+            }
+            r.houses = 0;
+            row = sheet.getRow(str_or_etr);
+            cell = row.getCell(1);
+            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.smallTerraced)
+                    || df.formatCellValue(cell).equalsIgnoreCase(F_Strings.endTerrace)) {
+                System.out.println("Found \"" + F_Strings.smallTerraced + " or " + F_Strings.endTerrace + "\".");
+                r.houses += formatCell(df, row.getCell(col));
+            }
+            row = sheet.getRow(mltr_or_mtr);
+            cell = row.getCell(1);
+            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.mediumOrLargeTerraced)
+                    || df.formatCellValue(cell).equalsIgnoreCase(F_Strings.midTerrace)) {
+                System.out.println("Found \"" + F_Strings.mediumOrLargeTerraced + " or " + F_Strings.midTerrace + "\".");
+                r.houses += formatCell(df, row.getCell(col));
+            }
+            row = sheet.getRow(sdr);
+            cell = row.getCell(1);
+            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.semiDetached)) {
+                System.out.println("Found \"" + F_Strings.semiDetached + "\".");
+                r.houses += formatCell(df, row.getCell(col));
+            }
+            row = sheet.getRow(dr);
+            cell = row.getCell(1);
+            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.detached)) {
+                System.out.println("Found \"" + F_Strings.detached + "\".");
+                r.houses += formatCell(df, row.getCell(col));
+            }
+            row = sheet.getRow(pblr);
+            cell = row.getCell(1);
+            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.purposeBuiltFlatLowRise)) {
+                System.out.println("Found \"" + F_Strings.purposeBuiltFlatLowRise + "\".");
+                r.purposeBuiltLowRiseFlats = formatCell(df, row.getCell(col));
+            }
+            row = sheet.getRow(cfr);
+            cell = row.getCell(1);
+            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.convertedFlat)) {
+                System.out.println("Found \"" + F_Strings.convertedFlat + "\".");
+                r.convertedFlatsAndMaisonettes = formatCell(df, row.getCell(col));
+            }
+            row = sheet.getRow(pbhr);
+            cell = row.getCell(1);
+            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.purposeBuiltFlatHighRise)) {
+                System.out.println("Found \"" + F_Strings.purposeBuiltFlatHighRise + "\".");
+                r.purposeBuiltHighRiseFlats = formatCell(df, row.getCell(col));
+            }
+            row = sheet.getRow(ar);
+            cell = row.getCell(1);
+            if (df.formatCellValue(cell).equalsIgnoreCase(allDwellings)) {
+                System.out.println("Found \"" + allDwellings + "\".");
+                r.allDwellings = formatCell(df, row.getCell(col));
+            }
+            System.out.println(r.toString());
+        }
+    }
+
     /**
-     *
      * @param year Year
      * @param f File path
      * @param sn SheetName
      * @param col All tenures column
+     * @param str_or_et Small Terrace row or End Terrace
+     * @param mltr_or_mtr Medium/Large Terrace row or Mid Terrace
+     * @param sdr Semi-Detached row
+     * @param dr Detached row
      * @param br Bungalow row
+     * @param cfr Converted Flat row
+     * @param pblr Purpose Built Low-rise row
+     * @param pbhr Purpose Built High-rise row
      * @param ar All Dwellings row
-     * @return
+     * @return F_ARecord
      */
-    public F_ARecord getARecordHSSF(String year, Path f, String sn, int col, int br, int pbd, int ar) {
+    public F_ARecord getARecordHSSF(String year, Path f, String sn, int col,
+            int str_or_et, int mltr_or_mtr, int sdr, int dr, int br, int cfr, int pblr,
+            int pbhr, int ar) {
         F_ARecord r = new F_ARecord();
         r.year = year;
         HSSFWorkbook wb = getHSSFWorkbook(f);
@@ -7630,62 +7876,9 @@ public class F_Main extends F_Object {
             int i = 1;
             int numberOfSheets = wb.getNumberOfSheets();
             for (Sheet sheet : wb) {
-                // Write out to text file
-                String sheetName = sheet.getSheetName().trim();
-                //String s = "Sheet " + i + " of " + numberOfSheets + ": " + sheetName;
-                //System.out.println(s);
-                if (sheetName.equalsIgnoreCase(sn)) {
-                    String s = "Sheet " + i + " of " + numberOfSheets + ": " + sheetName;
-                    System.out.println(s);
-                    Row row;
-                    Cell cell;
-                    row = sheet.getRow(5);
-                    cell = row.getCell(col);
-                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.allTenures)) {
-                        System.out.println("Found \"" + F_Strings.allTenures + "\".");
-                    }
-                    row = sheet.getRow(br);
-                    cell = row.getCell(1);
-                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.bungalow)) {
-                        System.out.println("Found \"" + F_Strings.bungalow + "\".");
-                        r.totalBungalows = formatCell(df, row.getCell(col));
-                    }
-                    row = sheet.getRow(ar);
-                    cell = row.getCell(1);
-                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.all_dwelling_types)) {
-                        System.out.println("Found \"" + F_Strings.all_dwelling_types + "\".");
-                        r.allDwellings = formatCell(df, row.getCell(col));
-                    }
-                    row = sheet.getRow(br + pbd);
-                    cell = row.getCell(1);
-                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.purposeBuiltFlatLowRise)) {
-                        System.out.println("Found \"" + F_Strings.purposeBuiltFlatLowRise + "\".");
-                        r.purposeBuiltFlatLowRise = formatCell(df, row.getCell(col));
-                    }
-                    row = sheet.getRow(br + pbd + 1);
-                    cell = row.getCell(1);
-                    if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.purposeBuiltFlatHighRise)) {
-                        System.out.println("Found \"" + F_Strings.purposeBuiltFlatHighRise + "\".");
-                        r.purposeBuiltFlatHighRise = formatCell(df, row.getCell(col));
-                    }
-                    System.out.println(r.toString());
-
-//                    for (Row row1 : sheet) {
-//                        int rowNum = row1.getRowNum();
-//                        for (Cell cell1 : row1) {
-//                            int columnIndex = cell1.getColumnIndex();
-//                            String cellValue = df.formatCellValue(cell1);
-//                            if (cellValue.equalsIgnoreCase("bungalow")) {
-//                                System.out.println("row=" + rowNum
-//                                    + ", col=" + columnIndex
-//                                    + ", value=" + df.formatCellValue(cell1));
-//                            }
-//                            if (cellValue.equalsIgnoreCase("all dwellings")) {
-//                                
-//                            }
-//                        }
-//                    }
-                }
+                parse(sheet, df, i, numberOfSheets, sn, col, str_or_et,
+                        mltr_or_mtr, sdr, dr, br, cfr, pblr, pbhr, ar, r, 
+                        F_Strings.all_dwelling_types);
                 i++;
             }
         }

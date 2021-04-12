@@ -23,9 +23,11 @@ public class F_ARecord {
     
     public String year;
     public int allDwellings;
-    public int totalBungalows;
-    public int purposeBuiltFlatLowRise;
-    public int purposeBuiltFlatHighRise;
+    public int bungalows;
+    public int houses;
+    public int convertedFlatsAndMaisonettes;
+    public int purposeBuiltLowRiseFlats;
+    public int purposeBuiltHighRiseFlats;
     
     public F_ARecord(){}
     
@@ -34,21 +36,31 @@ public class F_ARecord {
     public String toString() {
         return this.getClass().getSimpleName() + "(year=" + year 
                 + ", allDwellings=" + allDwellings
-                + ", totalBungalows=" + totalBungalows
-                + ", purposeBuiltFlatLowRise=" + purposeBuiltFlatLowRise
-                + ", purposeBuiltFlatHighRise=" + purposeBuiltFlatHighRise
-//                + ", totalBungalows=" + totalBungalows
-//                + ", totalBungalows=" + totalBungalows
-//                + ", totalBungalows=" + totalBungalows
+                + ", bungalows=" + bungalows
+                + ", houses=" + houses
+                + ", convertedFlatsAndMaisonettes=" + convertedFlatsAndMaisonettes
+                + ", purposeBuiltLowRiseFlats=" + purposeBuiltLowRiseFlats
+                + ", purposeBuiltHighRiseFlats=" + purposeBuiltHighRiseFlats
                 + ")";
     }
     
     public double getPercentageBungalow() {
-        return (totalBungalows * 100.0d) / (double) allDwellings;
+        return getPercentageOfAllDwellings(bungalows);
+    }
+
+    public double getPercentageHouses() {
+        return getPercentageOfAllDwellings(houses);
+    }
+
+    public double getPercentageBungalowConvertedFlatsAndMaisonettes() {
+        return getPercentageOfAllDwellings(convertedFlatsAndMaisonettes);
     }
 
     public double getPercentagePurposeBuilt() {
-        return ((purposeBuiltFlatLowRise + purposeBuiltFlatHighRise) * 100.0d) / (double) allDwellings;
+        return getPercentageOfAllDwellings(purposeBuiltLowRiseFlats + purposeBuiltHighRiseFlats);
     }
 
+    public double getPercentageOfAllDwellings(int count){
+        return (count * 100.0d) / (double) allDwellings;
+    }
 }
