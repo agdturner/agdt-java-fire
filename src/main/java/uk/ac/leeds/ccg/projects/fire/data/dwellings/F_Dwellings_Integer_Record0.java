@@ -15,6 +15,8 @@
  */
 package uk.ac.leeds.ccg.projects.fire.data.dwellings;
 
+import java.util.HashMap;
+import java.util.Objects;
 import java.util.Set;
 import uk.ac.leeds.ccg.data.Data_Record;
 import uk.ac.leeds.ccg.projects.fire.core.F_Strings;
@@ -231,6 +233,16 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
      * failures for Construction.
      */
     public Integer fSFScoreFireFighting;
+    
+    /**
+     * Fire spread by time FRS arrive.
+     */
+    public Integer AType;
+    
+    /**
+     * Fire spread at fire stop
+     */
+    public Integer BType;
 
     public F_Dwellings_Integer_Record0(F_Dwellings_String_Record0 r, F_Data d) throws Exception {
         super(r.id);
@@ -294,6 +306,47 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
         tEVACUATIONS_CODE = d.name2ids.get(d.vname2id.get(F_Strings.EVACUATIONS_CODE)).get(r.tEVACUATIONS_CODE);
         tBUILDING_EVACUATION_DELAY_DESCRIPTION = d.name2ids.get(d.vname2id.get(F_Strings.BUILDING_EVACUATION_DELAY_DESCRIPTION)).get(r.tBUILDING_EVACUATION_DELAY_DESCRIPTION);
         tBUILDING_EVACUATION_TIME_DESCRIPTION = d.name2ids.get(d.vname2id.get(F_Strings.BUILDING_EVACUATION_TIME_DESCRIPTION)).get(r.tBUILDING_EVACUATION_TIME_DESCRIPTION);
+        // Assign AType and BType
+        Integer vFSOAD = d.vname2id.get(F_Strings.FIRE_SIZE_ON_ARRIVAL_DESCRIPTION);
+        HashMap<String, Integer> name2idFSOAD = d.name2ids.get(vFSOAD);
+        Integer vOPAOA = d.vname2id.get(F_Strings.OTHER_PROPERTY_AFFECTED_ON_ARRIVAL);
+        HashMap<String, Integer> name2idOPAOA = d.name2ids.get(vOPAOA);
+        AType = 0;
+        if (tFIRE_SIZE_ON_ARRIVAL_DESCRIPTION.equals(name2idFSOAD.get(F_Strings.LimitedToItem1stIgnited))
+                || tFIRE_SIZE_ON_ARRIVAL_DESCRIPTION.equals(name2idFSOAD.get(F_Strings.LimitedToRoomOfOrigin))
+                || tFIRE_SIZE_ON_ARRIVAL_DESCRIPTION.equals(name2idFSOAD.get(F_Strings.NotApplicable))) {
+            if (tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL.equals(name2idOPAOA.get(F_Strings.NoOtherPropertyAffected))) {
+                AType = 1;
+            } else if (tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL.equals(name2idOPAOA.get(F_Strings.AnotherPropertyAffected))) {
+                AType = 2;
+            }
+        } else {
+            if (tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL.equals(name2idOPAOA.get(F_Strings.NoOtherPropertyAffected))) {
+                AType = 3;
+            } else if (tOTHER_PROPERTY_AFFECTED_ON_ARRIVAL.equals(name2idOPAOA.get(F_Strings.AnotherPropertyAffected))) {
+                AType = 4;
+            }
+        }
+        Integer vSOF = d.vname2id.get(F_Strings.spread_of_fire_d);
+        HashMap<String, Integer> name2idSOF = d.name2ids.get(vSOF);
+        Integer vOPAC = d.vname2id.get(F_Strings.other_property_affected_close_d);
+        HashMap<String, Integer> name2idOPAC = d.name2ids.get(vOPAC);        
+        BType = 0;
+        if (tspread_of_fire_d.equals(name2idSOF.get(F_Strings.LimitedToItem1stIgnited))
+                || tspread_of_fire_d.equals(name2idSOF.get(F_Strings.LimitedToRoomOfOrigin))
+                || tspread_of_fire_d.equals(name2idSOF.get(F_Strings.NoFireDamage))) {
+            if (tother_property_affected_close_d.equals(name2idOPAC.get(F_Strings.NoOtherPropertyAffected))) {
+                BType = 1;
+            } else if (tother_property_affected_close_d.equals(name2idOPAC.get(F_Strings.AnotherPropertyAffected))) {
+                BType = 2;
+            }
+        } else {
+            if (tother_property_affected_close_d.equals(name2idOPAC.get(F_Strings.NoOtherPropertyAffected))) {
+                BType = 3;
+            } else if (tother_property_affected_close_d.equals(name2idOPAC.get(F_Strings.AnotherPropertyAffected))) {
+                BType = 4;
+            }
+        }
     }
 
     @Override
@@ -685,6 +738,8 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
         r += ", evacuationScore=" + evacuationScore;
         r += ", holeyCheese=" + holeyCheese;
         r += ", delaysToFireFightingAndNotFirespreadHoleyCheese=" + delaysToFireFightingAndNotFirespreadHoleyCheese;
+        r += ", AType=" + AType;
+        r += ", BType=" + BType;        
         return r;
     }
 
@@ -770,6 +825,8 @@ public abstract class F_Dwellings_Integer_Record0 extends Data_Record {
         r += "," + evacuationScore;
         r += "," + holeyCheese;
         r += "," + delaysToFireFightingAndNotFirespreadHoleyCheese;
+        r += "," + AType;
+        r += "," + BType;
         return r;
     }
 

@@ -393,6 +393,35 @@ public class F_Strings extends Generic_Strings {
     public static final String DelaysToFireFightingAndNotFirespreadHoleyCheese = "DelaysToFireFightingAndNotFirespreadHoleyCheese";
     public static final String FirespreadAndNotDelaysToFireFightingHoleyCheese = "FirespreadAndNotDelaysToFireFightingHoleyCheese";
 
+    public static final String AType = "AType";
+    public static final String A0Type = "A0Type";
+    public static final String A1Type = "A1Type";
+    public static final String A2Type = "A2Type";
+    public static final String A3Type = "A3Type";
+    public static final String A4Type = "A4Type";
+    public static final String BType = "BType";
+    public static final String B0Type = "B0Type";
+    public static final String B1Type = "B1Type";
+    public static final String B2Type = "B2Type";
+    public static final String B3Type = "B3Type";
+    public static final String B4Type = "B4Type";
+    public static final String A1B1Type = "A1B1Type";
+    public static final String A2B1Type = "A2B1Type";
+    public static final String A3B1Type = "A3B1Type";
+    public static final String A4B1Type = "A4B1Type";
+    public static final String A1B2Type = "A1B2Type";
+    public static final String A2B2Type = "A2B2Type";
+    public static final String A3B2Type = "A3B2Type";
+    public static final String A4B2Type = "A4B2Type";
+    public static final String A1B3Type = "A1B3Type";
+    public static final String A2B3Type = "A2B3Type";
+    public static final String A3B3Type = "A3B3Type";
+    public static final String A4B3Type = "A4B3Type";
+    public static final String A1B4Type = "A1B4Type";
+    public static final String A2B4Type = "A2B4Type";
+    public static final String A3B4Type = "A3B4Type";
+    public static final String A4B4Type = "A4B4Type";
+    
     //public static final String  = "";
     // EHS data
     // --------
@@ -405,8 +434,10 @@ public class F_Strings extends Generic_Strings {
     //public static final String allTerracedHouses = "all terraced houses";
     public static final String smallTerraced = "small terraced house";
     public static final String mediumOrLargeTerraced = "medium/large terraced house";
-    public static final String semiDetached = "semi-detached house";
-    public static final String detached = "detached house";
+    public static final String semiDetached1 = "semi-detached house";
+    public static final String semiDetached2 = "semi detached";
+    public static final String detached1 = "detached house";
+    public static final String detached2 = "detached";
     public static final String convertedFlat = "converted flat";
     public static final String purposeBuiltFlatLowRise = "purpose built flat, low rise";
     public static final String purposeBuiltFlatHighRise = "purpose built flat, high rise";

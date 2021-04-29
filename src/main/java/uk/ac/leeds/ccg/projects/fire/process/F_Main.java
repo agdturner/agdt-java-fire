@@ -244,6 +244,10 @@ public class F_Main extends F_Object {
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllFirespreadAndNotDelaysToFireFightingHoleyCheese = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_FirespreadAndNotDelaysToFireFightingHoleyCheese = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllAType = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_AType = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllBType = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_BType = new HashMap<>();
 
     // Selected variable counts By FINANCIAL YEAR
     // ------------------------------------------
@@ -348,6 +352,65 @@ public class F_Main extends F_Object {
     HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_HoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, HashMap<Integer, Integer>> mAllDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // ATypes
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // BTypes
+    HashMap<Integer, HashMap<Integer, Integer>> mAllB0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllB1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllB2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllB3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllB4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // ABTypes
+    // B1
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA1B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA2B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA3B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA4B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // B2
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA1B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA2B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA3B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA4B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // B3
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA1B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA2B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA3B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA4B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // B4
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA1B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA2B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA3B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA4B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     // Single variable selections by BUILDING_FLOORS_ABOVE_GROUND
     // ----------------------------------------------------------
     // STARTING_DELAY_DESCRIPTION
@@ -540,7 +603,6 @@ public class F_Main extends F_Object {
     HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_LonePersonOverPensionableAge_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, HashMap<Integer, Integer>> mAllWholeBuildingOrAffectingMoreThan2Floors_AccumulationOfFlammableMaterial_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_AccumulationOfFlammableMaterial_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-
     HashMap<Integer, HashMap<Integer, Integer>> mAllWholeBuildingOrAffectingMoreThan2Floors_FaultyEquipmentOrApplianceOrFuelSupplyOrLeadsOrOverheatingUnknownCause_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_FaultyEquipmentOrApplianceOrFuelSupplyOrLeadsOrOverheatingUnknownCause_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
 
@@ -637,6 +699,66 @@ public class F_Main extends F_Object {
     HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_HoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, Integer> mTotalDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // AType
+    HashMap<Integer, Integer> mTotalA0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // BType
+    HashMap<Integer, Integer> mTotalB0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalB1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalB2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalB3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalB4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // ABType
+    // B1
+    HashMap<Integer, Integer> mTotalA1B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA2B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA3B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA4B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // B2
+    HashMap<Integer, Integer> mTotalA1B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA2B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA3B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA4B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // B3
+    HashMap<Integer, Integer> mTotalA1B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA2B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA3B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA4B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    // B4
+    HashMap<Integer, Integer> mTotalA1B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA2B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA3B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalA4B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+
     // Multiple variable selections
     HashMap<Integer, Integer> mTotalNight_NoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_Night_NoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
@@ -666,6 +788,7 @@ public class F_Main extends F_Object {
     HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_AccumulationOfFlammableMaterial_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, Integer> mTotalWholeBuildingOrAffectingMoreThan2Floors_FaultyEquipmentOrApplianceOrFuelSupplyOrLeadsOrOverheatingUnknownCause_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
     HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_FaultyEquipmentOrApplianceOrFuelSupplyOrLeadsOrOverheatingUnknownCause_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+
     // Single variable by BUILDING_FLOORS_ABOVE_GROUND
     // STARTING_DELAY_DESCRIPTION
     // BuildingType
@@ -1407,6 +1530,8 @@ public class F_Main extends F_Object {
             HashMap<Integer, Integer> mEvacuationScore = new HashMap<>();
             HashMap<Integer, Integer> mHoleyCheeseScore = new HashMap<>();
             HashMap<Integer, Integer> mDelaysToFireFightingAndNotFirespreadHoleyCheese = new HashMap<>();
+            HashMap<Integer, Integer> mAType = new HashMap<>();
+            HashMap<Integer, Integer> mBType = new HashMap<>();
 
             // MULTI_SEATED_FLAG
             int varMSF = env.data.vname2id.get(F_Strings.MULTI_SEATED_FLAG);
@@ -1622,7 +1747,9 @@ public class F_Main extends F_Object {
                                 mCombinedScore, mDelaysToFireFightingScore,
                                 mCauseOfFireScore, mFireSpreadScore,
                                 mEvacuationScore, mHoleyCheeseScore,
-                                mDelaysToFireFightingAndNotFirespreadHoleyCheese);
+                                mDelaysToFireFightingAndNotFirespreadHoleyCheese,
+                                mAType,
+                                mBType);
                         env.data.data.get(cID).data2.put(recID, rr);
                         env.data.recID2cID.put(recID, cID);
                     }
@@ -1659,7 +1786,9 @@ public class F_Main extends F_Object {
                                 mCombinedScore, mDelaysToFireFightingScore,
                                 mCauseOfFireScore, mFireSpreadScore,
                                 mEvacuationScore, mHoleyCheeseScore,
-                                mDelaysToFireFightingAndNotFirespreadHoleyCheese);
+                                mDelaysToFireFightingAndNotFirespreadHoleyCheese,
+                                mAType,
+                                mBType);
                         env.data.data.get(cID).data1.put(recID, rr);
                         env.data.recID2cID.put(recID, cID);
                     }
@@ -1809,7 +1938,9 @@ public class F_Main extends F_Object {
             HashMap<Integer, Integer> mFireSpreadScore,
             HashMap<Integer, Integer> mEvacuationScore,
             HashMap<Integer, Integer> mHoleyCheeseScore,
-            HashMap<Integer, Integer> mDelaysToFireFightingAndNotFirespreadHoleyCheese) {
+            HashMap<Integer, Integer> mDelaysToFireFightingAndNotFirespreadHoleyCheese,
+            HashMap<Integer, Integer> mAType,
+            HashMap<Integer, Integer> mBType) {
         Generic_Collections.addToCount(mFDScore, r.fDScore, 1);
         Generic_Collections.addToCount(mFSFScoreManagement, r.fSFScoreManagement, 1);
         Generic_Collections.addToCount(mFSFScoreConstruction, r.fSFScoreConstruction, 1);
@@ -1821,6 +1952,8 @@ public class F_Main extends F_Object {
         Generic_Collections.addToCount(mEvacuationScore, r.evacuationScore, 1);
         Generic_Collections.addToCount(mHoleyCheeseScore, r.holeyCheese, 1);
         Generic_Collections.addToCount(mDelaysToFireFightingAndNotFirespreadHoleyCheese, r.delaysToFireFightingAndNotFirespreadHoleyCheese, 1);
+        Generic_Collections.addToCount(mAType, r.AType, 1);
+        Generic_Collections.addToCount(mBType, r.BType, 1);
     }
 
     protected void addToCounts0(F_Dwellings_Integer_Record0 r,
@@ -1880,7 +2013,9 @@ public class F_Main extends F_Object {
             HashMap<Integer, Integer> mEVACUATIONS,
             HashMap<Integer, Integer> mEVACUATIONS_CODE,
             HashMap<Integer, Integer> mBUILDING_EVACUATION_DELAY_DESCRIPTION,
-            HashMap<Integer, Integer> mBUILDING_EVACUATION_TIME_DESCRIPTION) {
+            HashMap<Integer, Integer> mBUILDING_EVACUATION_TIME_DESCRIPTION,
+            HashMap<Integer, Integer> mAType,
+            HashMap<Integer, Integer> mBType) {
         Generic_Collections.addToCount(mFRS_NAME, r.tFRS_NAME, 1);
         Generic_Collections.addToCount(mE_CODE, r.tE_CODE, 1);
         Generic_Collections.addToCount(mMONTH_NAME, r.tMONTH_NAME, 1);
@@ -1938,6 +2073,8 @@ public class F_Main extends F_Object {
         Generic_Collections.addToCount(mEVACUATIONS_CODE, r.tEVACUATIONS_CODE, 1);
         Generic_Collections.addToCount(mBUILDING_EVACUATION_DELAY_DESCRIPTION, r.tBUILDING_EVACUATION_DELAY_DESCRIPTION, 1);
         Generic_Collections.addToCount(mBUILDING_EVACUATION_TIME_DESCRIPTION, r.tBUILDING_EVACUATION_TIME_DESCRIPTION, 1);
+        Generic_Collections.addToCount(mAType, r.AType, 1);
+        Generic_Collections.addToCount(mBType, r.BType, 1);
     }
 
     public String getFormatted(String s) {
@@ -2763,9 +2900,145 @@ public class F_Main extends F_Object {
                     HashMap<Integer, Integer> mFATALITY_CASUALTY_HoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
                     mAllFATALITY_CASUALTY_HoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_HoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE);
                     HashMap<Integer, Integer> mDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-                    mAllDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mHoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE);
+                    mAllDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE);
                     HashMap<Integer, Integer> mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
-                    mAllFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_HoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE);
+                    mAllFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A0Type
+                    HashMap<Integer, Integer> mA0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA0Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A1Type
+                    HashMap<Integer, Integer> mA1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A2Type
+                    HashMap<Integer, Integer> mA2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A3Type
+                    HashMap<Integer, Integer> mA3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A4Type
+                    HashMap<Integer, Integer> mA4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B0Type
+                    HashMap<Integer, Integer> mB0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllB0Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mB0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B1Type
+                    HashMap<Integer, Integer> mB1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllB1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mB1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B2Type
+                    HashMap<Integer, Integer> mB2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllB2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mB2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B3Type
+                    HashMap<Integer, Integer> mB3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllB3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mB3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B4Type
+                    HashMap<Integer, Integer> mB4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllB4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mB4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // ABType
+                    // B1
+                    // A1B1Type
+                    HashMap<Integer, Integer> mA1B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA1B1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA1B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A2B1Type
+                    HashMap<Integer, Integer> mA2B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA2B1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA2B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A3B1Type
+                    HashMap<Integer, Integer> mA3B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA3B1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA3B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A4B1Type
+                    HashMap<Integer, Integer> mA4B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA4B1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA4B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B2
+                    // A1B2Type
+                    HashMap<Integer, Integer> mA1B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA1B2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA1B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A2B2Type
+                    HashMap<Integer, Integer> mA2B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA2B2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA2B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A3B2Type
+                    HashMap<Integer, Integer> mA3B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA3B2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA3B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A4B2Type
+                    HashMap<Integer, Integer> mA4B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA4B2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA4B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B3
+                    // A1B3Type
+                    HashMap<Integer, Integer> mA1B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA1B3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA1B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A2B3Type
+                    HashMap<Integer, Integer> mA2B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA2B3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA2B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A3B3Type
+                    HashMap<Integer, Integer> mA3B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA3B3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA3B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A4B3Type
+                    HashMap<Integer, Integer> mA4B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA4B3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA4B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B4
+                    // A1B4Type
+                    HashMap<Integer, Integer> mA1B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA1B4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA1B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A2B4Type
+                    HashMap<Integer, Integer> mA2B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA2B4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA2B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A3B4Type
+                    HashMap<Integer, Integer> mA3B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA3B4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA3B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A4B4Type
+                    HashMap<Integer, Integer> mA4B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllA4B4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mA4B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE.put(cid.id, mFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+
                     // Single variable selections by BUILDING_FLOORS_ABOVE_GROUND
                     // ----------------------------------------------------------
                     // STARTING_DELAY_DESCRIPTION
@@ -3364,6 +3637,65 @@ public class F_Main extends F_Object {
                                 mFATALITY_CASUALTY_HoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE,
                                 mDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE,
                                 mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE);
+                        addToCountsAndSets(r, valFATALITY_CASUALTY,
+                                // AType
+                                mA0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                // BType
+                                mB0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mB1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mB2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mB3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mB4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                // AB1Type
+                                mA1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                // AB2Type
+                                mA1B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA2B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA3B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA4B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                // AB3Type
+                                mA1B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA2B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA3B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA4B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                // AB4Type
+                                mA1B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA2B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA3B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA4B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE);
                         if (r.tBUILDING_OR_PROPERTY_TYPE == valPurposeBuiltMediumRiseFlats) {
                             if (svalBUILDING_FLOORS_ABOVE_GROUND45.contains(r.tBUILDING_FLOORS_ABOVE_GROUND)) {
                                 mediumRise45++;
@@ -3726,6 +4058,65 @@ public class F_Main extends F_Object {
                                 mFATALITY_CASUALTY_HoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE,
                                 mDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE,
                                 mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE);
+                        addToCountsAndSets(r, valFATALITY_CASUALTY,
+                                // AType
+                                mA0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                // BType
+                                mB0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mB1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mB2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mB3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mB4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                // AB1Type
+                                mA1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                // AB2Type
+                                mA1B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA2B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA3B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA4B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                // AB3Type
+                                mA1B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA2B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA3B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA4B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                // AB4Type
+                                mA1B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA2B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA3B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mA4B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE);
                     }
                     mMediumRise45.put(cid.id, mediumRise45);
                     mMediumRise45_FATALITY_CASUALTY.put(cid.id, mediumRise45_FATALITY_CASUALTY);
@@ -3964,6 +4355,224 @@ public class F_Main extends F_Object {
                             varBUILDING_OR_PROPERTY_TYPE,
                             mDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE,
                             mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE);
+                    // AType
+                    output(dir, year, F_Strings.A0Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A1Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A2Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A3Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A4Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // BType
+                    output(dir, year, F_Strings.B0Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mB0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.B1Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mB1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.B2Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mB2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.B3Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mB3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.B4Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mB4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // ABType
+                    // AB1Type
+                    output(dir, year, F_Strings.A1B1Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A2B1Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A3B1Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A4B1Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // AB1Type
+                    output(dir, year, F_Strings.A1B1Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A2B1Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A3B1Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A4B1Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // AB2Type
+                    output(dir, year, F_Strings.A1B2Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA1B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A2B2Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA2B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A3B2Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA3B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A4B2Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA4B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // AB3Type
+                    output(dir, year, F_Strings.A1B3Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA1B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A2B3Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA2B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A3B3Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA3B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A4B3Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA4B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // AB4Type
+                    output(dir, year, F_Strings.A1B4Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA1B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A2B4Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA2B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A3B4Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA3B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    output(dir, year, F_Strings.A4B4Type
+                            + " BY "
+                            + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                            varBUILDING_OR_PROPERTY_TYPE,
+                            mA4B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE);
 
                     // Output single variable selections by BUILDING_FLOORS_ABOVE_GROUND
                     // ----------------------------------------------------------------
@@ -4372,6 +4981,140 @@ public class F_Main extends F_Object {
                             mDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE);
                     Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE,
                             mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE);
+                    // ATypes
+                    // A0
+                    Generic_Collections.addToCount(mTotalA0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A1
+                    Generic_Collections.addToCount(mTotalA1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A2
+                    Generic_Collections.addToCount(mTotalA2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A3
+                    Generic_Collections.addToCount(mTotalA3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A4
+                    Generic_Collections.addToCount(mTotalA4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // BType
+                    // B0
+                    Generic_Collections.addToCount(mTotalB0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mB0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B1
+                    Generic_Collections.addToCount(mTotalB1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mB1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B2
+                    Generic_Collections.addToCount(mTotalB2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mB2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B3
+                    Generic_Collections.addToCount(mTotalB3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mB3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // B4
+                    Generic_Collections.addToCount(mTotalB4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mB4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // ABType
+                    // A1B1
+                    Generic_Collections.addToCount(mTotalA1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA1B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A2B1
+                    Generic_Collections.addToCount(mTotalA2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA2B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A3B1
+                    Generic_Collections.addToCount(mTotalA3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA3B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A4B1
+                    Generic_Collections.addToCount(mTotalA4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA4B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A1B2
+                    Generic_Collections.addToCount(mTotalA1B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA1B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A2B2
+                    Generic_Collections.addToCount(mTotalA2B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA2B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A3B2
+                    Generic_Collections.addToCount(mTotalA3B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA3B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A4B2
+                    Generic_Collections.addToCount(mTotalA4B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA4B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A1B3
+                    Generic_Collections.addToCount(mTotalA1B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA1B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A2B3
+                    Generic_Collections.addToCount(mTotalA2B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA2B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A3B3
+                    Generic_Collections.addToCount(mTotalA3B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA3B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A4B3
+                    Generic_Collections.addToCount(mTotalA4B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA4B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A1B4
+                    Generic_Collections.addToCount(mTotalA1B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA1B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A2B4
+                    Generic_Collections.addToCount(mTotalA2B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA2B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A3B4
+                    Generic_Collections.addToCount(mTotalA3B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA3B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    // A4B4
+                    Generic_Collections.addToCount(mTotalA4B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mA4B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+
                     // Multiple variables
                     Generic_Collections.addToCount(mTotalNight_NoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE,
                             mNight_NoCompartmentationInBuilding_By_BUILDING_OR_PROPERTY_TYPE);
@@ -4977,6 +5720,195 @@ public class F_Main extends F_Object {
                     varBUILDING_OR_PROPERTY_TYPE,
                     mTotalDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE,
                     mTotalFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE);
+            // AType
+            output(dir, F_Strings.s2010_20, F_Strings.A0Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A1Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A2Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A3Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A4Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE);
+            // BType
+            output(dir, F_Strings.s2010_20, F_Strings.B0Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalB0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.B1Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalB1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.B2Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalB2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.B3Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalB3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.B4Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalB4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+            // ABType
+            // B1
+            output(dir, F_Strings.s2010_20, F_Strings.A1B1Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A2B1Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A3B1Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A4B1Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+            // B2
+            output(dir, F_Strings.s2010_20, F_Strings.A1B2Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA1B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A2B2Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA2B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A3B2Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA3B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A4B2Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA4B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+            // B3
+            output(dir, F_Strings.s2010_20, F_Strings.A1B3Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA1B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A2B3Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA2B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A3B3Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA3B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A4B3Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA4B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+            // B4
+            output(dir, F_Strings.s2010_20, F_Strings.A1B4Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA1B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A2B4Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA2B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A3B4Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA3B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+            output(dir, F_Strings.s2010_20, F_Strings.A4B4Type
+                    + " BY "
+                    + F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    F_Strings.BUILDING_OR_PROPERTY_TYPE,
+                    varBUILDING_OR_PROPERTY_TYPE,
+                    mTotalA4B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                    mTotalFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE);
             // Single variables by BUILDING_FLOORS_ABOVE_GROUND
             // START_DELAY_DESCRIPTION
 //            // BuildingType
@@ -5596,6 +6528,8 @@ public class F_Main extends F_Object {
             ar = 29;
             col = 6;
             F_ARecord r1314 = getARecord("2013/14", f, sn, col, str, mltr, sdr, dr, br, cfr, pblr, pbhr, ar);
+            f = Paths.get(indir.toString(),
+                    "2012-13_Chapter_1_Stock_profile_tables_figures_and_annex_tables" + type);
             sn = "AT1.1";
             int etr = 15;
             int mtr = 16;
@@ -5606,9 +6540,10 @@ public class F_Main extends F_Object {
             pblr = 21;
             pbhr = 22;
             ar = 24;
-            f = Paths.get(indir.toString(),
-                    "2012-13_Chapter_1_Stock_profile_tables_figures_and_annex_tables" + type);
             F_ARecord r1213 = getARecord("2012/13", f, sn, col, etr, mtr, sdr, dr, br, cfr, pblr, pbhr, ar);
+            type = ".xls";
+            f = Paths.get(indir.toString(),
+                    "2011-12_Chapter_1_Tables__Figures_and_Annex_Tables" + type);
             sn = "AT1.4";
             etr = 6;
             mtr = 7;
@@ -5619,11 +6554,9 @@ public class F_Main extends F_Object {
             pblr = 12;
             pbhr = 13;
             ar = 15;
-            type = ".xls";
-            f = Paths.get(indir.toString(),
-                    "2011-12_Chapter_1_Tables__Figures_and_Annex_Tables" + type);
             F_ARecord r1112 = getARecordHSSF("2011/12", f, sn, col, etr, mtr, sdr, dr, br, cfr, pblr, pbhr, ar);
             sn = "AT1.5";
+            type = ".xls";
             etr = 6;
             mtr = 7;
             sdr = 8;
@@ -5633,7 +6566,6 @@ public class F_Main extends F_Object {
             pblr = 14;
             pbhr = 15;
             ar = 18;
-            type = ".xls";
             f = Paths.get(indir.toString(),
                     "2010-11_2173554" + type);
             F_ARecord r1011 = getARecordHSSF("2010/11", f, sn, col, etr, mtr, sdr, dr, br, cfr, pblr, pbhr, ar);
@@ -5691,7 +6623,7 @@ public class F_Main extends F_Object {
                             + ",PBHR % of Total dwellings"
                             + ",PBHR fires"
                             + ",PBHR fires as % of Total fires"
-                            + ",PBHR fires * 10000 / PB dwellings"
+                            + ",PBHR fires * 10000 / PBHR dwellings"
                             + ",PBHR FATALITY_CASUALTY fires"
                             + ",PBHR FATALITY_CASUALTY fires as % of Total fires"
                             + ",PBHR FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires"
@@ -5707,7 +6639,7 @@ public class F_Main extends F_Object {
                             + ",PBLR % of Total dwellings"
                             + ",PBLR fires"
                             + ",PBLR fires as % of Total fires"
-                            + ",PBLR fires * 10000 / PB dwellings"
+                            + ",PBLR fires * 10000 / PBLR dwellings"
                             + ",PBLR FATALITY_CASUALTY fires"
                             + ",PBLR FATALITY_CASUALTY fires as % of Total fires"
                             + ",PBLR FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires"
@@ -5723,7 +6655,7 @@ public class F_Main extends F_Object {
                             + ",Houses % of Total dwellings"
                             + ",Houses fires"
                             + ",Houses fires as % of Total fires"
-                            + ",Houses fires * 10000 / PB dwellings"
+                            + ",Houses fires * 10000 / Houses dwellings"
                             + ",Houses FATALITY_CASUALTY fires"
                             + ",Houses FATALITY_CASUALTY fires as % of Total fires"
                             + ",Houses FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires"
@@ -5739,7 +6671,7 @@ public class F_Main extends F_Object {
                             + ",ConvertedFlats % of Total dwellings"
                             + ",ConvertedFlats fires"
                             + ",ConvertedFlats fires as % of Total fires"
-                            + ",ConvertedFlats fires * 10000 / PB dwellings"
+                            + ",ConvertedFlats fires * 10000 / ConvertedFlats dwellings"
                             + ",ConvertedFlats FATALITY_CASUALTY fires"
                             + ",ConvertedFlats FATALITY_CASUALTY fires as % of Total fires"
                             + ",ConvertedFlats FATALITY_CASUALTY fires as % of FATALITY_CASUALTY fires"
@@ -6470,6 +7402,223 @@ public class F_Main extends F_Object {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
                     mDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE,
                     mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE);
+        }
+    }
+    
+    protected <T extends F_Dwellings_Integer_Record0> void addToCountsAndSets(T r,
+            int valFATALITY_CASUALTY,
+            // AType
+            HashMap<Integer, Integer> mA0Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA4Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE,
+            // BType
+            HashMap<Integer, Integer> mB0Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mB1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mB2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mB3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mB4Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+            // ABType
+            // B1
+            HashMap<Integer, Integer> mA1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+            // B2
+            HashMap<Integer, Integer> mA1B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA2B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA3B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA4B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+            // B3
+            HashMap<Integer, Integer> mA1B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA2B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA3B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA4B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+            // B4
+            HashMap<Integer, Integer> mA1B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA2B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA3B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mA4B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE) {
+        if (null != r.AType) {
+            switch (r.AType) {
+                case 1:
+                    addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                            mA1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    break;
+                case 2:
+                    addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                            mA2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    break;
+                case 3:
+                    addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                            mA3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    break;
+                case 4:
+                    addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                            mA4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    break;
+                default:
+                    addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                            mA0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_A0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    break;
+            }
+        }
+        if (null != r.BType) {
+            switch (r.BType) {
+                case 1:
+                    addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                            mB1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    if (null != r.AType) {
+                        switch (r.AType) {
+                            case 1:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA1B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A1B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 2:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA2B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A2B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 3:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA3B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A3B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 4:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA4B1Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A4B1Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                        }
+                    }
+                    break;
+                case 2:
+                    addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                            mB2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    if (null != r.AType) {
+                        switch (r.AType) {
+                            case 1:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA1B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A1B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 2:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA2B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A2B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 3:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA3B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A3B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 4:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA4B2Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A4B2Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                        }
+                    }
+                    break;
+                case 3:
+                    addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                            mB3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    if (null != r.AType) {
+                        switch (r.AType) {
+                            case 1:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA1B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A1B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 2:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA2B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A2B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 3:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA3B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A3B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 4:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA4B3Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A4B3Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                        }
+                    }
+                    break;
+                case 4:
+                    addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                            mB4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    if (null != r.AType) {
+                        switch (r.AType) {
+                            case 1:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA1B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A1B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 2:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA2B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A2B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 3:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA3B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A3B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                            case 4:
+                                addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                                        mA4B4Type_By_BUILDING_OR_PROPERTY_TYPE,
+                                        mFATALITY_CASUALTY_A4B4Type_By_BUILDING_OR_PROPERTY_TYPE);
+                                break;
+                        }
+                    }
+                    break;
+                default:
+                    addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
+                            mB0Type_By_BUILDING_OR_PROPERTY_TYPE,
+                            mFATALITY_CASUALTY_B0Type_By_BUILDING_OR_PROPERTY_TYPE);
+                    break;
+            }
         }
     }
 
@@ -7343,10 +8492,21 @@ public class F_Main extends F_Object {
                 mAllDelaysToFireFightingAndNotFirespreadHoleyCheese.put(cid.id, mDelaysToFireFightingAndNotFirespreadHoleyCheese);
                 HashMap<Integer, Integer> mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese = new HashMap<>();
                 mAllFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese.put(cid.id, mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese);
+                // FirespreadAndNotDelaysToFireFightingHoleyCheese
                 HashMap<Integer, Integer> mFirespreadAndNotDelaysToFireFightingHoleyCheese = new HashMap<>();
                 mAllFirespreadAndNotDelaysToFireFightingHoleyCheese.put(cid.id, mFirespreadAndNotDelaysToFireFightingHoleyCheese);
                 HashMap<Integer, Integer> mFATALITY_CASUALTY_FirespreadAndNotDelaysToFireFightingHoleyCheese = new HashMap<>();
                 mAllFATALITY_CASUALTY_FirespreadAndNotDelaysToFireFightingHoleyCheese.put(cid.id, mFATALITY_CASUALTY_FirespreadAndNotDelaysToFireFightingHoleyCheese);
+                // AType
+                HashMap<Integer, Integer> mAType = new HashMap<>();
+                mAllAType.put(cid.id, mAType);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_AType = new HashMap<>();
+                mAllFATALITY_CASUALTY_AType.put(cid.id, mFATALITY_CASUALTY_AType);
+                // BType
+                HashMap<Integer, Integer> mBType = new HashMap<>();
+                mAllBType.put(cid.id, mBType);
+                HashMap<Integer, Integer> mFATALITY_CASUALTY_BType = new HashMap<>();
+                mAllFATALITY_CASUALTY_BType.put(cid.id, mFATALITY_CASUALTY_BType);
 
                 Iterator<F_RecordID> ite2;
                 // Normal Dwelling Types
@@ -7393,7 +8553,9 @@ public class F_Main extends F_Object {
                             mTIME_AT_SCENE_CODE,
                             mRESCUES, mEVACUATIONS, mEVACUATIONS_CODE,
                             mBUILDING_EVACUATION_DELAY_DESCRIPTION,
-                            mBUILDING_EVACUATION_TIME_DESCRIPTION);
+                            mBUILDING_EVACUATION_TIME_DESCRIPTION,
+                            mAType,
+                            mBType);
                     Generic_Collections.addToCount(mFATALITY_CASUALTY, r.tFATALITY_CASUALTY, 1);
                     Generic_Collections.addToCount(mOCCUPANCY_TYPE, r.tOCCUPANCY_TYPE, 1);
                     Generic_Collections.addToCount(mWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, r.tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, 1);
@@ -7409,6 +8571,8 @@ public class F_Main extends F_Object {
                     Generic_Collections.addToCount(mHoleyCheese, r.holeyCheese, 1);
                     Generic_Collections.addToCount(mDelaysToFireFightingAndNotFirespreadHoleyCheese, r.delaysToFireFightingAndNotFirespreadHoleyCheese, 1);
                     Generic_Collections.addToCount(mFirespreadAndNotDelaysToFireFightingHoleyCheese, r.firespreadAndNotDelaysToFireFightingHoleyCheese, 1);
+                    //Generic_Collections.addToCount(mAType, r.AType, 1);
+                    //Generic_Collections.addToCount(mBType, r.BType, 1);
                     if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
                         addToCounts0(r, mFATALITY_CASUALTY_FRS_NAME, mFATALITY_CASUALTY_E_CODE, mFATALITY_CASUALTY_MONTH_NAME,
                                 mFATALITY_CASUALTY_WEEKDAY_WEEKEND, mFATALITY_CASUALTY_DAY_NIGHT,
@@ -7448,7 +8612,9 @@ public class F_Main extends F_Object {
                                 mFATALITY_CASUALTY_TIME_AT_SCENE_CODE,
                                 mFATALITY_CASUALTY_RESCUES, mFATALITY_CASUALTY_EVACUATIONS, mFATALITY_CASUALTY_EVACUATIONS_CODE,
                                 mFATALITY_CASUALTY_BUILDING_EVACUATION_DELAY_DESCRIPTION,
-                                mFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION);
+                                mFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION,
+                                mFATALITY_CASUALTY_AType,
+                                mFATALITY_CASUALTY_BType);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_OCCUPANCY_TYPE, r.tOCCUPANCY_TYPE, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_WERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, r.tWERE_ACTIVE_SAFETY_SYSTEMS_PRESENT, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_ALARM_SYSTEM, r.tALARM_SYSTEM, 1);
@@ -7463,6 +8629,8 @@ public class F_Main extends F_Object {
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_HoleyCheese, r.holeyCheese, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese, r.delaysToFireFightingAndNotFirespreadHoleyCheese, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_FirespreadAndNotDelaysToFireFightingHoleyCheese, r.firespreadAndNotDelaysToFireFightingHoleyCheese, 1);
+                        //Generic_Collections.addToCount(mFATALITY_CASUALTY_AType, r.AType, 1);
+                        //Generic_Collections.addToCount(mFATALITY_CASUALTY_BType, r.BType, 1);
                     }
                 }
                 // Other Dwelling Types
@@ -7509,7 +8677,9 @@ public class F_Main extends F_Object {
                             mTIME_AT_SCENE_CODE,
                             mRESCUES, mEVACUATIONS, mEVACUATIONS_CODE,
                             mBUILDING_EVACUATION_DELAY_DESCRIPTION,
-                            mBUILDING_EVACUATION_TIME_DESCRIPTION);
+                            mBUILDING_EVACUATION_TIME_DESCRIPTION,
+                            mAType,
+                            mBType);
                     Generic_Collections.addToCount(mFATALITY_CASUALTY, r.tFATALITY_CASUALTY, 1);
                     Generic_Collections.addToCount(mFSO_APPLY, r.tFSO_APPLY, 1);
                     Generic_Collections.addToCount(mSAFETY_SYSTEM, r.tSAFETY_SYSTEM, 1);
@@ -7522,6 +8692,8 @@ public class F_Main extends F_Object {
                     Generic_Collections.addToCount(mHoleyCheese, r.holeyCheese, 1);
                     Generic_Collections.addToCount(mDelaysToFireFightingAndNotFirespreadHoleyCheese, r.delaysToFireFightingAndNotFirespreadHoleyCheese, 1);
                     Generic_Collections.addToCount(mFirespreadAndNotDelaysToFireFightingHoleyCheese, r.firespreadAndNotDelaysToFireFightingHoleyCheese, 1);
+                    //Generic_Collections.addToCount(mAType, r.AType, 1);
+                    //Generic_Collections.addToCount(mBType, r.BType, 1);
                     if (r.tFATALITY_CASUALTY == valFATALITY_CASUALTY) {
                         addToCounts0(r, mFATALITY_CASUALTY_FRS_NAME, mFATALITY_CASUALTY_E_CODE, mFATALITY_CASUALTY_MONTH_NAME,
                                 mFATALITY_CASUALTY_WEEKDAY_WEEKEND, mFATALITY_CASUALTY_DAY_NIGHT,
@@ -7561,7 +8733,9 @@ public class F_Main extends F_Object {
                                 mFATALITY_CASUALTY_TIME_AT_SCENE_CODE,
                                 mFATALITY_CASUALTY_RESCUES, mFATALITY_CASUALTY_EVACUATIONS, mFATALITY_CASUALTY_EVACUATIONS_CODE,
                                 mFATALITY_CASUALTY_BUILDING_EVACUATION_DELAY_DESCRIPTION,
-                                mFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION);
+                                mFATALITY_CASUALTY_BUILDING_EVACUATION_TIME_DESCRIPTION,
+                                mFATALITY_CASUALTY_AType,
+                                mFATALITY_CASUALTY_BType);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_FSO_APPLY, r.tFSO_APPLY, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_SAFETY_SYSTEM, r.tSAFETY_SYSTEM, 1);
                         // FIRE_SAFETY scores
@@ -7573,6 +8747,8 @@ public class F_Main extends F_Object {
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_HoleyCheese, r.holeyCheese, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese, r.delaysToFireFightingAndNotFirespreadHoleyCheese, 1);
                         Generic_Collections.addToCount(mFATALITY_CASUALTY_FirespreadAndNotDelaysToFireFightingHoleyCheese, r.firespreadAndNotDelaysToFireFightingHoleyCheese, 1);
+                        //Generic_Collections.addToCount(mFATALITY_CASUALTY_AType, r.AType, 1);
+                        //Generic_Collections.addToCount(mFATALITY_CASUALTY_BType, r.BType, 1);
                     }
                 }
                 allTotal += total;
@@ -7653,7 +8829,8 @@ public class F_Main extends F_Object {
                 outputScores(dir, tFINANCIAL_YEAR, F_Strings.HoleyCheese, env.data.vname2id.get(F_Strings.HoleyCheese), mHoleyCheese, mFATALITY_CASUALTY_HoleyCheese);
                 outputScores(dir, tFINANCIAL_YEAR, F_Strings.DelaysToFireFightingAndNotFirespreadHoleyCheese, env.data.vname2id.get(F_Strings.DelaysToFireFightingAndNotFirespreadHoleyCheese), mDelaysToFireFightingAndNotFirespreadHoleyCheese, mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese);
                 outputScores(dir, tFINANCIAL_YEAR, F_Strings.FirespreadAndNotDelaysToFireFightingHoleyCheese, env.data.vname2id.get(F_Strings.FirespreadAndNotDelaysToFireFightingHoleyCheese), mFirespreadAndNotDelaysToFireFightingHoleyCheese, mFATALITY_CASUALTY_FirespreadAndNotDelaysToFireFightingHoleyCheese);
-
+                outputScores(dir, tFINANCIAL_YEAR, F_Strings.AType, env.data.vname2id.get(F_Strings.AType), mAType, mFATALITY_CASUALTY_AType);
+                outputScores(dir, tFINANCIAL_YEAR, F_Strings.BType, env.data.vname2id.get(F_Strings.BType), mBType, mFATALITY_CASUALTY_BType);
             }
             Path dir = getDir(name, F_Strings.s2010_20);
             output(dir, F_Strings.s2010_20, F_Strings.FATALITY_CASUALTY, varFATALITY_CASUALTY, allTotal, collectCounts(mAllFATALITY_CASUALTY));
@@ -7732,6 +8909,9 @@ public class F_Main extends F_Object {
             outputScores(dir, F_Strings.s2010_20, F_Strings.HoleyCheese, env.data.vname2id.get(F_Strings.HoleyCheese), collectCounts(mAllHoleyCheese), collectCounts(mAllFATALITY_CASUALTY_HoleyCheese));
             outputScores(dir, F_Strings.s2010_20, F_Strings.DelaysToFireFightingAndNotFirespreadHoleyCheese, env.data.vname2id.get(F_Strings.DelaysToFireFightingAndNotFirespreadHoleyCheese), collectCounts(mAllDelaysToFireFightingAndNotFirespreadHoleyCheese), collectCounts(mAllFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese));
             outputScores(dir, F_Strings.s2010_20, F_Strings.FirespreadAndNotDelaysToFireFightingHoleyCheese, env.data.vname2id.get(F_Strings.FirespreadAndNotDelaysToFireFightingHoleyCheese), collectCounts(mAllFirespreadAndNotDelaysToFireFightingHoleyCheese), collectCounts(mAllFATALITY_CASUALTY_FirespreadAndNotDelaysToFireFightingHoleyCheese));
+            // AType and BType
+            outputScores(dir, F_Strings.s2010_20, F_Strings.AType, env.data.vname2id.get(F_Strings.AType), collectCounts(mAllAType), collectCounts(mAllFATALITY_CASUALTY_AType));
+            outputScores(dir, F_Strings.s2010_20, F_Strings.BType, env.data.vname2id.get(F_Strings.BType), collectCounts(mAllBType), collectCounts(mAllFATALITY_CASUALTY_BType));
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(F_Main.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -7755,8 +8935,8 @@ public class F_Main extends F_Object {
      * @return F_ARecord
      */
     public F_ARecord getARecord(String year, Path f, String sn, int col,
-            int str_or_etr, int mltr_or_mtr, int sdr, int dr, int br, int cfr, 
-            int pblr,            int pbhr, int ar) {
+            int str_or_etr, int mltr_or_mtr, int sdr, int dr, int br, int cfr,
+            int pblr, int pbhr, int ar) {
         F_ARecord r = new F_ARecord();
         r.year = year;
         Workbook wb = getWorkbook(f);
@@ -7811,14 +8991,16 @@ public class F_Main extends F_Object {
             }
             row = sheet.getRow(sdr);
             cell = row.getCell(1);
-            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.semiDetached)) {
-                System.out.println("Found \"" + F_Strings.semiDetached + "\".");
+            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.semiDetached1)
+                    || df.formatCellValue(cell).equalsIgnoreCase(F_Strings.semiDetached2)) {
+                System.out.println("Found \"" + F_Strings.semiDetached1 + " or " + F_Strings.semiDetached2 + "\".");
                 r.houses += formatCell(df, row.getCell(col));
             }
             row = sheet.getRow(dr);
             cell = row.getCell(1);
-            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.detached)) {
-                System.out.println("Found \"" + F_Strings.detached + "\".");
+            if (df.formatCellValue(cell).equalsIgnoreCase(F_Strings.detached1)
+                    || df.formatCellValue(cell).equalsIgnoreCase(F_Strings.detached2)) {
+                System.out.println("Found \"" + F_Strings.detached1 + " or " + F_Strings.detached2 + "\".");
                 r.houses += formatCell(df, row.getCell(col));
             }
             row = sheet.getRow(pblr);
@@ -7877,7 +9059,7 @@ public class F_Main extends F_Object {
             int numberOfSheets = wb.getNumberOfSheets();
             for (Sheet sheet : wb) {
                 parse(sheet, df, i, numberOfSheets, sn, col, str_or_et,
-                        mltr_or_mtr, sdr, dr, br, cfr, pblr, pbhr, ar, r, 
+                        mltr_or_mtr, sdr, dr, br, cfr, pblr, pbhr, ar, r,
                         F_Strings.all_dwelling_types);
                 i++;
             }
