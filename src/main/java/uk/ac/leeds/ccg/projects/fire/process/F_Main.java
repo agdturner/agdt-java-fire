@@ -149,8 +149,22 @@ public class F_Main extends F_Object {
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION = new HashMap<>();
+    // BUILDING_FLOORS_ABOVE_GROUND
     Map<Integer, Map<Integer, Integer>> mAllBUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // PBLR
+    Map<Integer, Map<Integer, Integer>> mAllPBLRBUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllPBLRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // PBMR
+    Map<Integer, Map<Integer, Integer>> mAllPBMRBUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllPBMRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // PBHR
+    Map<Integer, Map<Integer, Integer>> mAllPBHRBUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllPBHRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // NonPB
+    Map<Integer, Map<Integer, Integer>> mAllNonPBBUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    Map<Integer, Map<Integer, Integer>> mAllNonPBFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // BUILDING_FLOORS_BELOW_GROUND
     Map<Integer, Map<Integer, Integer>> mAllBUILDING_FLOORS_BELOW_GROUND = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllFATALITY_CASUALTY_BUILDING_FLOORS_BELOW_GROUND = new HashMap<>();
     Map<Integer, Map<Integer, Integer>> mAllBUILDING_FLOOR_ORIGIN = new HashMap<>();
@@ -492,6 +506,175 @@ public class F_Main extends F_Object {
     HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
     HashMap<Integer, HashMap<Integer, Integer>> mAllNPBSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
     HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A1Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A2Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A3Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A4Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // B1Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllB1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // B2Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllB2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // B3Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllB3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // B4Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllB4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // ABTypes
+    // A1B1Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A2B1Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A3B1Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A4B1Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A1B2Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A2B2Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A3B2Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A4B2Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A1B3Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A2B3Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A3B3Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A4B3Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A1B4Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A2B4Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A3B4Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A4B4Type
+    HashMap<Integer, HashMap<Integer, Integer>> mAllA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, HashMap<Integer, Integer>> mAllNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
 
     // Single variable selections by BUILDING_FLOOR_ORIGIN
     // ---------------------------------------------------
@@ -861,6 +1044,174 @@ public class F_Main extends F_Object {
     HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
     HashMap<Integer, Integer> mTotalNPBSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
     HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A1Type
+    HashMap<Integer, Integer> mTotalA1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A2Type
+    HashMap<Integer, Integer> mTotalA2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A3Type
+    HashMap<Integer, Integer> mTotalA3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A4Type
+    HashMap<Integer, Integer> mTotalA4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // B1Type
+    HashMap<Integer, Integer> mTotalB1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // B2Type
+    HashMap<Integer, Integer> mTotalB2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // B3Type
+    HashMap<Integer, Integer> mTotalB3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // B4Type
+    HashMap<Integer, Integer> mTotalB4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A1B1Type
+    HashMap<Integer, Integer> mTotalA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A1B2Type
+    HashMap<Integer, Integer> mTotalA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A1B3Type
+    HashMap<Integer, Integer> mTotalA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A1B4Type
+    HashMap<Integer, Integer> mTotalA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A2B1Type
+    HashMap<Integer, Integer> mTotalA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A2B2Type
+    HashMap<Integer, Integer> mTotalA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A2B3Type
+    HashMap<Integer, Integer> mTotalA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A2B4Type
+    HashMap<Integer, Integer> mTotalA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A3B1Type
+    HashMap<Integer, Integer> mTotalA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A3B2Type
+    HashMap<Integer, Integer> mTotalA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A3B3Type
+    HashMap<Integer, Integer> mTotalA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A3B4Type
+    HashMap<Integer, Integer> mTotalA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A4B1Type
+    HashMap<Integer, Integer> mTotalA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A4B2Type
+    HashMap<Integer, Integer> mTotalA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A4B3Type
+    HashMap<Integer, Integer> mTotalA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    // A4B4Type
+    HashMap<Integer, Integer> mTotalA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+    HashMap<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
     // Single variable by BUILDING_FLOOR_ORIGIN
     // STARTING_DELAY_DESCRIPTION
     // BuildingType
@@ -1993,6 +2344,13 @@ public class F_Main extends F_Object {
             HashMap<Integer, Integer> mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
             HashMap<Integer, Integer> mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
             HashMap<Integer, Integer> mBUILDING_FLOORS_ABOVE_GROUND,
+            int tPBLRBUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mPBLRBUILDING_FLOORS_ABOVE_GROUND,
+            int tPBMRBUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mPBMRBUILDING_FLOORS_ABOVE_GROUND,
+            int tPBHRBUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mPBHRBUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNonPBBUILDING_FLOORS_ABOVE_GROUND,
             HashMap<Integer, Integer> mBUILDING_FLOORS_BELOW_GROUND,
             HashMap<Integer, Integer> mBUILDING_FLOOR_ORIGIN,
             HashMap<Integer, Integer> mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
@@ -2052,6 +2410,15 @@ public class F_Main extends F_Object {
         Generic_Collections.addToCount(mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, r.tCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, 1);
         Generic_Collections.addToCount(mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, r.tBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, 1);
         Generic_Collections.addToCount(mBUILDING_FLOORS_ABOVE_GROUND, r.tBUILDING_FLOORS_ABOVE_GROUND, 1);
+        if (r.tBUILDING_OR_PROPERTY_TYPE == tPBLRBUILDING_OR_PROPERTY_TYPE) {
+            Generic_Collections.addToCount(mPBLRBUILDING_FLOORS_ABOVE_GROUND, r.tBUILDING_FLOORS_ABOVE_GROUND, 1);
+        } else if(r.tBUILDING_OR_PROPERTY_TYPE == tPBMRBUILDING_OR_PROPERTY_TYPE) {
+            Generic_Collections.addToCount(mPBMRBUILDING_FLOORS_ABOVE_GROUND, r.tBUILDING_FLOORS_ABOVE_GROUND, 1);
+        } else if(r.tBUILDING_OR_PROPERTY_TYPE == tPBHRBUILDING_OR_PROPERTY_TYPE) {
+            Generic_Collections.addToCount(mPBHRBUILDING_FLOORS_ABOVE_GROUND, r.tBUILDING_FLOORS_ABOVE_GROUND, 1);
+        } else {
+            Generic_Collections.addToCount(mNonPBBUILDING_FLOORS_ABOVE_GROUND, r.tBUILDING_FLOORS_ABOVE_GROUND, 1);
+        }
         Generic_Collections.addToCount(mBUILDING_FLOORS_BELOW_GROUND, r.tBUILDING_FLOORS_BELOW_GROUND, 1);
         Generic_Collections.addToCount(mBUILDING_FLOOR_ORIGIN, r.tBUILDING_FLOOR_ORIGIN, 1);
         Generic_Collections.addToCount(mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, r.tBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, 1);
@@ -2274,7 +2641,79 @@ public class F_Main extends F_Object {
             Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
             // NoDelay
             Map<Integer, Integer> mTotalSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
-            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND
+            Map<Integer, Integer> mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A1Type
+            Map<Integer, Integer> mTotalNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A2Type
+            Map<Integer, Integer> mTotalNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A3Type
+            Map<Integer, Integer> mTotalNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A4Type
+            Map<Integer, Integer> mTotalNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // B1Type
+            Map<Integer, Integer> mTotalNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // B2Type
+            Map<Integer, Integer> mTotalNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // B3Type
+            Map<Integer, Integer> mTotalNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // B4Type
+            Map<Integer, Integer> mTotalNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A1B1Type
+            Map<Integer, Integer> mTotalNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A1B2Type
+            Map<Integer, Integer> mTotalNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A1B3Type
+            Map<Integer, Integer> mTotalNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A1B4Type
+            Map<Integer, Integer> mTotalNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A2B1Type
+            Map<Integer, Integer> mTotalNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A2B2Type
+            Map<Integer, Integer> mTotalNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A2B3Type
+            Map<Integer, Integer> mTotalNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A2B4Type
+            Map<Integer, Integer> mTotalNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A3B1Type
+            Map<Integer, Integer> mTotalNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A3B2Type
+            Map<Integer, Integer> mTotalNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A3B3Type
+            Map<Integer, Integer> mTotalNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A3B4Type
+            Map<Integer, Integer> mTotalNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A4B1Type
+            Map<Integer, Integer> mTotalNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A4B2Type
+            Map<Integer, Integer> mTotalNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A4B3Type
+            Map<Integer, Integer> mTotalNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A4B4Type
+            Map<Integer, Integer> mTotalNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            Map<Integer, Integer> mTotalNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND
     ) {
         ArrayList<String> ofl = getOrderedFloorsList();
 //        TreeSet<Integer> keys = new TreeSet<>(); 
@@ -2305,7 +2744,32 @@ public class F_Main extends F_Object {
                         + ",SDD_Wrong_Count,SDD_Wrong_FATAL_CASUALTY_Count,SDD_Wrong_%FATAL_CASUALTY"
                         + ",SDD_Vehicle_Count,SDD_Vehicle_FATAL_CASUALTY_Count,SDD_Vehicle_%FATAL_CASUALTY"
                         + ",SDD_Delay_Count,SDD_Delay_FATAL_CASUALTY_Count,SDD_Delay_%FATAL_CASUALTY"
-                        + ",SDD_NoDelay_Count,SDD_NoDelay_FATAL_CASUALTY_Count,SDD_NoDelay_%FATAL_CASUALTY");
+                        + ",SDD_NoDelay_Count,SDD_NoDelay_FATAL_CASUALTY_Count,SDD_NoDelay_%FATAL_CASUALTY"
+                        + ",A1Type_Count,A1Type_FATAL_CASUALTY_Count,A1Type_%FATAL_CASUALTY"
+                        + ",A2Type_Count,A2Type_FATAL_CASUALTY_Count,A2Type_%FATAL_CASUALTY"
+                        + ",A3Type_Count,A3Type_FATAL_CASUALTY_Count,A3Type_%FATAL_CASUALTY"
+                        + ",A4Type_Count,A4Type_FATAL_CASUALTY_Count,A4Type_%FATAL_CASUALTY"
+                        + ",B1Type_Count,B1Type_FATAL_CASUALTY_Count,B1Type_%FATAL_CASUALTY"
+                        + ",B2Type_Count,B2Type_FATAL_CASUALTY_Count,B2Type_%FATAL_CASUALTY"
+                        + ",B3Type_Count,B3Type_FATAL_CASUALTY_Count,B3Type_%FATAL_CASUALTY"
+                        + ",B4Type_Count,B4Type_FATAL_CASUALTY_Count,B4Type_%FATAL_CASUALTY"
+                        + ",A1B1Type_Count,A1B1Type_FATAL_CASUALTY_Count,A1B1Type_%FATAL_CASUALTY"
+                        + ",A1B2Type_Count,A1B2Type_FATAL_CASUALTY_Count,A1B2Type_%FATAL_CASUALTY"
+                        + ",A1B3Type_Count,A1B3Type_FATAL_CASUALTY_Count,A1B3Type_%FATAL_CASUALTY"
+                        + ",A1B4Type_Count,A1B4Type_FATAL_CASUALTY_Count,A1B4Type_%FATAL_CASUALTY"
+                        + ",A2B1Type_Count,A2B1Type_FATAL_CASUALTY_Count,A2B1Type_%FATAL_CASUALTY"
+                        + ",A2B2Type_Count,A2B2Type_FATAL_CASUALTY_Count,A2B2Type_%FATAL_CASUALTY"
+                        + ",A2B3Type_Count,A2B3Type_FATAL_CASUALTY_Count,A2B3Type_%FATAL_CASUALTY"
+                        + ",A2B4Type_Count,A2B4Type_FATAL_CASUALTY_Count,A2B4Type_%FATAL_CASUALTY"
+                        + ",A3B1Type_Count,A3B1Type_FATAL_CASUALTY_Count,A3B1Type_%FATAL_CASUALTY"
+                        + ",A3B2Type_Count,A3B2Type_FATAL_CASUALTY_Count,A3B2Type_%FATAL_CASUALTY"
+                        + ",A3B3Type_Count,A3B3Type_FATAL_CASUALTY_Count,A3B3Type_%FATAL_CASUALTY"
+                        + ",A3B4Type_Count,A3B4Type_FATAL_CASUALTY_Count,A3B4Type_%FATAL_CASUALTY"
+                        + ",A4B1Type_Count,A4B1Type_FATAL_CASUALTY_Count,A4B1Type_%FATAL_CASUALTY"
+                        + ",A4B2Type_Count,A4B2Type_FATAL_CASUALTY_Count,A4B2Type_%FATAL_CASUALTY"
+                        + ",A4B3Type_Count,A4B3Type_FATAL_CASUALTY_Count,A4B3Type_%FATAL_CASUALTY"
+                        + ",A4B4Type_Count,A4B4Type_FATAL_CASUALTY_Count,A4B4Type_%FATAL_CASUALTY"
+                );
                 //m.keySet().stream().forEach(i -> pw.println("\"" + i + "\",\"" + m.get(i) + "\""));
                 Iterator<String> ites = ofl.iterator();
                 while (ites.hasNext()) {
@@ -2333,6 +2797,54 @@ public class F_Main extends F_Object {
                                 mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
                         print(pw, mTotalSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
                                 mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalB1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalB2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalB3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalB4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
+                        print(pw, mTotalA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k),
+                                mTotalFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.get(k));
                         pw.println();
                     }
                 }
@@ -3172,6 +3684,320 @@ public class F_Main extends F_Object {
                     mAllNPBSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
                     HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
                     mAllNPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A1Type
+                    HashMap<Integer, Integer> mA1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A2Type
+                    HashMap<Integer, Integer> mA2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A3Type
+                    HashMap<Integer, Integer> mA3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A4Type
+                    HashMap<Integer, Integer> mA4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // B1Type
+                    HashMap<Integer, Integer> mB1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllB1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mB1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // B2Type
+                    HashMap<Integer, Integer> mB2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllB2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mB2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // B3Type
+                    HashMap<Integer, Integer> mB3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllB3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mB3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // B4Type
+                    HashMap<Integer, Integer> mB4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllB4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mB4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // ABType
+                    // A1B1Type
+                    HashMap<Integer, Integer> mA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A2B1Type
+                    HashMap<Integer, Integer> mA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A3B1Type
+                    HashMap<Integer, Integer> mA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A4B1Type
+                    HashMap<Integer, Integer> mA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A1B2Type
+                    HashMap<Integer, Integer> mA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A2B2Type
+                    HashMap<Integer, Integer> mA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A3B2Type
+                    HashMap<Integer, Integer> mA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A4B2Type
+                    HashMap<Integer, Integer> mA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A1B3Type
+                    HashMap<Integer, Integer> mA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A2B3Type
+                    HashMap<Integer, Integer> mA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A3B3Type
+                    HashMap<Integer, Integer> mA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A4B3Type
+                    HashMap<Integer, Integer> mA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A1B4Type
+                    HashMap<Integer, Integer> mA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A2B4Type
+                    HashMap<Integer, Integer> mA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A3B4Type
+                    HashMap<Integer, Integer> mA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A4B4Type
+                    HashMap<Integer, Integer> mA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                    mAllNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+
                     // Single variable selections by BUILDING_FLOOR_ORIGIN
                     // ----------------------------------------------------------
                     // STARTING_DELAY_DESCRIPTION
@@ -3624,11 +4450,182 @@ public class F_Main extends F_Object {
                                 mFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_FaultyEquipmentOrApplianceOrFuelSupplyOrLeadsOrOverheatingUnknownCause_By_BUILDING_OR_PROPERTY_TYPE,
                                 valBSSMOEDNotApplicable,
                                 mBSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE,
-                                mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE,
-                                //                                mFIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
-                                //                                mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
-                                //                                mFIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
-                                //                                mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE);
+                                mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE
+                        //                                mFIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+                        //                                mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+                        //                                mFIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+                        //                                mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE);
+                        );
+                        addToCountsAndSets(r, valFATALITY_CASUALTY, sPurposeBuiltTypes,
+                                // A1Type
+                                mA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A2Type
+                                mA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A3Type
+                                mA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A4Type
+                                mA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // B1Type
+                                mB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // B2Type
+                                mB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // B3Type
+                                mB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // B4Type
+                                mB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A1B1Type
+                                mA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A1B2Type
+                                mA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A1B3Type
+                                mA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A1B4Type
+                                mA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A2B1Type
+                                mA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A2B2Type
+                                mA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A2B3Type
+                                mA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A2B4Type
+                                mA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A3B1Type
+                                mA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A3B2Type
+                                mA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A3B3Type
+                                mA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A3B4Type
+                                mA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A4B1Type
+                                mA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A4B2Type
+                                mA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A4B3Type
+                                mA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A4B4Type
+                                mA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                        addToCountsAndSets(r, valFATALITY_CASUALTY,
                                 mHoleyCheese2_By_BUILDING_OR_PROPERTY_TYPE,
                                 mFATALITY_CASUALTY_HoleyCheese2_By_BUILDING_OR_PROPERTY_TYPE,
                                 mHoleyCheese3_By_BUILDING_OR_PROPERTY_TYPE,
@@ -4049,7 +5046,177 @@ public class F_Main extends F_Object {
                                 mFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_FaultyEquipmentOrApplianceOrFuelSupplyOrLeadsOrOverheatingUnknownCause_By_BUILDING_OR_PROPERTY_TYPE,
                                 valBSSMOEDNotApplicable,
                                 mBSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE,
-                                mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE,
+                                mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE);
+                        addToCountsAndSets(r, valFATALITY_CASUALTY, sPurposeBuiltTypes,
+                                // A1Type
+                                mA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A2Type
+                                mA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A3Type
+                                mA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A4Type
+                                mA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // B1Type
+                                mB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // B2Type
+                                mB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // B3Type
+                                mB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // B4Type
+                                mB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A1B1Type
+                                mA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A1B2Type
+                                mA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A1B3Type
+                                mA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A1B4Type
+                                mA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A2B1Type
+                                mA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A2B2Type
+                                mA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A2B3Type
+                                mA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A2B4Type
+                                mA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A3B1Type
+                                mA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A3B2Type
+                                mA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A3B3Type
+                                mA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A3B4Type
+                                mA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A4B1Type
+                                mA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A4B2Type
+                                mA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A4B3Type
+                                mA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                // A4B4Type
+                                mA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                        addToCountsAndSets(r, valFATALITY_CASUALTY,
                                 mHoleyCheese2_By_BUILDING_OR_PROPERTY_TYPE,
                                 mFATALITY_CASUALTY_HoleyCheese2_By_BUILDING_OR_PROPERTY_TYPE,
                                 mHoleyCheese3_By_BUILDING_OR_PROPERTY_TYPE,
@@ -4667,6 +5834,332 @@ public class F_Main extends F_Object {
                             varBUILDING_FLOORS_ABOVE_GROUND,
                             mSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
                             mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // SDD BUILDING_FLOORS_ABOVE_GROUND
+                    // All
+                    outputBUILDING_FLOORS_ABOVE_GROUND(dir, year, F_Strings.STARTING_DELAY_DESCRIPTION
+                            + " BY "
+                            + F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
+                            F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
+                            varBUILDING_FLOORS_ABOVE_GROUND,
+                            mSDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // LargeSite
+                            mSDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Security
+                            mSDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Assault
+                            mSDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Civil
+                            mSDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Location
+                            mSDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Wrong
+                            mSDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Vehicle
+                            mSDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Delay
+                            mSDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // NoDelay
+                            mSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1Type
+                            mA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2Type
+                            mA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3Type
+                            mA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4Type
+                            mA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B1Type
+                            mB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B2Type
+                            mB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B3Type
+                            mB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B4Type
+                            mB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B1Type
+                            mA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B2Type
+                            mA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B3Type
+                            mA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B4Type
+                            mA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B1Type
+                            mA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B2Type
+                            mA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B3Type
+                            mA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B4Type
+                            mA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B1Type
+                            mA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B2Type
+                            mA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B3Type
+                            mA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B4Type
+                            mA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B1Type
+                            mA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B2Type
+                            mA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B3Type
+                            mA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B4Type
+                            mA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // PB
+                    outputBUILDING_FLOORS_ABOVE_GROUND(dir, year,
+                            F_Strings.PurposeBuilt + " "
+                            + F_Strings.STARTING_DELAY_DESCRIPTION
+                            + " BY "
+                            + F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
+                            F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
+                            varBUILDING_FLOORS_ABOVE_GROUND,
+                            mPBSDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // LargeSite
+                            mPBSDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Security
+                            mPBSDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Assault
+                            mPBSDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Civil
+                            mPBSDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Location
+                            mPBSDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Wrong
+                            mPBSDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Vehicle
+                            mPBSDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Delay
+                            mPBSDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // NoDelay
+                            mPBSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1Type
+                            mPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2Type
+                            mPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3Type
+                            mPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4Type
+                            mPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B1Type
+                            mPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B2Type
+                            mPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B3Type
+                            mPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B4Type
+                            mPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B1Type
+                            mPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B2Type
+                            mPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B3Type
+                            mPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B4Type
+                            mPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B1Type
+                            mPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B2Type
+                            mPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B3Type
+                            mPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B4Type
+                            mPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B1Type
+                            mPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B2Type
+                            mPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B3Type
+                            mPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B4Type
+                            mPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B1Type
+                            mPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B2Type
+                            mPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B3Type
+                            mPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B4Type
+                            mPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mTotalPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // Not PB
+                    outputBUILDING_FLOORS_ABOVE_GROUND(dir, year,
+                            F_Strings.NotPurposeBuilt + " " + F_Strings.STARTING_DELAY_DESCRIPTION
+                            + " BY "
+                            + F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
+                            F_Strings.BUILDING_FLOORS_ABOVE_GROUND,
+                            varBUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBSDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_SDD_BuildingType_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // LargeSite
+                            mNPBSDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_SDD_LargeSite_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Security
+                            mNPBSDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_SDD_Security_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Assault
+                            mNPBSDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_SDD_Assault_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Civil
+                            mNPBSDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_SDD_Civil_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Location
+                            mNPBSDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_SDD_Location_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Wrong
+                            mNPBSDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_SDD_Wrong_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Vehicle
+                            mNPBSDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_SDD_Vehicle_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // Delay
+                            mNPBSDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // NoDelay
+                            mNPBSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1Type
+                            mNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2Type
+                            mNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3Type
+                            mNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4Type
+                            mNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B1Type
+                            mNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B2Type
+                            mNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B3Type
+                            mNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // B4Type
+                            mNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B1Type
+                            mNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B2Type
+                            mNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B3Type
+                            mNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A1B4Type
+                            mNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B1Type
+                            mNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B2Type
+                            mNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B3Type
+                            mNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A2B4Type
+                            mNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B1Type
+                            mNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B2Type
+                            mNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B3Type
+                            mNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A3B4Type
+                            mNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B1Type
+                            mNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B2Type
+                            mNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B3Type
+                            mNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            // A4B4Type
+                            mNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+
                     // Output single variable selections by BUILDING_FLOOR_ORIGIN
                     // ----------------------------------------------------------------
                     // START_DELAY_DESCRIPTION
@@ -5306,6 +6799,318 @@ public class F_Main extends F_Object {
                             mNPBSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
                     Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
                             mNPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A1Type
+                    Generic_Collections.addToCount(mTotalA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A2Type
+                    Generic_Collections.addToCount(mTotalA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A3Type
+                    Generic_Collections.addToCount(mTotalA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A4Type
+                    Generic_Collections.addToCount(mTotalA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // B1Type
+                    Generic_Collections.addToCount(mTotalB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mB1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // B2Type
+                    Generic_Collections.addToCount(mTotalB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mB2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // B3Type
+                    Generic_Collections.addToCount(mTotalB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mB3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // B4Type
+                    Generic_Collections.addToCount(mTotalB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mB4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A1B1Type
+                    Generic_Collections.addToCount(mTotalA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A1B2Type
+                    Generic_Collections.addToCount(mTotalA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A1B3Type
+                    Generic_Collections.addToCount(mTotalA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A1B4Type
+                    Generic_Collections.addToCount(mTotalA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A2B1Type
+                    Generic_Collections.addToCount(mTotalA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A2B2Type
+                    Generic_Collections.addToCount(mTotalA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A2B3Type
+                    Generic_Collections.addToCount(mTotalA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A2B4Type
+                    Generic_Collections.addToCount(mTotalA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A3B1Type
+                    Generic_Collections.addToCount(mTotalA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A3B2Type
+                    Generic_Collections.addToCount(mTotalA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A3B3Type
+                    Generic_Collections.addToCount(mTotalA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A3B4Type
+                    Generic_Collections.addToCount(mTotalA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A4B1Type
+                    Generic_Collections.addToCount(mTotalA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A4B2Type
+                    Generic_Collections.addToCount(mTotalA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A4B3Type
+                    Generic_Collections.addToCount(mTotalA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    // A4B4Type
+                    Generic_Collections.addToCount(mTotalA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    Generic_Collections.addToCount(mTotalNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
                     // Single variable count summaries BUILDING_FLOOR_ORIGIN
                     // ---------------------------------------------------------
                     // STARTING_DELAY_DESCRIPTION
@@ -6033,7 +7838,79 @@ public class F_Main extends F_Object {
                     mTotalFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
                     // NoDelay
                     mTotalSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
-                    mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    mTotalFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1Type
+                    mTotalA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2Type
+                    mTotalA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3Type
+                    mTotalA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4Type
+                    mTotalA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B1Type
+                    mTotalB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B2Type
+                    mTotalB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B3Type
+                    mTotalB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B4Type
+                    mTotalB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B1Type
+                    mTotalA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B2Type
+                    mTotalA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B3Type
+                    mTotalA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B4Type
+                    mTotalA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B1Type
+                    mTotalA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B2Type
+                    mTotalA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B3Type
+                    mTotalA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B4Type
+                    mTotalA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B1Type
+                    mTotalA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B2Type
+                    mTotalA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B3Type
+                    mTotalA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B4Type
+                    mTotalA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B1Type
+                    mTotalA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B2Type
+                    mTotalA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B3Type
+                    mTotalA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B4Type
+                    mTotalA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
             outputBUILDING_FLOORS_ABOVE_GROUND(dir, F_Strings.s2010_20,
                     F_Strings.PurposeBuilt + " "
                     + F_Strings.STARTING_DELAY_DESCRIPTION
@@ -6069,7 +7946,79 @@ public class F_Main extends F_Object {
                     mTotalPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
                     // NoDelay
                     mTotalPBSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
-                    mTotalPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    mTotalPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1Type
+                    mTotalPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2Type
+                    mTotalPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3Type
+                    mTotalPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4Type
+                    mTotalPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B1Type
+                    mTotalPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B2Type
+                    mTotalPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B3Type
+                    mTotalPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B4Type
+                    mTotalPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B1Type
+                    mTotalPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B2Type
+                    mTotalPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B3Type
+                    mTotalPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B4Type
+                    mTotalPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B1Type
+                    mTotalPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B2Type
+                    mTotalPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B3Type
+                    mTotalPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B4Type
+                    mTotalPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B1Type
+                    mTotalPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B2Type
+                    mTotalPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B3Type
+                    mTotalPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B4Type
+                    mTotalPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B1Type
+                    mTotalPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B2Type
+                    mTotalPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B3Type
+                    mTotalPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B4Type
+                    mTotalPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
             outputBUILDING_FLOORS_ABOVE_GROUND(dir, F_Strings.s2010_20,
                     F_Strings.NotPurposeBuilt + " " + F_Strings.STARTING_DELAY_DESCRIPTION
                     + " BY "
@@ -6104,7 +8053,79 @@ public class F_Main extends F_Object {
                     mTotalNPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOORS_ABOVE_GROUND,
                     // NoDelay
                     mTotalNPBSDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
-                    mTotalNPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    mTotalNPBFATALITY_CASUALTY_SDD_NoDelay_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1Type
+                    mTotalNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2Type
+                    mTotalNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3Type
+                    mTotalNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4Type
+                    mTotalNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B1Type
+                    mTotalNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B2Type
+                    mTotalNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B3Type
+                    mTotalNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // B4Type
+                    mTotalNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B1Type
+                    mTotalNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B2Type
+                    mTotalNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B3Type
+                    mTotalNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A1B4Type
+                    mTotalNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B1Type
+                    mTotalNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B2Type
+                    mTotalNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B3Type
+                    mTotalNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A2B4Type
+                    mTotalNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B1Type
+                    mTotalNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B2Type
+                    mTotalNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B3Type
+                    mTotalNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A3B4Type
+                    mTotalNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B1Type
+                    mTotalNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B2Type
+                    mTotalNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B3Type
+                    mTotalNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    // A4B4Type
+                    mTotalNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                    mTotalNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
             // Single variables by BUILDING_FLOOR_ORIGIN
             // START_DELAY_DESCRIPTION
 //            // BuildingType
@@ -7053,20 +9074,13 @@ public class F_Main extends F_Object {
             HashMap<Integer, Integer> mFATALITY_CASUALTY_WholeBuildingOrAffectingMoreThan2Floors_FaultyEquipmentOrApplianceOrFuelSupplyOrLeadsOrOverheatingUnknownCause_By_BUILDING_OR_PROPERTY_TYPE,
             int valBSSMOEDNotApplicable,
             HashMap<Integer, Integer> mBSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE,
-            HashMap<Integer, Integer> mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE,
-            //           HashMap<Integer, Integer>  mFIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
-            //                              HashMap<Integer, Integer>   mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
-            //                              HashMap<Integer, Integer>   mFIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
-            //                              HashMap<Integer, Integer>   mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE
+    //           HashMap<Integer, Integer>  mFIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+    //                              HashMap<Integer, Integer>   mFATALITY_CASUALTY_FIRE_SAFETY_SUCCESS_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+    //                              HashMap<Integer, Integer>   mFIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE,
+    //                              HashMap<Integer, Integer>   mFATALITY_CASUALTY_FIRE_SAFETY_FAILURE_SCORE_By_BUILDING_OR_PROPERTY_TYPE
 
-            HashMap<Integer, Integer> mHoleyCheese2_By_BUILDING_OR_PROPERTY_TYPE,
-            HashMap<Integer, Integer> mFATALITY_CASUALTY_HoleyCheese2_By_BUILDING_OR_PROPERTY_TYPE,
-            HashMap<Integer, Integer> mHoleyCheese3_By_BUILDING_OR_PROPERTY_TYPE,
-            HashMap<Integer, Integer> mFATALITY_CASUALTY_HoleyCheese3_By_BUILDING_OR_PROPERTY_TYPE,
-            HashMap<Integer, Integer> mHoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE,
-            HashMap<Integer, Integer> mFATALITY_CASUALTY_HoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE,
-            HashMap<Integer, Integer> mDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE,
-            HashMap<Integer, Integer> mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE) {
+    ) {
         if (r.tDAY_NIGHT == valNight) {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
                     mNight_By_BUILDING_OR_PROPERTY_TYPE,
@@ -7326,6 +9340,7 @@ public class F_Main extends F_Object {
                     mPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN,
                     mNPBSDD_Delay_By_BUILDING_FLOOR_ORIGIN,
                     mNPBFATALITY_CASUALTY_SDD_Delay_By_BUILDING_FLOOR_ORIGIN);
+
         }
         if (r.tRESCUES != valRESCUES_0) {
             addToCount_BUILDING_OR_PROPERTY_TYPE(r, valFATALITY_CASUALTY,
@@ -7377,6 +9392,467 @@ public class F_Main extends F_Object {
                     mBSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE,
                     mFATALITY_CASUALTY_BSSMOEDNotApplicable_By_BUILDING_OR_PROPERTY_TYPE);
         }
+    }
+
+    protected <T extends F_Dwellings_Integer_Record0> void addToCountsAndSets(T r,
+            int valFATALITY_CASUALTY,
+            Set<Integer> pb,
+            // A1Type
+            HashMap<Integer, Integer> mA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A2Type
+            HashMap<Integer, Integer> mA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A3Type
+            HashMap<Integer, Integer> mA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A4Type
+            HashMap<Integer, Integer> mA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // B1Type
+            HashMap<Integer, Integer> mB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // B2Type
+            HashMap<Integer, Integer> mB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // B3Type
+            HashMap<Integer, Integer> mB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // B4Type
+            HashMap<Integer, Integer> mB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A1B1Type
+            HashMap<Integer, Integer> mA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A1B2Type
+            HashMap<Integer, Integer> mA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A1B3Type
+            HashMap<Integer, Integer> mA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A1B4Type
+            HashMap<Integer, Integer> mA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A2B1Type
+            HashMap<Integer, Integer> mA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A2B2Type
+            HashMap<Integer, Integer> mA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A2B3Type
+            HashMap<Integer, Integer> mA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A2B4Type
+            HashMap<Integer, Integer> mA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A3B1Type
+            HashMap<Integer, Integer> mA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A3B2Type
+            HashMap<Integer, Integer> mA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A3B3Type
+            HashMap<Integer, Integer> mA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A3B4Type
+            HashMap<Integer, Integer> mA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A4B1Type
+            HashMap<Integer, Integer> mA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A4B2Type
+            HashMap<Integer, Integer> mA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A4B3Type
+            HashMap<Integer, Integer> mA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            // A4B4Type
+            HashMap<Integer, Integer> mA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+            HashMap<Integer, Integer> mNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND) {
+        if (null != r.AType) {
+            switch (r.AType) {
+                case 1:
+                    addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                            mA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            pb,
+                            mPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    break;
+                case 2:
+                    addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                            mA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            pb,
+                            mPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    break;
+                case 3:
+                    addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                            mA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            pb,
+                            mPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    break;
+                case 4:
+                    addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                            mA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            pb,
+                            mPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBA4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_A4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (null != r.BType) {
+            switch (r.BType) {
+                case 1:
+                    addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                            mB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            pb,
+                            mPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBB1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    if (null != r.AType) {
+                        switch (r.AType) {
+                            case 1:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A1B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 2:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A2B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 3:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A3B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 4:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A4B1Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+                case 2:
+                    addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                            mB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            pb,
+                            mPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBB2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    if (null != r.AType) {
+                        switch (r.AType) {
+                            case 1:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A1B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 2:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A2B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 3:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A3B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 4:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A4B2Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+                case 3:
+                    addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                            mB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            pb,
+                            mPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBB3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    if (null != r.AType) {
+                        switch (r.AType) {
+                            case 1:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A1B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 2:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A2B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 3:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A3B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 4:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A4B3Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+                case 4:
+                    addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                            mB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            pb,
+                            mPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBB4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                            mNPBFATALITY_CASUALTY_B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                    if (null != r.AType) {
+                        switch (r.AType) {
+                            case 1:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A1B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 2:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A2B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 3:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A3B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            case 4:
+                                addToCount_BUILDING_FLOORS_ABOVE_GROUND(r, valFATALITY_CASUALTY,
+                                        mA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        pb,
+                                        mPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBA4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND,
+                                        mNPBFATALITY_CASUALTY_A4B4Type_By_BUILDING_FLOORS_ABOVE_GROUND);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    protected <T extends F_Dwellings_Integer_Record0> void addToCountsAndSets(T r,
+            int valFATALITY_CASUALTY,
+            HashMap<Integer, Integer> mHoleyCheese2_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_HoleyCheese2_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mHoleyCheese3_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_HoleyCheese3_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mHoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_HoleyCheese4_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mDelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE,
+            HashMap<Integer, Integer> mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE) {
         if (null != r.holeyCheese) {
             switch (r.holeyCheese) {
                 case 2:
@@ -7404,7 +9880,7 @@ public class F_Main extends F_Object {
                     mFATALITY_CASUALTY_DelaysToFireFightingAndNotFirespreadHoleyCheese_By_BUILDING_OR_PROPERTY_TYPE);
         }
     }
-    
+
     protected <T extends F_Dwellings_Integer_Record0> void addToCountsAndSets(T r,
             int valFATALITY_CASUALTY,
             // AType
@@ -8125,6 +10601,11 @@ public class F_Main extends F_Object {
         try {
             int varFATALITY_CASUALTY = env.data.vname2id.get(F_Strings.FATALITY_CASUALTY);
             int valFATALITY_CASUALTY = env.data.name2ids.get(varFATALITY_CASUALTY).get(F_Strings.FatalityOrCasualty);
+            int varBUILDING_OR_PROPERTY_TYPE = env.data.vname2id.get(F_Strings.BUILDING_OR_PROPERTY_TYPE);
+            HashMap<String, Integer> tBOPTName2id = env.data.name2ids.get(varBUILDING_OR_PROPERTY_TYPE);
+            int tPBLRBUILDING_OR_PROPERTY_TYPE = tBOPTName2id.get(F_Strings.PurposeBuiltLowRiseFlats);
+            int tPBMRBUILDING_OR_PROPERTY_TYPE = tBOPTName2id.get(F_Strings.PurposeBuiltMediumRiseFlats);
+            int tPBHRBUILDING_OR_PROPERTY_TYPE = tBOPTName2id.get(F_Strings.PurposeBuiltHighRiseFlats);
             // 1 Variable
             int allTotal = 0;
             Iterator<F_CollectionID> ite = env.data.data.keySet().iterator();
@@ -8317,6 +10798,26 @@ public class F_Main extends F_Object {
                 mAllBUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mBUILDING_FLOORS_ABOVE_GROUND);
                 HashMap<Integer, Integer> mFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
                 mAllFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND);
+                // PBLR
+                HashMap<Integer, Integer> mPBLRBUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                mAllPBLRBUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBLRBUILDING_FLOORS_ABOVE_GROUND);
+                HashMap<Integer, Integer> mPBLRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                mAllPBLRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBLRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND);
+                // PBMR
+                HashMap<Integer, Integer> mPBMRBUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                mAllPBMRBUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBMRBUILDING_FLOORS_ABOVE_GROUND);
+                HashMap<Integer, Integer> mPBMRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                mAllPBMRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBMRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND);
+                // PBHR
+                HashMap<Integer, Integer> mPBHRBUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                mAllPBHRBUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBHRBUILDING_FLOORS_ABOVE_GROUND);
+                HashMap<Integer, Integer> mPBHRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                mAllPBHRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mPBHRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND);
+                // NonPB
+                HashMap<Integer, Integer> mNonPBBUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                mAllNonPBBUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNonPBBUILDING_FLOORS_ABOVE_GROUND);
+                HashMap<Integer, Integer> mNonPBFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND = new HashMap<>();
+                mAllNonPBFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND.put(cid.id, mNonPBFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND);
                 // BUILDING_FLOORS_BELOW_GROUND
                 HashMap<Integer, Integer> mBUILDING_FLOORS_BELOW_GROUND = new HashMap<>();
                 mAllBUILDING_FLOORS_BELOW_GROUND.put(cid.id, mBUILDING_FLOORS_BELOW_GROUND);
@@ -8538,6 +11039,13 @@ public class F_Main extends F_Object {
                             mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
                             mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
                             mBUILDING_FLOORS_ABOVE_GROUND,
+                            tPBLRBUILDING_OR_PROPERTY_TYPE,
+                            mPBLRBUILDING_FLOORS_ABOVE_GROUND,
+                            tPBMRBUILDING_OR_PROPERTY_TYPE,
+                            mPBMRBUILDING_FLOORS_ABOVE_GROUND,
+                            tPBHRBUILDING_OR_PROPERTY_TYPE,
+                            mPBHRBUILDING_FLOORS_ABOVE_GROUND,
+                            mNonPBBUILDING_FLOORS_ABOVE_GROUND,
                             mBUILDING_FLOORS_BELOW_GROUND,
                             mBUILDING_FLOOR_ORIGIN,
                             mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
@@ -8597,6 +11105,13 @@ public class F_Main extends F_Object {
                                 mFATALITY_CASUALTY_CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
                                 mFATALITY_CASUALTY_BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
                                 mFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
+                                tPBLRBUILDING_OR_PROPERTY_TYPE,
+                                mPBLRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
+                                tPBMRBUILDING_OR_PROPERTY_TYPE,
+                                mPBMRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
+                                tPBHRBUILDING_OR_PROPERTY_TYPE,
+                                mPBHRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNonPBFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
                                 mFATALITY_CASUALTY_BUILDING_FLOORS_BELOW_GROUND,
                                 mFATALITY_CASUALTY_BUILDING_FLOOR_ORIGIN,
                                 mFATALITY_CASUALTY_BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
@@ -8662,6 +11177,13 @@ public class F_Main extends F_Object {
                             mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
                             mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
                             mBUILDING_FLOORS_ABOVE_GROUND,
+                            tPBLRBUILDING_OR_PROPERTY_TYPE,
+                            mPBLRBUILDING_FLOORS_ABOVE_GROUND,
+                            tPBMRBUILDING_OR_PROPERTY_TYPE,
+                            mPBMRBUILDING_FLOORS_ABOVE_GROUND,
+                            tPBHRBUILDING_OR_PROPERTY_TYPE,
+                            mPBHRBUILDING_FLOORS_ABOVE_GROUND,
+                            mNonPBBUILDING_FLOORS_ABOVE_GROUND,                            
                             mBUILDING_FLOORS_BELOW_GROUND,
                             mBUILDING_FLOOR_ORIGIN,
                             mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
@@ -8718,6 +11240,13 @@ public class F_Main extends F_Object {
                                 mFATALITY_CASUALTY_CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION,
                                 mFATALITY_CASUALTY_BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION,
                                 mFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
+                                tPBLRBUILDING_OR_PROPERTY_TYPE,
+                                mPBLRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
+                                tPBMRBUILDING_OR_PROPERTY_TYPE,
+                                mPBMRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
+                                tPBHRBUILDING_OR_PROPERTY_TYPE,
+                                mPBHRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
+                                mNonPBFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND,
                                 mFATALITY_CASUALTY_BUILDING_FLOORS_BELOW_GROUND,
                                 mFATALITY_CASUALTY_BUILDING_FLOOR_ORIGIN,
                                 mFATALITY_CASUALTY_BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION,
@@ -8790,6 +11319,10 @@ public class F_Main extends F_Object {
                 output(dir, tFINANCIAL_YEAR, F_Strings.CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, env.data.vname2id.get(F_Strings.CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION), mCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, mFATALITY_CASUALTY_CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION);
                 output(dir, tFINANCIAL_YEAR, F_Strings.BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION), mBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, mFATALITY_CASUALTY_BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION);
                 output(dir, tFINANCIAL_YEAR, F_Strings.BUILDING_FLOORS_ABOVE_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND), mBUILDING_FLOORS_ABOVE_GROUND, mFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND);
+                output(dir, tFINANCIAL_YEAR, "PBLR_" + F_Strings.BUILDING_FLOORS_ABOVE_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND), mPBLRBUILDING_FLOORS_ABOVE_GROUND, mPBLRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND);
+                output(dir, tFINANCIAL_YEAR, "PBMR_" + F_Strings.BUILDING_FLOORS_ABOVE_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND), mPBMRBUILDING_FLOORS_ABOVE_GROUND, mPBMRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND);
+                output(dir, tFINANCIAL_YEAR, "PBHR_" + F_Strings.BUILDING_FLOORS_ABOVE_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND), mPBHRBUILDING_FLOORS_ABOVE_GROUND, mPBHRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND);
+                output(dir, tFINANCIAL_YEAR, "NonPB_" + F_Strings.BUILDING_FLOORS_ABOVE_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND), mNonPBBUILDING_FLOORS_ABOVE_GROUND, mNonPBFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND);
                 output(dir, tFINANCIAL_YEAR, F_Strings.BUILDING_FLOORS_BELOW_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_BELOW_GROUND), mBUILDING_FLOORS_BELOW_GROUND, mFATALITY_CASUALTY_BUILDING_FLOORS_BELOW_GROUND);
                 output(dir, tFINANCIAL_YEAR, F_Strings.BUILDING_FLOOR_ORIGIN, env.data.vname2id.get(F_Strings.BUILDING_FLOOR_ORIGIN), mBUILDING_FLOOR_ORIGIN, mFATALITY_CASUALTY_BUILDING_FLOOR_ORIGIN);
                 output(dir, tFINANCIAL_YEAR, F_Strings.BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION), mBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, mFATALITY_CASUALTY_BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION);
@@ -8869,7 +11402,11 @@ public class F_Main extends F_Object {
             output(dir, F_Strings.s2010_20, F_Strings.CAUSE_EXPLOSION_STAGE_DESCRIPTION, env.data.vname2id.get(F_Strings.CAUSE_EXPLOSION_STAGE_DESCRIPTION), collectCounts(mAllCAUSE_EXPLOSION_STAGE_DESCRIPTION), collectCounts(mAllFATALITY_CASUALTY_CAUSE_EXPLOSION_STAGE_DESCRIPTION));
             output(dir, F_Strings.s2010_20, F_Strings.CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION, env.data.vname2id.get(F_Strings.CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION), collectCounts(mAllCAUSE_EXPLOSION_CONTAINERS_DESCRIPTION), collectCounts(mAllFATALITY_CASUALTY_CAUSE_EXPLOSION_CONTAINERS_DESCRIPTION));
             output(dir, F_Strings.s2010_20, F_Strings.BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION), collectCounts(mAllBUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION), collectCounts(mAllFATALITY_CASUALTY_BUILDING_SPECIAL_CONSTRUCTION_DESCRIPTION));
-            output(dir, F_Strings.s2010_20, F_Strings.BUILDING_FLOORS_ABOVE_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllBUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND));
+            output(dir, F_Strings.s2010_20, F_Strings.BUILDING_FLOORS_ABOVE_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllBUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND));            
+            output(dir, F_Strings.s2010_20, "PBLR_" + F_Strings.BUILDING_FLOORS_ABOVE_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllPBLRBUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllPBLRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND));
+                output(dir, F_Strings.s2010_20, "PBMR_" + F_Strings.BUILDING_FLOORS_ABOVE_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllPBMRBUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllPBMRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND));
+                output(dir, F_Strings.s2010_20, "PBHR_" + F_Strings.BUILDING_FLOORS_ABOVE_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllPBHRBUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllPBHRFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND));
+                output(dir, F_Strings.s2010_20, "NonPB_" + F_Strings.BUILDING_FLOORS_ABOVE_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllNonPBBUILDING_FLOORS_ABOVE_GROUND), collectCounts(mAllNonPBFATALITY_CASUALTY_BUILDING_FLOORS_ABOVE_GROUND));
             output(dir, F_Strings.s2010_20, F_Strings.BUILDING_FLOORS_BELOW_GROUND, env.data.vname2id.get(F_Strings.BUILDING_FLOORS_BELOW_GROUND), collectCounts(mAllBUILDING_FLOORS_BELOW_GROUND), collectCounts(mAllFATALITY_CASUALTY_BUILDING_FLOORS_BELOW_GROUND));
             output(dir, F_Strings.s2010_20, F_Strings.BUILDING_FLOOR_ORIGIN, env.data.vname2id.get(F_Strings.BUILDING_FLOOR_ORIGIN), collectCounts(mAllBUILDING_FLOOR_ORIGIN), collectCounts(mAllFATALITY_CASUALTY_BUILDING_FLOOR_ORIGIN));
             output(dir, F_Strings.s2010_20, F_Strings.BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION, env.data.vname2id.get(F_Strings.BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION), collectCounts(mAllBUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION), collectCounts(mAllFATALITY_CASUALTY_BUILDING_ORIGIN_FLOOR_SIZE_DESCRIPTION));
